@@ -2,6 +2,8 @@
 
 Enhanced log analyzer with supervised learning, ML models, and comprehensive pattern analysis for failure detection. Production-ready structure with organized modules and scripts.
 
+Access the chatbot via: https://log-analyzer-chatbot.onrender.com/
+
 ## 📁 Project Structure
 
 ```
@@ -330,3 +332,4 @@ open reports/analysis_report.html
 ## 📄 License
 
 See LICENSE file for details.
+
