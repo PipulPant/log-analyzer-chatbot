@@ -1,0 +1,88 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|IDENTIFIER|LOG
+2025-11-28 21:02:00,009|1|6|7a2a172d|Fetch Pending Verification Trx from DB|ESQLR|success|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,015|5|0|50952eb0|Fetch Access Token|ESQLR|pre|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,032|22|17|50952eb0|Fetch Access Token|ESQLR|success|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,034|0|0|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,035|0|0|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,035|0|0|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,035|0|0|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,035|0|0|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,035|2|0|3afff58e|Separate found retries|SJ|original|fd69eddb|Background External Check Status|
+2025-11-28 21:02:00,041|6|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,045|10|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|A285E841075543088F85E63B1AC59CB8|
+2025-11-28 21:02:00,069|34|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|4C977C99363A4A95BADF5C566911F5C5|
+2025-11-28 21:02:00,070|18|0|7c31f851|Transaction retry in progress?|ROA|Transaction retry in progress|c16635a5|Validate|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,073|2|0|39e52b97|Timeout reached?|ROA|Timeout reached|c16635a5|Validate|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,081|46|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-11-28 21:02:00,082|25|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|A285E841075543088F85E63B1AC59CB8|
+2025-11-28 21:02:00,090|12|6|c2689508|Update in progress flag to 0|PSQL|success|e7f4aa40|Multi-Instance Precaution|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,094|4|0|cea67986|Update successful?|ROA|Update successful|e7f4aa40|Multi-Instance Precaution|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,124|30|19|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,124|89|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|581F627F786F43FAB89D899036855323|
+2025-11-28 21:02:00,132|62|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|4C977C99363A4A95BADF5C566911F5C5|
+2025-11-28 21:02:00,139|15|0|7ce05023|Update successful?|ROA|Update successful|e7f4aa40|Multi-Instance Precaution|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,143|50|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-11-28 21:02:00,159|18|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|581F627F786F43FAB89D899036855323|
+2025-11-28 21:02:00,166|67|25|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|A285E841075543088F85E63B1AC59CB8|
+2025-11-28 21:02:00,174|8|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|A285E841075543088F85E63B1AC59CB8|
+2025-11-28 21:02:00,177|8|0|a4acbd06|Prepare Check Status Request|RT|success|58e40cf0|Call Ext Check Status|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:00,181|4|0|66939f10|Call MM Check Status|PJMS|pre|58e40cf0|Call Ext Check Status|BD8C4FAE67474E948CC483779F07AE2C|Filename: cbc098ef-835c-463a-8ce0-4c46b50ebfa4 | MTNU - Core Authentication, Validation & Scheduler > Scheduler > Background External Check Status > Call Ext Check Status |  - Request to :  'MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA' :{ "id" : "BD8C4FAE67474E948CC483779F07AE2C", "name" : "CHECK_STATUS_REQ", "dataObject" : { "instanceId" :"800001", "map" :{ "MSISDN" : "0767000283", "ACCESS_TOKEN" : "Y2ZjNmJiODctMTYwMS00NGNjLTg5NDctZGExNDAzOGE3NTdi" } }, "datum" : null }
+2025-11-28 21:02:00,182|0|545|fa1be98c|Pull Request|CJMS|success|ad467e37|CHECK_REG_STATUS_REQ|Filename: 04f83c84-69cc-46cb-b2f4-ea19555750f1 | MTNU - MM > MM BSS > Registration > CHECK_REG_STATUS_REQ | MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA - Request: { "id" : "BD8C4FAE67474E948CC483779F07AE2C", "name" : "CHECK_STATUS_REQ", "dataObject" : { "instanceId" :"800001", "map" :{ "MSISDN" : "0767000283", "ACCESS_TOKEN" : "Y2ZjNmJiODctMTYwMS00NGNjLTg5NDctZGExNDAzOGE3NTdi" } }, "datum" : null }
+2025-11-28 21:02:00,198|7|0|935c637a|POJO or JSON?|ROA|unmatched|608329cc|Inspect Request|
+2025-11-28 21:02:00,209|9|0|42d957a6|Store Request Data in Attributes|EJP|matched|608329cc|Inspect Request|
+2025-11-28 21:02:00,216|6|0|be1144bf|accessToken empty?|ROA|unmatched|608329cc|Inspect Request|
+2025-11-28 21:02:00,232|16|0|b7486b76|MSISDN Prefix Treatment|UA|success|608329cc|Inspect Request|
+2025-11-28 21:02:00,255|9|0|2594f849|Set HTTP Method and URI|UA|success|5fc8577c|Call BSS API|
+2025-11-28 21:02:00,259|106|8|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|4C977C99363A4A95BADF5C566911F5C5|
+2025-11-28 21:02:00,259|106|8|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-11-28 21:02:00,259|85|8|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|581F627F786F43FAB89D899036855323|
+2025-11-28 21:02:00,263|8|2|b88b7c2c|Call BSS API|IHTTP|pre|5fc8577c|Call BSS API|Filename: 04f83c84-69cc-46cb-b2f4-ea19555750f1 | MTNU - MM > MM BSS > Registration > CHECK_REG_STATUS_REQ > Call BSS API | MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA -URL: GET 'http://localhost:8110/service-mgmt/tt-api/3PP/v1/customerDetails?publicIdentifier=256767000283' - Request: { "id" : "BD8C4FAE67474E948CC483779F07AE2C", "name" : "CHECK_STATUS_REQ", "dataObject" : { "instanceId" :"800001", "map" :{ "MSISDN" : "0767000283", "ACCESS_TOKEN" : "Y2ZjNmJiODctMTYwMS00NGNjLTg5NDctZGExNDAzOGE3NTdi" } }, "datum" : null }
+2025-11-28 21:02:00,268|9|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|4C977C99363A4A95BADF5C566911F5C5|
+2025-11-28 21:02:00,268|1|0|ec49cb31|LogContent(Strip Large Content)|LC|success|74274fe9|Save CRM_EXT_CALL_DATA|Filename: 04f83c84-69cc-46cb-b2f4-ea19555750f1 | MTNU - MM > MM BSS > Registration > CHECK_REG_STATUS_REQ > Call BSS API > Save CRM_EXT_CALL_DATA | MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA:{ "id" : "BD8C4FAE67474E948CC483779F07AE2C", "name" : "CHECK_STATUS_REQ", "dataObject" : { "instanceId" :"800001", "map" :{ "MSISDN" : "0767000283", "ACCESS_TOKEN" : "Y2ZjNmJiODctMTYwMS00NGNjLTg5NDctZGExNDAzOGE3NTdi" } }, "datum" : null}
+2025-11-28 21:02:00,269|10|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-11-28 21:02:00,269|1|0|2da8762c|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,277|0|0|cf307de9|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,277|7|0|cf307de9|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,291|32|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|581F627F786F43FAB89D899036855323|
+2025-11-28 21:02:00,304|12|12|ac4fa82f|Receive request and data|HHREQ|success|109df499|BSS API|Filename: 0fe76b24-3b20-44b9-8bf5-65bf90e3bf94 | MTNU - MOCK > BSS API | GET '/service-mgmt/tt-api/3PP/v1/customerDetails' - Request: 
+2025-11-28 21:02:00,313|9|0|2e6b332e|Extract Transaction ID from Headers|UA|success|109df499|BSS API|
+2025-11-28 21:02:00,315|11|1|d3cad3f2|Log Request|LC|success|109df499|BSS API|Filename: 0fe76b24-3b20-44b9-8bf5-65bf90e3bf94 | MTNU - MOCK > BSS API | :
+2025-11-28 21:02:00,315|38|33|dd1ffb3c|Save request  CRM_EXT_CALL_DATA  |PSQL|success|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,324|11|0|96627adc|Which HTTP method?|ROA|GET|109df499|BSS API|
+2025-11-28 21:02:00,342|10|0|c4985335|Which API?|ROA|Customer Registration Status|fbfa771c|GET APIs|
+2025-11-28 21:02:00,353|11|0|cc02820a|Set attributes|UA|success|0cd942ab|Customer Registration Status|
+2025-11-28 21:02:00,362|9|0|516673c4|Fetch Customer Registration Status|ESQLR|pre|0cd942ab|Customer Registration Status|
+2025-11-28 21:02:00,366|13|4|516673c4|Fetch Customer Registration Status|ESQLR|No Record Found|0cd942ab|Customer Registration Status|
+2025-11-28 21:02:00,373|7|0|f230be70|Prepare Not Found Response|RT|success|0cd942ab|Customer Registration Status|
+2025-11-28 21:02:00,375|2|0|12a1fa0a|Set HTTP Code 404 Not Found|UA|success|0cd942ab|Customer Registration Status|
+2025-11-28 21:02:00,410|2|0|29c02cb6|200 Success|UA|success|7de70a53|Prepare Response|
+2025-11-28 21:02:00,419|9|0|8d8727c9|Log Response|LC|success|7de70a53|Prepare Response|Filename: 0fe76b24-3b20-44b9-8bf5-65bf90e3bf94 | MTNU - MOCK > BSS API > Prepare Response | :{ "code": "404", "reason": "", "message": "Customer with the provided MSISDN is not found", "status": "Failed", "referenceError": "2022021814021142747" }
+2025-11-28 21:02:00,441|4|0|8997758a|Respond with JSON data|HHRES|success|109df499|BSS API|Filename: 0fe76b24-3b20-44b9-8bf5-65bf90e3bf94 | MTNU - MOCK > BSS API | GET '/service-mgmt/tt-api/3PP/v1/customerDetails' - Response: { "code": "404", "reason": "", "message": "Customer with the provided MSISDN is not found", "status": "Failed", "referenceError": "2022021814021142747" }
+2025-11-28 21:02:00,443|1|182|b88b7c2c|Call BSS API|IHTTP|Response|5fc8577c|Call BSS API|Filename: 04f83c84-69cc-46cb-b2f4-ea19555750f1 | MTNU - MM > MM BSS > Registration > CHECK_REG_STATUS_REQ > Call BSS API | MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA - 3P Status Code: 404 - Response: { "code": "404", "reason": "", "message": "Customer with the provided MSISDN is not found", "status": "Failed", "referenceError": "2022021814021142747" }
+2025-11-28 21:02:00,443|188|183|b88b7c2c|Call BSS API|IHTTP|No Retry|5fc8577c|Call BSS API|Filename: 04f83c84-69cc-46cb-b2f4-ea19555750f1 | MTNU - MM > MM BSS > Registration > CHECK_REG_STATUS_REQ > Call BSS API | MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA - 3P Status Code: 404 - Response: { "id" : "BD8C4FAE67474E948CC483779F07AE2C", "name" : "CHECK_STATUS_REQ", "dataObject" : { "instanceId" :"800001", "map" :{ "MSISDN" : "0767000283", "ACCESS_TOKEN" : "Y2ZjNmJiODctMTYwMS00NGNjLTg5NDctZGExNDAzOGE3NTdi" } }, "datum" : null }
+2025-11-28 21:02:00,454|5|0|ec49cb31|LogContent(Strip Large Content)|LC|success|74274fe9|Save CRM_EXT_CALL_DATA|Filename: 04f83c84-69cc-46cb-b2f4-ea19555750f1 | MTNU - MM > MM BSS > Registration > CHECK_REG_STATUS_REQ > Call BSS API > Save CRM_EXT_CALL_DATA | MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA:{ "code": "404", "reason": "", "message": "Customer with the provided MSISDN is not found", "status": "Failed", "referenceError": "2022021814021142747"}
+2025-11-28 21:02:00,455|0|0|2da8762c|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,456|13|0|dd3e8e23|Good Response (200)|ROA|unmatched|5fc8577c|Call BSS API|
+2025-11-28 21:02:00,457|1|0|e59d10df|Put response data into attributes|EJP|matched|5fc8577c|Call BSS API|
+2025-11-28 21:02:00,460|0|0|cf307de9|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,460|5|0|cf307de9|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,461|4|0|40d9a02f|Map status|ESQLR|pre|5fc8577c|Call BSS API|
+2025-11-28 21:02:00,465|8|3|40d9a02f|Map status|ESQLR|No Record Found|5fc8577c|Call BSS API|
+2025-11-28 21:02:00,477|17|16|dd1ffb3c|Save request  CRM_EXT_CALL_DATA  |PSQL|success|74274fe9|Save CRM_EXT_CALL_DATA|
+2025-11-28 21:02:00,478|4|0|112103ff|Prepare Response|RT|success|ad467e37|CHECK_REG_STATUS_REQ|
+2025-11-28 21:02:00,491|3|0|e40e7440|POJO or JSON?|ROA|unmatched|e36a6901|Handle Response|
+2025-11-28 21:02:00,515|9|0|2e41c761|Publish Response|PJMS|pre|ad467e37|CHECK_REG_STATUS_REQ|Filename: 04f83c84-69cc-46cb-b2f4-ea19555750f1 | MTNU - MM > MM BSS > Registration > CHECK_REG_STATUS_REQ | MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA - Response sent :  'MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA.RESP' :{ "id" : "", "name" : "MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA.RESP", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "", "instanceId" : "800001", "msisdn" : "256767000283", "firstName": "", "lastName": "", "abillityRespCode": "404", "regStatusAbilName": "Failed", "messageStatus": "Customer with the provided MSISDN is not found", "respCode": "404", "subscriberInfoIDtype": "" }, "datum" : null }
+2025-11-28 21:02:01,182|1000|0|66939f10|Call MM Check Status|PJMS|success|58e40cf0|Call Ext Check Status|BD8C4FAE67474E948CC483779F07AE2C|Filename: cbc098ef-835c-463a-8ce0-4c46b50ebfa4 | MTNU - Core Authentication, Validation & Scheduler > Scheduler > Background External Check Status > Call Ext Check Status |  - Response from : 'MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA': { "id" : "", "name" : "MEDIATION.NIFI_CHECK_REG_STATUS_REQ.TA.RESP", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "", "instanceId" : "800001", "msisdn" : "256767000283", "firstName": "", "lastName": "", "abillityRespCode": "404", "regStatusAbilName": "Failed", "messageStatus": "Customer with the provided MSISDN is not found", "respCode": "404", "subscriberInfoIDtype": "" }, "datum" : null }
+2025-11-28 21:02:01,189|6|0|9fd45c13|Store Response in Attributes|EJP|matched|58e40cf0|Call Ext Check Status|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,207|10|0|b87ed3b8|Prepare Result Code Mapping Request|RT|success|bc0451df|Call Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,212|1|0|9a4e2e82|Extract attributes|EJP|matched|6a14c468|Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,220|9|0|f2aea5a9|Log  Request|LC|success|6a14c468|Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|Filename: cbc098ef-835c-463a-8ce0-4c46b50ebfa4 | MTNU - Core Authentication, Validation & Scheduler > Scheduler > Background External Check Status > Call Ext Check Status > Call Result Code Mapping > Result Code Mapping | :{ "trxId" : "BD8C4FAE67474E948CC483779F07AE2C", "mappingName" : "BG_EXT_CHECK_STATUS", "respCode" : "6_404_Failed", "respMsg" : "Customer with the provided MSISDN is not found", "autoAdd" : "on", "language" : "EN" }
+2025-11-28 21:02:01,229|9|0|eafa1330|Prepare SQL to fetch ISL Code|UA|success|fee285f4|Fetch ISL Code|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,232|3|0|0fd2b92e|Fetch ISL Code|ESQLR|pre|fee285f4|Fetch ISL Code|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,233|4|1|0fd2b92e|Fetch ISL Code|ESQLR|success|fee285f4|Fetch ISL Code|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,251|9|0|7d96f450|Fetch message|ESQLR|pre|6a14c468|Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,254|12|2|7d96f450|Fetch message|ESQLR|success|6a14c468|Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,255|1|0|928834c4|Set Mapping Response|RT|success|6a14c468|Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,258|2|0|39807a31|Log Response|LC|success|6a14c468|Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|Filename: cbc098ef-835c-463a-8ce0-4c46b50ebfa4 | MTNU - Core Authentication, Validation & Scheduler > Scheduler > Background External Check Status > Call Ext Check Status > Call Result Code Mapping > Result Code Mapping | :{ "trxId" : "BD8C4FAE67474E948CC483779F07AE2C", "islCode" : "505", "message" : "Customer with the provided MSISDN is not found", "notFoundFlag" : "" }
+2025-11-28 21:02:01,263|4|0|9b19bb98|Extract Response Data|EJP|matched|bc0451df|Call Result Code Mapping|BD8C4FAE67474E948CC483779F07AE2C|
+2025-11-28 21:02:01,291|7|0|31b6d9fb|Success or Failure?|ROA|unmatched|86893a73|Handle Result|BD8C4FAE67474E948CC483779F07AE2C|

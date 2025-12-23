@@ -1,0 +1,22 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-05-14 19:00:56,262|0|955|64deb156|Pull Request|CJMS|success|8bf548c5|Print Registration Form|Filename: 276a3286-0bce-4676-8ba5-151547a067fa | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Print Registration Form | ISL-CORE.CMS_PRINT_REGISTRATION_FORM_REQ.TA - Request: ReqMsg{id=A9EBD5110EE64D10BB98C3895891FABA, name=CMS_PRINT_REGISTRATION_FORM_REQ, dataObject=String%5B50%5D,instanceId=110001,companyId=1,username=mirnawc,createdDateTime=Wed May 14 19:00:56 ICT 2025,locale=EN,map=StringObjectMap%5BMSISDN = 765144545, TRXID = A9EBD5110EE64D10BB98C3895891FABA, TRXTYPEID = 1, PRINTGSM = true, PRINT_TYPE = GSM, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0,appActionId=100019%5D, datum=null}
+2025-05-14 19:00:56,321|20|0|1407da4d|POJO or JSON?|ROA|POJO|166188e7|Inspect Request|
+2025-05-14 19:00:56,340|19|0|eccd7a9c|ReqMsg to JSON|PTJ|success|166188e7|Inspect Request|
+2025-05-14 19:00:56,361|20|0|5ab315c5|Store Request Data in Attributes|EJP|matched|166188e7|Inspect Request|
+2025-05-14 19:00:56,459|16|0|8efa4999|Request or Database as source?|ROA|unmatched|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:56,477|16|0|44e3bd0d|Fetch Customer Data|ESQLR|pre|190c2fd8|Fetch From Database|
+2025-05-14 19:00:57,042|408|565|44e3bd0d|Fetch Customer Data|ESQLR|success|190c2fd8|Fetch From Database|
+2025-05-14 19:00:57,195|144|132|9275b305|Pull Attributes for mapping|EJP|matched|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:57,217|22|0|27ad7dc2|Find Mappings|ESQLR|pre|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:57,237|42|20|27ad7dc2|Find Mappings|ESQLR|success|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:57,452|215|204|6ed24a94|UpdateRecord with Mapped Value|UR|success|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:57,474|22|0|1780cf50|Find Watermark Config|ESQLR|pre|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:57,484|32|10|1780cf50|Find Watermark Config|ESQLR|success|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:57,492|8|0|30952767|Check TrxType and TrxStatus to exclude|ESQLR|pre|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:57,501|17|9|30952767|Check TrxType and TrxStatus to exclude|ESQLR|success|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:58,947|1446|1438|ef5329dc|Prepare Image, Sim Data and Format Jasper Report Param|EGS|failure|1bbb1c5c|Prepare Print Data|
+2025-05-14 19:00:59,026|24|0|9d86f194|Internal Error Response Attributes|UA|success|35304ccc|Prepare JSON Reponse|
+2025-05-14 19:00:59,093|67|46|75ce0033|Prepare JSON Response|RT|success|35304ccc|Prepare JSON Reponse|
+2025-05-14 19:00:59,133|6|0|ed422d4e|POJO or JSON?|ROA|POJO|145eab84|Convert Response|
+2025-05-14 19:00:59,152|19|0|c15a5a7d|RespMsg JSON to POJO|JTP|success|145eab84|Convert Response|
+2025-05-14 19:00:59,222|31|6|8ad94afc|Publish Response|PJMS|pre|8bf548c5|Print Registration Form|Filename: 276a3286-0bce-4676-8ba5-151547a067fa | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Print Registration Form | ISL-CORE.CMS_PRINT_REGISTRATION_FORM_REQ.TA - Response sent :  'ISL-CORE.CMS_PRINT_REGISTRATION_FORM_REQ.TA.RESP' :RespMsg{id=A9EBD5110EE64D10BB98C3895891FABA, name=CUSTOMER_SEARCH_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=PrintRegistrationResp%5BurlFile=<null>,trxId=<null>,instanceId=<null>,idCompany=<null>,respCode=505,respDesc=Internal Error,customMessage=<null>,arrayOptions=<null>,data=<null>,createdDateTime=Wed May 14 19:00:59 ICT 2025%5D, datum=null}

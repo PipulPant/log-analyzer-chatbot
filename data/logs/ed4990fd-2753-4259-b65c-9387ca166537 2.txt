@@ -1,0 +1,145 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|IDENTIFIER|LOG
+2025-12-01 17:55:00,011|1|7|2444bed1|Fetch Retries from DB|ESQLR|success|20e0fff8|Registration Retry Process|
+2025-12-01 17:55:00,017|0|0|7497d6da|Separate found retries|SJ|split|20e0fff8|Registration Retry Process|
+2025-12-01 17:55:00,017|6|0|7497d6da|Separate found retries|SJ|original|20e0fff8|Registration Retry Process|
+2025-12-01 17:55:00,028|7|0|eb1f6299|Extract cronjob data|EJP|matched|695d4ea9|Fetch|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,033|5|0|a69726d6|Fetch transaction data|ESQLR|pre|695d4ea9|Fetch|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,042|14|9|a69726d6|Fetch transaction data|ESQLR|success|695d4ea9|Fetch|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,076|34|24|5d44ffb0|Extract transaction data|UA|success|695d4ea9|Fetch|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,091|0|0|f70587e7|Status is Pending Retry or BG Job?|ROA|matched|30742ee3|Validate|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,093|1|0|0b227a55|Max retry reached?|ROA|unmatched|30742ee3|Validate|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,110|16|0|62fa35b2|Transaction retry in progress?|ROA|unmatched|30742ee3|Validate|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,222|110|79|1ca3180c|Update in progress flag to 1|PSQL|success|8dc1e8a8|Multi-Instance Precaution|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,229|7|0|cffa4206|Update successful?|ROA|Update successful|8dc1e8a8|Multi-Instance Precaution|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,255|6|0|d3a0d017|Prepare Request|RT|success|f1c2df73|Prepare and Send|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,258|3|0|bbc95d3d|Put request into attribute|EJP|matched|f1c2df73|Prepare and Send|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,278|23|15|435193aa|Send Request|PJMS|pre|f1c2df73|Prepare and Send|3B26055B29F84916BAAF7D38426E34E4|Filename: ed4990fd-2753-4259-b65c-9387ca166537 | MTNU - Core Authentication, Validation & Scheduler > Scheduler > Registration Retry Process > Prepare and Send |  - Response sent :  'ISL-CORE.MOMO_REG_DOC_UPLOAD_RETRY_REQ.TB' :{ "id": "3B26055B29F84916BAAF7D38426E34E4", "name": "MOMO_REG_DOC_UPLOAD_RETRY_REQ", "dataObject": { "crmExtCallErrorId": "12422", "nbRetry": "0", "customerDataId": "21901", "trxId": "3B26055B29F84916BAAF7D38426E34E4" } }
+2025-12-01 17:55:00,288|1|793|7b528c4b|Pull Doc Upload API Retry messages|CJMS|success|5eaa91bf|Document Upload API|Filename: c0c37ddb-69b8-4d78-a908-1d63f53cb6dd | MTNU - Core Sim Swap & Registration Retry Process > Registration Retry Processes > MoMo Registration > Document Upload API | ISL-CORE.MOMO_REG_DOC_UPLOAD_RETRY_REQ.TB - Request: { "id": "3B26055B29F84916BAAF7D38426E34E4", "name": "MOMO_REG_DOC_UPLOAD_RETRY_REQ", "dataObject": { "crmExtCallErrorId": "12422", "nbRetry": "0", "customerDataId": "21901", "trxId": "3B26055B29F84916BAAF7D38426E34E4" } }
+2025-12-01 17:55:00,325|1|0|5f5d2b7e|Extract Request Data|EJP|matched|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,328|70|66|3453ffd5|Log Audit Trail|PSQL|failure|f1c2df73|Prepare and Send|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,454|128|121|68bab9df|Update transaction as in progress|PSQL|success|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,472|18|12|4b82cc0d|Increase retry count|PSQL|success|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,481|9|0|1bbdb6b5|Fetch transaction data|ESQLR|pre|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,487|15|5|1bbdb6b5|Fetch transaction data|ESQLR|success|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,497|10|0|2c92c53b|Fetch user name|ESQLR|pre|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,501|14|3|2c92c53b|Fetch user name|ESQLR|success|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,519|18|0|e3dc0c8b|Fetch customer data|ESQLR|pre|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,539|38|20|e3dc0c8b|Fetch customer data|ESQLR|success|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,541|1|0|120dd6b6|Find reg form generated|ESQLR|pre|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,547|7|6|120dd6b6|Find reg form generated|ESQLR|success|6ad5c88d|Extract and Fetch Data|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,562|9|0|507b3bdd|Document Upload API enabled?|ROA|matched|5eaa91bf|Document Upload API|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,586|7|0|d98d3c3d|Reg form already generated?|ROA|Reg Form already generated|ade2e9a4|Generate E-Form |3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,620|13|0|4fa0c2b7|Check If any document pending|ESQLR|pre|da677ea2|Check Pending Document|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,627|20|8|4fa0c2b7|Check If any document pending|ESQLR|success|da677ea2|Check Pending Document|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,639|11|0|12856bf0|All Documents Finished Upload?|ROA|unmatched|da677ea2|Check Pending Document|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,673|5|0|52421dce|Prepare Request|RT|success|556e734a|Call Document Upload API|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,677|3|1|a51c6fbe|Call MM Doc Upload API|PJMS|pre|556e734a|Call Document Upload API|3B26055B29F84916BAAF7D38426E34E4|Filename: c0c37ddb-69b8-4d78-a908-1d63f53cb6dd | MTNU - Core Sim Swap & Registration Retry Process > Registration Retry Processes > MoMo Registration > Document Upload API > Call Document Upload API | ISL-CORE.MOMO_REG_DOC_UPLOAD_RETRY_REQ.TB - Request to :  'ISL-MM.DMS_UPLOAD_DOCUMENT_REQ.TA' :{ "id" : "3B26055B29F84916BAAF7D38426E34E4", "name" : "DOC_UPLOAD_REQ", "dataObject" : { "trxId" : "3B26055B29F84916BAAF7D38426E34E4", "instanceId" : "800001", "trxTypeId" : "10", "username" : "pipulmtnu", "createdDateTime" : "2025-12-01 16:48:43.72", "map" : { "MSISDN" : "0777000283", "REG_ID" : "70054364", "TRX_TYPE" : "10" } } }
+2025-12-01 17:55:00,692|0|870|0513e087|Listen to CORE|CJMS|success|28ec1330|Upload Document to DMS|Filename: 6da3e2af-44ec-4f9b-98f8-95b6ffc74d58 | MTNU - DMS > Upload Document to DMS | ISL-MM.DMS_UPLOAD_DOCUMENT_REQ.TA - Request: { "id" : "3B26055B29F84916BAAF7D38426E34E4", "name" : "DOC_UPLOAD_REQ", "dataObject" : { "trxId" : "3B26055B29F84916BAAF7D38426E34E4", "instanceId" : "800001", "trxTypeId" : "10", "username" : "pipulmtnu", "createdDateTime" : "2025-12-01 16:48:43.72", "map" : { "MSISDN" : "0777000283", "REG_ID" : "70054364", "TRX_TYPE" : "10" } } }
+2025-12-01 17:55:00,731|1|0|b349828e|POJO or JSON?|ROA|unmatched|a567d4ae|Inspect Request|
+2025-12-01 17:55:00,743|12|1|896d36a2|Store Request Data in Attributes|EJP|matched|a567d4ae|Inspect Request|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,751|8|0|eb65a0d7|agentType empty?|ROA|agentType empty|a567d4ae|Inspect Request|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,775|3|0|f33b28f6|Fetch DocumentList|ESQLR|pre|53cd6e96|Preprocessing|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,788|7|13|f33b28f6|Fetch DocumentList|ESQLR|success|53cd6e96|Preprocessing|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,793|4|0|441ade47|Pull Out id type and id sub category|EJP|matched|53cd6e96|Preprocessing|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,799|6|0|574b09e4|Map Idtype|ESQLR|pre|53cd6e96|Preprocessing|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,805|12|6|574b09e4|Map Idtype|ESQLR|success|53cd6e96|Preprocessing|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,838|13|0|cc87fcef|Initialize SFTP and JpegToTiff Config |UA|success|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,849|0|1|9678f28b|Get Single Document Details|SJ|split|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,850|0|1|9678f28b|Get Single Document Details|SJ|split|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,851|1|2|9678f28b|Get Single Document Details|SJ|split|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,851|0|2|9678f28b|Get Single Document Details|SJ|split|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,852|14|3|9678f28b|Get Single Document Details|SJ|original|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,860|10|0|321c4d77|Put document detail in FF Attribute|EJP|matched|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,864|14|1|321c4d77|Put document detail in FF Attribute|EJP|matched|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,865|14|0|321c4d77|Put document detail in FF Attribute|EJP|matched|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,868|16|0|321c4d77|Put document detail in FF Attribute|EJP|matched|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,871|10|0|3e5f419d|Simswap trx?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,882|10|0|40095748|Visa Img Merge Required?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,882|9|0|3e5f419d|Simswap trx?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,884|11|0|3e5f419d|Simswap trx?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,885|12|0|3e5f419d|Simswap trx?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,892|9|0|2805ebd3|Trx Type is Re-reg/Doc Resubmit?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,894|11|0|40095748|Visa Img Merge Required?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,898|14|0|40095748|Visa Img Merge Required?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,899|14|0|40095748|Visa Img Merge Required?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,906|12|1|2805ebd3|Trx Type is Re-reg/Doc Resubmit?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,907|9|0|2805ebd3|Trx Type is Re-reg/Doc Resubmit?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,908|9|0|2805ebd3|Trx Type is Re-reg/Doc Resubmit?|ROA|unmatched|d2afa6bb|Fix Document Name and Doc upload ID|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,924|11|0|8d2c3738|Set Request Attributes|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,925|1|0|131a5bf2|Set Document File name|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,935|1|0|bd271262|FingerPrint?|ROA|unmatched|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,937|1|0|345c4c45|Prepare XML for Upload|RT|success|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,938|12|0|8d2c3738|Set Request Attributes|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,942|16|0|8d2c3738|Set Request Attributes|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,943|17|1|8d2c3738|Set Request Attributes|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,949|11|0|131a5bf2|Set Document File name|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,952|10|0|131a5bf2|Set Document File name|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,953|10|0|131a5bf2|Set Document File name|UA|success|8f18b26f|Upload Message Contents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,960|6|0|bd271262|FingerPrint?|ROA|unmatched|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,961|7|0|bd271262|FingerPrint?|ROA|unmatched|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,962|8|0|bd271262|FingerPrint?|ROA|unmatched|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,971|11|1|345c4c45|Prepare XML for Upload|RT|success|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,972|10|0|345c4c45|Prepare XML for Upload|RT|success|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,972|18|15|ae93bf52|Upload File to DMS|EGS|success|cca06557|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,974|12|0|345c4c45|Prepare XML for Upload|RT|success|f415dae2|Process  for FP|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:00,992|16|11|ae93bf52|Upload File to DMS|EGS|success|cca06557|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,010|24|19|ae93bf52|Upload File to DMS|EGS|success|cca06557|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,011|13|2|a3c4d834|Set Request Attributes|UA|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,013|4|0|a3c4d834|Set Request Attributes|UA|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,025|39|33|ae93bf52|Upload File to DMS|EGS|success|cca06557|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,026|13|0|c19a2cea|Document Merge?|ROA|unmatched|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,027|1|0|db3c11ce|Fetch Document Data|ESQLR|pre|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,031|2|0|a3c4d834|Set Request Attributes|UA|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,033|2|0|c19a2cea|Document Merge?|ROA|unmatched|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,034|23|0|c19a2cea|Document Merge?|ROA|unmatched|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,034|1|0|a3c4d834|Set Request Attributes|UA|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,044|10|0|c19a2cea|Document Merge?|ROA|unmatched|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,193|154|166|db3c11ce|Fetch Document Data|ESQLR|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,199|166|0|db3c11ce|Fetch Document Data|ESQLR|pre|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,336|137|134|0971aef6|Upload File to DMS|EGS|success|fe049d47|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:01,405|23|12|07d5aa57|Set Doc Upload response|RT|success|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:03,468|2245|2269|db3c11ce|Fetch Document Data|ESQLR|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:03,471|2437|0|db3c11ce|Fetch Document Data|ESQLR|pre|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:03,794|243|323|db3c11ce|Fetch Document Data|ESQLR|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:03,797|2752|2|db3c11ce|Fetch Document Data|ESQLR|pre|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:03,896|86|82|0971aef6|Upload File to DMS|EGS|success|fe049d47|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:03,944|10|2|07d5aa57|Set Doc Upload response|RT|success|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:04,145|303|349|db3c11ce|Fetch Document Data|ESQLR|success|8c332937|Upload Message Attachments|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:04,329|181|168|0971aef6|Upload File to DMS|EGS|success|fe049d47|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:04,353|16|15|07d5aa57|Set Doc Upload response|RT|success|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:08,649|5170|5168|0971aef6|Upload File to DMS|EGS|success|fe049d47|Upload File|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:09,483|826|822|07d5aa57|Set Doc Upload response|RT|success|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,433|1|8033|57a0f2fd|Merge Response|MC|merged|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,434|6489|8034|57a0f2fd|Merge Response|MC|original|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,434|9027|8034|57a0f2fd|Merge Response|MC|original|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,434|6080|8034|57a0f2fd|Merge Response|MC|original|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,434|951|8034|57a0f2fd|Merge Response|MC|original|ee6ae976|Upload Documents|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,456|13|1|39978bc8|Prepare JSON Response|RT|success|28ec1330|Upload Document to DMS|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,476|11|0|e421347d|POJO or JSON?|ROA|unmatched|7a7b4a3b|Handle Response|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,506|17|5|333eb1df|Response to CORE|PJMS|pre|28ec1330|Upload Document to DMS|3B26055B29F84916BAAF7D38426E34E4|Filename: 6da3e2af-44ec-4f9b-98f8-95b6ffc74d58 | MTNU - DMS > Upload Document to DMS | ISL-MM.DMS_UPLOAD_DOCUMENT_REQ.TA - Response sent :  'ISL-MM.DMS_UPLOAD_DOCUMENT_REQ.TA.RESP' :{ "id" : "3B26055B29F84916BAAF7D38426E34E4", "name" : "MM_DMS_UPLOAD_RESP", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "3B26055B29F84916BAAF7D38426E34E4", "instanceId" : "800001", "idCompany" : "1", "respCode" : "200", "respDesc": "Success", "docList": %5B{ "docId" : "2514", "uploadSuccess" : "true" },{ "docId" : "2515", "uploadSuccess" : "true" },{ "docId" : "2516", "uploadSuccess" : "true" },{ "docId" : "2517", "uploadSuccess" : "true" }%5D, "createdDateTime" : "Mon Dec 01 17:55:10 ICT 2025", "respStatus" : null, "responseData":{} }, "datum" : null }
+2025-12-01 17:55:10,732|10054|1|a51c6fbe|Call MM Doc Upload API|PJMS|success|556e734a|Call Document Upload API|3B26055B29F84916BAAF7D38426E34E4|Filename: c0c37ddb-69b8-4d78-a908-1d63f53cb6dd | MTNU - Core Sim Swap & Registration Retry Process > Registration Retry Processes > MoMo Registration > Document Upload API > Call Document Upload API | ISL-CORE.MOMO_REG_DOC_UPLOAD_RETRY_REQ.TB - Response from : 'ISL-MM.DMS_UPLOAD_DOCUMENT_REQ.TA': { "id" : "3B26055B29F84916BAAF7D38426E34E4", "name" : "MM_DMS_UPLOAD_RESP", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "3B26055B29F84916BAAF7D38426E34E4", "instanceId" : "800001", "idCompany" : "1", "respCode" : "200", "respDesc": "Success", "docList": %5B{ "docId" : "2514", "uploadSuccess" : "true" },{ "docId" : "2515", "uploadSuccess" : "true" },{ "docId" : "2516", "uploadSuccess" : "true" },{ "docId" : "2517", "uploadSuccess" : "true" }%5D, "createdDateTime" : "Mon Dec 01 17:55:10 ICT 2025", "respStatus" : null, "responseData":{} }, "datum" : null }
+2025-12-01 17:55:10,743|7|4|192c2bfc|Extract response values|EJP|matched|556e734a|Call Document Upload API|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,766|3|0|db70c19e|Success Response?|ROA|Success Resp code|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,775|1|1|c5cf4ced|Seperate Response|SJ|split|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,777|0|3|c5cf4ced|Seperate Response|SJ|split|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,777|0|3|c5cf4ced|Seperate Response|SJ|split|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,778|0|4|c5cf4ced|Seperate Response|SJ|split|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,778|7|4|c5cf4ced|Seperate Response|SJ|original|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,795|18|0|dbc27364|Put response data into attributes|EJP|matched|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,805|28|8|dbc27364|Put response data into attributes|EJP|matched|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,823|45|0|dbc27364|Put response data into attributes|EJP|matched|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,851|56|47|dbe5373a|Update Result Flag|PSQL|success|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,868|90|0|dbc27364|Put response data into attributes|EJP|matched|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,871|64|18|dbe5373a|Update Result Flag|PSQL|success|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,872|49|18|dbe5373a|Update Result Flag|PSQL|success|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:10,892|20|17|dbe5373a|Update Result Flag|PSQL|success|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,655|1|2|c255a2d9|MergeContent|MC|merged|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,656|805|3|c255a2d9|MergeContent|MC|original|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,658|787|5|c255a2d9|MergeContent|MC|original|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,658|787|5|c255a2d9|MergeContent|MC|original|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,658|766|5|c255a2d9|MergeContent|MC|original|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,669|13|0|b71607b8|Check If any document pending|ESQLR|pre|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,673|17|4|b71607b8|Check If any document pending|ESQLR|success|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,676|3|0|c7452d61|All Documents Finished Upload?|ROA|All Documents Finished Upload|cd344b8e|Process Result|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,722|25|22|ebb19658|Deactivate cronjob|PSQL|success|6460685c|Handle Success|3B26055B29F84916BAAF7D38426E34E4|
+2025-12-01 17:55:11,752|30|26|4d1a2786|Set in progress = 0|PSQL|success|6460685c|Handle Success|3B26055B29F84916BAAF7D38426E34E4|

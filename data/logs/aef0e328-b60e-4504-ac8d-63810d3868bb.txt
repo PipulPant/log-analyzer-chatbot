@@ -1,0 +1,27 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-02-14 16:47:32,692|0|248|d0a4f4e7|Pull Request|CJMS|success|1cec37b6|Search Registration|Filename: aef0e328-b60e-4504-ac8d-63810d3868bb | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Search Registration | ISL-CORE.CUSTOMER_SEARCH_V5_REQ.TA - Request: ReqMsg{id=B81EFA95D7364E1ABF0A295CBF253616, name=CUSTOMER_SEARCH_V5_REQ, dataObject=CustomerSearchReq%5Bmsisdn=390883503,endDateTime=Fri Feb 14 00:00:00 ICT 2025,firstResult=1,maxResult=10,map=StringObjectMap%5BEXPORT_FILE = , SYS_REGISTRATION_TYPE_ID = 1,6,10,16, %5D ,enableWhiteList=true,screenId=40000196,username=pipulwebcare,loginInstanceId=11000101,trxId=B81EFA95D7364E1ABF0A295CBF253616,idCompany=1,createdDateTime=Fri Feb 14 16:47:32 ICT 2025,locale=EN%5D, datum=null}
+2025-02-14 16:47:32,717|2|0|086398fe|POJO or JSON?|ROA|POJO|9b1fdcff|Inspect Request|
+2025-02-14 16:47:32,721|4|0|fbdcbd28|ReqMsg to JSON|PTJ|success|9b1fdcff|Inspect Request|
+2025-02-14 16:47:32,735|14|0|d47d9732|Store Request Data in Attributes|EJP|matched|9b1fdcff|Inspect Request|
+2025-02-14 16:47:32,766|31|0|48548261|Set configuration and initial values|UA|success|9b1fdcff|Inspect Request|
+2025-02-14 16:47:32,777|11|0|cedb6217|AcceptedBy exists?|ROA|unmatched|9b1fdcff|Inspect Request|
+2025-02-14 16:47:32,802|13|0|3f04a002|Enable Lock?|ROA|matched|1cec37b6|Search Registration|
+2025-02-14 16:47:32,819|10|0|c683402c|Fetch ISL_USER|ESQLR|pre|45f63b62|Query and Transform Data|
+2025-02-14 16:47:32,831|22|13|c683402c|Fetch ISL_USER|ESQLR|success|45f63b62|Query and Transform Data|
+2025-02-14 16:47:32,847|5|0|cf516e74|Prepare SQL Clauses|UA|success|064b7c63|Search Customer|
+2025-02-14 16:47:32,864|17|0|b1e70a4a|Bulk Search?|ROA|unmatched|064b7c63|Search Customer|
+2025-02-14 16:47:32,888|24|0|dbfb392e|caller?|ROA|webcare|064b7c63|Search Customer|
+2025-02-14 16:47:32,934|25|0|7c1eb19e|Prepare Sql Query|UA|success|b9aec601|Process for Webcare|
+2025-02-14 16:47:32,955|21|0|dd991ac9|Find customer data|ESQLR|pre|b9aec601|Process for Webcare|
+2025-02-14 16:47:33,090|1|134|dd991ac9|Find customer data|ESQLR|success|b9aec601|Process for Webcare|
+2025-02-14 16:47:33,132|38|19|332b590e|Extract trxIds from array|EGS|success|e92a4103|Get trxEvents and Merge|
+2025-02-14 16:47:33,146|14|0|454515eb|Find trxEventType data|ESQLR|pre|e92a4103|Get trxEvents and Merge|
+2025-02-14 16:47:33,482|350|336|454515eb|Find trxEventType data|ESQLR|success|e92a4103|Get trxEvents and Merge|
+2025-02-14 16:47:33,490|8|2|3d8246b8|Merge Result Arrays|EGS|success|e92a4103|Get trxEvents and Merge|
+2025-02-14 16:47:33,520|11|0|a8647016|Transform to Bean's JSON|JTJSON|success|b9aec601|Process for Webcare|
+2025-02-14 16:47:33,552|32|0|1afa7210|Extract Customers|EJP|matched|b9aec601|Process for Webcare|
+2025-02-14 16:47:33,588|6|0|fc102ad4|Success Response Attributes|UA|success|f2213315|Prepare JSON Reponse|
+2025-02-14 16:47:33,608|20|0|f4b297bc|Prepare JSON Response|RT|success|f2213315|Prepare JSON Reponse|
+2025-02-14 16:47:33,644|11|0|ea9d7b05|POJO or JSON?|ROA|POJO|f7826ce0|Convert Response|
+2025-02-14 16:47:33,675|31|3|70a19cc9|RespMsg JSON to POJO|JTP|success|f7826ce0|Convert Response|
+2025-02-14 16:47:33,713|30|3|4340eaf7|Publish Response|PJMS|pre|1cec37b6|Search Registration|Filename: aef0e328-b60e-4504-ac8d-63810d3868bb | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Search Registration | ISL-CORE.CUSTOMER_SEARCH_V5_REQ.TA - Response sent :  'ISL-CORE.CUSTOMER_SEARCH_V5_REQ.TA.RESP' :RespMsg{id=B81EFA95D7364E1ABF0A295CBF253616, name=CUSTOMER_SEARCH_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=CustomerSearchResp%5BcountCustomer=0,customers=String%5B59%5D,msisdn=390883503,iccid=0000000000390883503,firstName=Jane,lastName=Jane,dealerName=webcare,idType=1,trxStatusId=200,trxTypeId=6,createdDateTime=Fri Feb 14 16:46:47 ICT 2025,isTrxLock=false,serviceSubscription=MOBILE_WALLET,activationStatus=5,billingType=prepaid,momoProfile=momo_huawei,startRegDate=Fri Feb 14 16:46:47 ICT 2025,endRegDate=Fri Feb 14 16:46:47 ICT 2025,sendRegDate=Fri Feb 14 16:46:47 ICT 2025,receivedRegDate=Fri Feb 14 16:46:47 ICT 2025,activateBy=pipulwebcare,confirmerType=idtype,confirmerIdType=7,displayConfirmer=YES,confirmerIdNumber=123-321-231,confirmerContractNo=0093212322,editedDateTime=Fri Feb 14 16:46:47 ICT 2025%5D,CustomerInformation%5BtrxId=7FD7682CA52F45F0BB0FE0CA35558778,msisdn=390883503,iccid=0000000000390883503,firstName=Jane,lastName=Jane,dealerName=webcare,idType=1,trxStatusId=210,trxTypeId=1,createdDateTime=Fri Feb 14 11:30:29 ICT 2025,isTrxLock=false,activationStatus=5,billingType=prepaid,startRegDate=Fri Feb 14 11:27:43 ICT 2025,endRegDate=Fri Feb 14 11:30:26 ICT 2025,sendRegDate=Fri Feb 14 11:30:29 ICT 2025,receivedRegDate=Fri Feb 14 11:30:29 ICT 2025,regVerificationStartDateTime=Fri Feb 14 13:35:58 ICT 2025,regVerificationEndDateTime=Fri Feb 14 13:39:26 ICT 2025,acceptBy=pipulwebcare,acceptDateTime=Fri Feb 14 13:30:15 ICT 2025,activateBy=pipulwebcare,confirmerType=idtype,confirmerIdType=7,displayConfirmer=YES,confirmerIdNumber=123-321-231,confirmerContractNo=0093212322,editedDateTime=Fri Feb 14 11:30:29 ICT 2025%5D},trxId=B81EFA95D7364E1ABF0A295CBF253616,respCode=200,respDesc=Success,createdDateTime=Fri Feb 14 16:47:33 ICT 2025%5D, datum=null}

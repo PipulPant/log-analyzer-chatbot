@@ -1,0 +1,10 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-11-26 04:00:00,023|0|0|08ac1aef|Schedule trigger|GFF|success|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:00,081|58|22|b171666d|Update Schedule last run|PSQL|success|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:00,097|16|0|5614d3b6|Valid Instance ?|ROA|Valid Instance|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:00,126|29|17|2caf7f75|Log Audit Trail|PSQL|success|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:00,131|34|0|178fd717|Schedule Query from DB|ESQLR|pre|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:00,173|12|42|178fd717|Schedule Query from DB|ESQLR|success|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:00,193|20|0|7fbd2168|Fix Header|RT|success|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:00,198|5|0|018f8237|Set Filename|UA|success|caa45627|Hourly Pending Verification|
+2025-11-26 04:00:06,563|6365|6334|9a5172d7|PutEmail|PE|success|caa45627|Hourly Pending Verification|

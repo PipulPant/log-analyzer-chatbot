@@ -1,0 +1,109 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-06-05 18:39:01,700|13|13|2eb0aed2|Jetty Server (HTTP)|HHREQ|success|4239f542|EAI|Filename: 9aea2fa0-b41a-495d-8272-b7cc3f074291 | Singtel > EAI | POST '/RegistrationWebService' - Request: <v:Envelope xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:c="http://schemas.xmlsoap.org/soap/encoding/" xmlns:v="http://schemas.xmlsoap.org/soap/envelope/"><v:Header><n0:info xmlns:n0="http://mobile-technologies.com"><instanceId>800001</instanceId><operationName>checkStatus</operationName><securityToken>NGRmM2ZmMGJhNGRkNDZiMTgxMWMwNzM2YmUxNDJhNDM=</securityToken></n0:info></v:Header><v:Body><n1:checkStatus xmlns:n1="http://mobile-technologies.com/eai/isl/"><securityToken i:type="d:string">NGRmM2ZmMGJhNGRkNDZiMTgxMWMwNzM2YmUxNDJhNDM=</securityToken><operationName i:type="d:string">checkStatus</operationName><instanceId i:type="d:int">800001</instanceId><crmFormData i:type=":"><checkOccupied i:type="d:boolean">true</checkOccupied><companyId i:type="d:int">1</companyId><createdDateTime i:type="d:string">2025-06-05T18:39:00</createdDateTime><enableWhiteList i:type="d:boolean">true</enableWhiteList><instanceId i:type="d:int">800001</instanceId><localId i:type="d:long">0</localId><locale i:type="d:string">EN</locale><map i:type=":"><entry i:type=":"><key i:type="d:string">ICCID</key><value i:type="d:string">9000000000090000125</value></entry><entry i:type=":"><key i:type="d:string">MSISDN</key><value i:type="d:string">9***0125</value></entry><entry i:type=":"><key i:type="d:string">SOURCE_FLAG</key><value i:type="d:string">IN_FLOW</value></entry><entry i:type=":"><key i:type="d:string">SYS_DATA</key><value i:type="d:string">30AF2B9009CEB40B15823B2E1AAF92BC</value></entry></map><retries i:type="d:int">0</retries><securityToken i:type="d:string">NGRmM2ZmMGJhNGRkNDZiMTgxMWMwNzM2YmUxNDJhNDM=</securityToken><smsCount i:type="d:int">0</smsCount><state i:type=":"><displayName i:type="d:string">PENDING - MPOS</displayName><value i:type="d:int">5</value></state><trxId i:type="d:string">5ECCDFA9BD1D45F18D37DF60591638E9</trxId><trxTypeId i:type="d:long">1</trxTypeId><username i:type="d:string">pipul-singtel</username></crmFormData></n1:checkStatus></v:Body></v:Envelope>
+2025-06-05 18:39:01,724|22|1|7f279b97|SOAP or REST?|ROA|unmatched|4239f542|EAI|
+2025-06-05 18:39:01,747|1|0|21731a1c|Which Web Service?|ROA|Registration|6fe2eb4d|SOAP API|
+2025-06-05 18:39:01,769|10|0|c8289c97|SOAP / WSDL / XSD?|ROA|SOAP Req|63eac753|Registration|
+2025-06-05 18:39:01,791|17|6|5f690cb6|Parse Header Data|EXP|matched|f44b7d3d|Inspect SOAP|
+2025-06-05 18:39:01,881|90|58|3b71a6f2|Get Request Object|EXP|matched|f44b7d3d|Inspect SOAP|
+2025-06-05 18:39:01,912|31|0|2dc7607b|Remove i:type|RT|success|f44b7d3d|Inspect SOAP|
+2025-06-05 18:39:01,920|8|3|6e1913b7|Set default values (if missing)|UR|success|f44b7d3d|Inspect SOAP|
+2025-06-05 18:39:01,952|31|0|2d556d25|Extract important attributes|EJP|matched|f44b7d3d|Inspect SOAP|
+2025-06-05 18:39:02,035|27|5|3d7dfb5b|Set cache file name as trxId|UA|success|f5b81b28|Check Security Token|
+2025-06-05 18:39:02,091|56|0|355a915f|Cache Original Request|PF|success|f5b81b28|Check Security Token|
+2025-06-05 18:39:02,158|52|0|53c6b2bc|Load conf|ESQLR|pre|435d2015|Operation is permitted?|
+2025-06-05 18:39:02,192|86|33|53c6b2bc|Load conf|ESQLR|success|435d2015|Operation is permitted?|
+2025-06-05 18:39:02,210|18|0|48a2b8ec|Operation Permitted?|ROA|Operation Permitted|435d2015|Operation is permitted?|
+2025-06-05 18:39:02,293|51|0|eceba4ab|Blank Instance ID or Security Token?|ROA|unmatched|dae4f9e7|Call Core Check Security Token|
+2025-06-05 18:39:02,316|23|0|9a581a73|Construct JSON Message|RT|success|dae4f9e7|Call Core Check Security Token|
+2025-06-05 18:39:02,334|18|0|3ea09d82|Publish Request to MQ|PJMS|pre|dae4f9e7|Call Core Check Security Token|Filename: DEDEC511598E4F8C8D2828D930577EC3 | Singtel > EAI > SOAP API > Registration > Check Security Token > Call Core Check Security Token |  - Request to :  'ISL-CORE.SEC_TOKEN_VALIDATE_REQ.TA' :{ "name": "SEC_TOKEN_VALIDATE_REQ", "id": "5ECCDFA9BD1D45F18D37DF60591638E9", "dataObject": { "trxId": "5ECCDFA9BD1D45F18D37DF60591638E9", "securityToken": "NGRmM2ZmMGJhNGRkNDZiMTgxMWMwNzM2YmUxNDJhNDM=", "methodName": "checkStatus", "offlineLoginFlag": "", "instanceId": 800001, "createdDateTime": "Thu Jun 05 18:39:02 ICT 2025" }, "allData": null }
+2025-06-05 18:39:02,361|0|316|27494a83|Pull Security Token Request|CJMS|success|b6633d09|Check Security Token|Filename: a03047f1-8c84-49ca-b95f-ea9843e30e40 | Singtel > CORE > Credential > Check Security Token | ISL-CORE.SEC_TOKEN_VALIDATE_REQ.TA - Request: { "name": "SEC_TOKEN_VALIDATE_REQ", "id": "5ECCDFA9BD1D45F18D37DF60591638E9", "dataObject": { "trxId": "5ECCDFA9BD1D45F18D37DF60591638E9", "securityToken": "NGRmM2ZmMGJhNGRkNDZiMTgxMWMwNzM2YmUxNDJhNDM=", "methodName": "checkStatus", "offlineLoginFlag": "", "instanceId": 800001, "createdDateTime": "Thu Jun 05 18:39:02 ICT 2025" }, "allData": null }
+2025-06-05 18:39:02,388|7|0|26f3bab9|POJO or JSON?|ROA|unmatched|34b5c12a|Inspect Request|
+2025-06-05 18:39:02,435|47|0|786d46d6|Set configuration and initial values|UA|success|34b5c12a|Inspect Request|
+2025-06-05 18:39:02,454|19|0|dcd635b7|Store Request Data in Attributes|EJP|matched|34b5c12a|Inspect Request|
+2025-06-05 18:39:02,500|2|0|ac3b7e51|Get Caller App|ESQLR|pre|b6633d09|Check Security Token|
+2025-06-05 18:39:02,508|10|7|ac3b7e51|Get Caller App|ESQLR|success|b6633d09|Check Security Token|
+2025-06-05 18:39:02,614|36|0|968061ca|Load RM_SECURITYTOKEN|ESQLR|pre|d10c6242|Query Security Token|
+2025-06-05 18:39:02,630|0|16|968061ca|Load RM_SECURITYTOKEN|ESQLR|success|d10c6242|Query Security Token|
+2025-06-05 18:39:02,659|28|2|454f097f|Extract Distributor fields|EJP|matched|d10c6242|Query Security Token|
+2025-06-05 18:39:02,713|37|0|7296d8fe|Validate Active IMEI?|ROA|unmatched|c41b94fb|Validate Dealer|
+2025-06-05 18:39:02,771|14|0|eba322c0|Active?|ROA|Is Active|16adb559|Check Security Token Lifetime|
+2025-06-05 18:39:02,830|48|0|d0d31609|Check Offline Flag|ROA|unmatched|0482ec68|Check Offline|
+2025-06-05 18:39:02,897|52|7|4adce568|Insert RM_SECURITYTOKENUSE|PSQL|success|16adb559|Check Security Token Lifetime|
+2025-06-05 18:39:02,997|49|0|ff9fa6f4|Set Success Response Attributes|UA|success|811fbc3b|Prepare JSON Reponse|
+2025-06-05 18:39:03,029|32|0|32a2076b|Prepare JSON Response|RT|success|811fbc3b|Prepare JSON Reponse|
+2025-06-05 18:39:03,052|21|0|11d772c3|POJO or JSON?|ROA|unmatched|e67b83de|Convert Response|
+2025-06-05 18:39:03,435|1094|0|3ea09d82|Publish Request to MQ|PJMS|success|dae4f9e7|Call Core Check Security Token|Filename: DEDEC511598E4F8C8D2828D930577EC3 | Singtel > EAI > SOAP API > Registration > Check Security Token > Call Core Check Security Token |  - Response from : 'ISL-CORE.SEC_TOKEN_VALIDATE_REQ.TA': { "id": "5ECCDFA9BD1D45F18D37DF60591638E9", "name": "SEC_TOKEN_VALIDATE_REQ", "resultCode": 200, "dataObject": { "respCode": 200, "respDesc": "", "ssmDistributor": 10001, "userId": "pipul-singtel", "createdDateTime": "Thu Jun 05 18:39:03 ICT 2025" }, "allData": null }
+2025-06-05 18:39:03,464|14|0|2f3467e4|Extract user details|EJP|matched|1137ba99|Validate User and SSMDistributor|
+2025-06-05 18:39:03,496|31|0|7c29a42b|Valid Security Token?|ROA|matched|1137ba99|Validate User and SSMDistributor|
+2025-06-05 18:39:03,500|4|0|9cf5de2b|User Name Matches?|ROA|matched|1137ba99|Validate User and SSMDistributor|
+2025-06-05 18:39:03,519|18|0|d1d338ce|Blank Usernames?|ROA|unmatched|1137ba99|Validate User and SSMDistributor|
+2025-06-05 18:39:03,605|27|0|d97c4c9c|Fetch Original Request from Cache|FF|success|f5b81b28|Check Security Token|
+2025-06-05 18:39:03,640|30|0|738f0d51|Which operation?|ROA|Check Status|63eac753|Registration|
+2025-06-05 18:39:03,688|12|0|776f41fa|Construct JSON Message|RT|success|55066717|Check Status|
+2025-06-05 18:39:03,719|31|2|a6fa3f2c|Set instanceId and remove trxId|UR|success|55066717|Check Status|
+2025-06-05 18:39:03,740|21|1|21ff3119|Convert map.entry to JSON map|EGS|success|55066717|Check Status|
+2025-06-05 18:39:03,762|22|0|8d075295|Extract Source Flag|EJP|matched|55066717|Check Status|
+2025-06-05 18:39:03,787|25|0|7c88f894|Separate Manual and Periodical from others|ROA|unmatched|55066717|Check Status|
+2025-06-05 18:39:03,820|1|0|f0d54b1c|Pre-submit Checks?|ROA|unmatched|58a6a963|Check duplicate Pre-submit checks|
+2025-06-05 18:39:03,866|23|0|308784d9|Map Trx Type to CORE Queue|ESQLR|pre|55066717|Check Status|
+2025-06-05 18:39:03,881|38|14|308784d9|Map Trx Type to CORE Queue|ESQLR|success|55066717|Check Status|
+2025-06-05 18:39:03,922|41|5|c9270b25|Publish Request to MQ|PJMS|pre|55066717|Check Status|Filename: DEDEC511598E4F8C8D2828D930577EC3 | Singtel > EAI > SOAP API > Registration > Operations > Check Status |  - Request to :  'ISL-CORE.NEW_REG_CHECKS_REQ.TA' :{"id":"5ECCDFA9BD1D45F18D37DF60591638E9","name":"CHECK_REG_STATUS_REQ","dataObject":{"checkOccupied":true,"companyId":1,"createdDateTime":"2025-06-05T18:39:00","enableWhiteList":true,"instanceId":800001,"localId":0,"locale":"EN","map":{"ICCID":9000000000090000125,"MSISDN":9***0125,"SOURCE_FLAG":"IN_FLOW","SYS_DATA":"30AF2B9009CEB40B15823B2E1AAF92BC"},"retries":0,"securityToken":"NGRmM2ZmMGJhNGRkNDZiMTgxMWMwNzM2YmUxNDJhNDM=","smsCount":0,"state":{"displayName":"PENDING - MPOS","value":5},"trxId":"5ECCDFA9BD1D45F18D37DF60591638E9","trxTypeId":1,"username":"pipul-singtel"}}
+2025-06-05 18:39:03,930|1|842|e601db54|Pull Checks Request|CJMS|success|d702e949|Checks New Registration |Filename: 39875ebd-613c-4646-855e-d67342976ed4 | Singtel > CORE > Registration > Checks > Checks New Registration  | ISL-CORE.NEW_REG_CHECKS_REQ.TA - Request: {"id":"5ECCDFA9BD1D45F18D37DF60591638E9","name":"CHECK_REG_STATUS_REQ","dataObject":{"checkOccupied":true,"companyId":1,"createdDateTime":"2025-06-05T18:39:00","enableWhiteList":true,"instanceId":800001,"localId":0,"locale":"EN","map":{"ICCID":9000000000090000125,"MSISDN":9***0125,"SOURCE_FLAG":"IN_FLOW","SYS_DATA":"30AF2B9009CEB40B15823B2E1AAF92BC"},"retries":0,"securityToken":"NGRmM2ZmMGJhNGRkNDZiMTgxMWMwNzM2YmUxNDJhNDM=","smsCount":0,"state":{"displayName":"PENDING - MPOS","value":5},"trxId":"5ECCDFA9BD1D45F18D37DF60591638E9","trxTypeId":1,"username":"pipul-singtel"}}
+2025-06-05 18:39:03,982|47|0|94478549|POJO or JSON?|ROA|unmatched|a81f60bd|Inspect Request|
+2025-06-05 18:39:04,018|36|0|98c740aa|Set configuration and initial values|UA|success|a81f60bd|Inspect Request|
+2025-06-05 18:39:04,050|15|1|13a7de8a|Store Request Data in Attributes|EJP|matched|742feda2|Process Attributes|
+2025-06-05 18:39:04,083|33|0|6f2067ad|Prevent SOURCE_FLAG empty|UA|success|742feda2|Process Attributes|
+2025-06-05 18:39:04,087|4|0|f28f7d7f|Valid Request?|ROA|matched|742feda2|Process Attributes|
+2025-06-05 18:39:04,155|5|0|9b9d71a4|Source Flag to Destination|ROA|IN FLOW|a81f60bd|Inspect Request|
+2025-06-05 18:39:04,235|23|0|2c0f408e|Initialize Values|UA|success|adad6771|IN FLOW CHECKS|
+2025-06-05 18:39:04,271|14|0|cbc08e87|Check SIM Card Status enabled?|ROA|Check SIM Card Status enabled|27bcc610|Call Check SIM Card Status|
+2025-06-05 18:39:04,306|35|0|a82dc49b|Prepare Check SIM Card Status Request|RT|success|27bcc610|Call Check SIM Card Status|
+2025-06-05 18:39:04,473|0|3|884008b1|Pull Check SIM Card Status Request|CJMS|success|7d27364e|Check SIM Card Status|Filename: 4d2bfa80-67b8-4ee9-a252-d3a0d7647cce | Singtel > CORE > Registration > Checks > Check SIM Card Status | ISL-CORE.SIM_CARD_STATUS_REQ.TA - Request: { "id" : "5ECCDFA9BD1D45F18D37DF60591638E9", "name" : "CHECK_SIM_CARD_STATUS_REQ", "dataObject" : { "trxId" : "5ECCDFA9BD1D45F18D37DF60591638E9", "instanceId" : 300001, "trxTypeId" : 1, "username" : "pipul-singtel", "map" : { "MSISDN" : "9***0125", "ICCID" : "9000000000090000125" } }, "datum" : null }
+2025-06-05 18:39:04,497|4|0|c80f6439|POJO or JSON?|ROA|unmatched|69359252|Inspect Request|
+2025-06-05 18:39:04,529|32|0|144469f8|Set configuration and initial values|UA|success|69359252|Inspect Request|
+2025-06-05 18:39:04,579|35|0|be01525a|Store Request Data in Attributes|EJP|matched|874be45d|Process Attributes|
+2025-06-05 18:39:04,605|26|0|a3962895|Valid Request?|ROA|matched|874be45d|Process Attributes|
+2025-06-05 18:39:04,656|2|0|9c085773|SIM Swap?|ROA|unmatched|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,689|32|0|969e7439|Query for SIM Card Status|UA|success|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,694|5|0|2abfd88f|Retrieve SIM Card Status|ESQLR|pre|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,712|23|18|2abfd88f|Retrieve SIM Card Status|ESQLR|success|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,727|15|0|d9efe4af|Trx Type empty?|ROA|unmatched|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,735|8|0|ca315562|Retrieve Expected Status by Trx Type|ESQLR|pre|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,744|17|8|ca315562|Retrieve Expected Status by Trx Type|ESQLR|success|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,767|23|0|d9c05440|SIM Card Status valid?|ROA|Valid|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,791|24|0|6348a596|Set response attributes for valid status|UA|success|4132594d|Get SIM Card Status|
+2025-06-05 18:39:04,854|24|0|ea724b30|Prepare Result Code Mapping Request|RT|success|cb432cf1|Call Result Code Mapping|
+2025-06-05 18:39:04,901|0|17|8cd34c55|Pull Request|CJMS|success|6f90c4ba|Result Code Mapping|Filename: 823f539a-71e8-4b6e-a287-54c5bfcdbebb | Singtel > CORE > Result Code Mapping | ISL-CORE.RESULT_CODE_MAPPING_REQ.TA - Request: { "trxId" : "5ECCDFA9BD1D45F18D37DF60591638E9", "mappingName" : "SIM_CARD_STATUS", "respCode" : "VALID_STATUS", "respMsg" : "VALID_STATUS", "autoAdd" : "off", "language" : "EN" }
+2025-06-05 18:39:04,928|26|0|41b45c13|Extract attributes|EJP|matched|6f90c4ba|Result Code Mapping|
+2025-06-05 18:39:04,955|7|0|7f2b3246|Prepare SQL to fetch ISL Code|UA|success|2ae4ea8a|Fetch ISL Code|
+2025-06-05 18:39:04,987|32|0|5e9294b6|Fetch ISL Code|ESQLR|pre|2ae4ea8a|Fetch ISL Code|
+2025-06-05 18:39:05,011|56|23|5e9294b6|Fetch ISL Code|ESQLR|success|2ae4ea8a|Fetch ISL Code|
+2025-06-05 18:39:05,066|23|0|a88e5819|Fetch message|ESQLR|pre|6f90c4ba|Result Code Mapping|
+2025-06-05 18:39:05,072|29|6|a88e5819|Fetch message|ESQLR|success|6f90c4ba|Result Code Mapping|
+2025-06-05 18:39:05,112|39|0|1269a9c3|Set Mapping Response|RT|success|6f90c4ba|Result Code Mapping|
+2025-06-05 18:39:05,925|1068|0|97137344|Call Result Code Mapping|PJMS|success|cb432cf1|Call Result Code Mapping|Filename: 4d2bfa80-67b8-4ee9-a252-d3a0d7647cce | Singtel > CORE > Registration > Checks > Check SIM Card Status > Get SIM Card Status > Call Result Code Mapping | ISL-CORE.SIM_CARD_STATUS_REQ.TA - Response from : 'ISL-CORE.RESULT_CODE_MAPPING_REQ.TA': { "trxId" : "5ECCDFA9BD1D45F18D37DF60591638E9", "islCode" : "101", "message" : "SIM Card in valid status.", "notFoundFlag" : "" }
+2025-06-05 18:39:05,960|34|0|bc41692e|Extract Response Data|EJP|matched|cb432cf1|Call Result Code Mapping|
+2025-06-05 18:39:05,996|36|0|0637f260|Mapping not found?|ROA|unmatched|cb432cf1|Call Result Code Mapping|
+2025-06-05 18:39:06,103|36|0|76af89c3|Prepare JSON Response|RT|success|06fd8915|Prepare JSON Reponse|
+2025-06-05 18:39:06,108|5|0|bf406b66|Restore initial jms attributes|UA|success|06fd8915|Prepare JSON Reponse|
+2025-06-05 18:39:06,185|34|0|8f0bb8d5|POJO or JSON?|ROA|unmatched|5aaa9b12|Convert Response|
+2025-06-05 18:39:06,585|2260|0|d75f3bc4|Call Check SIM Card  Status|PJMS|success|27bcc610|Call Check SIM Card Status|Filename: 39875ebd-613c-4646-855e-d67342976ed4 | Singtel > CORE > Registration > Checks > Checks New Registration  > IN FLOW CHECKS > Call Check SIM Card Status | ISL-CORE.NEW_REG_CHECKS_REQ.TA - Response from : 'ISL-CORE.SIM_CARD_STATUS_REQ.TA': { "id": "5ECCDFA9BD1D45F18D37DF60591638E9", "name": "CHECK_SIM_CARD_STATUS_REQ", "resultCode": "SUCCESS", "dataObject": { "trxId": "5ECCDFA9BD1D45F18D37DF60591638E9", "instanceId": 300001, "idCompany": 1, "respCode": 101, "respDesc": "SIM Card in valid status.", "createdDateTime": "Thu Jun 05 18:39:06 ICT 2025", "data" : { "simCardStatusName" : "", "simCardStatus" : "1" } } }
+2025-06-05 18:39:06,621|36|0|3e1e58df|Store Check Status Response in Attributes|EJP|matched|27bcc610|Call Check SIM Card Status|
+2025-06-05 18:39:06,626|4|0|b912b653|Set attribute that we have response|UA|success|27bcc610|Call Check SIM Card Status|
+2025-06-05 18:39:06,634|8|0|220fea56|Check SIM Card Status Success?|ROA|Check SIM Card Status success|27bcc610|Call Check SIM Card Status|
+2025-06-05 18:39:06,692|14|0|f6937e6f|Check Local SIM Count enabled?|ROA|unmatched|c9d67617|Call Check Local SIM Count|
+2025-06-05 18:39:06,772|22|0|f4fe9d47|Check Status enabled?|ROA|unmatched|e8094480|Call Check Status|
+2025-06-05 18:39:06,843|31|0|ae05cb47|Have Response?|ROA|Have Response|30eba2a7|Response Check|
+2025-06-05 18:39:06,897|24|0|a5e7b521|Restore initial jms attributes|UA|success|d702e949|Checks New Registration |
+2025-06-05 18:39:06,945|4|0|637f73b9|POJO or JSON?|ROA|unmatched|3c6cc4a1|Convert Response|
+2025-06-05 18:39:07,071|3144|0|c9270b25|Publish Request to MQ|PJMS|success|55066717|Check Status|Filename: DEDEC511598E4F8C8D2828D930577EC3 | Singtel > EAI > SOAP API > Registration > Operations > Check Status |  - Response from : 'ISL-CORE.NEW_REG_CHECKS_REQ.TA': { "id": "5ECCDFA9BD1D45F18D37DF60591638E9", "name": "CHECK_SIM_CARD_STATUS_REQ", "resultCode": "SUCCESS", "dataObject": { "trxId": "5ECCDFA9BD1D45F18D37DF60591638E9", "instanceId": 300001, "idCompany": 1, "respCode": 101, "respDesc": "SIM Card in valid status.", "createdDateTime": "Thu Jun 05 18:39:06 ICT 2025", "data" : { "simCardStatusName" : "", "simCardStatus" : "1" } } }
+2025-06-05 18:39:07,119|23|1|1c72fada|Extract dataObject fields|EJP|matched|dd3d0c77|Check Response|
+2025-06-05 18:39:07,140|21|0|1e5e1b6a|Trx Status ID not to be empty|UA|success|dd3d0c77|Check Response|
+2025-06-05 18:39:07,174|34|0|e44fb601|Check response|ROA|unmatched|dd3d0c77|Check Response|
+2025-06-05 18:39:07,214|22|0|dff69f79|Prepare Response|RT|success|814bccc8|Prepare SUCCESS Response|
+2025-06-05 18:39:07,238|24|0|aa343fd4|Set MIME as text/xml|UA|success|814bccc8|Prepare SUCCESS Response|
+2025-06-05 18:39:07,383|20|0|cfc60a1f|Success|UA|success|8dbbd077|Prepare final response|
+2025-06-05 18:39:07,395|12|0|1c2d541c|SOAP Response?|ROA|XML|8dbbd077|Prepare final response|
+2025-06-05 18:39:07,407|12|0|ca979d59|Set MiME as text/xml|UA|success|8dbbd077|Prepare final response|
+2025-06-05 18:39:07,454|47|0|070c25d9|Remove Cache Entry (if any)|DF|failure|8dbbd077|Prepare final response|
+2025-06-05 18:39:07,464|4|0|ce2a54cb|Send HTTP Response|HHRES|success|4239f542|EAI|Filename: DEDEC511598E4F8C8D2828D930577EC3 | Singtel > EAI | POST '/RegistrationWebService' - Response: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isl="http://mobile-technologies.com/eai/isl/"><soapenv:Header /><soapenv:Body><isl:checkStatusResponse><return><responseCode>101</responseCode><responseDesc>SIM Card in valid status.</responseDesc><msisdn></msisdn><iccid></iccid><data><entry><key>EXT_SKIP_OTP</key><value>false</value></entry><entry><key>EXT_OLD_BIRTHDATE</key><value></value></entry><entry><key>EXT_OLD_SUBSCRIBER</key><value></value></entry></data></return></isl:checkStatusResponse></soapenv:Body></soapenv:Envelope>

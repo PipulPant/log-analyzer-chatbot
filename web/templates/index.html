@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analyzer - AI Chat Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>📊 Log Analyzer</h1>
+                <p>AI-Powered Log Analysis</p>
+            </div>
+            <div class="sidebar-actions">
+                <button class="btn-new-chat" onclick="newChat()">
+                    <span>+</span> New Chat
+                </button>
+            </div>
+            <div class="conversations-list" id="conversationsList">
+                <div class="conversations-header">Recent Conversations</div>
+                <div class="conversations-items" id="conversationsItems">
+                    <div class="conversation-loading">Loading...</div>
+                </div>
+            </div>
+            <div class="sidebar-info">
+                <div class="info-card">
+                    <h3>How to Use</h3>
+                    <ul>
+                        <li>📎 Upload a log file</li>
+                        <li>💬 Or paste log content</li>
+                        <li>🤖 Get instant analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <h2>Log Analysis Chat</h2>
+                <div class="header-actions">
+                    <input type="file" id="fileInput" accept=".txt,.log,.json" style="display: none;" onchange="handleFileUpload(event)">
+                    <button class="btn-upload" onclick="document.getElementById('fileInput').click()">
+                        📎 Upload Log File
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <h3>👋 Welcome to Log Analyzer</h3>
+                    <p>Upload a log file or paste log content to get started with AI-powered analysis.</p>
+                    <div class="welcome-features">
+                        <div class="feature-card">
+                            <span class="feature-icon">🎯</span>
+                            <h4>Root Cause Analysis</h4>
+                            <p>Identifies primary failures</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">🤖</span>
+                            <h4>ML-Powered Detection</h4>
+                            <p>Multiple AI models working together</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">⚡</span>
+                            <h4>Real-Time Analysis</h4>
+                            <p>Instant results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Paste your log content here or upload a file..."
+                        rows="3"
+                        onkeydown="handleKeyDown(event)"
+                    ></textarea>
+                    <div class="input-actions">
+                        <button class="btn-attach" onclick="document.getElementById('fileInput').click()" title="Upload file">
+                            📎
+                        </button>
+                        <button class="btn-send" onclick="sendMessage()" id="sendButton">
+                            <span>Send</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M2 10L18 2L12 18L10 10L2 10Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-footer">
+                    <span class="hint">Press Enter to send, Shift+Enter for new line</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+

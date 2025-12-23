@@ -1,0 +1,47 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-12-23 15:07:51,420|0|0|680dd9f5|Schedule trigger|GFF|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,455|35|12|c1c2242a|Update Schedule last run datetime|PSQL|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,480|25|0|a39945d3|check concurrence instance run|ROA|valid instance|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,497|17|0|7c76ce4e|Find all in-progress jobs|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,578|66|81|7c76ce4e|Find all in-progress jobs|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,606|1|7|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,606|0|8|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,608|2|10|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,609|0|11|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,609|0|11|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,609|0|11|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,609|0|11|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,619|10|21|2bc8819a|SplitJson|SJ|split|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,619|41|21|2bc8819a|SplitJson|SJ|original|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,633|27|0|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,652|46|0|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,656|22|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,658|24|1|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,677|68|1|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,681|29|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,683|31|1|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,685|27|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,699|90|0|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,705|28|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,707|24|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,707|30|1|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,723|114|0|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,728|21|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,729|29|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,730|30|1|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,748|139|0|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,752|22|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,754|31|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,758|35|4|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,769|160|0|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,773|14|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,779|30|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,781|32|1|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,795|176|3|f35b2064|Extract Bulk Id|EJP|matched|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,799|18|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,806|36|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,808|38|1|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,823|15|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,829|34|0|7ef60438|Find in-progress jobs by bulk id|ESQLR|pre|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,831|36|1|7ef60438|Find in-progress jobs by bulk id|ESQLR|success|f5950210|Corp Sim Bulk Master Job|
+2025-12-23 15:07:51,845|14|0|9721ed8a|All child jobs finished|ROA|count > 0|f5950210|Corp Sim Bulk Master Job|

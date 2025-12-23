@@ -1,0 +1,12 @@
+{
+  "classification_model_path": "data/models/classification_xgboost.pkl",
+  "anomaly_detector_path": "data/models/anomaly_detector.pkl",
+  "classification_type": "xgboost",
+  "anomaly_contamination": 0.1,
+  "ensemble_weights": {
+    "classification": 0.3,
+    "anomaly": 0.3,
+    "nlp": 0.2,
+    "rule_based": 0.2
+  }
+}

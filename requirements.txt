@@ -1,0 +1,27 @@
+# Required packages
+numpy>=1.20.0
+scikit-learn>=1.0.0
+matplotlib>=3.3.0
+scipy>=1.7.0
+
+# ML Models (optional but recommended)
+xgboost>=1.5.0
+sentence-transformers>=2.2.0
+torch>=1.12.0
+
+# Web Application
+flask>=2.3.0
+flask-cors>=4.0.0
+werkzeug>=2.3.0
+
+# Optional advanced ML (uncomment if needed)
+# transformers>=4.20.0  # For BERT models
+# tensorflow>=2.8.0  # For autoencoders/LSTM
+# prophet>=1.1.0  # For time series
+# hmmlearn>=0.2.7  # For HMM
+# torch-geometric>=2.0.0  # For GNN
+
+# Optional LLM dependencies (install as needed for AI-powered chatbot)
+# openai>=1.0.0  # For DeepSeek/OpenAI API integration
+# requests>=2.28.0  # For Ollama local models
+# transformers>=4.30.0  # For Hugging Face models (if not already installed)

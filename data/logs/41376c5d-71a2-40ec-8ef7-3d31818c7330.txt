@@ -1,0 +1,4 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-07-15 15:29:41,248|0|0|36dd4149|Schedule trigger|GFF|success|f9c4bf34|Corp Sim Bulk Master Job|
+2025-07-15 15:29:41,288|40|20|37b73170|Update Schedule last run datetime|PSQL|success|f9c4bf34|Corp Sim Bulk Master Job|
+2025-07-15 15:29:41,312|24|0|6e064d3d|check concurrence instance run|ROA|unmatched|f9c4bf34|Corp Sim Bulk Master Job|

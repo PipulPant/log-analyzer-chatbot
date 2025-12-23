@@ -1,0 +1,77 @@
+2025-11-21 13:40:59.934670 | DEBUG | App Name: mt_FpCamera, Version: 1.3.6+104, Package: com.mt.app.fpcamera, Signature: 8439527C554E06A7C08E49057E540F8B4BC9E7B2D01AC25AE60E0CCF02E9137B
+2025-11-21 13:40:59.961860 | DEBUG | Permission status: Permission.camera = PermissionStatus.granted
+2025-11-21 13:40:59.970508 | DEBUG | Permission status: Permission.microphone = PermissionStatus.granted
+2025-11-21 13:40:59.973564 | DEBUG | Permission status: Permission.photos = PermissionStatus.granted
+2025-11-21 13:40:59.986464 | DEBUG | Permission status: Permission.videos = PermissionStatus.granted
+2025-11-21 13:40:59.989131 | DEBUG | Permission status: Permission.audio = PermissionStatus.granted
+2025-11-21 13:41:00.008493 | DEBUG | External app request: {"request":{"RawEnabled":true,"imageProcessingPipeline":"standard","blurDetectionMinimumScore":0.55,"RawImageQuality":100,"MinimumNFQ":3,"MinimumMinutia":25,"Aliveness":false,"IsDebugMode":false,"CameraMask":true,"Threshold":0.7,"Flash":true,"OvalMask":true,"timeLimit":-1,"timeoutMessage":"FpCam reached time limit","ColorAmplifier":0.1,"OvalRange":0.65,"wsqBitRate":0.75,"wsqDepth":8,"wsqDpi":500},"fileQueries":null,"ttl":110,"locale":"EN","ltr":true,"callerAppName":"com.mt.isl.mpos.android","version":null,"iOSAppId":null,"bundle":"{\"bundleUrl\": \"https://33.mobile-technologies.com:8449/mpos/fpxpress_assets.zip\", \"bundleChecksum\": \"6023d6e64b1c496ddffff9fb358e2596\"}","license":"{\"license\": \"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPExpY2Vuc2U+Cgk8bmFtZT4zRGlWaSBGYWNlIFNESyBMaWNlbnNlPC9uYW1lPgoJPGNjPkxpY2Vuc2UjNDgzNjggLSBGYWNlU0RLIHYzLjE3IEVTTCAoQWxsIEluIE9uZSArIERCICgxMDAwMDApKSAjMCwgcmVtaS5iYXN0aWVyQG1vYmlsZS10ZWNobm9sb2dpZXMuY29tPC9jYz4KCTx2ZXJzaW9uPjMuMC4xLjI8L3ZlcnNpb24+Cgk8bWF4X3Nka192ZXJzaW9uPjMuMTc8L21heF9zZGtfdmVyc2lvbj4KCTxWaWRlb0VuZ2luZT4xPC9WaWRlb0VuZ2luZT4KCTxhZ2VfZ2VuZGVyX2VzdGltYXRvcj4xPC9hZ2VfZ2VuZGVyX2VzdGltYXRvcj4KCTxlbW90aW9uc19lc3RpbWF0b3I+MTwvZW1vdGlvbnNfZXN0aW1hdG9yPgoJPFZpZGVvQ2xpZW50RXh0PjE8L1ZpZGVvQ2xpZW50RXh0PgoJPFZpZGVvQ2xpZW50PjE8L1ZpZGVvQ2xpZW50PgoJPG1hdGNoZXI2PjE8L21hdGNoZXI2PgoJPG1hdGNoZXI2djI+MTwvbWF0Y2hlcjZ2Mj4KCTxtYXRjaGVyNnYzPjE8L21hdGNoZXI2djM+Cgk8bWF0Y2hlcjZ2ND4xPC9tYXRjaGVyNnY0PgoJPG1hdGNoZXI2djU+MTwvbWF0Y2hlcjZ2NT4KCTxtYXRjaGVyNnY2PjE8L21hdGNoZXI2djY+Cgk8bWF0Y2hlcjZ2Nz4xPC9tYXRjaGVyNnY3PgoJPG1hdGNoZXI3PjE8L21hdGNoZXI3PgoJPG1hdGNoZXI3djI+MTwvbWF0Y2hlcjd2Mj4KCTxtYXRjaGVyN3YzPjE8L21hdGNoZXI3djM+Cgk8bWF0Y2hlcjd2Nj4xPC9tYXRjaGVyN3Y2PgoJPG1hdGNoZXI3djc+MTwvbWF0Y2hlcjd2Nz4KCTxtYXRjaGVyOHY2PjE8L21hdGNoZXI4djY+Cgk8bWF0Y2hlcjh2Nz4xPC9tYXRjaGVyOHY3PgoJPG1hdGNoZXI5djMwPjE8L21hdGNoZXI5djMwPgoJPG1hdGNoZXI5djMwMD4xPC9tYXRjaGVyOXYzMDA+Cgk8bWF0Y2hlcjl2MTAwMD4xPC9tYXRjaGVyOXYxMDAwPgoJPG1hdGNoZXI5djMwbWFzaz4xPC9tYXRjaGVyOXYzMG1hc2s+Cgk8bWF0Y2hlcjl2MzAwbWFzaz4xPC9tYXRjaGVyOXYzMDBtYXNrPgoJPG1hdGNoZXI5djEwMDBtYXNrPjE8L21hdGNoZXI5djEwMDBtYXNrPgoJPG1hdGNoZXIxMHYzMD4xPC9tYXRjaGVyMTB2MzA+Cgk8bWF0Y2hlcjEwdjEwMD4xPC9tYXRjaGVyMTB2MTAwPgoJPG1hdGNoZXIxMHYxMDAwPjE8L21hdGNoZXIxMHYxMDAwPgoJPG1hdGNoZXIxMXYzMD4xPC9tYXRjaGVyMTF2MzA+Cgk8bWF0Y2hlcjExdjEwMD4xPC9tYXRjaGVyMTF2MTAwPgoJPG1hdGNoZXIxMXYzMDA+MTwvbWF0Y2hlcjExdjMwMD4KCTxtYXRjaGVyMTF2MTAwMD4xPC9tYXRjaGVyMTF2MTAwMD4KCTxtYXRjaGVyMTJ2MzA+MTwvbWF0Y2hlcjEydjMwPgoJPG1hdGNoZXIxMnY1MD4xPC9tYXRjaGVyMTJ2NTA+Cgk8bWF0Y2hlcjEydjEwMD4xPC9tYXRjaGVyMTJ2MTAwPgoJPG1hdGNoZXIxMnYzMDA+MTwvbWF0Y2hlcjEydjMwMD4KCTxtYXRjaGVyMTJ2MTAwMD4xPC9tYXRjaGVyMTJ2MTAwMD4KCTx0ZW1wbGF0ZXNpbmRleDY+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDY+Cgk8dGVtcGxhdGVzaW5kZXg2djI+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDZ2Mj4KCTx0ZW1wbGF0ZXNpbmRleDZ2Mz4xMDAwMDA8L3RlbXBsYXRlc2luZGV4NnYzPgoJPHRlbXBsYXRlc2luZGV4NnY0PjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg2djQ+Cgk8dGVtcGxhdGVzaW5kZXg2djU+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDZ2NT4KCTx0ZW1wbGF0ZXNpbmRleDZ2Nj4xMDAwMDA8L3RlbXBsYXRlc2luZGV4NnY2PgoJPHRlbXBsYXRlc2luZGV4NnY3PjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg2djc+Cgk8dGVtcGxhdGVzaW5kZXg3PjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg3PgoJPHRlbXBsYXRlc2luZGV4N3YyPjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg3djI+Cgk8dGVtcGxhdGVzaW5kZXg3djM+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDd2Mz4KCTx0ZW1wbGF0ZXNpbmRleDd2Nj4xMDAwMDA8L3RlbXBsYXRlc2luZGV4N3Y2PgoJPHRlbXBsYXRlc2luZGV4N3Y3PjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg3djc+Cgk8dGVtcGxhdGVzaW5kZXg4djY+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDh2Nj4KCTx0ZW1wbGF0ZXNpbmRleDh2Nz4xMDAwMDA8L3RlbXBsYXRlc2luZGV4OHY3PgoJPHRlbXBsYXRlc2luZGV4OXYzMD4xMDAwMDA8L3RlbXBsYXRlc2luZGV4OXYzMD4KCTx0ZW1wbGF0ZXNpbmRleDl2MzAwPjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg5djMwMD4KCTx0ZW1wbGF0ZXNpbmRleDl2MTAwMD4xMDAwMDA8L3RlbXBsYXRlc2luZGV4OXYxMDAwPgoJPHRlbXBsYXRlc2luZGV4OXYzMG1hc2s+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDl2MzBtYXNrPgoJPHRlbXBsYXRlc2luZGV4OXYzMDBtYXNrPjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg5djMwMG1hc2s+Cgk8dGVtcGxhdGVzaW5kZXg5djEwMDBtYXNrPjEwMDAwMDwvdGVtcGxhdGVzaW5kZXg5djEwMDBtYXNrPgoJPHRlbXBsYXRlc2luZGV4MTB2MzA+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDEwdjMwPgoJPHRlbXBsYXRlc2luZGV4MTB2MTAwPjEwMDAwMDwvdGVtcGxhdGVzaW5kZXgxMHYxMDA+Cgk8dGVtcGxhdGVzaW5kZXgxMHYxMDAwPjEwMDAwMDwvdGVtcGxhdGVzaW5kZXgxMHYxMDAwPgoJPHRlbXBsYXRlc2luZGV4MTF2MzA+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDExdjMwPgoJPHRlbXBsYXRlc2luZGV4MTF2MTAwPjEwMDAwMDwvdGVtcGxhdGVzaW5kZXgxMXYxMDA+Cgk8dGVtcGxhdGVzaW5kZXgxMXYzMDA+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDExdjMwMD4KCTx0ZW1wbGF0ZXNpbmRleDExdjEwMDA+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDExdjEwMDA+Cgk8dGVtcGxhdGVzaW5kZXgxMnYzMD4xMDAwMDA8L3RlbXBsYXRlc2luZGV4MTJ2MzA+Cgk8dGVtcGxhdGVzaW5kZXgxMnY1MD4xMDAwMDA8L3RlbXBsYXRlc2luZGV4MTJ2NTA+Cgk8dGVtcGxhdGVzaW5kZXgxMnYxMDA+MTAwMDAwPC90ZW1wbGF0ZXNpbmRleDEydjEwMD4KCTx0ZW1wbGF0ZXNpbmRleDEydjMwMD4xMDAwMDA8L3RlbXBsYXRlc2luZGV4MTJ2MzAwPgoJPHRlbXBsYXRlc2luZGV4MTJ2MTAwMD4xMDAwMDA8L3RlbXBsYXRlc2luZGV4MTJ2MTAwMD4KCTxxdWFsaXR5X2VzdGltYXRvcj4yPC9xdWFsaXR5X2VzdGltYXRvcj4KCTxmYWNlX3F1YWxpdHlfZXN0aW1hdG9yPjI8L2ZhY2VfcXVhbGl0eV9lc3RpbWF0b3I+Cgk8Y2FwdHVyZXIxPjI8L2NhcHR1cmVyMT4KCTxjYXB0dXJlcjI+MjwvY2FwdHVyZXIyPgoJPGNhcHR1cmVyND4yPC9jYXB0dXJlcjQ+Cgk8bWFudWFsX2NhcHR1cmVyPjI8L21hbnVhbF9jYXB0dXJlcj4KCTxjdmNfY2FwdHVyZXI+MjwvY3ZjX2NhcHR1cmVyPgoJPHZpZGVvX2NhcHR1cmVyPjI8L3ZpZGVvX2NhcHR1cmVyPgoJPHByb2ZpbGVfY2FwdHVyZXI+MjwvcHJvZmlsZV9jYXB0dXJlcj4KCTxzdGF0aWNfY2FwdHVyZXI+Mjwvc3RhdGljX2NhcHR1cmVyPgoJPHByb2Nlc3NvcjY+MTwvcHJvY2Vzc29yNj4KCTxwcm9jZXNzb3I2djI+MTwvcHJvY2Vzc29yNnYyPgoJPHByb2Nlc3NvcjZ2Mz4xPC9wcm9jZXNzb3I2djM+Cgk8cHJvY2Vzc29yNnY0PjE8L3Byb2Nlc3NvcjZ2ND4KCTxwcm9jZXNzb3I2djU+MTwvcHJvY2Vzc29yNnY1PgoJPHByb2Nlc3NvcjZ2Nj4xPC9wcm9jZXNzb3I2djY+Cgk8cHJvY2Vzc29yNnY3PjE8L3Byb2Nlc3NvcjZ2Nz4KCTxwcm9jZXNzb3I3PjE8L3Byb2Nlc3Nvcjc+Cgk8cHJvY2Vzc29yN3YyPjE8L3Byb2Nlc3Nvcjd2Mj4KCTxwcm9jZXNzb3I3djM+MTwvcHJvY2Vzc29yN3YzPgoJPHByb2Nlc3Nvcjd2Nj4xPC9wcm9jZXNzb3I3djY+Cgk8cHJvY2Vzc29yN3Y3PjE8L3Byb2Nlc3Nvcjd2Nz4KCTxwcm9jZXNzb3I4djY+MTwvcHJvY2Vzc29yOHY2PgoJPHByb2Nlc3Nvcjh2Nz4xPC9wcm9jZXNzb3I4djc+Cgk8cHJvY2Vzc29yOXYzMD4xPC9wcm9jZXNzb3I5djMwPgoJPHByb2Nlc3Nvcjl2MzAwPjE8L3Byb2Nlc3Nvcjl2MzAwPgoJPHByb2Nlc3Nvcjl2MTAwMD4xPC9wcm9jZXNzb3I5djEwMDA+Cgk8cHJvY2Vzc29yOXYzMG1hc2s+MTwvcHJvY2Vzc29yOXYzMG1hc2s+Cgk8cHJvY2Vzc29yOXYzMDBtYXNrPjE8L3Byb2Nlc3Nvcjl2MzAwbWFzaz4KCTxwcm9jZXNzb3I5djEwMDBtYXNrPjE8L3Byb2Nlc3Nvcjl2MTAwMG1hc2s+Cgk8cHJvY2Vzc29yMTB2MzA+MTwvcHJvY2Vzc29yMTB2MzA+Cgk8cHJvY2Vzc29yMTB2MTAwPjE8L3Byb2Nlc3NvcjEwdjEwMD4KCTxwcm9jZXNzb3IxMHYxMDAwPjE8L3Byb2Nlc3NvcjEwdjEwMDA+Cgk8cHJvY2Vzc29yMTF2MzA+MTwvcHJvY2Vzc29yMTF2MzA+Cgk8cHJvY2Vzc29yMTF2MTAwPjE8L3Byb2Nlc3NvcjExdjEwMD4KCTxwcm9jZXNzb3IxMXYzMDA+MTwvcHJvY2Vzc29yMTF2MzAwPgoJPHByb2Nlc3NvcjExdjEwMDA+MTwvcHJvY2Vzc29yMTF2MTAwMD4KCTxwcm9jZXNzb3IxMnYzMD4xPC9wcm9jZXNzb3IxMnYzMD4KCTxwcm9jZXNzb3IxMnY1MD4xPC9wcm9jZXNzb3IxMnY1MD4KCTxwcm9jZXNzb3IxMnYxMDA+MTwvcHJvY2Vzc29yMTJ2MTAwPgoJPHByb2Nlc3NvcjEydjMwMD4xPC9wcm9jZXNzb3IxMnYzMDA+Cgk8cHJvY2Vzc29yMTJ2MTAwMD4xPC9wcm9jZXNzb3IxMnYxMDAwPgoJPGRlcHRoX2xpdmVuZXNzX2VzdGltYXRvcj4xPC9kZXB0aF9saXZlbmVzc19lc3RpbWF0b3I+Cgk8aXJfbGl2ZW5lc3NfZXN0aW1hdG9yPjE8L2lyX2xpdmVuZXNzX2VzdGltYXRvcj4KCTxsaXZlbmVzc18yZF9lc3RpbWF0b3I+MTwvbGl2ZW5lc3NfMmRfZXN0aW1hdG9yPgoJPGFjdGl2ZV9saXZlbmVzc19lc3RpbWF0b3I+MTwvYWN0aXZlX2xpdmVuZXNzX2VzdGltYXRvcj4KCTxkZXNrdG9wX2dwdV9zdXBwb3J0PjE8L2Rlc2t0b3BfZ3B1X3N1cHBvcnQ+Cgk8U2lnbmF0dXJlPiYjMTA7LS0tLS1CRUdJTiBTSUdOQVRVUkUtLS0tLSYjMTA7UHdGNXYxZ0sxZnRqbEFsd2h3SzBXbUZGeUVKL3pjeVMxaUdPMEdjTjBCWjluQnVVZStvZ2d1RTRwY2cySW0wUSYjMTA7QmdhRmFUL3o0aEl2bDRIVEpJL0hiYmdXb0h6S1NBUHNpczBYK0xMZkRxbzhPVGk2TmtVbExrc3F1dTVsNGs5TSYjMTA7SFBqaytYSUZSdEFuaThSRzJUblVqWkY5VnRGQ2dpU2lEWC80TzZJOHA4YjcxTlljbEdJcXMxZlNaeXp1WjhwbCYjMTA7Q2NGVnpsZTI3aTVKazBjNnRpbjlMVGxDZUJIY1ljL0J4YndDMWk2RXNiRVRBZVNpQzUwVGF4ZUEzSmlKUEMwOSYjMTA7ZDJpckt3d1N1a2hvQitoMEdxQkdKaGlDT0FJYVBqVVpMdlB0UDNWSUJ6UTBZQ3VOTVdReTV1UytCakNxUEdCTyYjMTA7bXhPa015aFUySnEwOGxiQjBTUWtyUT09JiMxMDstLS0tLUVORCBTSUdOQVRVUkUtLS0tLSYjMTA7PC9TaWduYXR1cmU+CjwvTGljZW5zZT4K\", \"licenseChecksum\": \"656ec75a0d951883b105779d2a4f3a54\"}","certificate":null}
+2025-11-21 13:41:00.018439 | DEBUG | App dir: /data/user/0/com.mt.app.fpcamera/app_flutter
+2025-11-21 13:41:00.059922 | DEBUG | Deleting files from cache: /storage/emulated/0/Android/data/com.mt.app.fpcamera/files
+2025-11-21 13:41:00.061318 | DEBUG | 0 files deleted from cache
+2025-11-21 13:41:00.252530 | DEBUG | Loading configuration
+2025-11-21 13:41:00.253253 | DEBUG | Validating configuration
+2025-11-21 13:41:01.922438 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:01.972957 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.020536 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.059542 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.103447 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.166512 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.199786 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.241190 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.281705 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.322507 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.356669 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.396726 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.432369 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.489873 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.534960 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.573309 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.607945 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.643032 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.696433 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.790006 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.824821 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.861050 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.902588 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.946705 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:02.986567 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.030495 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.079480 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.116543 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.153777 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.190613 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.224954 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.267172 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.311174 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.359059 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.397456 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.432767 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.476166 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.521104 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.594634 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.672117 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.709346 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.753809 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.810005 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.852731 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.900473 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:03.988161 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.038008 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.083057 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.119887 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.178827 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.240754 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.289276 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.333533 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.376872 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.442863 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.503222 | DEBUG | Assisting auto focus localPosition=> Instance of 'Offset'
+2025-11-21 13:41:04.508873 | DEBUG | Focus point: dx=0.6928077238881422, dy=0.6875994821676367
+2025-11-21 13:41:04.512811 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.579468 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.645905 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.687390 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.726559 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.763452 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.791976 | DEBUG | Initial delay not done, skipping frame processing
+2025-11-21 13:41:04.843131 | DEBUG | Initial delay not done, skipping frame processing

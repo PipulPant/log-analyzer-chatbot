@@ -1,0 +1,133 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|IDENTIFIER|LOG
+2025-04-16 14:08:01,419|1|1334|7d85db49|Fetch Retries from DB|ESQLR|success|61eca7e8|Registration Retry Process|
+2025-04-16 14:08:01,520|0|0|eb27248d|Separate found retries|SJ|split|61eca7e8|Registration Retry Process|
+2025-04-16 14:08:01,520|0|0|eb27248d|Separate found retries|SJ|split|61eca7e8|Registration Retry Process|
+2025-04-16 14:08:01,520|0|0|eb27248d|Separate found retries|SJ|split|61eca7e8|Registration Retry Process|
+2025-04-16 14:08:01,520|0|0|eb27248d|Separate found retries|SJ|split|61eca7e8|Registration Retry Process|
+2025-04-16 14:08:01,520|101|0|eb27248d|Separate found retries|SJ|original|61eca7e8|Registration Retry Process|
+2025-04-16 14:08:03,475|1944|0|2e8801ae|Extract cronjob data|EJP|matched|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,477|2|0|b5bd27e9|Fetch transaction data|ESQLR|pre|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,479|4|2|b5bd27e9|Fetch transaction data|ESQLR|success|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,526|45|0|6a550a0c|Extract transaction data|UA|success|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,539|13|0|e784d67d|Find Registration Type|ESQLR|pre|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,545|19|5|e784d67d|Find Registration Type|ESQLR|success|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,546|1|0|9bc52194|Find Original Trx Status|ESQLR|pre|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,549|4|3|9bc52194|Find Original Trx Status|ESQLR|success|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,566|17|0|174c4f36|Fetch retry process conf|ESQLR|pre|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,570|21|4|174c4f36|Fetch retry process conf|ESQLR|failure|639edbfd|Fetch|58990CF0D02F43559974E25EF1EA0C4A|
+2025-04-16 14:08:03,587|2056|0|2e8801ae|Extract cronjob data|EJP|matched|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,591|4|0|b5bd27e9|Fetch transaction data|ESQLR|pre|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,594|7|2|b5bd27e9|Fetch transaction data|ESQLR|success|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,628|34|0|6a550a0c|Extract transaction data|UA|success|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,646|18|0|e784d67d|Find Registration Type|ESQLR|pre|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,659|31|13|e784d67d|Find Registration Type|ESQLR|success|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,676|17|0|9bc52194|Find Original Trx Status|ESQLR|pre|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,680|21|3|9bc52194|Find Original Trx Status|ESQLR|success|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,681|2150|0|2e8801ae|Extract cronjob data|EJP|matched|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,687|7|0|174c4f36|Fetch retry process conf|ESQLR|pre|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,690|8|0|b5bd27e9|Fetch transaction data|ESQLR|pre|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,693|11|2|b5bd27e9|Fetch transaction data|ESQLR|success|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,700|20|13|174c4f36|Fetch retry process conf|ESQLR|failure|639edbfd|Fetch|D63F5667F6264659A41193734AE1CAEE|
+2025-04-16 14:08:03,732|39|0|6a550a0c|Extract transaction data|UA|success|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,737|5|0|e784d67d|Find Registration Type|ESQLR|pre|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,741|9|4|e784d67d|Find Registration Type|ESQLR|success|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,756|15|0|9bc52194|Find Original Trx Status|ESQLR|pre|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,759|18|2|9bc52194|Find Original Trx Status|ESQLR|success|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,782|23|0|174c4f36|Fetch retry process conf|ESQLR|pre|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,785|26|3|174c4f36|Fetch retry process conf|ESQLR|No Record Found|639edbfd|Fetch|74F357DED445440DB162CB7F8AA5E2B7|
+2025-04-16 14:08:03,793|2262|0|2e8801ae|Extract cronjob data|EJP|matched|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,802|9|0|b5bd27e9|Fetch transaction data|ESQLR|pre|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,805|12|3|b5bd27e9|Fetch transaction data|ESQLR|success|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,833|28|0|6a550a0c|Extract transaction data|UA|success|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,839|6|0|e784d67d|Find Registration Type|ESQLR|pre|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,842|9|3|e784d67d|Find Registration Type|ESQLR|success|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,846|4|0|9bc52194|Find Original Trx Status|ESQLR|pre|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,847|5|1|9bc52194|Find Original Trx Status|ESQLR|success|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,861|13|0|174c4f36|Fetch retry process conf|ESQLR|pre|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,863|15|2|174c4f36|Fetch retry process conf|ESQLR|success|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:03,968|104|0|da092b4a|Extract retry process data|UA|success|639edbfd|Fetch|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,089|93|0|8e2a79ea|Status is Pending Retry?|ROA|Status is Pending Retry|5e7f7e3e|Validate|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,191|102|0|94fe96c1|Max retry reached?|ROA|unmatched|5e7f7e3e|Validate|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,207|16|0|33a5d2ed|Transaction retry in progress?|ROA|unmatched|5e7f7e3e|Validate|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,364|70|18|b9cd8918|Update in progress flag to 1|PSQL|success|99667905|Multi-Instance Precaution|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,483|119|0|6d0dcdb4|Update successful?|ROA|Update successful|99667905|Multi-Instance Precaution|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,813|80|0|3033af2d|Prepare Request|RT|success|72d8f965|Prepare and Send|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,834|21|4|6d2fc980|Send Request|PJMS|pre|72d8f965|Prepare and Send|B935BD3436F24F1C823417F9EB69B47F|Filename: 59236edb-b0cb-4894-befc-a24462cf8c26 | Product - Core Search, View, Print Registration & Scheduler > Scheduler > Registration Retry Process > Prepare and Send |  - Response sent :  'ISL-CORE.SIM_PRE_PROVISIONING_RETRY_REQ.TB' :{ "id": "B935BD3436F24F1C823417F9EB69B47F", "name": "SIM_PRE_PROVISIONING_RETRY_REQ", "dataObject": { "crmExtCallErrorId": "365607", "nbRetry": "1", "customerDataId": "27265", "retryProcessId": "1", "isFromAcceptReg": "0", "isFromRejectReg": "0", "trxId": "B935BD3436F24F1C823417F9EB69B47F" } }
+2025-04-16 14:08:04,837|0|941|20877286|Pull Sim Pre Provisioning API Retry messages|CJMS|success|7792a0b8|SIM Pre Provisioning OSIA API|Filename: af211a03-6c6b-4d98-85d2-508a0aef8c3b | Product - Core Registration Retry Process > SIM Pre Provisioning OSIA API | ISL-CORE.SIM_PRE_PROVISIONING_RETRY_REQ.TB - Request: { "id": "B935BD3436F24F1C823417F9EB69B47F", "name": "SIM_PRE_PROVISIONING_RETRY_REQ", "dataObject": { "crmExtCallErrorId": "365607", "nbRetry": "1", "customerDataId": "27265", "retryProcessId": "1", "isFromAcceptReg": "0", "isFromRejectReg": "0", "trxId": "B935BD3436F24F1C823417F9EB69B47F" } }
+2025-04-16 14:08:04,889|21|0|6e3d5487|Extract Request Data|EJP|matched|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,912|99|0|985e2353|Put request into attribute|EJP|matched|72d8f965|Prepare and Send|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,929|39|28|38c6cac8|Update transaction as in progress|PSQL|success|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,955|26|6|62952022|Increase retry count|PSQL|success|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,960|5|0|7dba19e7|Fetch transaction data|ESQLR|pre|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,971|16|11|7dba19e7|Fetch transaction data|ESQLR|success|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,985|14|0|f4941e04|Fetch user name|ESQLR|pre|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,989|18|4|f4941e04|Fetch user name|ESQLR|success|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,989|76|12|5c7d8883|Log Audit Trail|PSQL|success|72d8f965|Prepare and Send|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:04,991|2|0|71e5a08a|Fetch customer data|ESQLR|pre|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,001|12|10|71e5a08a|Fetch customer data|ESQLR|success|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,022|20|0|3113132c|RetryProcessId exists|ROA|Is retry process id exists|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,037|14|1|f681dd3b|Fetch retry process conf|ESQLR|pre|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,046|23|11|f681dd3b|Fetch retry process conf|ESQLR|success|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,065|19|1|dfe3b9a4|Extract retry process data|UA|success|01cdf11c|Extract and Fetch Data|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,090|12|0|075499e2|SIM Pre Provisioning API enabled?|ROA|SIM Pre-Provisioning API Enabled|7792a0b8|SIM Pre Provisioning OSIA API|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,139|14|0|f3c56f61|Prepare OSIA Request|RT|success|83647b09|Call OSIA SIM Pre Provisioning API|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,145|5|1|7b4658e5|Call MM OSIA SIM Pre Provisioning API|PJMS|pre|83647b09|Call OSIA SIM Pre Provisioning API|B935BD3436F24F1C823417F9EB69B47F|Filename: af211a03-6c6b-4d98-85d2-508a0aef8c3b | Product - Core Registration Retry Process > SIM Pre Provisioning OSIA API > Call OSIA SIM Pre Provisioning API | ISL-CORE.SIM_PRE_PROVISIONING_RETRY_REQ.TB - Request to :  'ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA' :{ "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulpantwebcare", "map" : { "MSISDN": "9647510008801", "SIM_STATUS": "PRE-PROVISIONED" } } }
+2025-04-16 14:08:05,150|0|817|beb69051|Listen to SIM Pre-Provisioning Req|CJMS|success|30ea57ea|SIM Pre-Provisioning|Filename: 98777521-80df-4242-9a60-93b26f128785 | Product - MM, USSD & Mock > MM > REST WS (3rd Party  API) > OSIA > SIM Pre-Provisioning | ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA - Request: { "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulpantwebcare", "map" : { "MSISDN": "9647510008801", "SIM_STATUS": "PRE-PROVISIONED" } } }
+2025-04-16 14:08:05,182|23|0|c8804d90|POJO or JSON?|ROA|unmatched|e4ff59c9|Inspect Request|
+2025-04-16 14:08:05,196|14|0|588ea83e|Store Request Data in Attributes|EJP|matched|e4ff59c9|Inspect Request|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,206|9|0|c7a2eaf6|Request valid?|ROA|matched|e4ff59c9|Inspect Request|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,269|29|0|7af50569|Set HTTP Method and URI|UA|success|d765807d|Call 3rd party and save req and resp|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,319|25|0|b71f012b|Call OSIA Webservice|IHTTP|pre|8edb7b60|Invoke WS|B935BD3436F24F1C823417F9EB69B47F|Filename: 98777521-80df-4242-9a60-93b26f128785 | Product - MM, USSD & Mock > MM > REST WS (3rd Party  API) > OSIA > SIM Pre-Provisioning > Call 3rd party and save req and resp > Invoke WS | ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA -URL: PUT 'http://localhost:8989/v1/enrollments/9647510008801/simActivationStatus/PRE-PROVISIONED' - Request: { "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulpantwebcare", "map" : { "MSISDN": "9647510008801", "SIM_STATUS": "PRE-PROVISIONED" } } }
+2025-04-16 14:08:05,325|2|4|677175f8|Jetty Server|HHREQ|success|33f6d543|MOCK|Filename: 75818caa-caeb-4a4e-a7d9-c14e8e2d26f2 | Product - MM, USSD & Mock > MOCK | PUT '/v1/enrollments/9647510008801/simActivationStatus/PRE-PROVISIONED' - Request: { "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulpantwebcare", "map" : { "MSISDN": "9647510008801", "SIM_STATUS": "PRE-PROVISIONED" } } }
+2025-04-16 14:08:05,330|4|0|85925aab|Check URI|ROA|REST|33f6d543|MOCK|
+2025-04-16 14:08:05,339|25|0|faf7dd5a|Strip Big Data|LC|success|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|Filename: 98777521-80df-4242-9a60-93b26f128785 | Product - MM, USSD & Mock > MM > REST WS (3rd Party  API) > OSIA > SIM Pre-Provisioning > Call 3rd party and save req and resp > Invoke WS > Save CRM_EXT_CALL_DATA | ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA: { "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulpantwebcare", "map" : { "MSISDN": "9647510008801", "SIM_STATUS": "PRE-PROVISIONED" } }}
+2025-04-16 14:08:05,356|16|1|8656e055|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,364|31|0|ff179604|OSIA Mock?|ROA|OSIA Mock|22fa3de5|REST|
+2025-04-16 14:08:05,386|0|1|27cedb18|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,386|30|1|27cedb18|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,398|18|0|c9fe34aa|Which HTTP Method?|ROA|PUT|85c1c5d3|OSIA Mock|
+2025-04-16 14:08:05,432|46|23|3e18a92e|Save request  CRM_EXT_CALL_DATA  |PSQL|success|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,438|16|0|da7eb930|Extract Enrollment Type|EJP|matched|614ed707|HTTP Put|
+2025-04-16 14:08:05,440|2|0|7fcac04a|Which API?|ROA|Sim Activation Status|614ed707|HTTP Put|
+2025-04-16 14:08:05,467|22|0|e86d4717|Get Msisdn & Sim Status|UA|success|02f5ea2e|MOCK OSIA Sim Pre-Provisioning |
+2025-04-16 14:08:05,468|1|0|6d65d6f5|Valid Request?|ROA|matched|02f5ea2e|MOCK OSIA Sim Pre-Provisioning |
+2025-04-16 14:08:05,488|19|0|4a3aba84|Check MOCK table|ESQLR|pre|02f5ea2e|MOCK OSIA Sim Pre-Provisioning |
+2025-04-16 14:08:05,492|23|4|4a3aba84|Check MOCK table|ESQLR|No Record Found|02f5ea2e|MOCK OSIA Sim Pre-Provisioning |
+2025-04-16 14:08:05,529|36|0|80fd8478|Set No Record 404|UA|success|02f5ea2e|MOCK OSIA Sim Pre-Provisioning |
+2025-04-16 14:08:05,578|29|0|07d9e127|Extract TrxId|EJP|matched|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,583|5|1|3856f86e|Find transaction|ESQLR|pre|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,589|11|7|3856f86e|Find transaction|ESQLR|success|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,593|3|0|aaf8deec|Find latest retry task name|ESQLR|pre|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,601|32|0|4be7a669|Prepare Response Text|RT|success|02f5ea2e|MOCK OSIA Sim Pre-Provisioning |
+2025-04-16 14:08:05,637|47|43|aaf8deec|Find latest retry task name|ESQLR|success|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,659|8|1|aba8effe|Return HTTP response|HHRES|success|33f6d543|MOCK|Filename: 75818caa-caeb-4a4e-a7d9-c14e8e2d26f2 | Product - MM, USSD & Mock > MOCK | PUT '/v1/enrollments/9647510008801/simActivationStatus/PRE-PROVISIONED' - Response: { "code" : "404", "message" : "Unknown record" }
+2025-04-16 14:08:05,660|366|341|b71f012b|Call OSIA Webservice|IHTTP|No Retry|8edb7b60|Invoke WS|B935BD3436F24F1C823417F9EB69B47F|Filename: 98777521-80df-4242-9a60-93b26f128785 | Product - MM, USSD & Mock > MM > REST WS (3rd Party  API) > OSIA > SIM Pre-Provisioning > Call 3rd party and save req and resp > Invoke WS | ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA - 3P Status Code: 404 - Response: { "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulpantwebcare", "map" : { "MSISDN": "9647510008801", "SIM_STATUS": "PRE-PROVISIONED" } } }
+2025-04-16 14:08:05,662|2|0|d376a73e|Pull out Attributes|UA|success|8edb7b60|Invoke WS|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,667|30|1|afba27d2|Fetch has_callback flag|ESQLR|pre|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,678|41|14|afba27d2|Fetch has_callback flag|ESQLR|success|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,707|25|0|faf7dd5a|Strip Big Data|LC|success|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|Filename: 98777521-80df-4242-9a60-93b26f128785 | Product - MM, USSD & Mock > MM > REST WS (3rd Party  API) > OSIA > SIM Pre-Provisioning > Call 3rd party and save req and resp > Invoke WS > Save CRM_EXT_CALL_DATA | ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA: { "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulpantwebcare", "map" : { "MSISDN": "9647510008801", "SIM_STATUS": "PRE-PROVISIONED" } }}
+2025-04-16 14:08:05,712|32|0|dbf5e268|Has_callback?|ROA|unmatched|fb720243|Callback|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,716|31|0|1ac78ec3|Prepare JSON Response|RT|success|c026c1e2|Prepare Response|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,727|19|1|8656e055|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,754|13|0|8b5cef1a|POJO or JSON?|ROA|unmatched|e9087aeb|Handle Response|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,755|0|0|27cedb18|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,756|29|1|27cedb18|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:05,791|16|1|bd4765f2|Response to SIM Pre Provisioning req|PJMS|pre|30ea57ea|SIM Pre-Provisioning|B935BD3436F24F1C823417F9EB69B47F|Filename: 98777521-80df-4242-9a60-93b26f128785 | Product - MM, USSD & Mock > MM > REST WS (3rd Party  API) > OSIA > SIM Pre-Provisioning | ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA - Response sent :  'ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA.RESP' :{ "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_RESP", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "idCompany" : "1", "respCode" : "404", "respDesc": "Unknown record", "createdDateTime" : "Wed Apr 16 14:08:05 ICT 2025", "respStatus" : null, "responseData" : null }, "datum" : null }
+2025-04-16 14:08:05,806|50|36|3e18a92e|Save request  CRM_EXT_CALL_DATA  |PSQL|success|1897b0a0|Save CRM_EXT_CALL_DATA|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,212|1067|0|7b4658e5|Call MM OSIA SIM Pre Provisioning API|PJMS|success|83647b09|Call OSIA SIM Pre Provisioning API|B935BD3436F24F1C823417F9EB69B47F|Filename: af211a03-6c6b-4d98-85d2-508a0aef8c3b | Product - Core Registration Retry Process > SIM Pre Provisioning OSIA API > Call OSIA SIM Pre Provisioning API | ISL-CORE.SIM_PRE_PROVISIONING_RETRY_REQ.TB - Response from : 'ISL-MM.OSIA_SIM_PRE_PROVISIONING_V5_REQ.TA': { "id" : "B935BD3436F24F1C823417F9EB69B47F", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_RESP", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "instanceId" : "11000101", "idCompany" : "1", "respCode" : "404", "respDesc": "Unknown record", "createdDateTime" : "Wed Apr 16 14:08:05 ICT 2025", "respStatus" : null, "responseData" : null }, "datum" : null }
+2025-04-16 14:08:06,219|6|0|b7e5cd5a|Extract response values|EJP|matched|83647b09|Call OSIA SIM Pre Provisioning API|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,316|25|0|e21e9951|Prepare Result Code Mapping Request|RT|success|b8795024|Call Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,339|15|0|f73c2dd4|Extract attributes|EJP|matched|ca220cdb|Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,353|29|0|37bf43c3|Log Request|LC|success|ca220cdb|Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|Filename: af211a03-6c6b-4d98-85d2-508a0aef8c3b | Product - Core Registration Retry Process > SIM Pre Provisioning OSIA API > Call Result Code Mapping > Result Code Mapping | ISL-CORE.SIM_PRE_PROVISIONING_RETRY_REQ.TB: { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "mappingName" : "SIM_PRE_PROVISIONING_RETRY_REQ", "respCode" : "404", "respMsg" : "Unknown record", "autoAdd" : "on", "language" : "EN" }
+2025-04-16 14:08:06,366|12|0|3a2bd2ca|Prepare SQL to fetch ISL Code|UA|success|42fabc1a|Fetch ISL Code|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,371|5|0|55d41247|Fetch ISL Code|ESQLR|pre|42fabc1a|Fetch ISL Code|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,380|14|9|55d41247|Fetch ISL Code|ESQLR|success|42fabc1a|Fetch ISL Code|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,423|12|0|9904ec20|Fetch message|ESQLR|pre|ca220cdb|Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,429|18|5|9904ec20|Fetch message|ESQLR|success|ca220cdb|Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,465|35|0|ce1a0bce|Set Mapping Response|RT|success|ca220cdb|Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,487|22|0|4d4bfa02|Log Response|LC|success|ca220cdb|Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|Filename: af211a03-6c6b-4d98-85d2-508a0aef8c3b | Product - Core Registration Retry Process > SIM Pre Provisioning OSIA API > Call Result Code Mapping > Result Code Mapping | ISL-CORE.SIM_PRE_PROVISIONING_RETRY_REQ.TB: { "trxId" : "B935BD3436F24F1C823417F9EB69B47F", "islCode" : "505", "message" : "Unknown record", "notFoundFlag" : "" }
+2025-04-16 14:08:06,490|11|0|11307870|Extract Response Data|EJP|matched|b8795024|Call Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,515|25|0|f14944c7|Mapping result?|ROA|Failure with retry|b8795024|Call Result Code Mapping|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,591|11|0|21ec1da3|Retry Required?|ROA|Retry required|6da2227e|Handle Failure with retry|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,614|23|0|8c9305e2|Max retry reached?|ROA|unmatched|6da2227e|Handle Failure with retry|B935BD3436F24F1C823417F9EB69B47F|
+2025-04-16 14:08:06,621|7|6|d909cdc0|Set in progress = 0|PSQL|success|6da2227e|Handle Failure with retry|B935BD3436F24F1C823417F9EB69B47F|

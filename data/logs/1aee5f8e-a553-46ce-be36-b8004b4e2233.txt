@@ -1,0 +1,277 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-09-19 19:36:11,109|0|386|67d2492e|Listen for Document Upload Request|CJMS|success|0d47d155|Upload Document|Filename: 1aee5f8e-a553-46ce-be36-b8004b4e2233 | Document Handler > Upload Document | ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA - Request: ReqMsg{id=B285DAC1A85E4A3FBB81330A3CF24202, name=UPLOAD_DOCUMENTS_V5_REQ, dataObject=String%5B50%5D,instanceId=130000,companyId=1,username=mirnaisl,createdDateTime=Fri Sep 19 19:36:11 ICT 2025,locale=EN,map=StringObjectMap%5BSIM_CHANGE_FORM = byte%5B5102%5D, FRONT_ID = byte%5B5102%5D, REFERENCE_ID = 620003, PHOTOGRAPH = byte%5B5102%5D, CONFIRMER_IDFRONTSIDE = , CONFIRMER_FORM = , BACK_ID = , REQ_LETTER = , OTHER2 = , CONFIRMER_IDBACKSIDE = , USE_CASE_NAME = SIM_CHANGE, SAF = byte%5B5102%5D, EXIST_PHOTOGRAPH = byte%5B5102%5D, REFERENCE_ID2 = 620003, EXIST_SAF = byte%5B5102%5D, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0,appScreenId=40001615,appActionId=100006%5D, datum=null}
+2025-09-19 19:36:11,126|9|0|59125f3c|POJO or JSON?|ROA|POJO|0ba4fe45|Inspect Request|
+2025-09-19 19:36:11,130|3|1|533f0e30|ReqMsg to JSON|PTJ|success|0ba4fe45|Inspect Request|
+2025-09-19 19:36:11,132|2|1|a1b5a8b1|Store Request Data in Attributes|EJP|matched|0ba4fe45|Inspect Request|
+2025-09-19 19:36:11,142|10|0|8190a6bf|Set Initial Attribute values|UA|success|0ba4fe45|Inspect Request|
+2025-09-19 19:36:11,151|9|0|9a6a5ec0|Set Initial Status|UA|success|0ba4fe45|Inspect Request|
+2025-09-19 19:36:11,160|6|0|8e2e6b03|Fetch Use Case Validation Parameters|ESQLR|pre|1796af2b|cache and strip document|
+2025-09-19 19:36:11,162|8|2|8e2e6b03|Fetch Use Case Validation Parameters|ESQLR|success|1796af2b|cache and strip document|
+2025-09-19 19:36:11,170|8|0|8716a995|Fetch Document Validation Data|ESQLR|pre|1796af2b|cache and strip document|
+2025-09-19 19:36:11,175|13|5|8716a995|Fetch Document Validation Data|ESQLR|success|1796af2b|cache and strip document|
+2025-09-19 19:36:11,180|5|0|aadcbdc7|set filename|UA|success|1796af2b|cache and strip document|
+2025-09-19 19:36:11,182|2|0|97904c89|Cache Request|PF|success|1796af2b|cache and strip document|
+2025-09-19 19:36:11,185|3|1|24f4a9c1|Remove documents in crmFormData map|EGS|success|1796af2b|cache and strip document|
+2025-09-19 19:36:11,223|10|0|cad7624d|get cached request|FF|success|b6c42a8a|Validate Upload Request|
+2025-09-19 19:36:11,241|0|1|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,242|0|1|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,242|0|1|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,242|0|1|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,242|0|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,242|0|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,243|1|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,243|0|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,243|0|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,243|0|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,243|0|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,243|0|2|88329984|Split into individual flowfiles per document|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,257|15|0|03fe6a21|Empty file (not mandatoy)|ROA|Empty file|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,258|16|0|03fe6a21|Empty file (not mandatoy)|ROA|Empty file|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,258|15|0|03fe6a21|Empty file (not mandatoy)|ROA|Empty file|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,259|16|0|03fe6a21|Empty file (not mandatoy)|ROA|Empty file|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,259|16|0|03fe6a21|Empty file (not mandatoy)|ROA|Empty file|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,260|17|0|03fe6a21|Empty file (not mandatoy)|ROA|Empty file|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,260|19|0|03fe6a21|Empty file (not mandatoy)|ROA|unmatched|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,261|1|0|83e578c0|set target|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,262|20|0|03fe6a21|Empty file (not mandatoy)|ROA|unmatched|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,263|6|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,264|22|0|03fe6a21|Empty file (not mandatoy)|ROA|unmatched|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,265|7|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,268|7|0|f29dde9a|decode image|Base64EncodeContent|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,268|26|0|03fe6a21|Empty file (not mandatoy)|ROA|unmatched|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,271|28|0|03fe6a21|Empty file (not mandatoy)|ROA|unmatched|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,271|28|0|03fe6a21|Empty file (not mandatoy)|ROA|unmatched|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,272|10|0|83e578c0|set target|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,273|9|0|83e578c0|set target|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,273|4|0|83e578c0|set target|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,274|16|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,276|8|0|4fc580e0|IdentifyMimeType|IdentifyMimeType|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,276|5|0|83e578c0|set target|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,277|6|0|83e578c0|set target|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,277|18|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,278|19|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,278|18|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,281|9|0|f29dde9a|decode image|Base64EncodeContent|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,283|7|0|8e0b4b67|check if filetype is allowed|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,286|13|0|f29dde9a|decode image|Base64EncodeContent|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,287|14|0|f29dde9a|decode image|Base64EncodeContent|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,287|6|0|4fc580e0|IdentifyMimeType|IdentifyMimeType|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,288|12|0|f29dde9a|decode image|Base64EncodeContent|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,288|11|0|f29dde9a|decode image|Base64EncodeContent|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,288|1|0|4fc580e0|IdentifyMimeType|IdentifyMimeType|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,289|1|0|4fc580e0|IdentifyMimeType|IdentifyMimeType|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,291|5|0|4fc580e0|IdentifyMimeType|IdentifyMimeType|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,292|8|0|2e5c96dd|set filename|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,294|6|0|4fc580e0|IdentifyMimeType|IdentifyMimeType|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,295|8|0|8e0b4b67|check if filetype is allowed|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,297|5|0|2b31176b|fileType Allowed?|ROA|fileTypeAllowed|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,298|10|0|8e0b4b67|check if filetype is allowed|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,299|2|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,304|9|0|2e5c96dd|set filename|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,304|5|0|2e5c96dd|set filename|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,306|16|0|8e0b4b67|check if filetype is allowed|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,308|17|0|8e0b4b67|check if filetype is allowed|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,309|5|0|2b31176b|fileType Allowed?|ROA|fileTypeAllowed|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,309|15|0|8e0b4b67|check if filetype is allowed|EGS|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,309|5|0|2b31176b|fileType Allowed?|ROA|fileTypeAllowed|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,309|0|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,310|1|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,315|9|0|2e5c96dd|set filename|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,316|8|0|2e5c96dd|set filename|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,316|7|0|2e5c96dd|set filename|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,320|5|0|2b31176b|fileType Allowed?|ROA|fileTypeAllowed|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,321|5|0|2b31176b|fileType Allowed?|ROA|fileTypeAllowed|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,322|6|0|2b31176b|fileType Allowed?|ROA|fileTypeAllowed|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,325|5|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,330|9|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,330|8|0|9459de61|Set success content|RT|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,504|3|4|df844215|Join documents back together|MC|merged|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,505|206|5|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,505|242|5|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,505|196|5|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|241|5|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|176|5|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|196|5|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|175|6|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|180|6|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|232|6|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|229|6|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|228|6|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,506|228|6|df844215|Join documents back together|MC|original|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,514|9|0|82c908d5|Evaluate success/failure|EJP|matched|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,526|12|0|d287e6d0|Trim success/failure attribute for evaluation|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,531|5|0|11fdc11a|All files valid?|ROA|All file types valid|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,539|8|0|ef585973|get cached request|FF|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,547|8|0|7e0fa968|Set mime type back to json|UA|success|8b6c08a7|Get file type and validate |
+2025-09-19 19:36:11,567|11|5|a9821800|Validate Content of Upload Request|EGS|success|b6c42a8a|Validate Upload Request|
+2025-09-19 19:36:11,578|9|0|64e2dbe0|Request valid?|ROA|unmatched|b6c42a8a|Validate Upload Request|
+2025-09-19 19:36:11,587|9|2|3bc8803e|Remove documents in crmFormData map|UR|success|b6c42a8a|Validate Upload Request|
+2025-09-19 19:36:11,599|9|0|43f15cd2|Check if web-api|ROA|unmatched|71acd0cb|Upload Document|
+2025-09-19 19:36:11,603|4|0|14ca8029|Prepare Success Response|RT|success|71acd0cb|Upload Document|
+2025-09-19 19:36:11,609|10|0|3a2e965e|Set responseSent=true|UA|success|71acd0cb|Upload Document|
+2025-09-19 19:36:11,628|6|0|ba82ebd4|Find existing use case trx|ESQLR|pre|e2faea2b|Store Documents|
+2025-09-19 19:36:11,634|12|6|ba82ebd4|Find existing use case trx|ESQLR|No Record Found|e2faea2b|Store Documents|
+2025-09-19 19:36:11,640|3|0|5e7f0823|responseSent=true?|ROA|unmatched|d3f13c83|Convert Response|
+2025-09-19 19:36:11,649|9|0|aaebebbe|POJO or JSON?|ROA|POJO|d3f13c83|Convert Response|
+2025-09-19 19:36:11,650|15|13|edd4c356|Store Use Case Trx|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,652|2|0|6bac111f|RespMsg JSON to POJO|JTP|success|d3f13c83|Convert Response|
+2025-09-19 19:36:11,670|11|2|efbbfabc|Response for Document Upload Request|PJMS|pre|0d47d155|Upload Document|Filename: 81475087609350 | Document Handler > Upload Document | ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA - Response sent :  'ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA.RESP' :RespMsg{id=B285DAC1A85E4A3FBB81330A3CF24202, name=ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA, resultCode=ResultCode{code=200, desc=Success}, dataObject=String%5B59%5D,instanceId=130000,respCode=200,respDesc=Success. Document is being process.,createdDateTime=Fri Sep 19 19:36:11 ICT 2025%5D, datum=null}
+2025-09-19 19:36:11,676|26|15|896e5cc3|Store Use Case Trx History|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,687|11|0|25ecf049|get cached request|FF|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,698|1|1|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,698|0|1|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,698|0|1|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,698|0|1|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,699|1|2|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,699|0|2|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,699|0|2|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,699|0|2|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,699|0|2|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,699|0|2|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,699|0|2|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,700|1|3|5accbff8|Split into individual flowfiles per document|EGS|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,708|10|0|983ae321|Empty file (non mandatory)|ROA|Empty file|e2faea2b|Store Documents|
+2025-09-19 19:36:11,709|11|0|983ae321|Empty file (non mandatory)|ROA|Empty file|e2faea2b|Store Documents|
+2025-09-19 19:36:11,713|4|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,714|5|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,715|16|0|983ae321|Empty file (non mandatory)|ROA|Empty file|e2faea2b|Store Documents|
+2025-09-19 19:36:11,716|17|0|983ae321|Empty file (non mandatory)|ROA|Empty file|e2faea2b|Store Documents|
+2025-09-19 19:36:11,716|17|0|983ae321|Empty file (non mandatory)|ROA|Empty file|e2faea2b|Store Documents|
+2025-09-19 19:36:11,716|16|0|983ae321|Empty file (non mandatory)|ROA|Empty file|e2faea2b|Store Documents|
+2025-09-19 19:36:11,717|19|0|983ae321|Empty file (non mandatory)|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,717|19|0|983ae321|Empty file (non mandatory)|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,718|19|0|983ae321|Empty file (non mandatory)|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,721|22|0|983ae321|Empty file (non mandatory)|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,722|23|0|983ae321|Empty file (non mandatory)|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,722|5|0|2fcc5e2f|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,723|24|0|983ae321|Empty file (non mandatory)|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,724|9|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,725|9|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,725|9|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,725|8|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,727|10|0|2fcc5e2f|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,728|10|0|2fcc5e2f|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,729|7|0|93b0b5f9|Generate Document ID from UUID 32 character |UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,730|1|0|baef2ce8|set target|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,730|3|0|93b0b5f9|Generate Document ID from UUID 32 character |UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,731|3|0|93b0b5f9|Generate Document ID from UUID 32 character |UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,734|4|0|fe4ce88b|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,735|14|0|2fcc5e2f|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,735|13|0|2fcc5e2f|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,735|12|0|2fcc5e2f|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,741|11|0|baef2ce8|set target|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,741|7|0|1729bfee|decode image|Base64EncodeContent|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,742|11|0|baef2ce8|set target|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,742|7|0|93b0b5f9|Generate Document ID from UUID 32 character |UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,743|1|0|baef2ce8|set target|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,744|9|0|93b0b5f9|Generate Document ID from UUID 32 character |UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,745|1|0|baef2ce8|set target|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,745|4|0|fe4ce88b|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,746|4|0|fe4ce88b|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,746|3|0|fe4ce88b|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,747|6|0|3c64bd99|IdentifyMimeType|IdentifyMimeType|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,748|3|0|1729bfee|decode image|Base64EncodeContent|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,749|3|0|1729bfee|decode image|Base64EncodeContent|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,750|4|0|1729bfee|decode image|Base64EncodeContent|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,750|15|0|93b0b5f9|Generate Document ID from UUID 32 character |UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,752|7|0|fe4ce88b|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,753|6|0|9ef10753|set filename and respCode|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,756|6|0|baef2ce8|set target|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,758|9|0|3c64bd99|IdentifyMimeType|IdentifyMimeType|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,760|12|0|3c64bd99|IdentifyMimeType|IdentifyMimeType|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,760|8|0|1729bfee|decode image|Base64EncodeContent|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,761|11|0|3c64bd99|IdentifyMimeType|IdentifyMimeType|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,762|1|0|3c64bd99|IdentifyMimeType|IdentifyMimeType|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,763|7|0|fe4ce88b|Existing Trx?|ROA|unmatched|e2faea2b|Store Documents|
+2025-09-19 19:36:11,764|6|0|9ef10753|set filename and respCode|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,766|4|0|9ef10753|set filename and respCode|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,767|7|0|9ef10753|set filename and respCode|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,770|9|0|9ef10753|set filename and respCode|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,771|8|0|1729bfee|decode image|Base64EncodeContent|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,773|1|0|3c64bd99|IdentifyMimeType|IdentifyMimeType|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,781|8|0|9ef10753|set filename and respCode|UA|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,787|34|23|a8f2b26d|Store Document Trx|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,809|22|15|34aa5031|Store Document Trx History|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,820|11|0|f631d1b9|Store document in File System|PF|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,827|7|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,882|118|93|a8f2b26d|Store Document Trx|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,882|116|94|a8f2b26d|Store Document Trx|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,882|115|94|a8f2b26d|Store Document Trx|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,882|112|94|a8f2b26d|Store Document Trx|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,882|101|94|a8f2b26d|Store Document Trx|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,973|91|82|34aa5031|Store Document Trx History|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,973|91|82|34aa5031|Store Document Trx History|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,973|91|82|34aa5031|Store Document Trx History|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,973|91|82|34aa5031|Store Document Trx History|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,973|91|82|34aa5031|Store Document Trx History|PSQL|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,982|9|0|f631d1b9|Store document in File System|PF|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,983|10|0|f631d1b9|Store document in File System|PF|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,983|10|0|f631d1b9|Store document in File System|PF|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,984|11|0|f631d1b9|Store document in File System|PF|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,985|12|0|f631d1b9|Store document in File System|PF|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,990|8|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,991|8|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,992|8|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,992|8|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:11,993|8|0|50458810|Set success|RT|success|e2faea2b|Store Documents|
+2025-09-19 19:36:12,245|1|1|e200bed0|Join documents back together|MC|merged|d345157f|Store new document|
+2025-09-19 19:36:12,245|408|1|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|526|1|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|246|1|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|526|1|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|246|1|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|246|1|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|246|1|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|246|2|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|515|2|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|515|2|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|515|2|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,246|515|2|e200bed0|Join documents back together|MC|original|d345157f|Store new document|
+2025-09-19 19:36:12,258|13|0|0cab5b3e|Put document status in attribtute|ET|matched|d345157f|Store new document|
+2025-09-19 19:36:12,266|8|0|79c15a6f|update mime type|UA|success|d345157f|Store new document|
+2025-09-19 19:36:12,279|10|0|6444ffd3|Clean up result codes|UA|success|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:12,283|4|0|e50db5dc|All documents success?|ROA|Success|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:12,289|5|0|97791335|3rd party enable|ROA|enable|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:12,292|3|0|be50c2cd|Prepare request|RT|success|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:12,303|0|27|227ce6d9|Listen to CORE Request|CJMS|success|31f8731c|Update Validate Documents Flag|Filename: b7813d2c-ff0f-497e-b353-e12f951cb359 | Document Handler > Update Validate Documents Flag | IDH.UPDATE_VALIDATE_DOC_FLAG.TA - Request: { "id": "B285DAC1A85E4A3FBB81330A3CF24202", "name": "ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA", "resultCode": "SUCCESS", "dataObject": { "trxId": "B285DAC1A85E4A3FBB81330A3CF24202", "instanceId": 130000, "idCompany": null, "createdDateTime": "Fri Sep 19 19:36:12 ICT 2025", "map": { "USE_CASE" : "12", "MSISDN" : "620003", "ID_RECVD_DT" : "20250919193612", "ID_RECVD_FLG" : "Y", "SUB_CODE" : "620003" } } }
+2025-09-19 19:36:12,303|10|2|a4ca73b9|Publish Update doc flag|PJMS|pre|486d50fd|Prepare Response for store new document|Filename: 81475829083387 | Document Handler > Upload Document > Upload Document > Store new document > Prepare Response for store new document | ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA - Request to :  'IDH.UPDATE_VALIDATE_DOC_FLAG.TA' :
+2025-09-19 19:36:12,314|6|0|9317c00a|POJO or JSON ?|ROA|unmatched|b64bb1e5|Inspect Request|
+2025-09-19 19:36:12,319|4|0|32cd8cbd|Store Request fields to Attributes|EJP|matched|b64bb1e5|Inspect Request|
+2025-09-19 19:36:12,328|9|0|198fb149|Valid Request?|ROA|unmatched|b64bb1e5|Inspect Request|
+2025-09-19 19:36:12,352|8|0|97b76d70|mapping operation name|ESQLR|pre|3a824004|Call 3rd party and save req and resp|
+2025-09-19 19:36:12,354|10|1|97b76d70|mapping operation name|ESQLR|success|3a824004|Call 3rd party and save req and resp|
+2025-09-19 19:36:12,364|10|0|a6397374|Prepare Xml to request |RT|success|3a824004|Call 3rd party and save req and resp|
+2025-09-19 19:36:12,369|5|0|4ce84904|Set HTTP Method and URI|UA|success|3a824004|Call 3rd party and save req and resp|
+2025-09-19 19:36:12,371|2|0|44c9b610|Call 3PP|IHTTP|pre|3a824004|Call 3rd party and save req and resp|Filename: b7813d2c-ff0f-497e-b353-e12f951cb359 | Document Handler > Update Validate Documents Flag > Call 3rd party and save req and resp | IDH.UPDATE_VALIDATE_DOC_FLAG.TA -URL: POST 'http://192.168.8.45:8087/mtna-ability/EaiEnvelopeSoapQSService' - Request: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.concierge.com" xmlns:env="http://schema.concierge.com/Envelope" xmlns:ns4="http://schema.concierge.com/isp"> <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <ns3:authentication xmlns:ns3="http://schema.concierge.com"> <ns3:password>mt</ns3:password> <ns3:user>mt</ns3:user> </ns3:authentication> </soapenv:Header> <soapenv:Body xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <ns3:clientRequest xmlns:ns3="http://schema.concierge.com" xmlns:ns6="http://schema.concierge.com/ttws" xmlns:ns5="http://schema.concierge.com/Services" xmlns:ns2="http://schema.concierge.com/Envelope" xmlns:ns4="http://schema.concierge.com/isp"> <ns2:EaiEnvelope> <ns2:ApplicationName>MTNA</ns2:ApplicationName> <ns2:Domain>Domain</ns2:Domain> <ns2:Service>ISPService</ns2:Service> <ns2:ServiceId>3</ns2:ServiceId> <ns2:Language>Eng</ns2:Language> <ns2:UserId>externalapp</ns2:UserId> <ns2:Sender>externalapp</ns2:Sender> <ns2:MessageId>MessageId</ns2:MessageId> <ns2:Payload> <ns4:ISP> <ns4:ISPRequest> <ns4:OperationName>updateValidateDocumentsFlag</ns4:OperationName> <ns4:Request> <EVENT> <REQUEST API_CODE="7630" CLIENT_ID="MTNA" EXTERNAL_APPLICATION="admin" EXTERNAL_REFERENCE=" 20250919193612" EXTERNAL_SYSTEMS_LOG_REFERNCE=" 20250919193612" EXTERNAL_USER="admin" INFO_LEVEL="" OPERATION_NAME="simcDocUpdate" PROFILE_CODE="" SERVICE_ID="620003"/> <REQUESTDETAILS ID_NUMBER="" ID_RECVD_DT="" ID_RECVD_FLG="" ID_TYPE="" ID_VRIFD_DT="20250919" ID_VRIFD_FLG="Y"/> </EVENT> </ns4:Request> </ns4:ISPRequest> </ns4:ISP> </ns2:Payload> </ns2:EaiEnvelope> </ns3:clientRequest> </soapenv:Body> </soapenv:Envelope>
+2025-09-19 19:36:12,375|0|5|44c9b610|Call 3PP|IHTTP|Response|3a824004|Call 3rd party and save req and resp|Filename: b7813d2c-ff0f-497e-b353-e12f951cb359 | Document Handler > Update Validate Documents Flag > Call 3rd party and save req and resp | IDH.UPDATE_VALIDATE_DOC_FLAG.TA - 3P Status Code: 404 - Response: <html><head><title>Apache Tomcat/7.0.41 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /mtna-ability/EaiEnvelopeSoapQSService</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/mtna-ability/EaiEnvelopeSoapQSService</u></p><p><b>description</b> <u>The requested resource is not available.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.41</h3></body></html>
+2025-09-19 19:36:12,376|7|5|44c9b610|Call 3PP|IHTTP|No Retry|3a824004|Call 3rd party and save req and resp|Filename: b7813d2c-ff0f-497e-b353-e12f951cb359 | Document Handler > Update Validate Documents Flag > Call 3rd party and save req and resp | IDH.UPDATE_VALIDATE_DOC_FLAG.TA - 3P Status Code: 404 - Response: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.concierge.com" xmlns:env="http://schema.concierge.com/Envelope" xmlns:ns4="http://schema.concierge.com/isp"> <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <ns3:authentication xmlns:ns3="http://schema.concierge.com"> <ns3:password>mt</ns3:password> <ns3:user>mt</ns3:user> </ns3:authentication> </soapenv:Header> <soapenv:Body xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <ns3:clientRequest xmlns:ns3="http://schema.concierge.com" xmlns:ns6="http://schema.concierge.com/ttws" xmlns:ns5="http://schema.concierge.com/Services" xmlns:ns2="http://schema.concierge.com/Envelope" xmlns:ns4="http://schema.concierge.com/isp"> <ns2:EaiEnvelope> <ns2:ApplicationName>MTNA</ns2:ApplicationName> <ns2:Domain>Domain</ns2:Domain> <ns2:Service>ISPService</ns2:Service> <ns2:ServiceId>3</ns2:ServiceId> <ns2:Language>Eng</ns2:Language> <ns2:UserId>externalapp</ns2:UserId> <ns2:Sender>externalapp</ns2:Sender> <ns2:MessageId>MessageId</ns2:MessageId> <ns2:Payload> <ns4:ISP> <ns4:ISPRequest> <ns4:OperationName>updateValidateDocumentsFlag</ns4:OperationName> <ns4:Request> <EVENT> <REQUEST API_CODE="7630" CLIENT_ID="MTNA" EXTERNAL_APPLICATION="admin" EXTERNAL_REFERENCE=" 20250919193612" EXTERNAL_SYSTEMS_LOG_REFERNCE=" 20250919193612" EXTERNAL_USER="admin" INFO_LEVEL="" OPERATION_NAME="simcDocUpdate" PROFILE_CODE="" SERVICE_ID="620003"/> <REQUESTDETAILS ID_NUMBER="" ID_RECVD_DT="" ID_RECVD_FLG="" ID_TYPE="" ID_VRIFD_DT="20250919" ID_VRIFD_FLG="Y"/> </EVENT> </ns4:Request> </ns4:ISPRequest> </ns4:ISP> </ns2:Payload> </ns2:EaiEnvelope> </ns3:clientRequest> </soapenv:Body> </soapenv:Envelope>
+2025-09-19 19:36:12,381|5|0|af53c9ba|Set respCode and respDesc|UA|success|3a824004|Call 3rd party and save req and resp|
+2025-09-19 19:36:12,382|3|0|96b8f0df|Strip Big Data|LC|success|8d2ded40|Save CRM_EXT_CALL_DATA|Filename: b7813d2c-ff0f-497e-b353-e12f951cb359 | Document Handler > Update Validate Documents Flag > Call 3rd party and save req and resp > Save CRM_EXT_CALL_DATA | IDH.UPDATE_VALIDATE_DOC_FLAG.TA: <html><head><title>Apache Tomcat/7.0.41 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /mtna-ability/EaiEnvelopeSoapQSService</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/mtna-ability/EaiEnvelopeSoapQSService</u></p><p><b>description</b> <u>The requested resource is not available.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.41</h3></body></html>
+2025-09-19 19:36:12,383|1|0|0dde769c|ExtractText|ET|matched|8d2ded40|Save CRM_EXT_CALL_DATA|
+2025-09-19 19:36:12,386|5|0|2b12b192|Check Response Status Code|ROA|404|3a824004|Call 3rd party and save req and resp|
+2025-09-19 19:36:12,398|15|14|371864fa|Save request  CRM_EXT_CALL_DATA  |PSQL|success|8d2ded40|Save CRM_EXT_CALL_DATA|
+2025-09-19 19:36:12,401|1|0|9a3fe660|Update RespCode 505|UA|success|bad98c22|Prepare Response|
+2025-09-19 19:36:12,402|1|0|b84ddf18|Handle Internal Error Resp|RT|success|bad98c22|Prepare Response|
+2025-09-19 19:36:12,413|3|0|27b0d01f|POJO or JSON ?|ROA|unmatched|8d4688e3|Handle Response|
+2025-09-19 19:36:12,422|6|2|4631756e|Send Response to Core|PJMS|pre|31f8731c|Update Validate Documents Flag|Filename: b7813d2c-ff0f-497e-b353-e12f951cb359 | Document Handler > Update Validate Documents Flag | IDH.UPDATE_VALIDATE_DOC_FLAG.TA - Response sent :  'IDH.UPDATE_VALIDATE_DOC_FLAG.TA.RESP' :{ "id" : "B285DAC1A85E4A3FBB81330A3CF24202", "name" : "DOCUMENT_FLAG_RESP", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "B285DAC1A85E4A3FBB81330A3CF24202", "instanceId" : "0", "messageStatus": "Internal Error", "respCode": "505", "respDesc" : "Internal Error" }, "datum" : null }
+2025-09-19 19:36:13,308|1004|0|a4ca73b9|Publish Update doc flag|PJMS|success|486d50fd|Prepare Response for store new document|Filename: 81475829083387 | Document Handler > Upload Document > Upload Document > Store new document > Prepare Response for store new document | ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA - Response from : 'IDH.UPDATE_VALIDATE_DOC_FLAG.TA': 
+2025-09-19 19:36:13,319|10|0|0f6a5ee6|Extract Response Data|EJP|matched|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:13,329|8|0|9f069fe4|Prepare Result Code Mapping Request|RT|success|d1f18f95|Call Result Code Mapping|
+2025-09-19 19:36:13,342|3|0|2cd53d46|Log Request|LC|success|c835c16f|Result Code Mapping|Filename: 81475829083387 | Document Handler > Upload Document > Upload Document > Store new document > Prepare Response for store new document > Call Result Code Mapping > Result Code Mapping | ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA: 
+2025-09-19 19:36:13,347|8|0|1709b8c6|Extract attributes|EJP|matched|c835c16f|Result Code Mapping|
+2025-09-19 19:36:13,352|2|0|f00feaa8|Prepare SQL to fetch ISL Code|UA|success|67bb1005|Fetch ISL Code|
+2025-09-19 19:36:13,356|4|0|c069e864|Fetch ISL Code|ESQLR|pre|67bb1005|Fetch ISL Code|
+2025-09-19 19:36:13,358|6|2|c069e864|Fetch ISL Code|ESQLR|success|67bb1005|Fetch ISL Code|
+2025-09-19 19:36:13,369|7|0|134b982e|Fetch message|ESQLR|pre|c835c16f|Result Code Mapping|
+2025-09-19 19:36:13,372|10|3|134b982e|Fetch message|ESQLR|success|c835c16f|Result Code Mapping|
+2025-09-19 19:36:13,382|10|0|cca6c1af|Set Mapping Response|RT|success|c835c16f|Result Code Mapping|
+2025-09-19 19:36:13,387|5|0|95b9a5d3|Log Response|LC|success|c835c16f|Result Code Mapping|Filename: 81475829083387 | Document Handler > Upload Document > Upload Document > Store new document > Prepare Response for store new document > Call Result Code Mapping > Result Code Mapping | ISL-CORE.UPLOAD_DOCUMENTS_V5_REQ.TA: 
+2025-09-19 19:36:13,390|3|0|18873e57|Extract Response Data|EJP|matched|d1f18f95|Call Result Code Mapping|
+2025-09-19 19:36:13,396|5|0|b3dc6120|Mapping result?|ROA|unmatched|d1f18f95|Call Result Code Mapping|
+2025-09-19 19:36:13,406|3|0|50c56f12|Set condition ref1 or ref2|UA|success|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:13,436|30|26|1433227c|Update DH_DOC_TRX status to fail|PSQL|success|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:13,451|15|10|42062799|Update DH_DOCUMENT status to fail|PSQL|success|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:13,459|8|0|0ece158d|Prepare Fail Response|RT|success|486d50fd|Prepare Response for store new document|
+2025-09-19 19:36:13,484|5|0|32b91558|Response to attribute|ET|matched|91de5558|Audit Trail|
+2025-09-19 19:36:13,494|10|4|1f96db0c|Store Audit Trail|PSQL|success|91de5558|Audit Trail|
+2025-09-19 19:36:13,501|8|0|5e7f0823|responseSent=true?|ROA|responseSent=true|d3f13c83|Convert Response|

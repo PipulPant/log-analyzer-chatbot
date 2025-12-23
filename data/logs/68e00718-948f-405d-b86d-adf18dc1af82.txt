@@ -1,0 +1,16 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-02-05 16:24:37,691|0|195|b43c5ed8|Pull Request|CJMS|success|07a0bf26|Unlock Registrations|Filename: 68e00718-948f-405d-b86d-adf18dc1af82 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Unlock Registrations | ISL-CORE.UNLOCK_SUBSCRIBER_REG_V5_REQ.TA - Request: ReqMsg{id=8DA9B5B142C54DC88F850D6D846EBEDE, name=UNLOCK_SUBSCRIBER_REG_V5_REQ, dataObject=String%5B50%5D,instanceId=11000101,companyId=1,username=pipulwebcare,createdDateTime=Wed Feb 05 16:24:37 ICT 2025,locale=EN,map=String%5B68%5D, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0,appScreenId=40000196,appActionId=100083%5D, datum=null}
+2025-02-05 16:24:37,723|4|0|9583e55b|POJO or JSON?|ROA|POJO|b0b9f66f|Inspect Request|
+2025-02-05 16:24:37,726|3|0|2b5af944|ReqMsg to JSON|PTJ|success|b0b9f66f|Inspect Request|
+2025-02-05 16:24:37,729|2|0|ebe61ddd|Store Request Data in Attributes|EJP|matched|b0b9f66f|Inspect Request|
+2025-02-05 16:24:37,766|25|0|99b89403|Enable unLock?|ROA|matched|07a0bf26|Unlock Registrations|
+2025-02-05 16:24:37,795|13|0|81a681fa|username exist ?|ROA|username exist|f5c8a785|Query and Transform Data|
+2025-02-05 16:24:37,820|25|0|94eaf328|Fetch ISL_USER|ESQLR|pre|f5c8a785|Query and Transform Data|
+2025-02-05 16:24:37,822|27|2|94eaf328|Fetch ISL_USER|ESQLR|success|f5c8a785|Query and Transform Data|
+2025-02-05 16:24:37,846|24|0|16178751|Prepare Delete Query|UA|success|f5c8a785|Query and Transform Data|
+2025-02-05 16:24:37,876|30|7|d97a8d61|UnLock The Trx|PSQL|success|f5c8a785|Query and Transform Data|
+2025-02-05 16:24:37,937|19|0|5cfd7923|Success Response Attributes|UA|success|8bf163a3|Prepare JSON Reponse|
+2025-02-05 16:24:37,946|9|0|c75924f6|Prepare JSON Response|RT|success|8bf163a3|Prepare JSON Reponse|
+2025-02-05 16:24:37,986|15|0|94a7c4e5|POJO or JSON?|ROA|POJO|8273b23f|Convert Response|
+2025-02-05 16:24:38,003|17|3|de02b4a8|RespMsg JSON to POJO|JTP|success|8273b23f|Convert Response|
+2025-02-05 16:24:38,018|6|1|434f2981|Publish Response|PJMS|pre|07a0bf26|Unlock Registrations|Filename: 68e00718-948f-405d-b86d-adf18dc1af82 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Unlock Registrations | ISL-CORE.UNLOCK_SUBSCRIBER_REG_V5_REQ.TA - Response sent :  'ISL-CORE.UNLOCK_SUBSCRIBER_REG_V5_REQ.TA.RESP' :RespMsg{id=8DA9B5B142C54DC88F850D6D846EBEDE, name=CUSTOMER_SEARCH_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=CustomerSearchResp%5BcountCustomer=0,trxId=8DA9B5B142C54DC88F850D6D846EBEDE,instanceId=11000101,respCode=200,respDesc=Success,createdDateTime=Wed Feb 05 16:24:37 ICT 2025%5D, datum=null}

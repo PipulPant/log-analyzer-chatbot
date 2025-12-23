@@ -1,0 +1,13 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|IDENTIFIER|LOG
+2025-04-29 15:41:17,118|0|2|b7131ae2|Jetty Server (HTTPs)|HHREQ|success|4f5c2725|EAI|Filename: c57debc7-99e8-42bc-b762-92d7bee2af2c | MTNU - EAI > EAI | GET '/ISL_EAI/' - Request: 
+2025-04-29 15:41:17,127|8|0|ac876ad9|What compression?|ROA|unmatched|a2957ea5|Check & Decompress Content|
+2025-04-29 15:41:17,139|3|0|1eb29b81|SOAP or REST?|ROA|Ping|4f5c2725|EAI|
+2025-04-29 15:41:17,147|1|0|6bfb583e|Success|UA|success|ed6b1dfc|Prepare final response|
+2025-04-29 15:41:17,148|1|0|200722f9|SOAP Response?|ROA|unmatched|ed6b1dfc|Prepare final response|
+2025-04-29 15:41:17,158|10|0|026ad5ae|Prepare SOAP Response|RT|success|ed6b1dfc|Prepare final response|
+2025-04-29 15:41:17,158|0|0|6302884d|Set MiME as text/xml|UA|success|ed6b1dfc|Prepare final response|
+2025-04-29 15:41:17,167|9|0|7dd66b70|Remove Cache Entry (if any)|DF|failure|ed6b1dfc|Prepare final response|
+2025-04-29 15:41:17,178|0|0|5d70e13f|Which compression?|ROA|gzip|c59648b5|Compress Response|
+2025-04-29 15:41:17,188|9|0|51e055f1|Compress gzip|CompressContent|success|c59648b5|Compress Response|
+2025-04-29 15:41:17,189|1|0|a9bdc2b4|Set compression encoding|UA|success|c59648b5|Compress Response|
+2025-04-29 15:41:17,204|7|0|3d7a107b|Send HTTP Response|HHRES|success|4f5c2725|EAI|Filename: c57debc7-99e8-42bc-b762-92d7bee2af2c | MTNU - EAI > EAI | GET '/ISL_EAI/' - Response: 

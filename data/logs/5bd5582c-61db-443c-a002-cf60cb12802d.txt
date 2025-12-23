@@ -1,0 +1,193 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-03-20 12:41:59,506|1|3|6ee758ab|HandleHttpRequest|HHREQ|success|b120b8b4|External EAI|Filename: 5bd5582c-61db-443c-a002-cf60cb12802d | MTNA - EAI, MM, USSD & Utility > EAI > External EAI | POST '/ISL_EAI/v1/enrollments/143535889231468' - Request: 
+2025-03-20 12:41:59,532|26|0|e00d4682|Fix Http URI|UA|success|b120b8b4|External EAI|
+2025-03-20 12:41:59,553|21|0|7e03080f|Ping Request?|ROA|unmatched|b120b8b4|External EAI|
+2025-03-20 12:41:59,575|13|0|c38659a2|Decode Auth header|UA|success|c90ed526|Extract User & Pass From Req|
+2025-03-20 12:41:59,583|8|0|e67e1620|64Decode User & Pass|UA|success|c90ed526|Extract User & Pass From Req|
+2025-03-20 12:41:59,596|6|0|7740ee51|Fetch ext user record|ESQLR|pre|4737cb1e|Validate User|
+2025-03-20 12:41:59,598|8|2|7740ee51|Fetch ext user record|ESQLR|success|4737cb1e|Validate User|
+2025-03-20 12:41:59,600|1|0|7bb361b5|Valid User?|ROA|Valid User|4737cb1e|Validate User|
+2025-03-20 12:41:59,617|17|0|c6d41111|Check Org?|ROA|unmatched|4737cb1e|Validate User|
+2025-03-20 12:41:59,626|9|2|fd6a5468|Insert record in ISL_EXT_USER_USE|PSQL|success|4737cb1e|Validate User|
+2025-03-20 12:41:59,645|1|0|556c7be9|Which HTTP Method?|ROA|HTTP POST|b120b8b4|External EAI|
+2025-03-20 12:41:59,675|10|0|3af38309|Which API?|ROA|Registration|35a954db|POST APIs|
+2025-03-20 12:41:59,724|15|0|28f4538e|Extract Request Data|EJP|matched|7c24d32d|Inspect Request|
+2025-03-20 12:41:59,726|2|0|542917d0|Extract trxId and enrollmentId, Initialize Value|UA|success|7c24d32d|Inspect Request|
+2025-03-20 12:41:59,736|10|0|4c0b2474|Prepare Audit Trail Attributes|UA|success|7c24d32d|Inspect Request|
+2025-03-20 12:41:59,739|3|0|816945bc|Request Valid?|ROA|matched|7c24d32d|Inspect Request|
+2025-03-20 12:41:59,740|1|0|df1edbc4|Check if enrollmentId exists|ESQLR|pre|7c24d32d|Inspect Request|
+2025-03-20 12:41:59,743|4|3|df1edbc4|Check if enrollmentId exists|ESQLR|No Record Found|7c24d32d|Inspect Request|
+2025-03-20 12:41:59,763|1|0|69370b49|Enrollment User present?|ROA|Enrollment User present|39b29132|Check For Username|
+2025-03-20 12:41:59,767|4|0|6f8ca6c3|Find Isl User|ESQLR|pre|39b29132|Check For Username|
+2025-03-20 12:41:59,769|6|2|6f8ca6c3|Find Isl User|ESQLR|No Record Found|39b29132|Check For Username|
+2025-03-20 12:41:59,772|3|0|2bfbd238|Assign Default User|UA|success|39b29132|Check For Username|
+2025-03-20 12:41:59,788|5|0|e83d7c81|Prepare Global Audit Trail Attributes|UA|success|22eb31c7|Log Audit Trail|
+2025-03-20 12:41:59,804|16|0|38253a7c|Strip Big Data|LC|success|22eb31c7|Log Audit Trail|Filename: 5bd5582c-61db-443c-a002-cf60cb12802d | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > Log Audit Trail | : { "enrollmentType": "RE_REG", "reqType": "updateMoMoProfile", "contextualData": { "enrollmentUser": "huawei-momo", "enrollmentDate": "2025-02-14T12:10:47Z", "mobileWalletProfile": "LOW_MOMO", "msisdn": "100000203", "MSISDN": "100000203", "rejectionReason": "TRANSLATION_REQUIRED" }}
+2025-03-20 12:41:59,808|3|0|3743bf86|ExtractText|ET|matched|22eb31c7|Log Audit Trail|
+2025-03-20 12:41:59,820|12|0|c163fee4|Prepare Description for Audit Trail|UA|success|22eb31c7|Log Audit Trail|
+2025-03-20 12:41:59,825|14|0|ff67856b|Prepare Request|RT|success|940514b9|Call Core Registration|
+2025-03-20 12:41:59,828|8|0|d9d492d0|Initialize SQL Query|UA|success|22eb31c7|Log Audit Trail|
+2025-03-20 12:41:59,853|28|1|36f060cc|Call Core Re-Reg Translation|PJMS|pre|940514b9|Call Core Registration|Filename: 5bd5582c-61db-443c-a002-cf60cb12802d | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > POST APIs > APIs group > Registration > Call Core Registration |  - Request to :  'ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA' :{ "id" : "603AF650E33C48DBB8AFF4C16C85648F", "name" : "STORE_REG_REQ", "dataObject" : { "instanceId" : "800002", "userName" : "lillycare", "trxTypeId" : "6", "map" : { "MSISDN" : "100000203", "REQUEST_TYPE" : "updateMoMoProfile", "EXT_TRX_ID" : "", "ENROLLMENT_ID" : "143535889231468", "SYS_CREATED_DATE_TIME" : "2025-02-14T12:10:47Z", "SYS_USERNAME" : "lillycare", "REJECTED_REASON" : "TRANSLATION_REQUIRED", "MOBILE_WALLET_PROFILE" : "LOW_MOMO" }, "formVersion" : { "formId" : "6" } }, "datum" : null }
+2025-03-20 12:41:59,853|0|362|7055d9a0|Pull Registration Request|CJMS|success|29bcd423|Re-Registration Rejected|Filename: 8c9df539-2239-44e8-bd9c-bb6e29a7b776 | MTNA - Core Registrations & Verifications  > Registrations > Re-Registration Rejected | ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA - Request: { "id" : "603AF650E33C48DBB8AFF4C16C85648F", "name" : "STORE_REG_REQ", "dataObject" : { "instanceId" : "800002", "userName" : "lillycare", "trxTypeId" : "6", "map" : { "MSISDN" : "100000203", "REQUEST_TYPE" : "updateMoMoProfile", "EXT_TRX_ID" : "", "ENROLLMENT_ID" : "143535889231468", "SYS_CREATED_DATE_TIME" : "2025-02-14T12:10:47Z", "SYS_USERNAME" : "lillycare", "REJECTED_REASON" : "TRANSLATION_REQUIRED", "MOBILE_WALLET_PROFILE" : "LOW_MOMO" }, "formVersion" : { "formId" : "6" } }, "datum" : null }
+2025-03-20 12:41:59,872|44|31|f54534fb|Log Request|PSQL|success|22eb31c7|Log Audit Trail|
+2025-03-20 12:41:59,876|7|0|b43b9758|POJO or JSON?|ROA|unmatched|a0aae1b5|Inspect Request|
+2025-03-20 12:41:59,890|14|0|b40674f4|Set configuration and initial values|UA|success|a0aae1b5|Inspect Request|
+2025-03-20 12:41:59,914|6|0|fd8d3762|Store Request Data in Attributes|EJP|matched|cc635d26|Process Attributes|
+2025-03-20 12:41:59,925|11|0|e4af6bc3|Set IMEI and trxEventTypeId|UA|success|cc635d26|Process Attributes|
+2025-03-20 12:41:59,969|2|0|cb729e26|Check MSISDN if already had rereg type|ESQLR|pre|d334134f|Validate Request|
+2025-03-20 12:41:59,980|13|11|cb729e26|Check MSISDN if already had rereg type|ESQLR|No Record Found|d334134f|Validate Request|
+2025-03-20 12:41:59,985|5|0|f48e3981|Check registered MSISDN|ESQLR|pre|d334134f|Validate Request|
+2025-03-20 12:41:59,998|18|12|f48e3981|Check registered MSISDN|ESQLR|success|d334134f|Validate Request|
+2025-03-20 12:42:00,016|18|0|6e1ff780|Latest trx is not Rejected Re-reg?|ROA|matched|d334134f|Validate Request|
+2025-03-20 12:42:00,026|10|0|a44f2a1e|Check MSISDN Activation Status|ESQLR|pre|d334134f|Validate Request|
+2025-03-20 12:42:00,032|16|6|a44f2a1e|Check MSISDN Activation Status|ESQLR|success|d334134f|Validate Request|
+2025-03-20 12:42:00,038|5|0|4a056f1e|MSISDN is activated?|ROA|MSISDN is activated|d334134f|Validate Request|
+2025-03-20 12:42:00,054|16|0|6f2dbb0b|Fetch Customer Data|ESQLR|pre|d334134f|Validate Request|
+2025-03-20 12:42:00,068|30|14|6f2dbb0b|Fetch Customer Data|ESQLR|success|d334134f|Validate Request|
+2025-03-20 12:42:00,071|3|0|fe56c0e3|Huawei or ECW ?|ROA|is Huawei enable|d334134f|Validate Request|
+2025-03-20 12:42:00,078|7|0|6221248e|Mobile Wallet profile = Registered|ROA|matched|d334134f|Validate Request|
+2025-03-20 12:42:00,109|6|0|d22ae574|Huawei or ECW ?|ROA|is Huawei enable|f1f966c9|Check Mobile Wallet and Fetch subscriber Info, Prepare CrmFormData|
+2025-03-20 12:42:00,130|7|0|d4899f7e|Check Mobile Wallet Account Enabled?|ROA|unmatched|846ebe44|Call Huawei Query Customer Info API|
+2025-03-20 12:42:00,163|5|0|bdea5f99|Put Trx attribute to Attribute|UA|success|11bfe351|Fetch Subscriber Info|
+2025-03-20 12:42:00,175|7|0|5cf1a825|Find CRM_CUSTOMER_DATA columns|ESQLR|pre|28010b31|Fetch Registration Data from ISL DB|
+2025-03-20 12:42:00,276|108|101|5cf1a825|Find CRM_CUSTOMER_DATA columns|ESQLR|success|28010b31|Fetch Registration Data from ISL DB|
+2025-03-20 12:42:00,294|17|0|5ca9e3a2|Load CRM_CUSTOMER_DATA|ESQLR|pre|28010b31|Fetch Registration Data from ISL DB|
+2025-03-20 12:42:00,307|30|12|5ca9e3a2|Load CRM_CUSTOMER_DATA|ESQLR|success|28010b31|Fetch Registration Data from ISL DB|
+2025-03-20 12:42:00,344|13|0|edfcb2d0|Fetch data from CBS enabled?|ROA|unmatched|41eb78e9|Fetch Registration Data from 3PP|
+2025-03-20 12:42:00,374|2|0|8aff8272|Retrieve Images from DB?|ROA|Retrieve images from DB|73a5c8f3|Fetch Document Data from ISL DB|
+2025-03-20 12:42:00,380|6|0|8faa5ad6|Load CRM_CUSTOMER_BINARY_DATA columns|ESQLR|pre|73a5c8f3|Fetch Document Data from ISL DB|
+2025-03-20 12:42:00,387|13|6|8faa5ad6|Load CRM_CUSTOMER_BINARY_DATA columns|ESQLR|success|73a5c8f3|Fetch Document Data from ISL DB|
+2025-03-20 12:42:00,397|10|0|d4a059ec|Load CRM_CUSTOMER_BINARY_DATA|ESQLR|pre|73a5c8f3|Fetch Document Data from ISL DB|
+2025-03-20 12:42:00,729|223|332|d4a059ec|Load CRM_CUSTOMER_BINARY_DATA|ESQLR|success|73a5c8f3|Fetch Document Data from ISL DB|
+2025-03-20 12:42:00,761|6|0|b47a8a1e|Fetch value for SYS_SID|ESQLR|pre|f7ec6d50|Fetch User Info and Customer Data Id|
+2025-03-20 12:42:00,764|9|3|b47a8a1e|Fetch value for SYS_SID|ESQLR|success|f7ec6d50|Fetch User Info and Customer Data Id|
+2025-03-20 12:42:00,769|5|0|15072bac|Find userId|ESQLR|pre|f7ec6d50|Fetch User Info and Customer Data Id|
+2025-03-20 12:42:00,772|8|3|15072bac|Find userId|ESQLR|success|f7ec6d50|Fetch User Info and Customer Data Id|
+2025-03-20 12:42:00,788|16|0|dd59c3fe|Find distributorId|ESQLR|pre|f7ec6d50|Fetch User Info and Customer Data Id|
+2025-03-20 12:42:00,791|19|3|dd59c3fe|Find distributorId|ESQLR|success|f7ec6d50|Fetch User Info and Customer Data Id|
+2025-03-20 12:42:00,830|26|24|a29b13cd|Prepare crmFormData, populate default MoMo Fields and check for Rejected Fields|EGS|success|f1f966c9|Check Mobile Wallet and Fetch subscriber Info, Prepare CrmFormData|
+2025-03-20 12:42:00,870|8|0|39102d63|Store Images in DB?|ROA|Store Images in DB|6768f6b8|Cache & Strip Images|
+2025-03-20 12:42:00,886|16|0|1947005c|Set filename|UA|success|6768f6b8|Cache & Strip Images|
+2025-03-20 12:42:00,896|10|2|3f7ce7bd|Cache crmFormData with Images|PF|success|6768f6b8|Cache & Strip Images|
+2025-03-20 12:42:00,944|48|33|5e71fd21|Remove images in crmFormData map|UR|success|6768f6b8|Cache & Strip Images|
+2025-03-20 12:42:00,961|13|4|83941050|Call Store Registration|PJMS|pre|ceb9855e|Call Store Registration|Filename: 8f8beff8-2777-4aff-8c18-d0585f1c1dc8 | MTNA - Core Registrations & Verifications  > Registrations > Re-Registration Rejected > Call Store Registration | ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA - Request to :  'ISL-CORE.STORE_REG_REQ.TA' :{"dataObject":{"trxTypeId":6,"documentPending":false,"sysId":1023478,"trxId":"603AF650E33C48DBB8AFF4C16C85648F","wrongMsisdn":false,"state":{"value":5,"displayName":"PENDING - MPOS"},"map":{"KIN_FATHERNAME":"name","CONFIRMER_GRANDFATHERNAME":"rtthrt","DISTRICT_ID":"Badakhshan_center","FIRSTNAME":"trtyrjytr","MOMO_BIRTHPLACE":"Balkh","MOMO_HOUSE_LOCATION":"loc","MOMO_WORKSTATUS":"Employed","MOMO_OFFICE_PHONE_NO":"123","CONFIRMER_FIRSTNAME":"gergv","MOBILE_WALLET_PROFILE":"LOW_MOMO","LASTNAME":"trshtdytgrh","CONFIRMER_GENDER":"M","SERVICE_SUBSCRIPTION":"MOBILE_WALLET","NIC_PROVINCE":"Badakhshan","PURPOSE_OF_MOMO":"momo","MOMO_FIRSTNAME":"trtyrjytr","FATHERNAME":"fjtdyj","REQUEST_TYPE":"updateMoMoProfile","CREATED_BY":"12093446123706945","IDTYPE":"1","MOMO_EMPLOYER_NAME":"name","CONFIRMER_IDFRONTSIDE":"String%5B144491%5D","CONFIRMER_LASTNAME":"grgtgrt","MOMO_TITLE":"mr","MOMO_RELATIVE_PHONE_NO":"123","TRACKID":"8f8beff8-2777-4aff-8c18-d0585f1c1dc8","SYS_REGISTRATION_TYPE_ID":"1","KIN_RESIDENT_ADDRESS":"addr","CURRENT_DISTRICT_NUMBER":"thrydju","CURRENT_DISTRICT_ID":"Badakhshan_center","MOMO_JOB_POSITIN":"pos","MOMO_JOB_ADDRESS":"addr","CONFIRMER_IDBACKSIDE":"String%5B144491%5D","SYS_CREATED_DATE_TIME":"2025-03-13 17:03:54.904","SYS_USERNAME":"mirnawc","PREFERREDLANGUAGE":"EN","CURRENT_PROVINCE_ID":"Badakhshan","MOMO_ALT_PHONE_O":"123","SYS_FORM_ID":"4","CURRENT_STREET":"tyjdfuiukg","DISTRICT_NUMBER":"thrydju","CHECK_MAX_CONFIRMER_ENABLED":"YES","SYS_UPDATED_DATE_TIME":"2025-03-13 17:03:54.904","NATIONALITY":"AFG","KIN_FIRSTNAME":"name","ENROLLMENT_ID":"143535889231468","MSISDN":"100000203","CONFIRMER_IDTYPE":"2","NIC_REGISTRATION_NUMBER":"444-777-888","MONTHLY_INCOME":"0","MOMO_MIDDLENAME":"Middle name","MOMO_EMAIL":"test","MOMO_FATHERNAME":"fjtdyj","MOMO_MARITALSTATUS":"Married","EXT_ISL_TRX_ICCID":"1000002030000010001","BIRTHDATE":"Thu Jan 01 00:00:00 1970","EXT_ISL_TRX_MSISDN":"100000203","CONFIRMER_CONTACT_NO":"0025874554","CHECK_MAX_DONE":"YES","KIN_RELATION_TYPE":"f","GENDER":"M","PROVINCE_ID":"Badakhshan","DISTRIBUTOR_ID":"10001","GRANDFATHERNAME":"yutyh","SYS_SID":"1023478","CONFIRMER_IDNUMBER":"444-888-666","ICCID":"1000002030000010001","SAME_AS_PERM_ADDRESS":"true","CONFIRMER_FORM":"String%5B144491%5D","CONFIRMER_FATHERNAME":"rghrt","DISPLAY_CONFIRMER":"YES","REJECTED_REASON":"TRANSLATION_REQUIRED","STREET":"tyjdfuiukg","CONFIRMER_BIRTHDATE":"Thu Jan 01 00:00:00 1970","KIN_LASTNAME":"name","IDNUMBER":"555-555-555","MOMO_GRANDFATHERNAME":"yutyh","SOURCE_OF_INCOME":"inc","MOMO_CHANGE_TO_SELECT":"YES","CHECK_MAX_CONFIRMER_DONE":"YES","MOMO_LASTNAME":"trshtdytgrh","CITY":"Badakhshan_center(Faiz_Abad)","CONFIRMER_TYPE":"idtype","CHECK_MOMO_WALLET_DONE":"NO","EXT_TRX_ID":"","CURRENT_CITY":"Badakhshan_center(Faiz_Abad)","BILLINGTYPE":"prepaid","SUBSCRIPTIONTYPE":"Afghan"},"trxEventTypeId":1029,"enableWhiteList":true,"succeeded":false,"retries":0,"username":"mirnawc","trxStatusId":100,"instanceId":800002,"formId":6,"localId":0,"rejected":false,"smsCount":0,"preferredLanguage":"EN","checkOccupied":false,"iccid":"1000002030000010001","aborted":false,"msisdn":"100000203","duplicate":false,"formVersion":{"formId":6,"fullVersion":"null.null.null"}},"id":"603AF650E33C48DBB8AFF4C16C85648F","name":"STORE_REGISTRATION_REQ"}
+2025-03-20 12:42:00,972|1|706|93e07560|Pull Store Registration Request|CJMS|success|9dbdfb13|Store Registration|Filename: 037c859e-a05d-44cf-8e1f-587d266946b7 | MTNA - Core Registrations & Verifications  > Registrations > Store Registration | ISL-CORE.STORE_REG_REQ.TA - Request: {"dataObject":{"trxTypeId":6,"documentPending":false,"sysId":1023478,"trxId":"603AF650E33C48DBB8AFF4C16C85648F","wrongMsisdn":false,"state":{"value":5,"displayName":"PENDING - MPOS"},"map":{"KIN_FATHERNAME":"name","CONFIRMER_GRANDFATHERNAME":"rtthrt","DISTRICT_ID":"Badakhshan_center","FIRSTNAME":"trtyrjytr","MOMO_BIRTHPLACE":"Balkh","MOMO_HOUSE_LOCATION":"loc","MOMO_WORKSTATUS":"Employed","MOMO_OFFICE_PHONE_NO":"123","CONFIRMER_FIRSTNAME":"gergv","MOBILE_WALLET_PROFILE":"LOW_MOMO","LASTNAME":"trshtdytgrh","CONFIRMER_GENDER":"M","SERVICE_SUBSCRIPTION":"MOBILE_WALLET","NIC_PROVINCE":"Badakhshan","PURPOSE_OF_MOMO":"momo","MOMO_FIRSTNAME":"trtyrjytr","FATHERNAME":"fjtdyj","REQUEST_TYPE":"updateMoMoProfile","CREATED_BY":"12093446123706945","IDTYPE":"1","MOMO_EMPLOYER_NAME":"name","CONFIRMER_IDFRONTSIDE":"String%5B144491%5D","CONFIRMER_LASTNAME":"grgtgrt","MOMO_TITLE":"mr","MOMO_RELATIVE_PHONE_NO":"123","TRACKID":"8f8beff8-2777-4aff-8c18-d0585f1c1dc8","SYS_REGISTRATION_TYPE_ID":"1","KIN_RESIDENT_ADDRESS":"addr","CURRENT_DISTRICT_NUMBER":"thrydju","CURRENT_DISTRICT_ID":"Badakhshan_center","MOMO_JOB_POSITIN":"pos","MOMO_JOB_ADDRESS":"addr","CONFIRMER_IDBACKSIDE":"String%5B144491%5D","SYS_CREATED_DATE_TIME":"2025-03-13 17:03:54.904","SYS_USERNAME":"mirnawc","PREFERREDLANGUAGE":"EN","CURRENT_PROVINCE_ID":"Badakhshan","MOMO_ALT_PHONE_O":"123","SYS_FORM_ID":"4","CURRENT_STREET":"tyjdfuiukg","DISTRICT_NUMBER":"thrydju","CHECK_MAX_CONFIRMER_ENABLED":"YES","SYS_UPDATED_DATE_TIME":"2025-03-13 17:03:54.904","NATIONALITY":"AFG","KIN_FIRSTNAME":"name","ENROLLMENT_ID":"143535889231468","MSISDN":"100000203","CONFIRMER_IDTYPE":"2","NIC_REGISTRATION_NUMBER":"444-777-888","MONTHLY_INCOME":"0","MOMO_MIDDLENAME":"Middle name","MOMO_EMAIL":"test","MOMO_FATHERNAME":"fjtdyj","MOMO_MARITALSTATUS":"Married","EXT_ISL_TRX_ICCID":"1000002030000010001","BIRTHDATE":"Thu Jan 01 00:00:00 1970","EXT_ISL_TRX_MSISDN":"100000203","CONFIRMER_CONTACT_NO":"0025874554","CHECK_MAX_DONE":"YES","KIN_RELATION_TYPE":"f","GENDER":"M","PROVINCE_ID":"Badakhshan","DISTRIBUTOR_ID":"10001","GRANDFATHERNAME":"yutyh","SYS_SID":"1023478","CONFIRMER_IDNUMBER":"444-888-666","ICCID":"1000002030000010001","SAME_AS_PERM_ADDRESS":"true","CONFIRMER_FORM":"String%5B144491%5D","CONFIRMER_FATHERNAME":"rghrt","DISPLAY_CONFIRMER":"YES","REJECTED_REASON":"TRANSLATION_REQUIRED","STREET":"tyjdfuiukg","CONFIRMER_BIRTHDATE":"Thu Jan 01 00:00:00 1970","KIN_LASTNAME":"name","IDNUMBER":"555-555-555","MOMO_GRANDFATHERNAME":"yutyh","SOURCE_OF_INCOME":"inc","MOMO_CHANGE_TO_SELECT":"YES","CHECK_MAX_CONFIRMER_DONE":"YES","MOMO_LASTNAME":"trshtdytgrh","CITY":"Badakhshan_center(Faiz_Abad)","CONFIRMER_TYPE":"idtype","CHECK_MOMO_WALLET_DONE":"NO","EXT_TRX_ID":"","CURRENT_CITY":"Badakhshan_center(Faiz_Abad)","BILLINGTYPE":"prepaid","SUBSCRIPTIONTYPE":"Afghan"},"trxEventTypeId":1029,"enableWhiteList":true,"succeeded":false,"retries":0,"username":"mirnawc","trxStatusId":100,"instanceId":800002,"formId":6,"localId":0,"rejected":false,"smsCount":0,"preferredLanguage":"EN","checkOccupied":false,"iccid":"1000002030000010001","aborted":false,"msisdn":"100000203","duplicate":false,"formVersion":{"formId":6,"fullVersion":"null.null.null"}},"id":"603AF650E33C48DBB8AFF4C16C85648F","name":"STORE_REGISTRATION_REQ"}
+2025-03-20 12:42:01,005|3|0|370a5917|POJO or JSON?|ROA|unmatched|bf38d709|Inspect Request|
+2025-03-20 12:42:01,006|1|0|94430055|Set configuration and initial values|UA|success|bf38d709|Inspect Request|
+2025-03-20 12:42:01,048|36|15|3d0045ad|Store Request Data in Attributes|EJP|matched|c6bce7a7|Process Attributes|
+2025-03-20 12:42:01,065|16|0|5d48662c|Set date format depending on instanceId|UA|success|c6bce7a7|Process Attributes|
+2025-03-20 12:42:01,098|7|0|28ac8c03|Set TrxEventId|UA|success|9dbdfb13|Store Registration|
+2025-03-20 12:42:01,132|7|0|eb276db9|Store Images in DB?|ROA|Store Images in DB|cf198600|Handle Images|
+2025-03-20 12:42:01,140|8|0|5be075a4|Fix File name for bulk upload|UA|success|cf198600|Handle Images|
+2025-03-20 12:42:01,143|19|3|cfd804cd|Convert Arabic to English|EGS|success|03ee34c1|Store CRM_CUSTOMER_DATA|
+2025-03-20 12:42:01,146|6|2|f18edd93|Fetch CrmFormData from Cache|FF|success|cf198600|Handle Images|
+2025-03-20 12:42:01,157|14|9|209a5218|Check If Mobile Wallet Subscription Selected|ROA|Mobile Wallet Service Selected|03ee34c1|Store CRM_CUSTOMER_DATA|
+2025-03-20 12:42:01,165|7|0|613e64b5|Set Mobile Wallet Profile|UA|success|03ee34c1|Store CRM_CUSTOMER_DATA|
+2025-03-20 12:42:01,172|11|0|3103cbe0|Store Images in DB?|ROA|Store Images in DB|e7d22556|Store Images|
+2025-03-20 12:42:01,223|38|29|d285cccb|Prepare all images from map|JTJSON|success|2857780a|Store CRM_CUSTOMER_BINARY_DATA|
+2025-03-20 12:42:01,230|7|1|8c96ec68|Has Images?|ROC|unmatched|2857780a|Store CRM_CUSTOMER_BINARY_DATA|
+2025-03-20 12:42:01,282|52|36|078a43a5|Add SYS_CUSTOMER_DATA_ID|UR|success|2857780a|Store CRM_CUSTOMER_BINARY_DATA|
+2025-03-20 12:42:01,303|0|6|6d2e6c28|Prepare SQL for CRM_CUSTOMER_BINARY_DATA|CJSONTSQL|sql|2857780a|Store CRM_CUSTOMER_BINARY_DATA|
+2025-03-20 12:42:01,303|21|6|6d2e6c28|Prepare SQL for CRM_CUSTOMER_BINARY_DATA|CJSONTSQL|original|2857780a|Store CRM_CUSTOMER_BINARY_DATA|
+2025-03-20 12:42:01,330|27|0|93aaf643|Set 'sql.fragment' for PutSQL|UA|success|2857780a|Store CRM_CUSTOMER_BINARY_DATA|
+2025-03-20 12:42:01,467|6|0|99efc3b4|Set fragment attributes|UA|success|80179c15|Commit Registration|
+2025-03-20 12:42:01,603|438|419|14e82bf8|Prepare SQL INSERT CRM_CUSTOMER_DATA|RT|success|03ee34c1|Store CRM_CUSTOMER_DATA|
+2025-03-20 12:42:01,623|1|4|241f2e19|Prepare CRM_CUSTOMER_DATA SQL|CJSONTSQL|sql|03ee34c1|Store CRM_CUSTOMER_DATA|
+2025-03-20 12:42:01,623|20|5|241f2e19|Prepare CRM_CUSTOMER_DATA SQL|CJSONTSQL|original|03ee34c1|Store CRM_CUSTOMER_DATA|
+2025-03-20 12:42:01,631|8|0|289728d3|Set 'sql.fragment' for PutSQL|UA|success|03ee34c1|Store CRM_CUSTOMER_DATA|
+2025-03-20 12:42:01,700|66|56|796e2952|Prepare JSON for ISL_TRX|RT|success|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,715|0|0|0f6e2434|ISL_TRX JSON to SQL|CJSONTSQL|sql|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,715|15|1|0f6e2434|ISL_TRX JSON to SQL|CJSONTSQL|original|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,723|8|0|f11e5a78|Form Serial Number required?|ROA|Form Serial Number Required|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,733|18|0|edf3c3ee|Set 'sql.fragment' for PutSQL|UA|success|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,736|9|0|99efc3b4|Set fragment attributes|UA|success|80179c15|Commit Registration|
+2025-03-20 12:42:01,737|13|0|4470b1ba|Generate Form Serial Number|ESQLR|pre|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,740|16|2|4470b1ba|Generate Form Serial Number|ESQLR|success|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,805|12|0|99efc3b4|Set fragment attributes|UA|success|80179c15|Commit Registration|
+2025-03-20 12:42:01,862|122|79|151d6f08|Prepare JSON for ISL_TRX_EXTRA_ATTR|RT|success|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,879|0|0|c28a6e71|ISL_TRX_EXTRA_ATTR JSON to SQL|CJSONTSQL|sql|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,879|16|1|c28a6e71|ISL_TRX_EXTRA_ATTR JSON to SQL|CJSONTSQL|original|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,884|5|0|377cec56|Set 'sql.fragment' for PutSQL|UA|success|68144070|Create TRX and TRX EXTRAS|
+2025-03-20 12:42:01,911|7|0|bf8f4552|Prepare JSON for ISL_TRX_EVENT|RT|success|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,923|0|0|af1f7208|ISL_TRX_EVENT JSON to SQL|CJSONTSQL|sql|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,923|12|0|af1f7208|ISL_TRX_EVENT JSON to SQL|CJSONTSQL|original|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,933|10|2|62db0eb2|Set 'sql.fragment' for PutSQL|UA|success|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,941|18|0|daad150e|Prepare JSON for ISL_TRX_EVENT_DETAIL|RT|success|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,951|11|0|99efc3b4|Set fragment attributes|UA|success|80179c15|Commit Registration|
+2025-03-20 12:42:01,960|0|1|b203bcf8|ISL_TRX_EVENT_DETAIL JSON to SQL|CJSONTSQL|sql|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,961|20|2|b203bcf8|ISL_TRX_EVENT_DETAIL JSON to SQL|CJSONTSQL|original|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,978|17|0|4901d0d1|Set 'sql.fragment' for PutSQL|UA|success|c3c2b8ab|Create TRX Event and Detail|
+2025-03-20 12:42:01,980|12|0|99efc3b4|Set fragment attributes|UA|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,009|11|0|99efc3b4|Set fragment attributes|UA|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,366|371|355|53c84e0c|Commit Transaction|PSQL|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,366|371|355|53c84e0c|Commit Transaction|PSQL|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,366|371|355|53c84e0c|Commit Transaction|PSQL|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,366|371|355|53c84e0c|Commit Transaction|PSQL|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,366|371|355|53c84e0c|Commit Transaction|PSQL|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,366|357|355|53c84e0c|Commit Transaction|PSQL|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,384|18|0|f8b6db46|Handle Success Output|EGS|success|80179c15|Commit Registration|
+2025-03-20 12:42:02,408|6|0|bbbbdcfb|Generate Trx Event Id|UA|success|83c74a04|Save Trx History Details|
+2025-03-20 12:42:02,410|2|0|5668c54c|Save Trx Histroy Enabled?|ROA|Save trx history enabled|83c74a04|Save Trx History Details|
+2025-03-20 12:42:02,435|9|0|d4e803aa|Retreive ISL_TRX_HISTORY columns|ESQLR|pre|a1cdd1a4|Copy TrxData in ISL_TRX_HISTORY|
+2025-03-20 12:42:02,440|14|5|d4e803aa|Retreive ISL_TRX_HISTORY columns|ESQLR|success|a1cdd1a4|Copy TrxData in ISL_TRX_HISTORY|
+2025-03-20 12:42:02,469|29|22|f9dd927c|Copy Trx data to ISL_TRX_HISTORY|PSQL|success|a1cdd1a4|Copy TrxData in ISL_TRX_HISTORY|
+2025-03-20 12:42:02,498|1|0|a0bb3c85|Trx Images Updated?|ROA|Images Updated|f20320cb|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-03-20 12:42:02,502|3|0|dd69f19d|Retreive CRM_CUSTOMER_BINARY_DATA_HISTORY columns|ESQLR|pre|f20320cb|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-03-20 12:42:02,506|7|4|dd69f19d|Retreive CRM_CUSTOMER_BINARY_DATA_HISTORY columns|ESQLR|success|f20320cb|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-03-20 12:42:02,704|198|186|ed220618|Copy Trx data to CRM_CUSTOMER_BINARY_DATA_HISTORY|PSQL|success|f20320cb|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-03-20 12:42:02,731|5|0|76963a6b|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|pre|2416bfd5|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-03-20 12:42:02,771|45|40|76963a6b|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|success|2416bfd5|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-03-20 12:42:02,827|55|51|35a22e8c|Copy Trx data to CRM_CUSTOMER_DATA_HISTORY|PSQL|success|2416bfd5|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-03-20 12:42:02,876|14|0|cad9313b|Success Response|UA|success|cee6e080|Prepare JSON Response|
+2025-03-20 12:42:02,888|12|0|f799702a|Prepare JSON Response|RT|success|cee6e080|Prepare JSON Response|
+2025-03-20 12:42:02,920|13|0|bcb8e4be|POJO or JSON?|ROA|unmatched|1d3139ea|Convert Response|
+2025-03-20 12:42:02,929|7|0|e5a0b38c|Publish Store Registration Response|PJMS|pre|9dbdfb13|Store Registration|Filename: 8f8beff8-2777-4aff-8c18-d0585f1c1dc8 | MTNA - Core Registrations & Verifications  > Registrations > Store Registration | ISL-CORE.STORE_REG_REQ.TA - Response sent :  'ISL-CORE.STORE_REG_REQ.TA.RESP' :{ "id": "603AF650E33C48DBB8AFF4C16C85648F", "name": "SUBSCRIBER_REG_RESP", "resultCode": "SUCCESS", "dataObject": { "trxId": "603AF650E33C48DBB8AFF4C16C85648F", "instanceId": 800002, "idCompany": null, "respCode": 200, "respDesc": "Success", "customMessage": null, "arrayOptions": null, "data": null, "createdDateTime": "Thu Mar 20 12:42:02 ICT 2025", "trxStatusId": 200, "trxTypeId": 6, "customerId": null, "returnedTrxTypeId": null, "returnedTrxId": "", "msisdn": "100000203", "primaryTrxId": null }, "allData": null }
+2025-03-20 12:42:03,001|2026|1|83941050|Call Store Registration|PJMS|success|ceb9855e|Call Store Registration|Filename: 8f8beff8-2777-4aff-8c18-d0585f1c1dc8 | MTNA - Core Registrations & Verifications  > Registrations > Re-Registration Rejected > Call Store Registration | ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA - Response from : 'ISL-CORE.STORE_REG_REQ.TA': { "id": "603AF650E33C48DBB8AFF4C16C85648F", "name": "SUBSCRIBER_REG_RESP", "resultCode": "SUCCESS", "dataObject": { "trxId": "603AF650E33C48DBB8AFF4C16C85648F", "instanceId": 800002, "idCompany": null, "respCode": 200, "respDesc": "Success", "customMessage": null, "arrayOptions": null, "data": null, "createdDateTime": "Thu Mar 20 12:42:02 ICT 2025", "trxStatusId": 200, "trxTypeId": 6, "customerId": null, "returnedTrxTypeId": null, "returnedTrxId": "", "msisdn": "100000203", "primaryTrxId": null }, "allData": null }
+2025-03-20 12:42:03,008|6|0|03825d3d|Extract  Response Values|EJP|matched|ceb9855e|Call Store Registration|
+2025-03-20 12:42:03,019|11|0|4e776825|What is Store Registration Result?|ROA|Success|ceb9855e|Call Store Registration|
+2025-03-20 12:42:03,079|28|11|d125889a|Update trx as Status|PSQL|success|c8496318|Update ISL_TRX and Set reason|
+2025-03-20 12:42:03,091|12|0|f6a9cae2|Huawei or ECW ?|ROA|is Huawei enable|c8496318|Update ISL_TRX and Set reason|
+2025-03-20 12:42:03,101|10|5|3ed37198|Update MoMo Profile Huwaei|PSQL|success|c8496318|Update ISL_TRX and Set reason|
+2025-03-20 12:42:03,108|7|0|2ddf7ceb|Reject Translation?|ROA|unmatched|c8496318|Update ISL_TRX and Set reason|
+2025-03-20 12:42:03,137|12|0|c01cb3aa|Prepare Notification task  Request|RT|success|d95eda1a|Call ISL CORE Trigger notification task|
+2025-03-20 12:42:03,155|18|0|0a22cdc4|PublishJMS|PJMS|pre|d95eda1a|Call ISL CORE Trigger notification task|Filename: 8f8beff8-2777-4aff-8c18-d0585f1c1dc8 | MTNA - Core Registrations & Verifications  > Registrations > Re-Registration Rejected > Post-Processing > Call ISL CORE Trigger notification task | ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA - Response sent :  'ISL-CORE.TRX_TRIGGER_NOTIFICATION_REQ.TB' :{ "id" : "603AF650E33C48DBB8AFF4C16C85648F", "name":"TRIGGER_NOTIFICATION_REQ", "dataObject":{ "map":{ "TRX_ID": "603AF650E33C48DBB8AFF4C16C85648F", "ISL_TRG_TRIGGER_EVENT_TYPE_ID":"1", "ISL_TRG_TRIGGER_CONDITION_MSISDN_STATUS_ID": "1", "ISL_TRG_TRANSACTION_TYPE_ID":"2" } } }
+2025-03-20 12:42:03,156|0|482|adec002e|Pull Request|CJMS|success|df75ff6a|Trigger SMS Notification|Filename: 01ae9164-97f2-4f38-aa48-a343357107dc | MTNA - EAI, MM, USSD & Utility > CORE - Generic > Utility PGs > Trigger SMS Notification | ISL-CORE.TRX_TRIGGER_NOTIFICATION_REQ.TB - Request: { "id" : "603AF650E33C48DBB8AFF4C16C85648F", "name":"TRIGGER_NOTIFICATION_REQ", "dataObject":{ "map":{ "TRX_ID": "603AF650E33C48DBB8AFF4C16C85648F", "ISL_TRG_TRIGGER_EVENT_TYPE_ID":"1", "ISL_TRG_TRIGGER_CONDITION_MSISDN_STATUS_ID": "1", "ISL_TRG_TRANSACTION_TYPE_ID":"2" } } }
+2025-03-20 12:42:03,165|12|0|7e6bdf72|Success Response|UA|success|efadcc10|Prepare JSON Response|
+2025-03-20 12:42:03,173|6|0|4ef1b7e1|POJO or JSON?|ROA|unmatched|bfe4db43|Inspect Request|
+2025-03-20 12:42:03,184|19|0|835ecb0f|Prepare JSON Response|RT|success|efadcc10|Prepare JSON Response|
+2025-03-20 12:42:03,192|19|0|0ca9db1a|Store Request Data in Attributes|EJP|matched|bfe4db43|Inspect Request|
+2025-03-20 12:42:03,196|4|0|243b42a3|Valid Request?|ROA|matched|bfe4db43|Inspect Request|
+2025-03-20 12:42:03,202|7|0|2b052e51|mPOS?|ROA|unmatched|d693af75|Push Notification To Mpos|
+2025-03-20 12:42:03,204|20|0|5bf30f6b|Remove Cache Entry (if any)|DF|success|efadcc10|Prepare JSON Response|
+2025-03-20 12:42:03,222|1|0|8ab0b7c7|Prepare SQL Clauses|UA|success|7014394e|Query Trigger Notification Events|
+2025-03-20 12:42:03,222|7|0|b3401371|POJO or JSON?|ROA|unmatched|32275947|Convert Response|
+2025-03-20 12:42:03,233|11|0|47aca76d|Find ISL_TRIGGER_INFO|ESQLR|pre|7014394e|Query Trigger Notification Events|
+2025-03-20 12:42:03,239|1|5|47aca76d|Find ISL_TRIGGER_INFO|ESQLR|success|7014394e|Query Trigger Notification Events|
+2025-03-20 12:42:03,241|9|1|ce57a983|Publish Registration Response|PJMS|pre|29bcd423|Re-Registration Rejected|Filename: 8f8beff8-2777-4aff-8c18-d0585f1c1dc8 | MTNA - Core Registrations & Verifications  > Registrations > Re-Registration Rejected | ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA - Response sent :  'ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA.RESP' :{ "id": "603AF650E33C48DBB8AFF4C16C85648F", "name": "SUBSCRIBER_REG_RESP", "resultCode": "SUCCESS", "dataObject": { "trxId": "603AF650E33C48DBB8AFF4C16C85648F", "instanceId": 800002, "idCompany": null, "respCode": 200, "respDesc": "Success", "customMessage": null, "arrayOptions": null, "data": null, "createdDateTime": "Thu Mar 20 12:42:03 ICT 2025", "trxStatusId": 200, "trxTypeId": 6, "customerId": null, "returnedTrxTypeId": null, "returnedTrxId": "", "msisdn": 100000203, "primaryTrxId": null }, "allData": null }
+2025-03-20 12:42:03,247|1|0|1be192cd|Split Records|SJ|split|7014394e|Query Trigger Notification Events|
+2025-03-20 12:42:03,247|8|0|1be192cd|Split Records|SJ|original|7014394e|Query Trigger Notification Events|
+2025-03-20 12:42:03,247|0|0|58bceb6d|Extract Attributes|EJP|matched|7014394e|Query Trigger Notification Events|
+2025-03-20 12:42:03,249|1|0|79b7c6f1|SMS Notification Enabled?|ROA|SMS Notification Enabled|7014394e|Query Trigger Notification Events|
+2025-03-20 12:42:03,279|18|0|1578af74|Prepare Default Value from Config|UA|success|c8c438c7|Send Notification|
+2025-03-20 12:42:03,287|8|0|a33c6317|Prepare SQL query to find lang and msisdn|UA|success|c8c438c7|Send Notification|
+2025-03-20 12:42:03,296|9|0|a0028be6|Sql is empty?|ROA|unmatched|c8c438c7|Send Notification|
+2025-03-20 12:42:03,314|18|0|fde3fa84|Find Preferred Language and Msisdn|ESQLR|pre|c8c438c7|Send Notification|
+2025-03-20 12:42:03,322|26|8|fde3fa84|Find Preferred Language and Msisdn|ESQLR|success|c8c438c7|Send Notification|
+2025-03-20 12:42:03,337|15|0|0c9123ed|Find Customer Data|ESQLR|pre|c8c438c7|Send Notification|
+2025-03-20 12:42:03,362|40|25|0c9123ed|Find Customer Data|ESQLR|success|c8c438c7|Send Notification|
+2025-03-20 12:42:03,400|20|0|c0308158|Add Customer Data into sms body|EGS|success|1754b590|Send SMS|
+2025-03-20 12:42:03,416|15|0|9e0c7ef0|Prepare JSON Request To UMG|RT|success|1754b590|Send SMS|
+2025-03-20 12:42:03,423|7|0|bbc8c10c|RespMsg JSON to POJO|JTP|success|1754b590|Send SMS|
+2025-03-20 12:42:03,445|21|1|9d5167b8|Publish Response|PJMS|pre|1754b590|Send SMS|Filename: 01ae9164-97f2-4f38-aa48-a343357107dc | MTNA - EAI, MM, USSD & Utility > CORE - Generic > Utility PGs > Trigger SMS Notification > Find events and trigger notifications > Send Notification > Send SMS | ISL-CORE.TRX_TRIGGER_NOTIFICATION_REQ.TB - Response sent :  'UMG.REQUEST_FOR_SENDING_UTF16_TXT.TA' :ReqMsg{id=603AF650E33C48DBB8AFF4C16C85648F, name=REQUEST_FOR_SENDING_UTF16_TXT, dataObject=null, datum={SMS=Data{name=SMS, records={header=Record{name=header, params={dest-msisdn=Parameter{paramName=dest-msisdn, paramValue=100000203}, source-msisdn=Parameter{paramName=source-msisdn, paramValue=mt}, trxId=Parameter{paramName=trxId, paramValue=603AF650E33C48DBB8AFF4C16C85648F}, Thu Mar 20 12:42:03 ICT 2025=Parameter{paramName=Thu Mar 20 12:42:03 ICT 2025, paramValue=null}}}, body=Record{name=body, params={message=Parameter{paramName=message, paramValue=Accpeted test}}}}}}}
+2025-03-20 12:42:03,900|4046|0|36f060cc|Call Core Re-Reg Translation|PJMS|success|940514b9|Call Core Registration|Filename: 5bd5582c-61db-443c-a002-cf60cb12802d | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > POST APIs > APIs group > Registration > Call Core Registration |  - Response from : 'ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA': { "id": "603AF650E33C48DBB8AFF4C16C85648F", "name": "SUBSCRIBER_REG_RESP", "resultCode": "SUCCESS", "dataObject": { "trxId": "603AF650E33C48DBB8AFF4C16C85648F", "instanceId": 800002, "idCompany": null, "respCode": 200, "respDesc": "Success", "customMessage": null, "arrayOptions": null, "data": null, "createdDateTime": "Thu Mar 20 12:42:03 ICT 2025", "trxStatusId": 200, "trxTypeId": 6, "customerId": null, "returnedTrxTypeId": null, "returnedTrxId": "", "msisdn": 100000203, "primaryTrxId": null }, "allData": null }
+2025-03-20 12:42:03,917|16|0|eff720cf|Pull Response Information|EJP|matched|940514b9|Call Core Registration|
+2025-03-20 12:42:03,968|15|0|e6202495|Success Response 200|UA|success|6a136a0c|Prepare Response|
+2025-03-20 12:42:03,975|7|0|cce3f1f9|PrepareResponse|RT|success|6a136a0c|Prepare Response|
+2025-03-20 12:42:04,004|4|0|de39ffd0|Set Content-Type|UA|success|b120b8b4|External EAI|
+2025-03-20 12:42:04,006|2|0|70509f6a|HandleHttpResponse|HHRES|success|b120b8b4|External EAI|Filename: 5bd5582c-61db-443c-a002-cf60cb12802d | MTNA - EAI, MM, USSD & Utility > EAI > External EAI | POST '/v1/enrollments/143535889231468' - Response: 
+2025-03-20 12:42:04,026|5|0|e83d7c81|Prepare Global Audit Trail Attributes|UA|success|22eb31c7|Log Audit Trail|
+2025-03-20 12:42:04,042|16|0|38253a7c|Strip Big Data|LC|success|22eb31c7|Log Audit Trail|Filename: 5bd5582c-61db-443c-a002-cf60cb12802d | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > Log Audit Trail | : { "code": "200", "message": "Success"}
+2025-03-20 12:42:04,044|1|0|3743bf86|ExtractText|ET|matched|22eb31c7|Log Audit Trail|
+2025-03-20 12:42:04,054|9|0|c163fee4|Prepare Description for Audit Trail|UA|success|22eb31c7|Log Audit Trail|
+2025-03-20 12:42:04,061|7|0|d9d492d0|Initialize SQL Query|UA|success|22eb31c7|Log Audit Trail|
+2025-03-20 12:42:04,091|30|15|f54534fb|Log Request|PSQL|success|22eb31c7|Log Audit Trail|

@@ -1,0 +1,5 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-07-25 16:36:00,055|1|18|2878ebc0|Fetch Config from DB|ESQLR|success|a9260198|Trigger and Instance check|
+2025-07-25 16:36:00,099|44|0|da752cf8|UpdateAttribute|UA|success|a9260198|Trigger and Instance check|
+2025-07-25 16:36:00,133|34|0|93b36a57|EvaluateJsonPath|EJP|matched|a9260198|Trigger and Instance check|
+2025-07-25 16:36:00,156|23|0|297427e5|Report Enabled?|ROA|unmatched|a9260198|Trigger and Instance check|

@@ -1,0 +1,7 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-07-25 16:36:00,048|1|9|c93137c7|Fetch Config from DB|ESQLR|success|2d0bed75|Trigger and Instance check|
+2025-07-25 16:36:00,079|31|0|979e48b0|UpdateAttribute|UA|success|2d0bed75|Trigger and Instance check|
+2025-07-25 16:36:00,112|33|0|e91473fe|EvaluateJsonPath|EJP|matched|2d0bed75|Trigger and Instance check|
+2025-07-25 16:36:00,137|25|0|b851bfa7|Report Enabled?|ROA|Report Enabled|2d0bed75|Trigger and Instance check|
+2025-07-25 16:36:00,170|32|0|baf0ce4b|ExecuteGroovyScript|EGS|success|2d0bed75|Trigger and Instance check|
+2025-07-25 16:36:00,174|4|0|f37b5574|Send Email?|ROA|unmatched|2d0bed75|Trigger and Instance check|

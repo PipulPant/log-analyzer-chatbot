@@ -1,0 +1,18 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-02-14 15:45:49,988|0|443|13956acf|Pull Request|CJMS|success|285f143f|Lock Registration|Filename: 18253e8f-b8c0-490b-8cc5-861aad0e5fa3 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Lock Registration | ISL-CORE.LOCK_SUBSCRIBER_REG_V5_REQ.TA - Request: ReqMsg{id=8006D09A285A48619C1F7B135F3ED326, name=LOCK_SUBSCRIBER_REG_V5_REQ, dataObject=String%5B50%5D,instanceId=11000101,companyId=1,username=pipulwebcare,createdDateTime=Fri Feb 14 15:45:49 ICT 2025,locale=EN,map=String%5B65%5D, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0,appScreenId=40000196,appActionId=100082%5D, datum=null}
+2025-02-14 15:45:50,012|16|0|fc5d07ff|POJO or JSON?|ROA|POJO|4ef691a1|Inspect Request|
+2025-02-14 15:45:50,027|15|0|c09c04fa|ReqMsg to JSON|PTJ|success|4ef691a1|Inspect Request|
+2025-02-14 15:45:50,042|15|2|467fbd6f|Store Request Data in Attributes|EJP|matched|4ef691a1|Inspect Request|
+2025-02-14 15:45:50,075|33|0|94b27291|Set configuration and initial values|UA|success|4ef691a1|Inspect Request|
+2025-02-14 15:45:50,107|10|0|9cb37717|Lock Is Enabl?|ROA|matched|285f143f|Lock Registration|
+2025-02-14 15:45:50,144|26|0|afd140b5|Prepare Created And Expired Date time |UA|success|c93aecbc|Query and Transform Data|
+2025-02-14 15:45:50,160|16|0|27bc10fe|username exist ?|ROA|username exist|c93aecbc|Query and Transform Data|
+2025-02-14 15:45:50,177|17|0|4e9581e1|Fetch ISL_USER|ESQLR|pre|c93aecbc|Query and Transform Data|
+2025-02-14 15:45:50,190|30|13|4e9581e1|Fetch ISL_USER|ESQLR|success|c93aecbc|Query and Transform Data|
+2025-02-14 15:45:50,224|34|0|6cda2363|Prepare Insert Query|UA|success|c93aecbc|Query and Transform Data|
+2025-02-14 15:45:50,248|24|20|7f13f5ad|Lock The Trx|PSQL|success|c93aecbc|Query and Transform Data|
+2025-02-14 15:45:50,302|20|0|6965566b|Success Response Attributes|UA|success|b3cb4383|Prepare JSON Reponse|
+2025-02-14 15:45:50,306|4|0|b215348d|Prepare JSON Response|RT|success|b3cb4383|Prepare JSON Reponse|
+2025-02-14 15:45:50,361|17|0|0b805286|POJO or JSON?|ROA|POJO|afa4db66|Convert Response|
+2025-02-14 15:45:50,381|20|0|155909bb|RespMsg JSON to POJO|JTP|success|afa4db66|Convert Response|
+2025-02-14 15:45:50,414|25|9|9508fa45|Publish Response|PJMS|pre|285f143f|Lock Registration|Filename: 18253e8f-b8c0-490b-8cc5-861aad0e5fa3 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Lock Registration | ISL-CORE.LOCK_SUBSCRIBER_REG_V5_REQ.TA - Response sent :  'ISL-CORE.LOCK_SUBSCRIBER_REG_V5_REQ.TA.RESP' :RespMsg{id=8006D09A285A48619C1F7B135F3ED326, name=CUSTOMER_SEARCH_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=CustomerSearchResp%5BcountCustomer=0,trxId=8006D09A285A48619C1F7B135F3ED326,instanceId=11000101,respCode=200,respDesc=Success,createdDateTime=Fri Feb 14 15:45:50 ICT 2025%5D, datum=null}

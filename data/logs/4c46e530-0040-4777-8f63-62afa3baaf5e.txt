@@ -1,0 +1,295 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-04-03 18:29:49,225|0|320|3a0f5b02|Pull Registration Request|CJMS|success|073da5db|New Registration|Filename: 4c46e530-0040-4777-8f63-62afa3baaf5e | MTNA - Core Registrations & Verifications  > Registrations > New Registration | ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA - Request: ReqMsg{id=32C7AD74BEC645AE9FBF5AE2405D0F6B, name=SUBSCRIBER_REG_V5_REQ, dataObject=String%5B50%5D,trxTypeId=1,instanceId=11000101,companyId=1,formVersion=250.414.258,registrationTypeId=1,username=pipulwebcare,startRegistrationTime=Thu Apr 03 18:27:03 ICT 2025,endRegistrationTime=Thu Apr 03 18:29:49 ICT 2025,createdDateTime=Thu Apr 03 18:29:49 ICT 2025,map=StringObjectMap%5BEXT_LIGHT_FULL = false, CHECK_BILL_TYPE_DONE = NO, FIRSTNAME = sadas, NIC_PROVINCE = Badghis, REGISTRATION_FORM = byte%5B132435%5D, CHECK_PAIRING_DONE = NO, CURRENT_DISTRICT_NUMBER = 2132, CURRENT_DISTRICT_ID = Badakhshan_center, CHECK_STATUS_DONE = NO, PREFERREDLANGUAGE = EN, CHECK_MAX_CONFIRMER_ENABLED = YES, NATIONALITY = AFG, NIC_REGISTRATION_NUMBER = 432-213-123, CHECK_MAX_DONE = YES, GRANDFATHERNAME = asdasd, CONFIRMER_IDNUMBER = 432-213-123, UPDATE_NO_TO_YES_FLAG = false, ICCID = 1000000000000000024, CONFIRMER_IDCARD = byte%5B83129%5D, SAME_AS_PERM_ADDRESS = true, STREET = 21312, IDNUMBER = 432-213-123, CITY = Badakhshan_center(Faiz_Abad), CHECK_MOMO_WALLET_DONE = NO, SUBSCRIPTIONTYPE = Afghan, ISSNOOZE = false, START_REG_DATE = Thu Apr 03 18:27:03 2025, DISTRICT_ID = Badakhshan_center, LASTNAME = asdas, FATHERNAME = asdas, IDTYPE = 1, END_REG_DATE = Thu Apr 03 18:29:45 2025, CURRENT_PROVINCE_ID = Badakhshan, DISTRICT_NUMBER = 2132, CURRENT_STREET = 21312, ISSIMTYPESELECTED = false, MSISDN = 948423164, IDCARD = byte%5B83129%5D, BIRTHDATE = Thu Jan 01 00:00:00 1970, MOMOTICK = false, SEND_REG_DATE = Thu Apr 03 18:29:49 2025, GENDER = M, PROVINCE_ID = Badakhshan, TRX_ID = 2C8E728997F34F5DB940BDDFCB909CB1, DISPLAY_CONFIRMER = YES, PRINTGSMFLAG = false, CHECK_MAX_CONFIRMER_DONE = NO, CONFIRMER_TYPE = epassport, SUBSCRIBERPHOTO1 = byte%5B132435%5D, CURRENT_CITY = Badakhshan_center(Faiz_Abad), BILLINGTYPE = prepaid, CHECK_MAX_DEALER_DONE = NO, ISREJECT = false, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0%5D, datum=null}
+2025-04-03 18:29:49,251|16|0|61780d48|POJO or JSON?|ROA|POJO|0c1253b0|Inspect Request|
+2025-04-03 18:29:49,280|29|13|fca72161|ReqMsg to JSON|PTJ|success|0c1253b0|Inspect Request|
+2025-04-03 18:29:49,295|15|0|9f32fb91|Set configuration and initial values|UA|success|0c1253b0|Inspect Request|
+2025-04-03 18:29:49,309|4|0|8058c136|Store Images in DB?|ROA|Store Images in DB|77924171|Cache & Strip Images|
+2025-04-03 18:29:49,324|15|0|c0aedd8d|Set filename|UA|success|77924171|Cache & Strip Images|
+2025-04-03 18:29:49,329|5|1|0cbc8122|Cache crmFormData with Images|PF|success|77924171|Cache & Strip Images|
+2025-04-03 18:29:49,355|26|8|b9dd1f13|Remove images in crmFormData map|UR|success|77924171|Cache & Strip Images|
+2025-04-03 18:29:49,383|9|0|57ee0ce5|Store Request Data in Attributes|EJP|matched|15bf5151|Process Attributes|
+2025-04-03 18:29:49,396|13|0|7cca75d5|Set IMEI and trxEventTypeId|UA|success|15bf5151|Process Attributes|
+2025-04-03 18:29:49,440|13|0|1e7d5a8e|Selfcare ?|ROA|unmatched|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:49,470|16|0|42fa472f|Request from API?|ROA|unmatched|4f38dc73|Checks for API|
+2025-04-03 18:29:49,490|9|0|447d9712|Prepare Check Status Request|RT|success|e77e5234|New Registration Checks|
+2025-04-03 18:29:49,500|1|493|11f2ca9a|Pull Checks Request|CJMS|success|0b1e3910|Checks New Registration |Filename: 32e8e9ad-cfc2-4b16-9506-e67c5c7713a2 | MTNA - Core Operations & Management > Checks and Validate > Checks New Registration  | ISL-CORE.NEW_REG_CHECKS_REQ.TA - Request: { "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "CHECK_REG_STATUS_V5_REQ", "dataObject" : { "instanceId" : 11000101, "companyId" : "1", "locale" : "", "trxTypeId" : "1", "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "username" : "pipulwebcare", "checkOccupied" : "true", "map" : { "BIRTHDATE" : "Thu Jan 01 00:00:00 1970", "FIRSTNAME" : "sadas", "LASTNAME" : "asdas", "IDTYPE" : "1", "IDNUMBER" : "432-213-123", "MSISDN" : "948423164", "ICCID" : "1000000000000000024", "SOURCE_FLAG" : "POST_SUBMIT", "EXT_CHECK_MAX_ENABLED" : "Y", "CHECK_MAX_DEALER_DONE" : "NO", "CHECK_PAIRING_DONE" : "NO", "CHECK_STATUS_DONE" : "NO", "CHECK_MAX_DONE" : "YES" } }, "datum" : null }
+2025-04-03 18:29:49,501|11|2|d0da30dd|Call Check Status|PJMS|pre|e77e5234|New Registration Checks|Filename: d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1 | MTNA - Core Registrations & Verifications  > Registrations > New Registration > Pre-Processing & Check Status > New Registration Checks | ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA - Request to :  'ISL-CORE.NEW_REG_CHECKS_REQ.TA' :
+2025-04-03 18:29:49,536|32|0|759ffc80|POJO or JSON?|ROA|unmatched|480f1adf|Inspect Request|
+2025-04-03 18:29:49,547|11|0|755c275b|Set configuration and initial values|UA|success|480f1adf|Inspect Request|
+2025-04-03 18:29:49,588|24|0|9519b89a|Store Request Data in Attributes|EJP|matched|a6f9e169|Process Attributes|
+2025-04-03 18:29:49,592|3|0|d0c487cb|Prevent SOURCE_FLAG empty|UA|success|a6f9e169|Process Attributes|
+2025-04-03 18:29:49,595|3|0|cd89a891|Valid Request?|ROA|matched|a6f9e169|Process Attributes|
+2025-04-03 18:29:49,614|18|0|dab4f427|Source Flag to Destination|ROA|POST-SUBMIT|480f1adf|Inspect Request|
+2025-04-03 18:29:49,620|4|0|83dfedb9|Initialize Values|UA|success|2c5b0f51|POST-SUBMIT CHECKS|
+2025-04-03 18:29:49,645|2|0|ba5cd45a|Check Max per Channel User enabled?|ROA|unmatched|fae5eff7|Check Max per Channel User|
+2025-04-03 18:29:49,682|4|0|982c44d2|Check Pairing enabled?|ROA|unmatched|4fe5133c|Check Pairing|
+2025-04-03 18:29:49,763|21|0|ed125979|Check Status enabled?|ROA|Check Status enabled|d7bae6ad|Call Check Status|
+2025-04-03 18:29:49,784|21|0|25179f95|Prepare Check Status Request|RT|success|d7bae6ad|Call Check Status|
+2025-04-03 18:29:49,801|0|471|2cadf09d|Pull Check Status Request|CJMS|success|79702f04|Pure Check Status|Filename: 3b3b3c39-3c1e-415f-9928-0cb755a33c1c | MTNA - Core Operations & Management > Checks and Validate > Pure Check Status | ISL-CORE.CHECK_STATUS_REQ.TA - Request: { "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "CHECK_REG_STATUS_REQ", "dataObject" : {"instanceId":11000101,"companyId":"1","locale":"","trxTypeId":"1","trxId":"32C7AD74BEC645AE9FBF5AE2405D0F6B","username":"pipulwebcare","checkOccupied":"true","map":{"BIRTHDATE":"Thu Jan 01 00:00:00 1970","FIRSTNAME":"sadas","LASTNAME":"asdas","IDTYPE":"1","IDNUMBER":"432-213-123","MSISDN":"948423164","ICCID":"1000000000000000024","SOURCE_FLAG":"POST_SUBMIT","EXT_CHECK_MAX_ENABLED":"Y","CHECK_MAX_DEALER_DONE":"NO","CHECK_PAIRING_DONE":"NO","CHECK_STATUS_DONE":"NO","CHECK_MAX_DONE":"YES"}}, "datum" : null }
+2025-04-03 18:29:49,802|18|1|1e7fbfaf|Call Check Status|PJMS|pre|d7bae6ad|Call Check Status|Filename: 32e8e9ad-cfc2-4b16-9506-e67c5c7713a2 | MTNA - Core Operations & Management > Checks and Validate > Checks New Registration  > POST-SUBMIT CHECKS > Call Check Status | ISL-CORE.NEW_REG_CHECKS_REQ.TA - Request to :  'ISL-CORE.CHECK_STATUS_REQ.TA' :{ "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "CHECK_REG_STATUS_REQ", "dataObject" : {"instanceId":11000101,"companyId":"1","locale":"","trxTypeId":"1","trxId":"32C7AD74BEC645AE9FBF5AE2405D0F6B","username":"pipulwebcare","checkOccupied":"true","map":{"BIRTHDATE":"Thu Jan 01 00:00:00 1970","FIRSTNAME":"sadas","LASTNAME":"asdas","IDTYPE":"1","IDNUMBER":"432-213-123","MSISDN":"948423164","ICCID":"1000000000000000024","SOURCE_FLAG":"POST_SUBMIT","EXT_CHECK_MAX_ENABLED":"Y","CHECK_MAX_DEALER_DONE":"NO","CHECK_PAIRING_DONE":"NO","CHECK_STATUS_DONE":"NO","CHECK_MAX_DONE":"YES"}}, "datum" : null }
+2025-04-03 18:29:49,832|14|0|df87dd47|POJO or JSON?|ROA|unmatched|adfe1514|Inspect Request|
+2025-04-03 18:29:49,835|3|0|dc326067|Set configuration and initial values|UA|success|adfe1514|Inspect Request|
+2025-04-03 18:29:49,870|22|0|64ed5541|Store Request Data in Attributes|EJP|matched|c13f3d33|Process Attributes|
+2025-04-03 18:29:49,901|31|0|22acca84|mPOS?|ROA|unmatched|c13f3d33|Process Attributes|
+2025-04-03 18:29:49,920|18|0|0a6ee6a1|Get MSISDN and ICCID|EJP|matched|c13f3d33|Process Attributes|
+2025-04-03 18:29:49,923|3|0|a9add17a|Find user id by user name|ESQLR|pre|c13f3d33|Process Attributes|
+2025-04-03 18:29:49,925|5|2|a9add17a|Find user id by user name|ESQLR|success|c13f3d33|Process Attributes|
+2025-04-03 18:29:49,937|11|0|1c255695|Valid Request?|ROA|matched|c13f3d33|Process Attributes|
+2025-04-03 18:29:49,971|10|0|9160f431|Background or Manual?|ROA|Background|adfe1514|Inspect Request|
+2025-04-03 18:29:49,986|2|0|25cbcc18|mPOS?|ROA|unmatched|79702f04|Pure Check Status|
+2025-04-03 18:29:50,009|14|0|5187c179|Find Trx(Status) by ID|ESQLR|pre|1982a78c|Background Check Status|
+2025-04-03 18:29:50,013|18|3|5187c179|Find Trx(Status) by ID|ESQLR|No Record Found|1982a78c|Background Check Status|
+2025-04-03 18:29:50,038|25|0|03c45ba1|Set initial values|UA|success|1982a78c|Background Check Status|
+2025-04-03 18:29:50,056|18|0|b0701a5b|ISL or External Check?|ROA|unmatched|1982a78c|Background Check Status|
+2025-04-03 18:29:50,083|26|0|91b0c3b0|MSISDN or ICCID?|ROA|MSISDN|1982a78c|Background Check Status|
+2025-04-03 18:29:50,100|4|0|52688779|Find Trx by MSISDN|ESQLR|pre|d19ff5ed|Check by MSISDN|
+2025-04-03 18:29:50,102|6|2|52688779|Find Trx by MSISDN|ESQLR|No Record Found|d19ff5ed|Check by MSISDN|
+2025-04-03 18:29:50,148|25|0|a3021674|Have ICCID?|ROA|ICCID|1982a78c|Background Check Status|
+2025-04-03 18:29:50,177|21|0|02dc668f|Find Trx by ICCID|ESQLR|pre|1df362ac|Check by ICCID|
+2025-04-03 18:29:50,180|24|2|02dc668f|Find Trx by ICCID|ESQLR|No Record Found|1df362ac|Check by ICCID|
+2025-04-03 18:29:50,214|22|0|99f50e36|Append "_NOT_FOUND_DATA" to mapping|UA|success|1982a78c|Background Check Status|
+2025-04-03 18:29:50,244|30|0|efb2ab89|Append request Trx Type ID to mapping|UA|success|1982a78c|Background Check Status|
+2025-04-03 18:29:50,249|5|0|3606d45c|Mapping contains NOT_FOUND_DATA?|ROA|Not Found Data|1982a78c|Background Check Status|
+2025-04-03 18:29:50,313|16|0|976ed7b1|Preserve extCode for Custom Message|UA|success|a729eef4|Call Result Code Mapping|
+2025-04-03 18:29:50,341|28|0|e0185207|Prepare Result Code Mapping Request|RT|success|a729eef4|Call Result Code Mapping|
+2025-04-03 18:29:50,374|16|0|9d5b71f8|Extract attributes|EJP|matched|38f970a9|Result Code Mapping|
+2025-04-03 18:29:50,380|22|0|b22f2fe0|Log Request|LC|success|38f970a9|Result Code Mapping|Filename: 3b3b3c39-3c1e-415f-9928-0cb755a33c1c | MTNA - Core Operations & Management > Checks and Validate > Pure Check Status > Call Result Code Mapping > Result Code Mapping | ISL-CORE.CHECK_STATUS_REQ.TA: { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "mappingName" : "BG_CHECK_STATUS_NOT_FOUND_DATA_1", "respCode" : "101", "respMsg" : "Check Status failed", "autoAdd" : "off", "language" : "EN" }
+2025-04-03 18:29:50,392|11|0|6215ab49|Prepare SQL to fetch ISL Code|UA|success|b03d157f|Fetch ISL Code|
+2025-04-03 18:29:50,398|6|0|374d5b4f|Fetch ISL Code|ESQLR|pre|b03d157f|Fetch ISL Code|
+2025-04-03 18:29:50,401|9|2|374d5b4f|Fetch ISL Code|ESQLR|success|b03d157f|Fetch ISL Code|
+2025-04-03 18:29:50,437|24|0|b072b565|Fetch message|ESQLR|pre|38f970a9|Result Code Mapping|
+2025-04-03 18:29:50,447|34|9|b072b565|Fetch message|ESQLR|success|38f970a9|Result Code Mapping|
+2025-04-03 18:29:50,456|9|0|d8784646|Set Mapping Response|RT|success|38f970a9|Result Code Mapping|
+2025-04-03 18:29:50,473|17|0|a47852c9|Log Response|LC|success|38f970a9|Result Code Mapping|Filename: 3b3b3c39-3c1e-415f-9928-0cb755a33c1c | MTNA - Core Operations & Management > Checks and Validate > Pure Check Status > Call Result Code Mapping > Result Code Mapping | ISL-CORE.CHECK_STATUS_REQ.TA: { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "islCode" : "101", "message" : "Continue.", "notFoundFlag" : "" }
+2025-04-03 18:29:50,493|16|0|492a392b|Extract Response Data|EJP|matched|a729eef4|Call Result Code Mapping|
+2025-04-03 18:29:50,508|15|0|fb1b33a5|Mapping not found?|ROA|unmatched|a729eef4|Call Result Code Mapping|
+2025-04-03 18:29:50,517|9|0|96aebd04|Derive TrxStatus Name|UA|success|a729eef4|Call Result Code Mapping|
+2025-04-03 18:29:50,568|16|0|384e7ab5|Rejected or Blocked?|ROA|unmatched|51498555|Find Rejected Reasons|
+2025-04-03 18:29:50,610|14|0|5a6679f9|Set Success Response Attributes|UA|success|0f59f1ec|Prepare JSON Reponse|
+2025-04-03 18:29:50,641|22|0|f35550d6|Fetch Custom Message|ESQLR|pre|c9d83e11|Fetch Custom Message|
+2025-04-03 18:29:50,649|0|7|f35550d6|Fetch Custom Message|ESQLR|success|c9d83e11|Fetch Custom Message|
+2025-04-03 18:29:50,655|6|0|7ab0fb39|Build Custom Message|EGS|success|c9d83e11|Fetch Custom Message|
+2025-04-03 18:29:50,667|2|0|e533d177|Prepare JSON Response|RT|success|0f59f1ec|Prepare JSON Reponse|
+2025-04-03 18:29:50,715|25|0|134d8d52|POJO or JSON?|ROA|unmatched|30f9f480|Convert Response|
+2025-04-03 18:29:50,806|41|11|5a64ec7b|Publish Check Status Response|PJMS|pre|79702f04|Pure Check Status|Filename: 3b3b3c39-3c1e-415f-9928-0cb755a33c1c | MTNA - Core Operations & Management > Checks and Validate > Pure Check Status | ISL-CORE.CHECK_STATUS_REQ.TA - Response sent :  'ISL-CORE.CHECK_STATUS_REQ.TA.RESP' :{ "id": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name": "CHECK_REG_STATUS_REQ", "resultCode": "SUCCESS", "dataObject": { "trxId": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "instanceId": 11000101, "idCompany": 1, "respCode": 101, "respDesc": "Continue.", "customMessage": {"id":"101","messages":{"AR":"Continue.","EN":"Continue.","KU":"Continue."}}, "arrayOptions": null, "data": { "TRX_ID": "", "TRX_TYPE_ID": "" }, "createdDateTime": "Thu Apr 03 18:29:50 ICT 2025", "msisdn": "948423164", "iccid": "1000000000000000024", "customerAccountID": null, "statusSummary": null, "trxStatus": { "name": "CONT101", "trxStatusId": 101 }, "reasonTypeIds": "", "reasonComments": "", "customerInformation": null, "abillityRespCode": null, "abillityRespMsg": null } }
+2025-04-03 18:29:50,841|1039|0|1e7fbfaf|Call Check Status|PJMS|success|d7bae6ad|Call Check Status|Filename: 32e8e9ad-cfc2-4b16-9506-e67c5c7713a2 | MTNA - Core Operations & Management > Checks and Validate > Checks New Registration  > POST-SUBMIT CHECKS > Call Check Status | ISL-CORE.NEW_REG_CHECKS_REQ.TA - Response from : 'ISL-CORE.CHECK_STATUS_REQ.TA': { "id": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name": "CHECK_REG_STATUS_REQ", "resultCode": "SUCCESS", "dataObject": { "trxId": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "instanceId": 11000101, "idCompany": 1, "respCode": 101, "respDesc": "Continue.", "customMessage": {"id":"101","messages":{"AR":"Continue.","EN":"Continue.","KU":"Continue."}}, "arrayOptions": null, "data": { "TRX_ID": "", "TRX_TYPE_ID": "" }, "createdDateTime": "Thu Apr 03 18:29:50 ICT 2025", "msisdn": "948423164", "iccid": "1000000000000000024", "customerAccountID": null, "statusSummary": null, "trxStatus": { "name": "CONT101", "trxStatusId": 101 }, "reasonTypeIds": "", "reasonComments": "", "customerInformation": null, "abillityRespCode": null, "abillityRespMsg": null } }
+2025-04-03 18:29:50,858|16|0|a33509ba|Store Check Status Response in Attributes|EJP|matched|d7bae6ad|Call Check Status|
+2025-04-03 18:29:50,864|6|0|49fab7fd|Set attribute that we have response|UA|success|d7bae6ad|Call Check Status|
+2025-04-03 18:29:50,899|35|0|5f9fad99|Check Status Success?|ROA|Check Status Success|d7bae6ad|Call Check Status|
+2025-04-03 18:29:50,965|25|0|19f39784|Check Max Enabled?|ROA|unmatched|08c4477e|Call Check Max|
+2025-04-03 18:29:51,018|27|0|306abb76|Have Response?|ROA|Have Response|2c5b0f51|POST-SUBMIT CHECKS|
+2025-04-03 18:29:51,067|27|0|fd617b9b|POJO or JSON?|ROA|unmatched|d2309a71|Convert Response|
+2025-04-03 18:29:51,116|28|1|5a06e243|Publish Checks Response|PJMS|pre|0b1e3910|Checks New Registration |Filename: 32e8e9ad-cfc2-4b16-9506-e67c5c7713a2 | MTNA - Core Operations & Management > Checks and Validate > Checks New Registration  | ISL-CORE.NEW_REG_CHECKS_REQ.TA - Response sent :  'ISL-CORE.NEW_REG_CHECKS_REQ.TA.RESP' :{ "id": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name": "CHECK_REG_STATUS_REQ", "resultCode": "SUCCESS", "dataObject": { "trxId": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "instanceId": 11000101, "idCompany": 1, "respCode": 101, "respDesc": "Continue.", "customMessage": {"id":"101","messages":{"AR":"Continue.","EN":"Continue.","KU":"Continue."}}, "arrayOptions": null, "data": { "TRX_ID": "", "TRX_TYPE_ID": "" }, "createdDateTime": "Thu Apr 03 18:29:50 ICT 2025", "msisdn": "948423164", "iccid": "1000000000000000024", "customerAccountID": null, "statusSummary": null, "trxStatus": { "name": "CONT101", "trxStatusId": 101 }, "reasonTypeIds": "", "reasonComments": "", "customerInformation": null, "abillityRespCode": null, "abillityRespMsg": null } }
+2025-04-03 18:29:51,538|2037|0|d0da30dd|Call Check Status|PJMS|success|e77e5234|New Registration Checks|Filename: d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1 | MTNA - Core Registrations & Verifications  > Registrations > New Registration > Pre-Processing & Check Status > New Registration Checks | ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA - Response from : 'ISL-CORE.NEW_REG_CHECKS_REQ.TA': 
+2025-04-03 18:29:51,552|13|0|b1ab9f47|Store Check Status Response in Attributes|EJP|matched|e77e5234|New Registration Checks|
+2025-04-03 18:29:51,565|13|0|685fedc0|Check Status Successful|ROA|Continue|e77e5234|New Registration Checks|
+2025-04-03 18:29:51,580|4|0|2e5e64cf|Fetch value for SYS_SID|ESQLR|pre|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:51,581|5|1|2e5e64cf|Fetch value for SYS_SID|ESQLR|success|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:51,590|8|0|4ba2a621|Find userId|ESQLR|pre|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:51,593|11|3|4ba2a621|Find userId|ESQLR|success|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:51,600|7|0|19441a23|Find distributorId|ESQLR|pre|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:51,602|9|1|19441a23|Find distributorId|ESQLR|success|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:51,617|15|0|6944ed35|Request from New Reg API?|ROA|unmatched|0a42e3cd|Pre-Processing & Check Status|
+2025-04-03 18:29:51,629|4|0|9516c7d6|mPOS?|ROA|unmatched|be25c3b6|Store TMP_SEC_TOKEN (if mPOS)|
+2025-04-03 18:29:51,669|4|0|2d2839d5|Add/set additional attributes in CrmFormData|UA|success|bd2c0e04|Call Store Registration|
+2025-04-03 18:29:51,677|8|0|4cfa2a13|Create Request|RT|success|bd2c0e04|Call Store Registration|
+2025-04-03 18:29:51,686|8|1|de38b418|Call Store Registration|PJMS|pre|bd2c0e04|Call Store Registration|Filename: d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1 | MTNA - Core Registrations & Verifications  > Registrations > New Registration > Call Store Registration | ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA - Request to :  'ISL-CORE.STORE_REG_REQ.TA' :
+2025-04-03 18:29:51,696|0|3|b5f45c16|Pull Store Registration Request|CJMS|success|2561f3ac|Store Registration|Filename: 28a94436-9e66-46c8-be14-d436a099748a | MTNA - Core Registrations & Verifications  > Registrations > Store Registration | ISL-CORE.STORE_REG_REQ.TA - Request: { "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "STORE_REG_REQ", "dataObject" : {"trxId":"32C7AD74BEC645AE9FBF5AE2405D0F6B","trxTypeId":1,"instanceId":11000101,"companyId":1,"formVersion":{"formId":4,"modelFormVersion":414,"i18nFormVersion":258,"wfUiFormVersion":250},"registrationTypeId":1,"username":"pipulwebcare","startRegistrationTime":"Thu Apr 03 18:27:03 ICT 2025","endRegistrationTime":"Thu Apr 03 18:29:49 ICT 2025","createdDateTime":"Thu Apr 03 18:29:49 ICT 2025","map":{"EXT_LIGHT_FULL":"false","CHECK_BILL_TYPE_DONE":"NO","FIRSTNAME":"sadas","NIC_PROVINCE":"Badghis","CHECK_PAIRING_DONE":"NO","CURRENT_DISTRICT_NUMBER":"2132","CURRENT_DISTRICT_ID":"Badakhshan_center","CHECK_STATUS_DONE":"NO","PREFERREDLANGUAGE":"EN","CHECK_MAX_CONFIRMER_ENABLED":"YES","NATIONALITY":"AFG","NIC_REGISTRATION_NUMBER":"432-213-123","CHECK_MAX_DONE":"YES","GRANDFATHERNAME":"asdasd","CONFIRMER_IDNUMBER":"432-213-123","UPDATE_NO_TO_YES_FLAG":"false","ICCID":"1000000000000000024","SAME_AS_PERM_ADDRESS":"true","STREET":"21312","IDNUMBER":"432-213-123","CITY":"Badakhshan_center(Faiz_Abad)","CHECK_MOMO_WALLET_DONE":"NO","SUBSCRIPTIONTYPE":"Afghan","ISSNOOZE":"false","START_REG_DATE":"Thu Apr 03 18:27:03 2025","DISTRICT_ID":"Badakhshan_center","LASTNAME":"asdas","FATHERNAME":"asdas","IDTYPE":"1","END_REG_DATE":"Thu Apr 03 18:29:45 2025","CURRENT_PROVINCE_ID":"Badakhshan","DISTRICT_NUMBER":"2132","CURRENT_STREET":"21312","ISSIMTYPESELECTED":"false","MSISDN":"948423164","BIRTHDATE":"Thu Jan 01 00:00:00 1970","MOMOTICK":"false","SEND_REG_DATE":"Thu Apr 03 18:29:49 2025","GENDER":"M","PROVINCE_ID":"Badakhshan","TRX_ID":"2C8E728997F34F5DB940BDDFCB909CB1","DISPLAY_CONFIRMER":"YES","PRINTGSMFLAG":"false","CHECK_MAX_CONFIRMER_DONE":"NO","CONFIRMER_TYPE":"epassport","CURRENT_CITY":"Badakhshan_center(Faiz_Abad)","BILLINGTYPE":"prepaid","CHECK_MAX_DEALER_DONE":"NO","ISREJECT":"false","TRACKID":"d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1","SYS_SID":"1023679","DISTRIBUTOR_ID":"10001","SYS_IMEI":"","CREATED_BY":"1036522412586096","docFoundList":null,"SERVICE_SUBSCRIPTION":""},"state":{"value":5,"displayName":"PENDING - MPOS"},"retries":0,"localId":0,"enableWhiteList":true,"checkOccupied":false,"smsCount":0,"trxEventTypeId":"1052"}, "datum" : null }
+2025-04-03 18:29:51,714|12|0|8fb88f76|POJO or JSON?|ROA|unmatched|58183a92|Inspect Request|
+2025-04-03 18:29:51,727|12|0|2462c693|Set configuration and initial values|UA|success|58183a92|Inspect Request|
+2025-04-03 18:29:51,754|16|0|8ac0ce88|Store Request Data in Attributes|EJP|matched|cbb66621|Process Attributes|
+2025-04-03 18:29:51,769|15|0|43f94464|Set date format depending on instanceId|UA|success|cbb66621|Process Attributes|
+2025-04-03 18:29:51,800|13|0|8a9747f0|Set TrxEventId|UA|success|2561f3ac|Store Registration|
+2025-04-03 18:29:51,836|14|0|56c717d8|Convert Arabic to English|EGS|success|3de189ba|Store CRM_CUSTOMER_DATA|
+2025-04-03 18:29:51,842|10|0|9caa84b1|Store Images in DB?|ROA|Store Images in DB|09dfc204|Handle Images|
+2025-04-03 18:29:51,847|5|0|0108e48b|Fix File name for bulk upload|UA|success|09dfc204|Handle Images|
+2025-04-03 18:29:51,853|16|0|58829e4f|Check If Mobile Wallet Subscription Selected|ROA|unmatched|3de189ba|Store CRM_CUSTOMER_DATA|
+2025-04-03 18:29:51,854|7|0|2dacf4b6|Fetch CrmFormData from Cache|FF|success|09dfc204|Handle Images|
+2025-04-03 18:29:51,872|5|0|ab697efc|Store Images in DB?|ROA|Store Images in DB|8d31f677|Store Images|
+2025-04-03 18:29:51,876|23|3|0c3e467e|Prepare SQL INSERT CRM_CUSTOMER_DATA|RT|success|3de189ba|Store CRM_CUSTOMER_DATA|
+2025-04-03 18:29:51,884|0|0|98dafe37|Prepare CRM_CUSTOMER_DATA SQL|CJSONTSQL|sql|3de189ba|Store CRM_CUSTOMER_DATA|
+2025-04-03 18:29:51,884|8|1|98dafe37|Prepare CRM_CUSTOMER_DATA SQL|CJSONTSQL|original|3de189ba|Store CRM_CUSTOMER_DATA|
+2025-04-03 18:29:51,900|16|0|89055aa8|Set 'sql.fragment' for PutSQL|UA|success|3de189ba|Store CRM_CUSTOMER_DATA|
+2025-04-03 18:29:51,900|21|4|2a46e2f1|Prepare all images from map|JTJSON|success|f30e9353|Store CRM_CUSTOMER_BINARY_DATA|
+2025-04-03 18:29:51,910|10|0|94756e79|Has Images?|ROC|unmatched|f30e9353|Store CRM_CUSTOMER_BINARY_DATA|
+2025-04-03 18:29:51,921|11|5|20b62985|Add SYS_CUSTOMER_DATA_ID|UR|success|f30e9353|Store CRM_CUSTOMER_BINARY_DATA|
+2025-04-03 18:29:51,935|8|0|c67b17f4|Prepare JSON for ISL_TRX|RT|success|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,938|0|2|b14232b3|Prepare SQL for CRM_CUSTOMER_BINARY_DATA|CJSONTSQL|sql|f30e9353|Store CRM_CUSTOMER_BINARY_DATA|
+2025-04-03 18:29:51,938|17|2|b14232b3|Prepare SQL for CRM_CUSTOMER_BINARY_DATA|CJSONTSQL|original|f30e9353|Store CRM_CUSTOMER_BINARY_DATA|
+2025-04-03 18:29:51,940|2|0|f4888fcb|Set 'sql.fragment' for PutSQL|UA|success|f30e9353|Store CRM_CUSTOMER_BINARY_DATA|
+2025-04-03 18:29:51,954|0|0|149a98ef|ISL_TRX JSON to SQL|CJSONTSQL|sql|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,954|19|0|149a98ef|ISL_TRX JSON to SQL|CJSONTSQL|original|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,963|9|0|de64d29e|Form Serial Number required?|ROA|Form Serial Number Required|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,967|4|0|d0126462|Generate Form Serial Number|ESQLR|pre|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,969|6|1|d0126462|Generate Form Serial Number|ESQLR|success|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,978|24|0|28a0ffc4|Set 'sql.fragment' for PutSQL|UA|success|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,982|13|1|d0e88b51|Prepare JSON for ISL_TRX_EXTRA_ATTR|RT|success|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,999|0|0|aa369640|ISL_TRX_EXTRA_ATTR JSON to SQL|CJSONTSQL|sql|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:51,999|17|0|aa369640|ISL_TRX_EXTRA_ATTR JSON to SQL|CJSONTSQL|original|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:52,005|5|0|1b68115d|Set fragment attributes|UA|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,005|5|0|1b68115d|Set fragment attributes|UA|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,007|8|0|427a1d84|Set 'sql.fragment' for PutSQL|UA|success|cbbf1093|Create TRX and TRX EXTRAS|
+2025-04-03 18:29:52,035|15|0|14023c06|Prepare JSON for ISL_TRX_EVENT|RT|success|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,037|0|0|029ea1a7|ISL_TRX_EVENT JSON to SQL|CJSONTSQL|sql|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,037|2|0|029ea1a7|ISL_TRX_EVENT JSON to SQL|CJSONTSQL|original|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,043|5|0|1b68115d|Set fragment attributes|UA|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,044|7|0|11e792cd|Prepare JSON for ISL_TRX_EVENT_DETAIL|RT|success|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,054|0|0|3721f027|ISL_TRX_EVENT_DETAIL JSON to SQL|CJSONTSQL|sql|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,054|10|0|3721f027|ISL_TRX_EVENT_DETAIL JSON to SQL|CJSONTSQL|original|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,061|7|0|3d99e3cb|Set 'sql.fragment' for PutSQL|UA|success|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,063|26|0|9bc533c6|Set 'sql.fragment' for PutSQL|UA|success|76672beb|Create TRX Event and Detail|
+2025-04-03 18:29:52,066|13|0|1b68115d|Set fragment attributes|UA|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,079|12|0|1b68115d|Set fragment attributes|UA|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,110|10|0|1b68115d|Set fragment attributes|UA|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,354|258|228|a6746693|Commit Transaction|PSQL|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,354|258|228|a6746693|Commit Transaction|PSQL|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,354|258|228|a6746693|Commit Transaction|PSQL|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,354|258|228|a6746693|Commit Transaction|PSQL|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,354|244|228|a6746693|Commit Transaction|PSQL|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,354|258|228|a6746693|Commit Transaction|PSQL|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,364|10|0|cce27b79|Handle Success Output|EGS|success|80b64291|Commit Registration|
+2025-04-03 18:29:52,400|6|0|c5eee71c|Generate Trx Event Id|UA|success|ea388e5c|Save Trx History Details|
+2025-04-03 18:29:52,415|15|0|e9987f33|Save Trx Histroy Enabled?|ROA|Save trx history enabled|ea388e5c|Save Trx History Details|
+2025-04-03 18:29:52,446|13|0|018ec72c|Retreive ISL_TRX_HISTORY columns|ESQLR|pre|a9f70e79|Copy TrxData in ISL_TRX_HISTORY|
+2025-04-03 18:29:52,456|23|9|018ec72c|Retreive ISL_TRX_HISTORY columns|ESQLR|success|a9f70e79|Copy TrxData in ISL_TRX_HISTORY|
+2025-04-03 18:29:52,482|26|9|77d9b048|Copy Trx data to ISL_TRX_HISTORY|PSQL|success|a9f70e79|Copy TrxData in ISL_TRX_HISTORY|
+2025-04-03 18:29:52,496|5|0|4e582c05|Trx Images Updated?|ROA|Images Updated|c81e295c|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-04-03 18:29:52,499|3|0|37f087c8|Retreive CRM_CUSTOMER_BINARY_DATA_HISTORY columns|ESQLR|pre|c81e295c|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-04-03 18:29:52,511|15|11|37f087c8|Retreive CRM_CUSTOMER_BINARY_DATA_HISTORY columns|ESQLR|success|c81e295c|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-04-03 18:29:52,613|102|98|483baab8|Copy Trx data to CRM_CUSTOMER_BINARY_DATA_HISTORY|PSQL|success|c81e295c|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-04-03 18:29:52,626|5|0|aa7c1c32|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|pre|8ea7735f|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-04-03 18:29:52,682|61|55|aa7c1c32|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|success|8ea7735f|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-04-03 18:29:52,750|68|57|4da1e26f|Copy Trx data to CRM_CUSTOMER_DATA_HISTORY|PSQL|success|8ea7735f|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-04-03 18:29:52,810|16|0|5470a094|Success Response|UA|success|fd17b9b2|Prepare JSON Response|
+2025-04-03 18:29:52,813|3|0|2e685db2|Prepare JSON Response|RT|success|fd17b9b2|Prepare JSON Response|
+2025-04-03 18:29:52,838|12|0|73b40ca0|POJO or JSON?|ROA|unmatched|00108bdb|Convert Response|
+2025-04-03 18:29:52,864|18|2|e04ca4cc|Publish Store Registration Response|PJMS|pre|2561f3ac|Store Registration|Filename: d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1 | MTNA - Core Registrations & Verifications  > Registrations > Store Registration | ISL-CORE.STORE_REG_REQ.TA - Response sent :  'ISL-CORE.STORE_REG_REQ.TA.RESP' :{ "id": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name": "SUBSCRIBER_REG_RESP", "resultCode": "SUCCESS", "dataObject": { "trxId": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "instanceId": 11000101, "idCompany": null, "respCode": 200, "respDesc": "Success", "customMessage": null, "arrayOptions": null, "data": null, "createdDateTime": "Thu Apr 03 18:29:52 ICT 2025", "trxStatusId": 200, "trxTypeId": 1, "customerId": null, "returnedTrxTypeId": null, "returnedTrxId": "", "msisdn": "948423164", "primaryTrxId": null }, "allData": null }
+2025-04-03 18:29:53,720|2034|0|de38b418|Call Store Registration|PJMS|success|bd2c0e04|Call Store Registration|Filename: d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1 | MTNA - Core Registrations & Verifications  > Registrations > New Registration > Call Store Registration | ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA - Response from : 'ISL-CORE.STORE_REG_REQ.TA': 
+2025-04-03 18:29:53,723|2|0|8c810b75|Extract  Response Values|EJP|matched|bd2c0e04|Call Store Registration|
+2025-04-03 18:29:53,730|7|0|c24cd29c|What is Store Registration Result?|ROA|Success|bd2c0e04|Call Store Registration|
+2025-04-03 18:29:53,747|16|0|2c3dbb68|Reg with MoMo?|ROA|unmatched|bd2c0e04|Call Store Registration|
+2025-04-03 18:29:53,794|13|0|f373ab11|TrxStatus still has initial value|ROA|TrxStatus has initial value|b281c56d|Post-Processing|
+2025-04-03 18:29:53,829|18|0|4b559a71|Sim Pre Provisioning API enabled?|ROA|Sim Pre Provisioning API Enabled|95403b2d|Create Retry for Sim Pre Provisioning API|
+2025-04-03 18:29:53,859|30|15|63a5e3b2|Update trx to 111 and in progress|PSQL|success|95403b2d|Create Retry for Sim Pre Provisioning API|
+2025-04-03 18:29:53,865|6|0|b89de839|Fetch ID for Cronjob|ESQLR|pre|95403b2d|Create Retry for Sim Pre Provisioning API|
+2025-04-03 18:29:53,869|10|3|b89de839|Fetch ID for Cronjob|ESQLR|success|95403b2d|Create Retry for Sim Pre Provisioning API|
+2025-04-03 18:29:53,896|27|9|68a487a2|Store cronjob|PSQL|success|95403b2d|Create Retry for Sim Pre Provisioning API|
+2025-04-03 18:29:53,919|6|0|986a3689|Prepare Request|RT|success|12945ca9|Prepare and Send|
+2025-04-03 18:29:53,921|2|0|9d2d54f2|Put request into attribute|EJP|matched|12945ca9|Prepare and Send|
+2025-04-03 18:29:53,928|7|5|7d653b0d|Log Audit Trail|PSQL|success|12945ca9|Prepare and Send|
+2025-04-03 18:29:53,938|0|19|a12bf692|Pull Sim Pre Provisioning API Retry messages|CJMS|success|de9502b5|SIM Pre Provisioning Bss API|Filename: d12ce164-2b8b-46f5-aa28-f7f1fe2e8058 | MTNA - Core Registrations & Verifications  > Registration Retry Processes > New Registration > SIM Pre Provisioning Bss API | ISL-CORE.NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ.TB - Request: { "id": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name": "NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ", "dataObject": { "crmExtCallErrorId": "366795", "nbRetry": "0", "customerDataId": "1023679", "trxId": "32C7AD74BEC645AE9FBF5AE2405D0F6B" } }
+2025-04-03 18:29:53,938|19|2|6ed31ae8|Send Request|PJMS|pre|12945ca9|Prepare and Send|Filename: d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1 | MTNA - Core Registrations & Verifications  > Registrations > New Registration > Post-Processing > Create Retry for Sim Pre Provisioning API > Prepare and Send | ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA - Response sent :  'ISL-CORE.NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ.TB' :
+2025-04-03 18:29:53,949|3|0|fc7e5b9f|Extract Request Data|EJP|matched|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:53,968|19|10|aad33451|Update transaction as in progress|PSQL|success|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:53,988|20|7|bb20f0e7|Increase retry count|PSQL|success|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:53,988|12|0|af64ee57|Success Response|UA|success|2484b9d9|Prepare JSON Response|
+2025-04-03 18:29:53,996|8|0|12a1e1af|Fetch transaction data|ESQLR|pre|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:54,000|12|0|22a46d3b|Prepare JSON Response|RT|success|2484b9d9|Prepare JSON Response|
+2025-04-03 18:29:54,013|25|17|12a1e1af|Fetch transaction data|ESQLR|success|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:54,016|3|0|71cf52fb|Fetch user name|ESQLR|pre|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:54,018|5|1|71cf52fb|Fetch user name|ESQLR|success|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:54,020|20|0|58f80928|Remove Cache Entry (if any)|DF|success|2484b9d9|Prepare JSON Response|
+2025-04-03 18:29:54,025|7|0|bc952fa8|Fetch customer data|ESQLR|pre|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:54,026|10|0|a5344331|mPOS?|ROA|unmatched|631cb77a|Push Notification To Mpos|
+2025-04-03 18:29:54,042|24|17|bc952fa8|Fetch customer data|ESQLR|success|297d8e44|Extract and Fetch Data|
+2025-04-03 18:29:54,043|14|0|9a1700d2|POJO or JSON?|ROA|POJO|55582b4d|Convert Response|
+2025-04-03 18:29:54,061|17|0|7563c510|JSON to POJO|JTP|success|55582b4d|Convert Response|
+2025-04-03 18:29:54,068|16|0|a3524a05|SIM Pre Provisioning API enabled?|ROA|SIM Pre-Provisioning API Enabled|de9502b5|SIM Pre Provisioning Bss API|
+2025-04-03 18:29:54,080|9|0|f4a90b30|Prepare CBS Request|RT|success|f72362d9|Call OSIA SIM Pre Provisioning API|
+2025-04-03 18:29:54,088|3|925|0416cf9d|Listen to CORE Request|CJMS|success|6b119007|CBS Active request |Filename: be12a783-3e7b-46ad-af1e-05cf2cef018b | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > CBS Active request  | ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA - Request: { "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulwebcare", "map" : { "OPERATION_NAME":"requestForProvisioning", "MSISDN": "948423164", "SIM_STATUS": "PRE-PROVISIONED", "IDTYPE": "1" } } }
+2025-04-03 18:29:54,089|9|5|9c7b1976|Call MM CBS SIM Provisioning API|PJMS|pre|f72362d9|Call OSIA SIM Pre Provisioning API|Filename: d12ce164-2b8b-46f5-aa28-f7f1fe2e8058 | MTNA - Core Registrations & Verifications  > Registration Retry Processes > New Registration > SIM Pre Provisioning Bss API > Call OSIA SIM Pre Provisioning API | ISL-CORE.NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ.TB - Request to :  'ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA' :{ "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "OSIA_SIM_PRE_PROVISIONING_V5_REQ", "dataObject" : { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulwebcare", "map" : { "OPERATION_NAME":"requestForProvisioning", "MSISDN": "948423164", "SIM_STATUS": "PRE-PROVISIONED", "IDTYPE": "1" } } }
+2025-04-03 18:29:54,094|21|6|ab9fd00c|Publish Registration Response|PJMS|pre|073da5db|New Registration|Filename: d30bf8c2-7511-4a49-ac7a-0b2e5818a3e1 | MTNA - Core Registrations & Verifications  > Registrations > New Registration | ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA - Response sent :  'ISL-CORE.SUBSCRIBER_REG_V5_REQ.TA.RESP' :RespMsg{id=32C7AD74BEC645AE9FBF5AE2405D0F6B, name=SUBSCRIBER_REG_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=SubscriberRegResp%5BtrxStatusId=200,trxTypeId=1,returnedTrxId=,msisdn=948423164,trxId=32C7AD74BEC645AE9FBF5AE2405D0F6B,instanceId=11000101,respCode=200,respDesc=Success,createdDateTime=Thu Apr 03 18:29:54 ICT 2025%5D, datum=null}
+2025-04-03 18:29:54,111|17|0|47344641|POJO or JSON ?|ROA|unmatched|3f79a5ad|Inspect Request|
+2025-04-03 18:29:54,131|19|0|2dcb337c|Store Request Data in Attributes|EJP|matched|3f79a5ad|Inspect Request|
+2025-04-03 18:29:54,136|5|0|9dba0825|Valid request ?|ROA|valid|3f79a5ad|Inspect Request|
+2025-04-03 18:29:54,155|19|0|10175c9a|Get Username & Password|UA|success|3f79a5ad|Inspect Request|
+2025-04-03 18:29:54,179|24|0|51416379|Encode Username Password|EGS|success|3f79a5ad|Inspect Request|
+2025-04-03 18:29:54,217|7|0|06880df1|Store Request fields in Attributes|UA|success|65fd5f43|Call to 3rd Party |
+2025-04-03 18:29:54,242|25|0|3694dd57|Prepare request to XML|RT|success|65fd5f43|Call to 3rd Party |
+2025-04-03 18:29:54,253|8|0|c3506ffe|Set HTTP Method and URL|UA|success|83fff00a|Invoke SOAP WS|
+2025-04-03 18:29:54,272|19|0|660feb7d|Call to activation Request API|IHTTP|pre|83fff00a|Invoke SOAP WS|Filename: be12a783-3e7b-46ad-af1e-05cf2cef018b | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > CBS Active request  > Call to 3rd Party  > Invoke SOAP WS | ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA -URL: POST 'http://192.168.8.45:8087/mtna-ability/EaiEnvelopeSoapQSService' - Request: <?xml version="1.0" encoding="UTF-8"?> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://schema.concierge.com" xmlns:sch="http://schema.concierge.com"> <soapenv:Header> <sch:authentication> <sch:password>user</sch:password> <sch:user>password</sch:user> </sch:authentication> </soapenv:Header> <soapenv:Body> <com:clientRequest> <EaiEnvelope xmlns="http://schema.concierge.com/Envelope"> <ApplicationName>modules/ISL_MM</ApplicationName> <Domain>abl_portal</Domain> <Service>Services</Service> <Language>En</Language> <UserId>externalapp</UserId> <Sender>externalapp</Sender> <MessageId>abl_portal</MessageId> <Payload> <ser:Services xmlns:ser="http://schema.concierge.com/Services"> <ser:Request> <ser:Operation_Name>abillityReferenceApi</ser:Operation_Name> <ser:ChangeServicesRequest> <ser:code>5028</ser:code> <ser:request> <EVENT xmlns=""> <REQUEST OPERATION_NAME="requestForProvisioning" CALLED_FROM="ISL" SERVICE_CODE="GSM" API_CODE="7521" CLIENT_ID="modules/ISL_MM" ENTITY_ID="948423164" INFO_LEVEL="3" EXTERNAL_REFERENCE="" EXTERNAL_SYSTEMS_LOG_REFERNCE="" EXTERNAL_APPLICATION="ISL" EXTERNAL_USER="ISL" /> </EVENT> </ser:request> </ser:ChangeServicesRequest> </ser:Request> </ser:Services> </Payload> </EaiEnvelope> </com:clientRequest> </soapenv:Body> </soapenv:Envelope>
+2025-04-03 18:29:54,279|16|0|8b999a15|LogContent(Strip Large Content)|LC|success|b0bb7187|Save CRM_EXT_CALL_DATA|Filename: be12a783-3e7b-46ad-af1e-05cf2cef018b | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > CBS Active request  > Call to 3rd Party  > Invoke SOAP WS > Save CRM_EXT_CALL_DATA | ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://schema.concierge.com" xmlns:sch="http://schema.concierge.com"> <soapenv:Header> <sch:authentication> <sch:password>user</sch:password> <sch:user>password</sch:user> </sch:authentication> </soapenv:Header> <soapenv:Body> <com:clientRequest> <EaiEnvelope xmlns="http://schema.concierge.com/Envelope"> <ApplicationName>modules/ISL_MM</ApplicationName> <Domain>abl_portal</Domain> <Service>Services</Service> <Language>En</Language> <UserId>externalapp</UserId> <Sender>externalapp</Sender> <MessageId>abl_portal</MessageId> <Payload> <ser:Services xmlns:ser="http://schema.concierge.com/Services"> <ser:Request> <ser:Operation_Name>abillityReferenceApi</ser:Operation_Name> <ser:ChangeServicesRequest> <ser:code>5028</ser:code> <ser:request> <EVENT xmlns=""> <REQUEST OPERATION_NAME="requestForProvisioning" CALLED_FROM="ISL" SERVICE_CODE="GSM" API_CODE="7521" CLIENT_ID="modules/ISL_MM" ENTITY_ID="948423164" INFO_LEVEL="3" EXTERNAL_REFERENCE="" EXTERNAL_SYSTEMS_LOG_REFERNCE="" EXTERNAL_APPLICATION="ISL" EXTERNAL_USER="ISL" /> </EVENT> </ser:request> </ser:ChangeServicesRequest> </ser:Request> </ser:Services> </Payload> </EaiEnvelope> </com:clientRequest> </soapenv:Body></soapenv:Envelope>
+2025-04-03 18:29:54,285|5|0|a09dad17|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,290|1|0|4cfd1d4b|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,290|5|0|4cfd1d4b|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,330|40|18|13861f6c|Save request  CRM_EXT_CALL_DATA  |PSQL|success|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,392|0|120|660feb7d|Call to activation Request API|IHTTP|Response|83fff00a|Invoke SOAP WS|Filename: be12a783-3e7b-46ad-af1e-05cf2cef018b | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > CBS Active request  > Call to 3rd Party  > Invoke SOAP WS | ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA - 3P Status Code: 200 - Response: <?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns5:clientRequestResponse xmlns:ns6="http://schema.concierge.com/ttws" xmlns:ns5="http://schema.concierge.com" xmlns:ns4="http://schema.concierge.com/Services" xmlns:ns3="http://schema.concierge.com/Envelope" xmlns:ns2="http://schema.concierge.com/isp"><ns3:EaiEnvelope><ns3:ApplicationName>modules/ISL_MM</ns3:ApplicationName><ns3:Domain>abl_portal</ns3:Domain><ns3:Service>Services</ns3:Service><ns3:ServiceId>0</ns3:ServiceId><ns3:Language>En</ns3:Language><ns3:UserId>externalapp</ns3:UserId><ns3:Sender>externalapp</ns3:Sender><ns3:MessageId>abl_portal</ns3:MessageId><ns3:Payload><ns4:Services><ns4:Response><ns4:ResultStatusResponse><ns4:resultCode>0</ns4:resultCode></ns4:ResultStatusResponse><ns4:ChangeServicesResponse><EVENT><API_OUTPUT><SUCCESS_FLAG>0</SUCCESS_FLAG><REQUEST_STATUS>0</REQUEST_STATUS><SUCCESS_MESG_LANG_1>Activation successfully%5BLANG1%5D</SUCCESS_MESG_LANG_1><SUCCESS_MESG_LANG_2>Activation successfully%5BLANG2%5D</SUCCESS_MESG_LANG_2><ABILLITY_REFERENCE></ABILLITY_REFERENCE><TRANSACTION_LOG_REFERNCE></TRANSACTION_LOG_REFERNCE></API_OUTPUT></EVENT></ns4:ChangeServicesResponse></ns4:Response></ns4:Services></ns3:Payload></ns3:EaiEnvelope></ns5:clientRequestResponse></S:Body></S:Envelope>
+2025-04-03 18:29:54,392|139|121|660feb7d|Call to activation Request API|IHTTP|Original|83fff00a|Invoke SOAP WS|Filename: be12a783-3e7b-46ad-af1e-05cf2cef018b | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > CBS Active request  > Call to 3rd Party  > Invoke SOAP WS | ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA - 3P Status Code: 200 - Response: <?xml version="1.0" encoding="UTF-8"?> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://schema.concierge.com" xmlns:sch="http://schema.concierge.com"> <soapenv:Header> <sch:authentication> <sch:password>user</sch:password> <sch:user>password</sch:user> </sch:authentication> </soapenv:Header> <soapenv:Body> <com:clientRequest> <EaiEnvelope xmlns="http://schema.concierge.com/Envelope"> <ApplicationName>modules/ISL_MM</ApplicationName> <Domain>abl_portal</Domain> <Service>Services</Service> <Language>En</Language> <UserId>externalapp</UserId> <Sender>externalapp</Sender> <MessageId>abl_portal</MessageId> <Payload> <ser:Services xmlns:ser="http://schema.concierge.com/Services"> <ser:Request> <ser:Operation_Name>abillityReferenceApi</ser:Operation_Name> <ser:ChangeServicesRequest> <ser:code>5028</ser:code> <ser:request> <EVENT xmlns=""> <REQUEST OPERATION_NAME="requestForProvisioning" CALLED_FROM="ISL" SERVICE_CODE="GSM" API_CODE="7521" CLIENT_ID="modules/ISL_MM" ENTITY_ID="948423164" INFO_LEVEL="3" EXTERNAL_REFERENCE="" EXTERNAL_SYSTEMS_LOG_REFERNCE="" EXTERNAL_APPLICATION="ISL" EXTERNAL_USER="ISL" /> </EVENT> </ser:request> </ser:ChangeServicesRequest> </ser:Request> </ser:Services> </Payload> </EaiEnvelope> </com:clientRequest> </soapenv:Body> </soapenv:Envelope>
+2025-04-03 18:29:54,417|25|0|a0d72551|Set respCode and respDesc|UA|success|83fff00a|Invoke SOAP WS|
+2025-04-03 18:29:54,428|18|0|8b999a15|LogContent(Strip Large Content)|LC|success|b0bb7187|Save CRM_EXT_CALL_DATA|Filename: be12a783-3e7b-46ad-af1e-05cf2cef018b | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > CBS Active request  > Call to 3rd Party  > Invoke SOAP WS > Save CRM_EXT_CALL_DATA | ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA: <?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns5:clientRequestResponse xmlns:ns6="http://schema.concierge.com/ttws" xmlns:ns5="http://schema.concierge.com" xmlns:ns4="http://schema.concierge.com/Services" xmlns:ns3="http://schema.concierge.com/Envelope" xmlns:ns2="http://schema.concierge.com/isp"><ns3:EaiEnvelope><ns3:ApplicationName>modules/ISL_MM</ns3:ApplicationName><ns3:Domain>abl_portal</ns3:Domain><ns3:Service>Services</ns3:Service><ns3:ServiceId>0</ns3:ServiceId><ns3:Language>En</ns3:Language><ns3:UserId>externalapp</ns3:UserId><ns3:Sender>externalapp</ns3:Sender><ns3:MessageId>abl_portal</ns3:MessageId><ns3:Payload><ns4:Services><ns4:Response><ns4:ResultStatusResponse><ns4:resultCode>0</ns4:resultCode></ns4:ResultStatusResponse><ns4:ChangeServicesResponse><EVENT><API_OUTPUT><SUCCESS_FLAG>0</SUCCESS_FLAG><REQUEST_STATUS>0</REQUEST_STATUS><SUCCESS_MESG_LANG_1>Activation successfully%5BLANG1%5D</SUCCESS_MESG_LANG_1><SUCCESS_MESG_LANG_2>Activation successfully%5BLANG2%5D</SUCCESS_MESG_LANG_2><ABILLITY_REFERENCE></ABILLITY_REFERENCE><TRANSACTION_LOG_REFERNCE></TRANSACTION_LOG_REFERNCE></API_OUTPUT></EVENT></ns4:ChangeServicesResponse></ns4:Response></ns4:Services></ns3:Payload></ns3:EaiEnvelope></ns5:clientRequestResponse></S:Body></S:Envelope>
+2025-04-03 18:29:54,431|2|0|a09dad17|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,433|16|0|f9a5370d|Check Response Status Code|ROA|success|83fff00a|Invoke SOAP WS|
+2025-04-03 18:29:54,441|1|0|4cfd1d4b|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,441|9|0|4cfd1d4b|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,464|23|4|13861f6c|Save request  CRM_EXT_CALL_DATA  |PSQL|success|b0bb7187|Save CRM_EXT_CALL_DATA|
+2025-04-03 18:29:54,491|4|1|9c1884c0|Store Request fields to Attributes|EXP|matched|54d6dc00|Prepare Response|
+2025-04-03 18:29:54,510|19|0|e1edf9cd|Success Pre Provisioning ?|ROA|matched|54d6dc00|Prepare Response|
+2025-04-03 18:29:54,524|14|0|b8513318|Handle Success Resp|RT|success|54d6dc00|Prepare Response|
+2025-04-03 18:29:54,570|11|0|90878919|Request is POJO or JSON ?|ROA|unmatched|fa6a9027|Handle Response|
+2025-04-03 18:29:54,590|16|1|256ff7b1|Send Response to Core|PJMS|pre|6b119007|CBS Active request |Filename: be12a783-3e7b-46ad-af1e-05cf2cef018b | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > CBS Active request  | ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA - Response sent :  'ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA.RESP' :{ "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "respCode": "200", "respDesc" : "", "map" : { "SUCCESS_FLAG": "0", "REQUEST_STATUS": "0", "ABILLITY_REF_NUM": "null", "RESPONSE_ERROR_CODE":"", "SUCCESS_MESG_LANG_1":"Activation successfully%5BLANG1%5D", "SUCCESS_MESG_LANG_2":"Activation successfully%5BLANG2%5D", "TRANSACTION_LOG_REFERNCE":"" } } }
+2025-04-03 18:29:55,111|1022|0|9c7b1976|Call MM CBS SIM Provisioning API|PJMS|success|f72362d9|Call OSIA SIM Pre Provisioning API|Filename: d12ce164-2b8b-46f5-aa28-f7f1fe2e8058 | MTNA - Core Registrations & Verifications  > Registration Retry Processes > New Registration > SIM Pre Provisioning Bss API > Call OSIA SIM Pre Provisioning API | ISL-CORE.NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ.TB - Response from : 'ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA': { "id" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name" : "ISL-MM.CALL_CBS_API_ACTIVATION_REQ.TA", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "respCode": "200", "respDesc" : "", "map" : { "SUCCESS_FLAG": "0", "REQUEST_STATUS": "0", "ABILLITY_REF_NUM": "null", "RESPONSE_ERROR_CODE":"", "SUCCESS_MESG_LANG_1":"Activation successfully%5BLANG1%5D", "SUCCESS_MESG_LANG_2":"Activation successfully%5BLANG2%5D", "TRANSACTION_LOG_REFERNCE":"" } } }
+2025-04-03 18:29:55,114|3|0|cae68a4b|Extract response values|EJP|matched|f72362d9|Call OSIA SIM Pre Provisioning API|
+2025-04-03 18:29:55,158|14|0|aacbb123|Prepare Result Code Mapping Request|RT|success|f2e1f71b|Call Result Code Mapping|
+2025-04-03 18:29:55,173|6|0|595af6ba|Log Request|LC|success|0def7aab|Result Code Mapping|Filename: d12ce164-2b8b-46f5-aa28-f7f1fe2e8058 | MTNA - Core Registrations & Verifications  > Registration Retry Processes > New Registration > SIM Pre Provisioning Bss API > Call Result Code Mapping > Result Code Mapping | ISL-CORE.NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ.TB: { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "mappingName" : "NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ", "respCode" : "200", "respMsg" : "", "autoAdd" : "on", "language" : "EN" }
+2025-04-03 18:29:55,179|12|0|c1111f29|Extract attributes|EJP|matched|0def7aab|Result Code Mapping|
+2025-04-03 18:29:55,201|13|0|8b3def96|Prepare SQL to fetch ISL Code|UA|success|7db1e020|Fetch ISL Code|
+2025-04-03 18:29:55,202|1|0|5b115af1|Fetch ISL Code|ESQLR|pre|7db1e020|Fetch ISL Code|
+2025-04-03 18:29:55,215|14|12|5b115af1|Fetch ISL Code|ESQLR|success|7db1e020|Fetch ISL Code|
+2025-04-03 18:29:55,240|16|0|0ecd3c52|Fetch message|ESQLR|pre|0def7aab|Result Code Mapping|
+2025-04-03 18:29:55,247|23|7|0ecd3c52|Fetch message|ESQLR|success|0def7aab|Result Code Mapping|
+2025-04-03 18:29:55,260|13|0|a4bb9dc2|Set Mapping Response|RT|success|0def7aab|Result Code Mapping|
+2025-04-03 18:29:55,267|7|0|6865ae54|Log Response|LC|success|0def7aab|Result Code Mapping|Filename: d12ce164-2b8b-46f5-aa28-f7f1fe2e8058 | MTNA - Core Registrations & Verifications  > Registration Retry Processes > New Registration > SIM Pre Provisioning Bss API > Call Result Code Mapping > Result Code Mapping | ISL-CORE.NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ.TB: { "trxId" : "32C7AD74BEC645AE9FBF5AE2405D0F6B", "islCode" : "200", "message" : "", "notFoundFlag" : "" }
+2025-04-03 18:29:55,275|12|0|93ea0b5b|Extract Response Data|EJP|matched|f2e1f71b|Call Result Code Mapping|
+2025-04-03 18:29:55,292|16|0|33a4bb72|Mapping result?|ROA|Success|f2e1f71b|Call Result Code Mapping|
+2025-04-03 18:29:55,374|35|23|954f96b7|Deactivate cronjob|PSQL|success|d6df1769|Handle Success|
+2025-04-03 18:29:55,375|1|0|09e64200|API has callback?|ROA|unmatched|d6df1769|Handle Success|
+2025-04-03 18:29:55,382|6|0|b0b53fd4|Have more API to call?|ROA|Have more API to call|d6df1769|Handle Success|
+2025-04-03 18:29:55,385|3|0|1a1ecd74|Set next retry task|UA|success|d6df1769|Handle Success|
+2025-04-03 18:29:55,405|2|0|08580575|Fetch ID for Cronjob|ESQLR|pre|caa02115|Create and call next cronjob|
+2025-04-03 18:29:55,407|4|1|08580575|Fetch ID for Cronjob|ESQLR|success|caa02115|Create and call next cronjob|
+2025-04-03 18:29:55,424|17|3|2f943337|Store cronjob|PSQL|success|caa02115|Create and call next cronjob|
+2025-04-03 18:29:55,429|5|0|c661c7e3|Prepare Request|RT|success|caa02115|Create and call next cronjob|
+2025-04-03 18:29:55,431|2|0|fb99737d|Put request into attribute|EJP|matched|caa02115|Create and call next cronjob|
+2025-04-03 18:29:55,445|14|6|6b1b3e51|Log Audit Trail|PSQL|success|caa02115|Create and call next cronjob|
+2025-04-03 18:29:55,447|18|4|9b593dbb|Send Request|PJMS|pre|caa02115|Create and call next cronjob|Filename: d12ce164-2b8b-46f5-aa28-f7f1fe2e8058 | MTNA - Core Registrations & Verifications  > Registration Retry Processes > New Registration > SIM Pre Provisioning Bss API > Handle Result > Create and call next cronjob | ISL-CORE.NEW_REG_SIM_PRE_PROVISIONING_RETRY_REQ.TB - Response sent :  'ISL-CORE.NEW_REG_PRE_PROVISIONED_SIM_STATUS_RETRY_REQ.TB' :{ "id": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name": "NEW_REG_PRE_PROVISIONED_SIM_STATUS_RETRY_REQ", "dataObject": { "crmExtCallErrorId": "366796", "nbRetry": "0", "customerDataId": "1023679", "trxId": "32C7AD74BEC645AE9FBF5AE2405D0F6B" } }
+2025-04-03 18:29:55,448|0|73|c0d9fcbb|Pull New-Reg Sim Status Update Retry Message|CJMS|success|624b07e5|New Reg SIM Status Update to PreProvisioned|Filename: 95e6cd3d-f8fd-44e3-b98d-2269f372f3b9 | MTNA - Core Registrations & Verifications  > Registration Retry Processes > New Registration > New Reg SIM Status Update to PreProvisioned | ISL-CORE.NEW_REG_PRE_PROVISIONED_SIM_STATUS_RETRY_REQ.TB - Request: { "id": "32C7AD74BEC645AE9FBF5AE2405D0F6B", "name": "NEW_REG_PRE_PROVISIONED_SIM_STATUS_RETRY_REQ", "dataObject": { "crmExtCallErrorId": "366796", "nbRetry": "0", "customerDataId": "1023679", "trxId": "32C7AD74BEC645AE9FBF5AE2405D0F6B" } }
+2025-04-03 18:29:55,455|5|0|fbdf3c7d|Extract Request Data|EJP|matched|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,477|21|18|f89c5d4d|Update transaction as in progress|PSQL|success|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,494|17|6|777d0dbb|Increase retry count|PSQL|success|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,501|7|0|281e3b85|Fetch transaction data|ESQLR|pre|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,510|16|9|281e3b85|Fetch transaction data|ESQLR|success|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,513|2|0|9c8d00af|Fetch user name|ESQLR|pre|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,516|5|2|9c8d00af|Fetch user name|ESQLR|success|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,516|0|0|4145785f|Fetch customer data|ESQLR|pre|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,526|10|9|4145785f|Fetch customer data|ESQLR|success|575d286d|Extract and Fetch Data|
+2025-04-03 18:29:55,537|4|0|cad1f494|New-Reg Sim Status Update enabled?|ROA|Pre provisioned status update enabled|624b07e5|New Reg SIM Status Update to PreProvisioned|
+2025-04-03 18:29:55,554|4|0|d4d2c8e1|Check SIM Type & finalize MSISDN Condition|UA|success|b18b4d81|Update Sim Status to PreProvisioned|
+2025-04-03 18:29:55,558|4|0|bf4b1736|Check if ICCID & Msisdn not empty?|ROA|matched|b18b4d81|Update Sim Status to PreProvisioned|
+2025-04-03 18:29:55,564|6|0|365be135|Check If SIM Record Exists|ESQLR|pre|b18b4d81|Update Sim Status to PreProvisioned|
+2025-04-03 18:29:55,573|15|9|365be135|Check If SIM Record Exists|ESQLR|No Record Found|b18b4d81|Update Sim Status to PreProvisioned|
+2025-04-03 18:29:55,595|6|0|31d7962e|Check If SSM_MSISDN Record Exists|ESQLR|pre|867ebda5|Insert Sim Record|
+2025-04-03 18:29:55,604|15|9|31d7962e|Check If SSM_MSISDN Record Exists|ESQLR|No Record Found|867ebda5|Insert Sim Record|
+2025-04-03 18:29:55,624|19|11|615305ef|Insert Record SSM_MSISDN|PSQL|success|867ebda5|Insert Sim Record|
+2025-04-03 18:29:55,643|19|5|36c2f41e|Insert SSM_SIMRECORD|PSQL|success|867ebda5|Insert Sim Record|
+2025-04-03 18:29:55,667|21|20|59359994|Update Sim Status to Active|PSQL|success|b18b4d81|Update Sim Status to PreProvisioned|
+2025-04-03 18:29:55,672|5|0|0f9bb937|Set RespCode & RespDesc|UA|success|b18b4d81|Update Sim Status to PreProvisioned|
+2025-04-03 18:29:55,712|15|10|6ff7e41d|Deactivate cronjob|PSQL|success|3881be3f|Handle Success|
+2025-04-03 18:29:55,718|6|0|6c2c28ad|API has callback?|ROA|unmatched|3881be3f|Handle Success|
+2025-04-03 18:29:55,723|5|0|ca89f610|Have more API to call?|ROA|unmatched|3881be3f|Handle Success|
+2025-04-03 18:29:55,731|7|0|ca66f550|Configure trx type and trx status|UA|success|3881be3f|Handle Success|
+2025-04-03 18:29:55,747|16|0|1c078030|MoMo Selected and Check success and Not huawei|ROA|unmatched|3881be3f|Handle Success|
+2025-04-03 18:29:55,787|56|50|5ac87b9f|Update transaction to final status|PSQL|success|3881be3f|Handle Success|
+2025-04-03 18:29:55,804|17|0|7723c4f3|Update trx status for old registrations required?|ROA|unmatched|3881be3f|Handle Success|
+2025-04-03 18:29:55,812|25|11|96254e2c|Add ISL_TRX_EVENT|PSQL|success|3881be3f|Handle Success|
+2025-04-03 18:29:55,845|33|23|daeaba47|ISL_TRX_EVENT_DETAIL|PSQL|success|3881be3f|Handle Success|
+2025-04-03 18:29:55,861|3|0|4e322e3a|Generate Trx Event Id|UA|success|f942ebfb|Save Trx History Details|
+2025-04-03 18:29:55,871|10|0|64a6cc98|Save Trx Histroy Enabled?|ROA|Save trx history enabled|f942ebfb|Save Trx History Details|
+2025-04-03 18:29:55,879|7|0|9eb08624|Retreive ISL_TRX_HISTORY columns|ESQLR|pre|213f003a|Copy TrxData in ISL_TRX_HISTORY|
+2025-04-03 18:29:55,897|25|17|9eb08624|Retreive ISL_TRX_HISTORY columns|ESQLR|success|213f003a|Copy TrxData in ISL_TRX_HISTORY|
+2025-04-03 18:29:55,936|39|26|4dd010b1|Copy Trx data to ISL_TRX_HISTORY|PSQL|success|213f003a|Copy TrxData in ISL_TRX_HISTORY|
+2025-04-03 18:29:55,972|7|0|596b83e0|Retreive CRM_CUSTOMER_BINARY_DATA_HISTORY columns|ESQLR|pre|12f48121|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-04-03 18:29:55,984|19|11|596b83e0|Retreive CRM_CUSTOMER_BINARY_DATA_HISTORY columns|ESQLR|success|12f48121|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-04-03 18:29:56,089|105|98|af9dba33|Copy Trx data to CRM_CUSTOMER_BINARY_DATA_HISTORY|PSQL|success|12f48121|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-04-03 18:29:56,126|16|0|b9d88a7b|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|pre|9424dfe8|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-04-03 18:29:56,192|82|66|b9d88a7b|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|success|9424dfe8|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-04-03 18:29:56,233|41|28|9f4abf5c|Copy Trx data to CRM_CUSTOMER_DATA_HISTORY|PSQL|success|9424dfe8|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|

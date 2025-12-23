@@ -1,0 +1,24 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-03-12 11:10:01,252|0|784|47a72884|Pull Check Max Request|CJMS|success|4b954dd2|Check Max|Filename: 14aeac7c-976f-471a-89e8-adf9b02153f5 | MTNA - Core Operations & Management > Checks and Validate > Check Max | ISL-CORE.CHECK_MAX_V5_REQ.TA - Request: ReqMsg{id=04B62C79D27045E59FCF862C60A26017, name=CHECK_MAX_V5_REQ, dataObject=String%5B50%5D,trxTypeId=1,instanceId=11000101,companyId=1,username=pipulwebcare,createdDateTime=Wed Mar 12 11:10:01 ICT 2025,locale=EN,map=StringObjectMap%5BIDTYPE = 2, TRXTYPEID = 1, SOURCE_FLAG = IN_FLOW, CHK_MAX_TYPE = CONFIRMER, IDNUMBER = 123-123-321, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0,appActionId=100061%5D, datum=null}
+2025-03-12 11:10:01,283|22|0|1ffbbed8|POJO or JSON?|ROA|POJO|f4e41323|Inspect Request|
+2025-03-12 11:10:01,307|24|1|f37dbd34|ReqMsg to JSON|PTJ|success|f4e41323|Inspect Request|
+2025-03-12 11:10:01,312|4|0|c700bb6c|Store Request Data in Attributes|EJP|matched|f4e41323|Inspect Request|
+2025-03-12 11:10:01,324|12|0|1cb4fd53|Validate Request|ROA|matched|f4e41323|Inspect Request|
+2025-03-12 11:10:01,343|19|0|015dc10c|Convert Arabic to English|EGS|success|f4e41323|Inspect Request|
+2025-03-12 11:10:01,369|13|0|2f3ca228|ISL or External Check Max?|ROA|Confirmer Check Max|4b954dd2|Check Max|
+2025-03-12 11:10:01,416|19|0|362107cf|Checking condition|ROA|unmatched|2fdbce76|Confirmer Check Max|
+2025-03-12 11:10:01,456|19|0|79262e55|Find confirmer check max configuration details|ESQLR|pre|b970ed4d|Load Confirmer Check Max Conf Details|
+2025-03-12 11:10:01,474|0|18|79262e55|Find confirmer check max configuration details|ESQLR|success|b970ed4d|Load Confirmer Check Max Conf Details|
+2025-03-12 11:10:01,486|12|8|0cdf3d1e|Prepare SQL & Levenshtein Spec|EGS|success|b970ed4d|Load Confirmer Check Max Conf Details|
+2025-03-12 11:10:01,499|5|0|69700697|Find possible transactions for check max|ESQLR|pre|2fdbce76|Confirmer Check Max|
+2025-03-12 11:10:01,798|1|299|69700697|Find possible transactions for check max|ESQLR|No Record Found|2fdbce76|Confirmer Check Max|
+2025-03-12 11:10:01,802|4|0|d445b366|Result Below Max Configuration?|ROA|Result Below Max Configuration|2fdbce76|Confirmer Check Max|
+2025-03-12 11:10:01,859|13|0|ea0daa0e|Set Success Response Attributes|UA|success|7430fe7f|Prepare Reponse|
+2025-03-12 11:10:01,892|9|0|a7038913|Fetch Custom Message|ESQLR|pre|6fc8bae9|Fetch Custom Message|
+2025-03-12 11:10:01,895|0|3|a7038913|Fetch Custom Message|ESQLR|success|6fc8bae9|Fetch Custom Message|
+2025-03-12 11:10:01,908|25|0|99a87ae5|Check Max Over max ?|ROA|unmatched|6fc8bae9|Fetch Custom Message|
+2025-03-12 11:10:01,923|27|3|1a5c4377|Build Custom Message|EGS|success|6fc8bae9|Fetch Custom Message|
+2025-03-12 11:10:01,964|13|0|0a16131c|Prepare JSON Response|RT|success|7430fe7f|Prepare Reponse|
+2025-03-12 11:10:02,015|1|0|65f9abaa|POJO or JSON?|ROA|POJO|d1b82684|Convert Response|
+2025-03-12 11:10:02,035|20|0|8008ac33|RespMsg JSON to POJO|JTP|success|d1b82684|Convert Response|
+2025-03-12 11:10:02,067|26|3|6779ad0f|Publish Check Max Response|PJMS|pre|4b954dd2|Check Max|Filename: 14aeac7c-976f-471a-89e8-adf9b02153f5 | MTNA - Core Operations & Management > Checks and Validate > Check Max | ISL-CORE.CHECK_MAX_V5_REQ.TA - Response sent :  'ISL-CORE.CHECK_MAX_V5_REQ.TA.RESP' :RespMsg{id=04B62C79D27045E59FCF862C60A26017, name=CHECK_MAX_REG_REQ, resultCode=ResultCode{code=200, desc=Success}, dataObject=String%5B57%5D,instanceId=11000101,idCompany=1,respCode=200,respDesc=Success,customMessage=ResponseMessage %5Bid=200, messages={AR=SIM registration allowed. %5BAR%5D, EN=SIM registration allowed. %5BEN%5D, KU=SIM registration allowed. %5BKU%5D}%5D,createdDateTime=Wed Mar 12 11:10:01 ICT 2025%5D, datum=null}

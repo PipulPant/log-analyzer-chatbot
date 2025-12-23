@@ -1,0 +1,30 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|IDENTIFIER|LOG
+2025-12-01 14:06:00,004|1|2|7a2a172d|Fetch Pending Verification Trx from DB|ESQLR|success|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,008|4|0|50952eb0|Fetch Access Token|ESQLR|pre|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,020|16|11|50952eb0|Fetch Access Token|ESQLR|success|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,052|1|22|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,052|0|22|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,052|0|22|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,052|0|22|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,052|0|22|3afff58e|Separate found retries|SJ|split|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,052|32|22|3afff58e|Separate found retries|SJ|original|fd69eddb|Background External Check Status|
+2025-12-01 14:06:00,058|6|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|A285E841075543088F85E63B1AC59CB8|
+2025-12-01 14:06:00,061|9|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|4C977C99363A4A95BADF5C566911F5C5|
+2025-12-01 14:06:00,061|9|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-12-01 14:06:00,061|9|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|581F627F786F43FAB89D899036855323|
+2025-12-01 14:06:00,061|9|0|16f3557c|Evaluate Trx Attributes|EJP|matched|fd69eddb|Background External Check Status|76E151E866DA4CA8951B908FDD024DAB|
+2025-12-01 14:06:00,076|8|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|A285E841075543088F85E63B1AC59CB8|
+2025-12-01 14:06:00,078|10|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|4C977C99363A4A95BADF5C566911F5C5|
+2025-12-01 14:06:00,103|26|16|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|A285E841075543088F85E63B1AC59CB8|
+2025-12-01 14:06:00,103|23|16|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|4C977C99363A4A95BADF5C566911F5C5|
+2025-12-01 14:06:00,112|9|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|A285E841075543088F85E63B1AC59CB8|
+2025-12-01 14:06:00,115|12|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|4C977C99363A4A95BADF5C566911F5C5|
+2025-12-01 14:06:00,188|120|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-12-01 14:06:00,189|121|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|581F627F786F43FAB89D899036855323|
+2025-12-01 14:06:00,191|123|0|7c31f851|Transaction retry in progress?|ROA|unmatched|c16635a5|Validate|76E151E866DA4CA8951B908FDD024DAB|
+2025-12-01 14:06:00,256|62|60|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-12-01 14:06:00,256|62|61|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|581F627F786F43FAB89D899036855323|
+2025-12-01 14:06:00,276|82|81|981d09de|Update in progress flag to 1|PSQL|success|e7f4aa40|Multi-Instance Precaution|76E151E866DA4CA8951B908FDD024DAB|
+2025-12-01 14:06:00,282|26|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|70C28F3D717D4964A7B55DCFE49CD8B5|
+2025-12-01 14:06:00,284|28|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|581F627F786F43FAB89D899036855323|
+2025-12-01 14:06:00,285|29|0|7ce05023|Update successful?|ROA|unmatched|e7f4aa40|Multi-Instance Precaution|76E151E866DA4CA8951B908FDD024DAB|

@@ -1,0 +1,4 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-12-23 15:00:00,019|0|0|3e17d5f4|Schedule trigger|GFF|success|a2fe3917|SMS Hourly Registration Report|
+2025-12-23 15:00:00,054|35|9|5ef881c2|Update Schedule last run|PSQL|success|a2fe3917|SMS Hourly Registration Report|
+2025-12-23 15:00:00,065|11|0|8533cd2c|Valid Instance ?|ROA|unmatched|a2fe3917|SMS Hourly Registration Report|

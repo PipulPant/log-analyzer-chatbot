@@ -1,0 +1,4 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|IDENTIFIER|LOG
+2025-05-08 11:45:50,186|0|0|702fab53|Schedule trigger|GFF|success|204b1f7a|Trigger Bulk Status Update|
+2025-05-08 11:45:50,265|79|4|fdfb7359|Update Schedule last run datetime|PSQL|success|204b1f7a|Trigger Bulk Status Update|
+2025-05-08 11:45:50,277|12|0|b5f444ec|check concurrence instance run|ROA|unmatched|204b1f7a|Trigger Bulk Status Update|

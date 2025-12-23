@@ -1,0 +1,53 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-03-13 16:26:48,214|1|1|6ee758ab|HandleHttpRequest|HHREQ|success|b120b8b4|External EAI|Filename: 25091af6-39eb-4d4b-be9d-b880ddfeb443 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI | POST '/ISL_EAI/v1/enrollments/14353588923146' - Request:  { "enrollmentType": "RE_REG", "reqType": "updateMoMoProfile", "contextualData": { "enrollmentUser": "huawei-momo", "enrollmentDate": "2025-02-14T12:10:47Z", "mobileWalletProfile": "LOW_MOMO", "msisdn": "876694450", "MSISDN": "876694450" }, "transactionId": "66866867225345843398981760" }
+2025-03-13 16:26:48,221|6|0|e00d4682|Fix Http URI|UA|success|b120b8b4|External EAI|
+2025-03-13 16:26:48,231|10|0|7e03080f|Ping Request?|ROA|unmatched|b120b8b4|External EAI|
+2025-03-13 16:26:48,261|6|0|c38659a2|Decode Auth header|UA|success|c90ed526|Extract User & Pass From Req|
+2025-03-13 16:26:48,281|20|0|e67e1620|64Decode User & Pass|UA|success|c90ed526|Extract User & Pass From Req|
+2025-03-13 16:26:48,328|15|0|7740ee51|Fetch ext user record|ESQLR|pre|4737cb1e|Validate User|
+2025-03-13 16:26:48,331|18|2|7740ee51|Fetch ext user record|ESQLR|success|4737cb1e|Validate User|
+2025-03-13 16:26:48,343|12|0|7bb361b5|Valid User?|ROA|Valid User|4737cb1e|Validate User|
+2025-03-13 16:26:48,351|8|0|c6d41111|Check Org?|ROA|unmatched|4737cb1e|Validate User|
+2025-03-13 16:26:48,375|22|2|fd6a5468|Insert record in ISL_EXT_USER_USE|PSQL|success|4737cb1e|Validate User|
+2025-03-13 16:26:48,411|15|0|556c7be9|Which HTTP Method?|ROA|HTTP POST|b120b8b4|External EAI|
+2025-03-13 16:26:48,428|8|0|3af38309|Which API?|ROA|Registration|35a954db|POST APIs|
+2025-03-13 16:26:48,470|21|0|28f4538e|Extract Request Data|EJP|matched|7c24d32d|Inspect Request|
+2025-03-13 16:26:48,473|3|0|542917d0|Extract trxId and enrollmentId, Initialize Value|UA|success|7c24d32d|Inspect Request|
+2025-03-13 16:26:48,485|12|0|4c0b2474|Prepare Audit Trail Attributes|UA|success|7c24d32d|Inspect Request|
+2025-03-13 16:26:48,502|17|0|816945bc|Request Valid?|ROA|matched|7c24d32d|Inspect Request|
+2025-03-13 16:26:48,520|18|0|df1edbc4|Check if enrollmentId exists|ESQLR|pre|7c24d32d|Inspect Request|
+2025-03-13 16:26:48,523|21|2|df1edbc4|Check if enrollmentId exists|ESQLR|No Record Found|7c24d32d|Inspect Request|
+2025-03-13 16:26:48,530|12|0|e83d7c81|Prepare Global Audit Trail Attributes|UA|success|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:48,533|3|0|38253a7c|Strip Big Data|LC|success|22eb31c7|Log Audit Trail|Filename: 25091af6-39eb-4d4b-be9d-b880ddfeb443 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > Log Audit Trail | : { "enrollmentType": "RE_REG", "reqType": "updateMoMoProfile", "contextualData": { "enrollmentUser": "huawei-momo", "enrollmentDate": "2025-02-14T12:10:47Z", "mobileWalletProfile": "LOW_MOMO", "msisdn": "876694450", "MSISDN": "876694450" }, "transactionId": "66866867225345843398981760"}
+2025-03-13 16:26:48,543|5|0|69370b49|Enrollment User present?|ROA|Enrollment User present|39b29132|Check For Username|
+2025-03-13 16:26:48,549|15|0|3743bf86|ExtractText|ET|matched|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:48,550|1|0|c163fee4|Prepare Description for Audit Trail|UA|success|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:48,552|2|0|d9d492d0|Initialize SQL Query|UA|success|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:48,558|15|0|6f8ca6c3|Find Isl User|ESQLR|pre|39b29132|Check For Username|
+2025-03-13 16:26:48,560|17|1|6f8ca6c3|Find Isl User|ESQLR|No Record Found|39b29132|Check For Username|
+2025-03-13 16:26:48,580|28|13|f54534fb|Log Request|PSQL|success|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:48,582|22|0|2bfbd238|Assign Default User|UA|success|39b29132|Check For Username|
+2025-03-13 16:26:48,622|11|0|ff67856b|Prepare Request|RT|success|940514b9|Call Core Registration|
+2025-03-13 16:26:48,623|1|0|36f060cc|Call Core Re-Reg Translation|PJMS|pre|940514b9|Call Core Registration|Filename: 25091af6-39eb-4d4b-be9d-b880ddfeb443 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > POST APIs > APIs group > Registration > Call Core Registration |  - Request to :  'ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA' :{ "id" : "13D4568D03674B9EAD83CF774D896BF2", "name" : "STORE_REG_REQ", "dataObject" : { "instanceId" : "800002", "userName" : "lillycare", "trxTypeId" : "6", "map" : { "MSISDN" : "876694450", "REQUEST_TYPE" : "updateMoMoProfile", "EXT_TRX_ID" : ""transactionId": "6686686722843398981760"", "ENROLLMENT_ID" : "14353588923146", "SYS_CREATED_DATE_TIME" : "2025-02-14T12:10:47Z", "SYS_USERNAME" : "lillycare", "REJECTED_REASON" : "", "MOBILE_WALLET_PROFILE" : "LOW_MOMO" }, "formVersion" : { "formId" : "6" } }, "datum" : null }
+2025-03-13 16:26:48,625|0|805|7055d9a0|Pull Registration Request|CJMS|success|29bcd423|Re-Registration Rejected|Filename: ca7c93e9-0c28-4f7a-b896-0b6a144f7e95 | MTNA - Core Registrations & Verifications  > Registrations > Re-Registration Rejected | ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA - Request: { "id" : "13D4568D03674B9EAD83CF774D896BF2", "name" : "STORE_REG_REQ", "dataObject" : { "instanceId" : "800002", "userName" : "lillycare", "trxTypeId" : "6", "map" : { "MSISDN" : "876694450", "REQUEST_TYPE" : "updateMoMoProfile", "EXT_TRX_ID" : ""transactionId": "6686686722843398981760"", "ENROLLMENT_ID" : "14353588923146", "SYS_CREATED_DATE_TIME" : "2025-02-14T12:10:47Z", "SYS_USERNAME" : "lillycare", "REJECTED_REASON" : "", "MOBILE_WALLET_PROFILE" : "LOW_MOMO" }, "formVersion" : { "formId" : "6" } }, "datum" : null }
+2025-03-13 16:26:48,643|12|0|b43b9758|POJO or JSON?|ROA|unmatched|a0aae1b5|Inspect Request|
+2025-03-13 16:26:48,663|20|0|b40674f4|Set configuration and initial values|UA|success|a0aae1b5|Inspect Request|
+2025-03-13 16:26:48,685|19|0|fd8d3762|Store Request Data in Attributes|EJP|failure|cc635d26|Process Attributes|
+2025-03-13 16:26:48,736|18|0|c11a0ffa|Internal Error Response|UA|success|efadcc10|Prepare JSON Response|
+2025-03-13 16:26:48,739|3|0|835ecb0f|Prepare JSON Response|RT|success|efadcc10|Prepare JSON Response|
+2025-03-13 16:26:48,748|7|0|2b052e51|mPOS?|ROA|unmatched|d693af75|Push Notification To Mpos|
+2025-03-13 16:26:48,749|10|0|5bf30f6b|Remove Cache Entry (if any)|DF|failure|efadcc10|Prepare JSON Response|
+2025-03-13 16:26:48,765|17|0|b3401371|POJO or JSON?|ROA|unmatched|32275947|Convert Response|
+2025-03-13 16:26:48,787|18|0|ce57a983|Publish Registration Response|PJMS|pre|29bcd423|Re-Registration Rejected|Filename: ca7c93e9-0c28-4f7a-b896-0b6a144f7e95 | MTNA - Core Registrations & Verifications  > Registrations > Re-Registration Rejected | ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA - Response sent :  'ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA.RESP' :{ "id": "", "name": "SUBSCRIBER_REG_RESP", "resultCode": "SUCCESS", "dataObject": { "trxId": "", "instanceId": , "idCompany": null, "respCode": 500, "respDesc": "Internal Error", "customMessage": null, "arrayOptions": null, "data": null, "createdDateTime": "Thu Mar 13 16:26:48 ICT 2025", "trxStatusId": 500, "trxTypeId": 6, "customerId": null, "returnedTrxTypeId": null, "returnedTrxId": "", "msisdn": , "primaryTrxId": null }, "allData": null }
+2025-03-13 16:26:49,646|1022|0|36f060cc|Call Core Re-Reg Translation|PJMS|success|940514b9|Call Core Registration|Filename: 25091af6-39eb-4d4b-be9d-b880ddfeb443 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > POST APIs > APIs group > Registration > Call Core Registration |  - Response from : 'ISL-CORE.SUBSCRIBER_REREG_REJECTED_V5_REQ.TA': { "id": "", "name": "SUBSCRIBER_REG_RESP", "resultCode": "SUCCESS", "dataObject": { "trxId": "", "instanceId": , "idCompany": null, "respCode": 500, "respDesc": "Internal Error", "customMessage": null, "arrayOptions": null, "data": null, "createdDateTime": "Thu Mar 13 16:26:48 ICT 2025", "trxStatusId": 500, "trxTypeId": 6, "customerId": null, "returnedTrxTypeId": null, "returnedTrxId": "", "msisdn": , "primaryTrxId": null }, "allData": null }
+2025-03-13 16:26:49,656|9|0|eff720cf|Pull Response Information|EJP|failure|940514b9|Call Core Registration|
+2025-03-13 16:26:49,708|1|0|3ed60bd7|Internal Error 500|UA|success|6a136a0c|Prepare Response|
+2025-03-13 16:26:49,727|19|0|cce3f1f9|PrepareResponse|RT|success|6a136a0c|Prepare Response|
+2025-03-13 16:26:49,747|3|0|de39ffd0|Set Content-Type|UA|success|b120b8b4|External EAI|
+2025-03-13 16:26:49,759|12|0|70509f6a|HandleHttpResponse|HHRES|success|b120b8b4|External EAI|Filename: 25091af6-39eb-4d4b-be9d-b880ddfeb443 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI | POST '/v1/enrollments/14353588923146' - Response: { "code": "500", "message": "Unexpected error" }
+2025-03-13 16:26:49,760|11|0|e83d7c81|Prepare Global Audit Trail Attributes|UA|success|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:49,764|4|0|38253a7c|Strip Big Data|LC|success|22eb31c7|Log Audit Trail|Filename: 25091af6-39eb-4d4b-be9d-b880ddfeb443 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > Log Audit Trail | : { "code": "500", "message": "Unexpected error"}
+2025-03-13 16:26:49,782|18|0|3743bf86|ExtractText|ET|matched|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:49,783|1|0|c163fee4|Prepare Description for Audit Trail|UA|success|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:49,784|1|0|d9d492d0|Initialize SQL Query|UA|success|22eb31c7|Log Audit Trail|
+2025-03-13 16:26:49,791|7|3|f54534fb|Log Request|PSQL|success|22eb31c7|Log Audit Trail|

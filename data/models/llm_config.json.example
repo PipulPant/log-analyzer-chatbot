@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "provider": "deepseek",
+  "api_key": "",
+  "model": "deepseek-chat",
+  "base_url": "https://api.deepseek.com",
+  "description": "LLM configuration for enhancing chatbot intelligence. Set 'enabled' to true and provide API key to use."
+}
+

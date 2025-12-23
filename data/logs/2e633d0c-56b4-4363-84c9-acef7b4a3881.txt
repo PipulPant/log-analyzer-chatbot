@@ -1,0 +1,28 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|IDENTIFIER|LOG
+2025-06-06 16:58:42,824|1|3|d680288d|Jetty Server (HTTPs)|HHREQ|success|f86050b5|EAI|Filename: 2e633d0c-56b4-4363-84c9-acef7b4a3881 | MTNCB > EAI | POST '/ISL_EAI/CredentialWebService' - Request: 
+2025-06-06 16:58:42,885|41|0|24e9609d|Check gzip or deflate|ROA|gzip|40ec04ac|Check & Decompress Content|
+2025-06-06 16:58:42,908|23|0|d77728ce|Decompress gzip|CompressContent|success|40ec04ac|Check & Decompress Content|
+2025-06-06 16:58:42,943|33|0|c6204c00|SOAP or REST?|ROA|unmatched|f86050b5|EAI|
+2025-06-06 16:58:42,968|24|0|83c6df41|Which Web Service?|ROA|Credential|3c0e01fd|SOAP API|
+2025-06-06 16:58:43,067|29|0|02e5ca3b|SOAP / WSDL / XSD?|ROA|SOAP Req|40ade80e|Credential|
+2025-06-06 16:58:43,115|25|2|7c985caa|Get Header Values|EXP|matched|3cab6ee7|Inspect SOAP|
+2025-06-06 16:58:43,207|92|30|e96182b4|Get Request Object|EXP|matched|3cab6ee7|Inspect SOAP|
+2025-06-06 16:58:43,218|10|0|1a559eb1|Remove i:type|RT|success|3cab6ee7|Inspect SOAP|
+2025-06-06 16:58:43,242|24|4|3c6188b9|Set default values (if missing)|UR|success|3cab6ee7|Inspect SOAP|
+2025-06-06 16:58:43,280|38|0|955793eb|Fix Map Entry|EGS|success|3cab6ee7|Inspect SOAP|
+2025-06-06 16:58:43,297|17|0|d231e681|Extract important attributes|EJP|matched|3cab6ee7|Inspect SOAP|8F58D6660CC8443295775BB23678A354|
+2025-06-06 16:58:43,350|20|10|713d1c6b|Log Request|PSQL|success|40ade80e|Credential|8F58D6660CC8443295775BB23678A354|
+2025-06-06 16:58:43,391|32|0|d93fd0ce|Which operation?|ROA|Close Session|acb6fd24|Operations|8F58D6660CC8443295775BB23678A354|
+2025-06-06 16:58:43,430|26|0|6c21f43f|Prepare CORE Request|RT|success|e775094b|Close Session|8F58D6660CC8443295775BB23678A354|
+2025-06-06 16:58:43,457|27|12|5bee5cb9|Call Close Session in CORE|PJMS|pre|e775094b|Close Session|8F58D6660CC8443295775BB23678A354|Filename: 2e633d0c-56b4-4363-84c9-acef7b4a3881 | MTNCB > EAI > SOAP API > Credential > Operations > Close Session |  - Request to :  'ISL-CORE.CLOSE_SESSION_REQ.TA' :{ "id" : "8F58D6660CC8443295775BB23678A354", "name" : "CLOSE_SESSION_REQ", "dataObject" : {"instanceId":800001,"idCompany":1,"createdDateTime":"2025-06-06T16:58:41","userName":"caspermtncb","password":"4257750b16878b6748e202891ec68c8a","passwordEncrypted":"BhCojEyfPmwqQxNGxZ8mjA==","appId":100007,"mPosInfoData":{"imei":"OGVmMDhkMWItNjYwOS0zYWZjLTk1MDYtZGI0MTA4NGNhMjkx","offlineLogin":false,"cellId":91,"cellLac":3,"cellMcc":-1,"cellMnc":-1,"smsPermission":false,"smsMaxCount":0,"smsSent":false,"smsRetries":0,"mPosVersionName":"1.0.30+30","mPosVersionCode":30,"latitude":-1.0,"longitude":-1.0,"androidVersion":14,"processorName":"arm64-v8a"},"appActionId":100014,"appScreenId":40000445,"trxId":"8F58D6660CC8443295775BB23678A354"}, "datum" : null }
+2025-06-06 17:00:44,412|120955|0|5bee5cb9|Call Close Session in CORE|PJMS|failure|e775094b|Close Session|8F58D6660CC8443295775BB23678A354|Filename: 2e633d0c-56b4-4363-84c9-acef7b4a3881 | MTNCB > EAI > SOAP API > Credential > Operations > Close Session |  - Response from : 'ISL-CORE.CLOSE_SESSION_REQ.TA': { "id" : "8F58D6660CC8443295775BB23678A354", "name" : "CLOSE_SESSION_REQ", "dataObject" : {"instanceId":800001,"idCompany":1,"createdDateTime":"2025-06-06T16:58:41","userName":"caspermtncb","password":"4257750b16878b6748e202891ec68c8a","passwordEncrypted":"BhCojEyfPmwqQxNGxZ8mjA==","appId":100007,"mPosInfoData":{"imei":"OGVmMDhkMWItNjYwOS0zYWZjLTk1MDYtZGI0MTA4NGNhMjkx","offlineLogin":false,"cellId":91,"cellLac":3,"cellMcc":-1,"cellMnc":-1,"smsPermission":false,"smsMaxCount":0,"smsSent":false,"smsRetries":0,"mPosVersionName":"1.0.30+30","mPosVersionCode":30,"latitude":-1.0,"longitude":-1.0,"androidVersion":14,"processorName":"arm64-v8a"},"appActionId":100014,"appScreenId":40000445,"trxId":"8F58D6660CC8443295775BB23678A354"}, "datum" : null }
+2025-06-06 17:00:44,478|20|14|06564a1e|Log Internal Error|PSQL|success|40ade80e|Credential|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,607|34|0|168fba18|Internal Error|UA|success|b422cfc5|Prepare final response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,611|4|0|e341b6aa|SOAP Response?|ROA|unmatched|b422cfc5|Prepare final response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,612|1|0|937b04f7|Prepare SOAP Response|RT|success|b422cfc5|Prepare final response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,651|39|0|4d9df864|Set MiME as text/xml|UA|success|b422cfc5|Prepare final response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,654|3|0|e69e3871|Remove Cache Entry (if any)|DF|failure|b422cfc5|Prepare final response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,697|17|0|97eee8da|Check gzip or deflate?|ROA|gzip|b197d505|Compress Response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,718|21|0|bf20d9da|Compress Response gzip|CompressContent|success|b197d505|Compress Response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,730|12|0|00507af7|UpdateAttribute|UA|success|b197d505|Compress Response|8F58D6660CC8443295775BB23678A354|
+2025-06-06 17:00:44,776|19|0|69c38c40|Send HTTP Response|HHRES|success|f86050b5|EAI|8F58D6660CC8443295775BB23678A354|Filename: 2e633d0c-56b4-4363-84c9-acef7b4a3881 | MTNCB > EAI | POST '/ISL_EAI/CredentialWebService' - Response: 

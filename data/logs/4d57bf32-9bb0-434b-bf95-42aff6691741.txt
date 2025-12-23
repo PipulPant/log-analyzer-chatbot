@@ -1,0 +1,6 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-12-23 15:00:00,019|0|0|001baee7|Schedule trigger|GFF|success|ac30bfa3|Bulk Registration Job Status Update|
+2025-12-23 15:00:00,059|39|16|41eede3d|Update Schedule last run|PSQL|success|ac30bfa3|Bulk Registration Job Status Update|
+2025-12-23 15:00:00,067|8|0|9e7ad7dc|check concurrence instance run|ROA|valid instance|ac30bfa3|Bulk Registration Job Status Update|
+2025-12-23 15:00:00,096|28|0|d29d34b8|Fetch all In Progress Bulk Jobs|ESQLR|pre|ac30bfa3|Bulk Registration Job Status Update|
+2025-12-23 15:00:00,097|0|1|d29d34b8|Fetch all In Progress Bulk Jobs|ESQLR|No Record Found|ac30bfa3|Bulk Registration Job Status Update|

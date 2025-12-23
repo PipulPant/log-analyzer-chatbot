@@ -1,0 +1,7 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-12-23 15:04:00,018|0|0|4a8172b1|Schedule trigger|GFF|success|02d7b31a|Update MoMo Status|
+2025-12-23 15:04:00,065|47|18|7766071f|Update Schedule last run|PSQL|success|02d7b31a|Update MoMo Status|
+2025-12-23 15:04:00,082|17|0|7a391b14|check concurrence instance run|ROA|valid instance|02d7b31a|Update MoMo Status|
+2025-12-23 15:04:00,108|26|0|e0b08c53|check set isHW if HW or ECW|UA|success|02d7b31a|Update MoMo Status|
+2025-12-23 15:04:00,125|17|0|a0dcc2bf|find all accepted trx with activated sim and null,'no,'failed in isl' momo profile status|ESQLR|pre|02d7b31a|Update MoMo Status|
+2025-12-23 15:04:00,129|1|3|a0dcc2bf|find all accepted trx with activated sim and null,'no,'failed in isl' momo profile status|ESQLR|No Record Found|02d7b31a|Update MoMo Status|

@@ -1,0 +1,6 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-12-23 15:10:57,142|0|0|e9d92df3|Schedule trigger|GFF|success|6a00136c|Corp Sim Job|
+2025-12-23 15:10:57,158|15|9|544bbb49|Update Schedule last run datetime|PSQL|success|6a00136c|Corp Sim Job|
+2025-12-23 15:10:57,180|22|0|99a71c82|check concurrence instance run|ROA|valid instance|6a00136c|Corp Sim Job|
+2025-12-23 15:10:57,205|25|0|bc51945e|Find all in-progress corp sim jobs|ESQLR|pre|6a00136c|Corp Sim Job|
+2025-12-23 15:10:57,208|0|3|bc51945e|Find all in-progress corp sim jobs|ESQLR|No Record Found|6a00136c|Corp Sim Job|

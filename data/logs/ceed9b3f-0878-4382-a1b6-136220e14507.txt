@@ -1,0 +1,36 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-05-14 19:39:46,953|0|50|190158d3|Pull Request|CJMS|success|8fa4ab41|View Registration|Filename: ceed9b3f-0878-4382-a1b6-136220e14507 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > View Registration | ISL-CORE.GET_CUSTOMER_INFO_V5_REQ.TA - Request: ReqMsg{id=54E2713A86D440AF943D5D6283FF70E9, name=GET_CUSTOMER_INFO_V5_REQ, dataObject=String%5B62%5D,registMsisdn=765107844,offlineLoginFlag=false,iccid=8993400921417510000,trxTypeId=1,screenId=42000005,username=mirnawc,trxId=54E2713A86D440AF943D5D6283FF70E9,instanceId=11000101,idCompany=1%5D, datum=null}
+2025-05-14 19:39:46,967|12|0|67fb8c9e|POJO or JSON?|ROA|POJO|8aeed640|Inspect Request|
+2025-05-14 19:39:46,975|8|0|23718d6e|ReqMsg to JSON|PTJ|success|8aeed640|Inspect Request|
+2025-05-14 19:39:46,982|7|0|a4e999e5|Store Request Data in Attributes|EJP|matched|8aeed640|Inspect Request|
+2025-05-14 19:39:47,010|28|0|8cb6d18e|Get TrxTypeId|ESQLR|pre|8aeed640|Inspect Request|
+2025-05-14 19:39:47,023|41|13|8cb6d18e|Get TrxTypeId|ESQLR|success|8aeed640|Inspect Request|
+2025-05-14 19:39:47,057|34|0|d48676e1|Set configuration and initial values|UA|success|8aeed640|Inspect Request|
+2025-05-14 19:39:47,130|16|0|9fdcdcbd|is Reg TrxId empty?|ROA|unmatched|b873961e|Fetch Trx Data|
+2025-05-14 19:39:47,151|20|0|48c0d3b3|Assign regTrxId to trxId|UA|success|b873961e|Fetch Trx Data|
+2025-05-14 19:39:47,189|12|0|6aae65ff|Load CrmFormData Trx|ESQLR|pre|d6b11c88|Load Trx Data|
+2025-05-14 19:39:47,193|1|3|6aae65ff|Load CrmFormData Trx|ESQLR|success|d6b11c88|Load Trx Data|
+2025-05-14 19:39:47,224|31|0|4c152caf|Extract trx fields|EJP|matched|d6b11c88|Load Trx Data|
+2025-05-14 19:39:47,244|20|0|0c16534c|Status pending verification?|ROA|Status pending verification|d6b11c88|Load Trx Data|
+2025-05-14 19:39:47,276|31|3|b25ef2a3|Update REG_VERIFICATION_START_DATE_TIME|PSQL|success|d6b11c88|Load Trx Data|
+2025-05-14 19:39:47,353|15|0|23a5fed5|Find CRM_CUSTOMER_DATA columns|ESQLR|pre|3c90e83c|Fetch Registration Data from ISL DB|
+2025-05-14 19:39:47,399|61|45|23a5fed5|Find CRM_CUSTOMER_DATA columns|ESQLR|success|3c90e83c|Fetch Registration Data from ISL DB|
+2025-05-14 19:39:47,415|16|0|5b09ef4c|Load CRM_CUSTOMER_DATA|ESQLR|pre|3c90e83c|Fetch Registration Data from ISL DB|
+2025-05-14 19:39:47,419|20|4|5b09ef4c|Load CRM_CUSTOMER_DATA|ESQLR|success|3c90e83c|Fetch Registration Data from ISL DB|
+2025-05-14 19:39:47,432|9|0|db55cc59|Registration Data from 3PP enabled?|ROA|unmatched|d680061a|Fetch Customer Information|
+2025-05-14 19:39:47,445|13|0|ea4e0a30|Document Data from 3PP enabled?|ROA|unmatched|d680061a|Fetch Customer Information|
+2025-05-14 19:39:47,487|4|0|996cf8df|Retrieve Images from DB?|ROA|Retrieve images from DB|585a3bdc|Fetch Document Data from ISL DB|
+2025-05-14 19:39:47,496|9|0|e786b011|Load CRM_CUSTOMER_BINARY_DATA columns|ESQLR|pre|585a3bdc|Fetch Document Data from ISL DB|
+2025-05-14 19:39:47,505|18|9|e786b011|Load CRM_CUSTOMER_BINARY_DATA columns|ESQLR|success|585a3bdc|Fetch Document Data from ISL DB|
+2025-05-14 19:39:47,514|8|0|58293f7b|Load CRM_CUSTOMER_BINARY_DATA|ESQLR|pre|585a3bdc|Fetch Document Data from ISL DB|
+2025-05-14 19:39:47,586|60|72|58293f7b|Load CRM_CUSTOMER_BINARY_DATA|ESQLR|success|585a3bdc|Fetch Document Data from ISL DB|
+2025-05-14 19:39:47,628|7|0|aa3e7e8e|Load ISL_TRX_EVENT details|ESQLR|pre|b15c50f4|Fetch Extra Data from ISL DB|
+2025-05-14 19:39:47,633|12|5|aa3e7e8e|Load ISL_TRX_EVENT details|ESQLR|success|b15c50f4|Fetch Extra Data from ISL DB|
+2025-05-14 19:39:47,644|10|0|20fac4f4|event type has Reason ?|ROA|hasReason|b15c50f4|Fetch Extra Data from ISL DB|
+2025-05-14 19:39:47,655|10|0|8f7e9384|Load ISL_TRX_REASON|ESQLR|pre|b15c50f4|Fetch Extra Data from ISL DB|
+2025-05-14 19:39:47,660|15|5|8f7e9384|Load ISL_TRX_REASON|ESQLR|success|b15c50f4|Fetch Extra Data from ISL DB|
+2025-05-14 19:39:47,715|16|0|e1004397|Success Response|UA|success|84a8ecbf|Prepare Response|
+2025-05-14 19:39:47,744|29|12|77fb64b1|Prepare Response|EGS|success|84a8ecbf|Prepare Response|
+2025-05-14 19:39:47,787|17|0|7ec25eb0|POJO or JSON?|ROA|POJO|e1b69e30|Convert Response|
+2025-05-14 19:39:47,836|48|26|e1d93968|RespMsg JSON to POJO|JTP|success|e1b69e30|Convert Response|
+2025-05-14 19:39:47,901|45|28|81c81393|Publish Response|PJMS|pre|8fa4ab41|View Registration|Filename: ceed9b3f-0878-4382-a1b6-136220e14507 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > View Registration | ISL-CORE.GET_CUSTOMER_INFO_V5_REQ.TA - Response sent :  'ISL-CORE.GET_CUSTOMER_INFO_V5_REQ.TA.RESP' :RespMsg{id=8EC14665D9D04F17A0295D75C4209069, name=GET_CUSTOMER_INFO_V5_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=String%5B50%5D,trxStatusId=200,trxTypeId=1,instanceId=500001,username=wasinsang,createdDateTime=Wed May 14 12:39:47 ICT 2025,updatedDateTime=Wed May 14 12:26:32 ICT 2025,mPosInfoData=MposInfoData%5BsmsPermission=false,smsMaxCount=0,smsSent=false,smsRetries=0,extraInfos=StringObjectMap%5B%5D %5D,actionDealer=wasinsang,actionDate=Wed May 14 12:26:32 ICT 2025,actionName=TRX_EDITED,trxEventId=32CC3F881B8547EF90C6DF71F51D950F,trxEventTypeId=1039,map=String%5B58%5D, DISTRICT_ID = Muqur, FIRSTNAME = IDcheck, CONFIRMER_FIRSTNAME = confirmer, LASTNAME = Max, CONFIRMER_GENDER = M, NIC_PROVINCE = Badakhshan, FATHERNAME = father Father, POLICE_REGISTRATION_FORM = /islapps/mtnacr5/batch/newregupload/imag, REGISTRATION_FORM = String%5B176580%5D, IDTYPE = 1, CONFIRMER_IDFRONTSIDE = String%5B176580%5D, CONFIRMER_LASTNAME = lastname, OLD_NUMBER = 123-123-321, SYS_REGISTRATION_TYPE_ID = 1, CURRENT_DISTRICT_NUMBER = Batch District, CURRENT_DISTRICT_ID = Muqur, CONFIRMER_IDBACKSIDE = String%5B176580%5D, SYS_CREATED_DATE_TIME = 2025-05-14 19:21:16.969, SYS_USERNAME = wasinsang, PREFERREDLANGUAGE = EN, CURRENT_PROVINCE_ID = Badghis, IMAGE1 = /islapps/mtnacr5/batch/newregupload/imag, SYS_FORM_ID = 4, CURRENT_STREET = batchStreet, DISTRICT_NUMBER = batchVillage, CHECK_MAX_CONFIRMER_ENABLED = YES, SYS_UPDATED_DATE_TIME = 2025-05-14 19:26:32.028, OLD_IDTYPE = 1, NATIONALITY = AFG, MSISDN = 765107844, CONFIRMER_IDTYPE = 2, IDCARD = String%5B176580%5D, NIC_REGISTRATION_NUMBER = 123-123-321, EXT_ISL_TRX_ICCID = 8993400921417510000, BIRTHDATE = Tue Nov 10 00:00:00 1970, SNOOZECOUNTER = 0, EXT_ISL_TRX_MSISDN = 765107844, CONFIRMER_CONTACT_NO = 0765707046, GENDER = F, PROVINCE_ID = Badghis, CONFIRMER_EXPIRYDATE = Thu Dec 10 00:00:00 2026, GRANDFATHERNAME = grandFather grandFather, CONFIRMER_IDNUMBER = 987-345-235, SYS_SID = 1023819, ICCID = 8993400921417510000, SAME_AS_PERM_ADDRESS = false, CONFIRMER_FORM = String%5B176580%5D, CONFIRMER_FATHERNAME = confFather Pant, DISPLAY_CONFIRMER = NO, STREET = batchStreet, CONFIRMER_BIRTHDATE = Thu Dec 10 00:00:00 1970, IDNUMBER = 123-123-321, CHECK_MAX_CONFIRMER_DONE = NO, CITY = Muqur, CONFIRMER_TYPE = idtype, SUBSCRIBERPHOTO1 = String%5B176580%5D, REJECTEDREASON = TRX_EDITED, CURRENT_CITY = Muqur, CONFIRMER_PROVINCE_ID = Balkh, BILLINGTYPE = Prepaid, REJECTEDCOMMENT = ddfs, SUBSCRIPTIONTYPE = Afghan, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0,respDesc=Success%5D, datum=null}

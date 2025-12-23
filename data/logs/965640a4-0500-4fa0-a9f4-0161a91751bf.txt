@@ -1,0 +1,115 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-08-26 17:09:27,654|0|423|0f88f260|Pull Request|CJMS|success|09dc294b|Reject Registration|Filename: 965640a4-0500-4fa0-a9f4-0161a91751bf | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Reject Registration | ISL-CORE.REJECT_SUBSCRIBER_REG_V5_REQ.TA - Request: ReqMsg{id=0E96C285F2AC400E8E467DBA1A53C495, name=REJECT_SUBSCRIBER_REG_V5_REQ, dataObject=SubscriberManualReq%5BregistMsisdn=333333504,iccid=3333333333333333504,dealerName=mirnawc,currentDate=Tue Aug 26 17:09:27 ICT 2025,trxEventType=TRX_REJECTED,trxStatus=SUCCESS - 200,reasonLst={Reason%5BcrmMsgArrayOptionId=TRANS_ECW,crmMsgArrayId=REASONS,formId=4,comment=520226-1-1%5D},rejectedFieldIds=registration_form,trxId=0E96C285F2AC400E8E467DBA1A53C495,instanceId=11000101,idCompany=1,createdDateTime=Tue Aug 26 17:09:27 ICT 2025%5D, datum=null}
+2025-08-26 17:09:27,678|1|0|2b8e3f41|POJO or JSON?|ROA|POJO|e65983ef|Inspect Request|
+2025-08-26 17:09:27,689|10|1|6977e596|ReqMsg to JSON|PTJ|success|e65983ef|Inspect Request|
+2025-08-26 17:09:27,692|3|0|f0229f99|Store Request Data in Attributes|EJP|matched|e65983ef|Inspect Request|
+2025-08-26 17:09:27,717|24|0|10fb8144|Load trxData|ESQLR|pre|e65983ef|Inspect Request|
+2025-08-26 17:09:27,723|30|5|10fb8144|Load trxData|ESQLR|success|e65983ef|Inspect Request|
+2025-08-26 17:09:27,735|12|0|496b39d2|Store Original Trx Status Id|UA|success|e65983ef|Inspect Request|
+2025-08-26 17:09:27,780|28|0|440c37f8|check is bulk reg?|ROA|unmatched|09dc294b|Reject Registration|
+2025-08-26 17:09:27,794|6|0|d2cc7636|Registration Updated By Eyeballing|ROA|unmatched|46d08bcb|Validate Reject Request|
+2025-08-26 17:09:27,826|32|0|817b8aee|Trx Status is Success?|ROA|SUCCESS|46d08bcb|Validate Reject Request|
+2025-08-26 17:09:27,853|27|0|bf743a77|Request from Eyeballing?|ROA|unmatched|46d08bcb|Validate Reject Request|
+2025-08-26 17:09:27,884|6|0|f6c6b20a|Find userId|ESQLR|pre|3966965a|Reject Registration|
+2025-08-26 17:09:27,886|8|1|f6c6b20a|Find userId|ESQLR|success|3966965a|Reject Registration|
+2025-08-26 17:09:27,897|11|5|8f42af1c|Update status in ISL_TRX|PSQL|success|3966965a|Reject Registration|
+2025-08-26 17:09:27,927|30|7|bdd39195|Update rejected fields in CRM_CUSTOMER_DATA|PSQL|success|3966965a|Reject Registration|
+2025-08-26 17:09:27,973|8|0|cfd795b4|Generate Trx Event Id|UA|success|fea1681a|Save Trx History Details|
+2025-08-26 17:09:27,984|11|0|5c213a5d|Save Trx Histroy Enabled?|ROA|Save trx history enabled|fea1681a|Save Trx History Details|
+2025-08-26 17:09:28,033|20|0|1ffd8852|Retreive ISL_TRX_HISTORY columns|ESQLR|pre|d0e5309d|Copy TrxData in ISL_TRX_HISTORY|
+2025-08-26 17:09:28,040|27|6|1ffd8852|Retreive ISL_TRX_HISTORY columns|ESQLR|success|d0e5309d|Copy TrxData in ISL_TRX_HISTORY|
+2025-08-26 17:09:28,089|49|34|bb4d8565|Copy Trx data to ISL_TRX_HISTORY|PSQL|success|d0e5309d|Copy TrxData in ISL_TRX_HISTORY|
+2025-08-26 17:09:28,162|32|0|9986019d|Trx Images Updated?|ROA|unmatched|5b1085aa|Copy TrxData in CRM_CUSTOMER_BINARY_DATA_HISTORY|
+2025-08-26 17:09:28,208|18|0|e818a6fe|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|pre|de67d9fb|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-08-26 17:09:28,227|37|19|e818a6fe|Retreive CRM_CUSTOMER_DATA_HISTORY columns|ESQLR|success|de67d9fb|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-08-26 17:09:28,278|51|45|b1ab390a|Copy Trx data to CRM_CUSTOMER_DATA_HISTORY|PSQL|success|de67d9fb|Copy TrxData in CRM_CUSTOMER_DATA_HISTORY|
+2025-08-26 17:09:28,357|49|19|953f5183|Add ISL_TRX_EVENT|PSQL|success|e53d3b1a|Log History and Send Push Notification to mPos|
+2025-08-26 17:09:28,416|59|30|53be275d|Add ISL_TRX_EVENT_DETAIL|PSQL|success|e53d3b1a|Log History and Send Push Notification to mPos|
+2025-08-26 17:09:28,478|19|0|ab6b94e9|Move Reasons to Flowfile Content|RT|success|2041c270|Save Reason|
+2025-08-26 17:09:28,511|0|0|74be0bc2|Split Reasons|SJ|split|2041c270|Save Reason|
+2025-08-26 17:09:28,511|32|0|74be0bc2|Split Reasons|SJ|original|2041c270|Save Reason|
+2025-08-26 17:09:28,517|6|0|54749c83|Move Reason to Attribute|EJP|matched|2041c270|Save Reason|
+2025-08-26 17:09:28,523|31|0|c6d268ad|Remove JMS attributes|UA|success|1906f374|Push Notification To Mpos|
+2025-08-26 17:09:28,543|20|0|b23091aa|Load trx details|ESQLR|pre|1906f374|Push Notification To Mpos|
+2025-08-26 17:09:28,552|29|8|b23091aa|Load trx details|ESQLR|success|1906f374|Push Notification To Mpos|
+2025-08-26 17:09:28,558|41|14|c2327071|Insert Reason|PSQL|success|2041c270|Save Reason|
+2025-08-26 17:09:28,581|29|0|c9766021|mPOS?|ROA|mPos|1906f374|Push Notification To Mpos|
+2025-08-26 17:09:28,592|11|0|a2bb6212|Prepare Request to Push Notification to mPos|RT|success|1906f374|Push Notification To Mpos|
+2025-08-26 17:09:28,602|10|8|711ec74a|Publish Request to MQ|PJMS|pre|1906f374|Push Notification To Mpos|Filename: 965640a4-0500-4fa0-a9f4-0161a91751bf | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Reject Registration > Save Reason > Push Notification To Mpos |  - Response sent :  'ISL-CORE.MPOS_PUSH_NOTIFICATION.TA' :{ "id" : "0E96C285F2AC400E8E467DBA1A53C495", "name" : "MPOS_PUSH_NOTIFICATION", "dataObject" : { "trxId" : "0E96C285F2AC400E8E467DBA1A53C495", "trxTypeId" : "1", "instanceId" : 800001, "username" : "mirnawc", "map" : { "MSISDN" : "333333504", "ICCID" : "3333333333333333504", "SYS_IMEI" : "YzlmMzZjYzMtZjQ2Zi0zNTNhLTgyZDAtZTIzNDAyMzRlNDg2" } } }
+2025-08-26 17:09:28,605|0|500|06a26197|Pull Request|CJMS|success|87b8bd3f|Push Notification To Mpos|Filename: 328e5057-f2f2-4215-9e77-fe6841d3840f | MTNA - EAI, MM, USSD & Utility > CORE - Generic > Utility PGs > Push Notification To Mpos | ISL-CORE.MPOS_PUSH_NOTIFICATION.TA - Request: { "id" : "0E96C285F2AC400E8E467DBA1A53C495", "name" : "MPOS_PUSH_NOTIFICATION", "dataObject" : { "trxId" : "0E96C285F2AC400E8E467DBA1A53C495", "trxTypeId" : "1", "instanceId" : 800001, "username" : "mirnawc", "map" : { "MSISDN" : "333333504", "ICCID" : "3333333333333333504", "SYS_IMEI" : "YzlmMzZjYzMtZjQ2Zi0zNTNhLTgyZDAtZTIzNDAyMzRlNDg2" } } }
+2025-08-26 17:09:28,606|0|0|4cc2d03a|Pull Out Attributes|EJP|matched|87b8bd3f|Push Notification To Mpos|
+2025-08-26 17:09:28,607|0|0|e52241e1|mPOS?|ROA|mPos|87b8bd3f|Push Notification To Mpos|
+2025-08-26 17:09:28,628|21|0|92e248a1|Prepare Request to Check Status|RT|success|87b8bd3f|Push Notification To Mpos|
+2025-08-26 17:09:28,640|12|0|1e38e779|Remove all Jms Attributes|UA|success|87b8bd3f|Push Notification To Mpos|
+2025-08-26 17:09:28,648|8|1|91c744e1|Publish Request to MQ|PJMS|pre|87b8bd3f|Push Notification To Mpos|Filename: 328e5057-f2f2-4215-9e77-fe6841d3840f | MTNA - EAI, MM, USSD & Utility > CORE - Generic > Utility PGs > Push Notification To Mpos |  - Request to :  'ISL-CORE.CHECK_STATUS_REQ.TA' :{ "id" : "0E96C285F2AC400E8E467DBA1A53C495", "name" : "CHECK_REG_STATUS_REQ", "dataObject" : { "trxId" : "0E96C285F2AC400E8E467DBA1A53C495", "trxTypeId" : "1", "instanceId" : 800001, "username" : "", "map" : { "MSISDN" : "333333504", "ICCID" : "3333333333333333504" }, "checkOccupied" : true } }
+2025-08-26 17:09:28,650|0|1002|f9ce2597|Pull Check Status Request|CJMS|success|99c6a348|Pure Check Status|Filename: 04dceafc-9ab6-4814-9335-f81ce2944b33 | MTNA - Core Operations & Management > Checks and Validate > Pure Check Status | ISL-CORE.CHECK_STATUS_REQ.TA - Request: { "id" : "0E96C285F2AC400E8E467DBA1A53C495", "name" : "CHECK_REG_STATUS_REQ", "dataObject" : { "trxId" : "0E96C285F2AC400E8E467DBA1A53C495", "trxTypeId" : "1", "instanceId" : 800001, "username" : "", "map" : { "MSISDN" : "333333504", "ICCID" : "3333333333333333504" }, "checkOccupied" : true } }
+2025-08-26 17:09:28,689|19|0|aadb0125|POJO or JSON?|ROA|unmatched|a5a64f30|Inspect Request|
+2025-08-26 17:09:28,724|35|0|727e0162|Set configuration and initial values|UA|success|a5a64f30|Inspect Request|
+2025-08-26 17:09:28,744|2|0|c231116a|Store Request Data in Attributes|EJP|matched|d95f748e|Process Attributes|
+2025-08-26 17:09:28,749|4|0|528a2606|mPOS?|ROA|mPos|d95f748e|Process Attributes|
+2025-08-26 17:09:28,753|3|0|6376e3d5|Convert map.entry to JSON map|EGS|success|d95f748e|Process Attributes|
+2025-08-26 17:09:28,771|18|0|8aa42c3a|Get MSISDN and ICCID|EJP|matched|d95f748e|Process Attributes|
+2025-08-26 17:09:28,801|30|0|de26a5be|Find user id by user name|ESQLR|pre|d95f748e|Process Attributes|
+2025-08-26 17:09:28,802|31|2|de26a5be|Find user id by user name|ESQLR|No Record Found|d95f748e|Process Attributes|
+2025-08-26 17:09:28,814|11|0|fb4c7f44|Valid Request?|ROA|matched|d95f748e|Process Attributes|
+2025-08-26 17:09:28,839|13|0|9cdcb27b|Background or Manual?|ROA|Background|a5a64f30|Inspect Request|
+2025-08-26 17:09:28,891|22|0|84110182|mPOS?|ROA|mPos|99c6a348|Pure Check Status|
+2025-08-26 17:09:28,895|4|2|f4699748|Update LAST MPOS CHECK SATUS and increment number of retries|PSQL|success|99c6a348|Pure Check Status|
+2025-08-26 17:09:28,909|21|0|2d2d3a2e|Find Trx(Status) by ID|ESQLR|pre|e9b70217|Background Check Status|
+2025-08-26 17:09:28,912|24|3|2d2d3a2e|Find Trx(Status) by ID|ESQLR|success|e9b70217|Background Check Status|
+2025-08-26 17:09:28,974|22|0|bda9aa17|Derive TrxStatus Name|UA|success|2ac9d5b0|Call Result Code Mapping|
+2025-08-26 17:09:29,021|2|0|aa3ad5fe|Rejected or Blocked?|ROA|REJECTED_BLOCKED|49ee59bd|Find Rejected Reasons|
+2025-08-26 17:09:29,052|31|0|7622a04c|Load CMS Message Array|ESQLR|pre|49ee59bd|Find Rejected Reasons|
+2025-08-26 17:09:29,114|16|73|9e022a4b|Merge Files|MR|merged|2041c270|Save Reason|
+2025-08-26 17:09:29,114|556|73|9e022a4b|Merge Files|MR|original|2041c270|Save Reason|
+2025-08-26 17:09:29,186|97|134|7622a04c|Load CMS Message Array|ESQLR|success|49ee59bd|Find Rejected Reasons|
+2025-08-26 17:09:29,187|25|0|fe2b592e|Load trxTypeId|ESQLR|pre|165f6437|Call ISL CORE Trigger notification task|
+2025-08-26 17:09:29,196|25|0|f29a3b9e|Success Response|UA|success|1c111582|Prepare Response|
+2025-08-26 17:09:29,195|33|9|fe2b592e|Load trxTypeId|ESQLR|success|165f6437|Call ISL CORE Trigger notification task|
+2025-08-26 17:09:29,207|39|6|3a432932|Update REG_VERIFICATION_END_DATE_TIME|PSQL|success|b3f53674|Update verification Information|
+2025-08-26 17:09:29,223|27|0|853a6cdb|Prepare JSON Response|RT|success|1c111582|Prepare Response|
+2025-08-26 17:09:29,236|39|4|0f1ad34e|Prepare Notification task  Request|RT|success|165f6437|Call ISL CORE Trigger notification task|
+2025-08-26 17:09:29,238|31|7|3c7bb743|Update VERIFIED_BY|PSQL|success|b3f53674|Update verification Information|
+2025-08-26 17:09:29,269|0|848|05393294|Pull Request|CJMS|success|9f3cb0b7|Trigger SMS Notification|Filename: 7b0abb50-a2da-49ad-97fe-658d5be672f8 | MTNA - EAI, MM, USSD & Utility > CORE - Generic > Utility PGs > Trigger SMS Notification | ISL-CORE.TRX_TRIGGER_NOTIFICATION_REQ.TB - Request: { "id" : "0E96C285F2AC400E8E467DBA1A53C495", "name":"TRIGGER_NOTIFICATION_REQ", "dataObject":{ "map":{ "TRX_ID": "0E96C285F2AC400E8E467DBA1A53C495", "ISL_TRG_TRIGGER_EVENT_TYPE_ID":"3", "ISL_TRG_TRIGGER_CONDITION_MSISDN_STATUS_ID": "5", "ISL_TRG_TRIGGER_CONDITION_OTHER_STATUS_ID": null, "ISL_TRG_TRANSACTION_TYPE_ID":"1" } } }
+2025-08-26 17:09:29,269|32|30|30c38749|PublishJMS|PJMS|pre|165f6437|Call ISL CORE Trigger notification task|Filename: 965640a4-0500-4fa0-a9f4-0161a91751bf | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Reject Registration > Call ISL CORE Trigger notification task | ISL-CORE.REJECT_SUBSCRIBER_REG_V5_REQ.TA - Response sent :  'ISL-CORE.TRX_TRIGGER_NOTIFICATION_REQ.TB' :
+2025-08-26 17:09:29,306|18|0|becd2b3e|POJO or JSON?|ROA|unmatched|19d0afa2|Inspect Request|
+2025-08-26 17:09:29,317|11|0|b066daa8|Store Request Data in Attributes|EJP|matched|19d0afa2|Inspect Request|
+2025-08-26 17:09:29,323|6|0|be42a627|Valid Request?|ROA|matched|19d0afa2|Inspect Request|
+2025-08-26 17:09:29,335|38|0|fb25127a|Eyeballing Response sent already?|ROA|unmatched|8be50956|Check if Response already sent and Convert Response|
+2025-08-26 17:09:29,364|29|0|64e16812|POJO or JSON?|ROA|POJO|8be50956|Check if Response already sent and Convert Response|
+2025-08-26 17:09:29,368|182|175|9d64864c|Set reasonTypeIds / reasonComments|EGS|success|49ee59bd|Find Rejected Reasons|
+2025-08-26 17:09:29,376|2|0|e29bd434|Prepare SQL Clauses|UA|success|a06a3247|Query Trigger Notification Events|
+2025-08-26 17:09:29,382|18|3|d3e78759|RespMsg JSON to POJO|JTP|success|8be50956|Check if Response already sent and Convert Response|
+2025-08-26 17:09:29,395|19|0|25370353|Find ISL_TRIGGER_INFO|ESQLR|pre|a06a3247|Query Trigger Notification Events|
+2025-08-26 17:09:29,405|13|5|9284e17a|Publish Response|PJMS|pre|09dc294b|Reject Registration|Filename: 965640a4-0500-4fa0-a9f4-0161a91751bf | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Reject Registration | ISL-CORE.REJECT_SUBSCRIBER_REG_V5_REQ.TA - Response sent :  'ISL-CORE.REJECT_SUBSCRIBER_REG_V5_REQ.TA.RESP' :RespMsg{id=0E96C285F2AC400E8E467DBA1A53C495, name=REJECT_SUBSCRIBER_REG_V5_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=SubscriberManualResp%5BregistMsisdn=333333504,iccid=3333333333333333504,dealerName=mirnawc,trxStatus=null - null,trxId=0E96C285F2AC400E8E467DBA1A53C495,instanceId=11000101,idCompany=1,respCode=200,respDesc=Success,data={actionname=TRX_REJECTED, trxStatusId=405, actiondealer=mirnawc, actiondate=Tue Aug 26 17:09:27 ICT 2025, status=405, rejectedreason=TRANS_ECW, rejectedComment=520226-1-1},createdDateTime=Tue Aug 26 17:09:29 ICT 2025%5D, datum=null}
+2025-08-26 17:09:29,412|1|17|25370353|Find ISL_TRIGGER_INFO|ESQLR|success|a06a3247|Query Trigger Notification Events|
+2025-08-26 17:09:29,419|0|0|6a649689|Split Records|SJ|split|a06a3247|Query Trigger Notification Events|
+2025-08-26 17:09:29,419|7|0|6a649689|Split Records|SJ|original|a06a3247|Query Trigger Notification Events|
+2025-08-26 17:09:29,427|8|0|65511159|Extract Attributes|EJP|matched|a06a3247|Query Trigger Notification Events|
+2025-08-26 17:09:29,435|29|0|d273acca|Set Success Response Attributes|UA|success|d10115d1|Prepare JSON Reponse|
+2025-08-26 17:09:29,435|8|0|34ce6b86|SMS Notification Enabled?|ROA|SMS Notification Enabled|a06a3247|Query Trigger Notification Events|
+2025-08-26 17:09:29,488|16|0|6977f263|Prepare Default Value from Config|UA|success|b5274f5c|Send Notification|
+2025-08-26 17:09:29,490|24|0|e045418b|Fetch Custom Message|ESQLR|pre|86aedaec|Fetch Custom Message|
+2025-08-26 17:09:29,494|1|4|e045418b|Fetch Custom Message|ESQLR|No Record Found|86aedaec|Fetch Custom Message|
+2025-08-26 17:09:29,497|3|0|32cb48e8|Default Message|UA|success|86aedaec|Fetch Custom Message|
+2025-08-26 17:09:29,506|18|0|1a103477|Prepare SQL query to find lang and msisdn|UA|success|b5274f5c|Send Notification|
+2025-08-26 17:09:29,517|11|0|b139b3be|Sql is empty?|ROA|unmatched|b5274f5c|Send Notification|
+2025-08-26 17:09:29,525|8|0|ab76361c|Find Preferred Language and Msisdn|ESQLR|pre|b5274f5c|Send Notification|
+2025-08-26 17:09:29,532|15|7|ab76361c|Find Preferred Language and Msisdn|ESQLR|success|b5274f5c|Send Notification|
+2025-08-26 17:09:29,533|24|0|fa39ee65|Prepare JSON Response|RT|success|d10115d1|Prepare JSON Reponse|
+2025-08-26 17:09:29,550|17|0|9cf168b5|Find Customer Data|ESQLR|pre|b5274f5c|Send Notification|
+2025-08-26 17:09:29,570|37|19|9cf168b5|Find Customer Data|ESQLR|success|b5274f5c|Send Notification|
+2025-08-26 17:09:29,586|8|0|5d31ef2c|Add Customer Data into sms body|EGS|success|12e2b463|Send SMS|
+2025-08-26 17:09:29,591|5|0|6a80da3a|Prepare JSON Request To UMG|RT|success|12e2b463|Send SMS|
+2025-08-26 17:09:29,602|9|0|aebf7762|POJO or JSON?|ROA|unmatched|134df6e3|Convert Response|
+2025-08-26 17:09:29,606|15|0|fa0b338c|RespMsg JSON to POJO|JTP|success|12e2b463|Send SMS|
+2025-08-26 17:09:29,629|22|3|3c5ecd1a|Publish Response|PJMS|pre|12e2b463|Send SMS|Filename: 7b0abb50-a2da-49ad-97fe-658d5be672f8 | MTNA - EAI, MM, USSD & Utility > CORE - Generic > Utility PGs > Trigger SMS Notification > Find events and trigger notifications > Send Notification > Send SMS | ISL-CORE.TRX_TRIGGER_NOTIFICATION_REQ.TB - Response sent :  'UMG.REQUEST_FOR_SENDING_UTF16_TXT.TA' :ReqMsg{id=0E96C285F2AC400E8E467DBA1A53C495, name=REQUEST_FOR_SENDING_UTF16_TXT, dataObject=null, datum={SMS=Data{name=SMS, records={header=Record{name=header, params={dest-msisdn=Parameter{paramName=dest-msisdn, paramValue=333333504}, source-msisdn=Parameter{paramName=source-msisdn, paramValue=mt}, trxId=Parameter{paramName=trxId, paramValue=0E96C285F2AC400E8E467DBA1A53C495}, Tue Aug 26 17:09:29 ICT 2025=Parameter{paramName=Tue Aug 26 17:09:29 ICT 2025, paramValue=null}}}, body=Record{name=body, params={message=Parameter{paramName=message, paramValue=Success Rejected}}}}}}}
+2025-08-26 17:09:29,635|32|0|4db8dda7|Publish Check Status Response|PJMS|pre|99c6a348|Pure Check Status|Filename: 04dceafc-9ab6-4814-9335-f81ce2944b33 | MTNA - Core Operations & Management > Checks and Validate > Pure Check Status | ISL-CORE.CHECK_STATUS_REQ.TA - Response sent :  'ISL-CORE.CHECK_STATUS_REQ.TA.RESP' :{ "id": "0E96C285F2AC400E8E467DBA1A53C495", "name": "CHECK_REG_STATUS_REQ", "resultCode": "SUCCESS", "dataObject": { "trxId": "0E96C285F2AC400E8E467DBA1A53C495", "instanceId": 800001, "idCompany": 1, "respCode": 405, "respDesc": "", "customMessage": { "id": "405", "messages": { "EN": "" } }, "arrayOptions": null, "data": { "TRX_ID": "", "TRX_TYPE_ID": "" }, "createdDateTime": "Tue Aug 26 17:09:29 ICT 2025", "msisdn": "333333504", "iccid": "3333333333333333504", "customerAccountID": null, "statusSummary": null, "trxStatus": { "name": "REJECTED", "trxStatusId": 405 }, "reasonTypeIds": "Translation from ECW", "reasonComments": "520226-1-1", "customerInformation": null, "abillityRespCode": null, "abillityRespMsg": null } }
+2025-08-26 17:09:29,677|1029|0|91c744e1|Publish Request to MQ|PJMS|success|87b8bd3f|Push Notification To Mpos|Filename: 328e5057-f2f2-4215-9e77-fe6841d3840f | MTNA - EAI, MM, USSD & Utility > CORE - Generic > Utility PGs > Push Notification To Mpos |  - Response from : 'ISL-CORE.CHECK_STATUS_REQ.TA': { "id": "0E96C285F2AC400E8E467DBA1A53C495", "name": "CHECK_REG_STATUS_REQ", "resultCode": "SUCCESS", "dataObject": { "trxId": "0E96C285F2AC400E8E467DBA1A53C495", "instanceId": 800001, "idCompany": 1, "respCode": 405, "respDesc": "", "customMessage": { "id": "405", "messages": { "EN": "" } }, "arrayOptions": null, "data": { "TRX_ID": "", "TRX_TYPE_ID": "" }, "createdDateTime": "Tue Aug 26 17:09:29 ICT 2025", "msisdn": "333333504", "iccid": "3333333333333333504", "customerAccountID": null, "statusSummary": null, "trxStatus": { "name": "REJECTED", "trxStatusId": 405 }, "reasonTypeIds": "Translation from ECW", "reasonComments": "520226-1-1", "customerInformation": null, "abillityRespCode": null, "abillityRespMsg": null } }
+2025-08-26 17:09:29,712|13|0|6003ee43|Extract dataObject fields|EJP|matched|fb930c25|Prepare SUCCESS Response|
+2025-08-26 17:09:29,726|14|0|e5db0484|Check response|ROA|valid|fb930c25|Prepare SUCCESS Response|
+2025-08-26 17:09:29,732|5|0|8e182758|Required to send Push Notification ?|ROA|Required to send Push Notification|fb930c25|Prepare SUCCESS Response|
+2025-08-26 17:09:29,737|5|0|0865e0af|Prepare Response|RT|success|fb930c25|Prepare SUCCESS Response|
+2025-08-26 17:09:29,750|18|9|e71413eb|Save Pushed Check Status Datetime if Valid|PSQL|success|fb930c25|Prepare SUCCESS Response|
+2025-08-26 17:09:29,757|18|0|a5d66635|Prepare Queue Name|UA|success|87b8bd3f|Push Notification To Mpos|
+2025-08-26 17:09:29,774|17|12|dc250608|Push Msg To MQTT|PublishMQTT|failure|87b8bd3f|Push Notification To Mpos|

@@ -1,0 +1,101 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-03-17 14:52:43,243|0|37|0a337087|Consume Credential Request|CJMS|success|a3bafacc|Login|Filename: 8a9c6e08-1528-484f-afdd-c679f33aa71a | MTNA - Core Operations & Management > Credential > Login | ISL-CORE.CREDENTIAL_VALIDATION_V5_REQ.TA - Request: ReqMsg{id=F143C6CC294D414AB38973349A572404, name=CREDENTIAL_VALIDATION_V5_REQ, dataObject=CredentialValidationReq%5BuserName=webcare,appId=110001,mPosInfoData=<null>,map=String%5B52%5D, BYPASSPASSWORD = , %5D ,formVersions=com.mt.form.bean.MasterDataVersionBean%5B59%5D,registeredFP=<null>,trxId=F143C6CC294D414AB38973349A572404,instanceId=11000101,idCompany=1,createdDateTime=Mon Mar 17 14:52:43 ICT 2025,locale=en%5D, datum=null}
+2025-03-17 14:52:43,262|13|0|d945e116|POJO or JSON?|ROA|POJO|e82b60a6|Inspect Request|
+2025-03-17 14:52:43,287|25|1|095dae91|ReqMsg to JSON|PTJ|success|e82b60a6|Inspect Request|
+2025-03-17 14:52:43,308|21|1|c9c52411|Store Request Data in Attributes|EJP|matched|e82b60a6|Inspect Request|
+2025-03-17 14:52:43,329|21|0|810732f9|Initialize Configuration Value|UA|success|e82b60a6|Inspect Request|
+2025-03-17 14:52:43,347|1|0|f3d2a5a5|Get Caller App|ESQLR|pre|2d261c46|Load Values|
+2025-03-17 14:52:43,351|5|3|f3d2a5a5|Get Caller App|ESQLR|success|2d261c46|Load Values|
+2025-03-17 14:52:43,389|19|0|fbef572e|Login Via AD is Enable ?|ROA|unmatched|dd699f8b|Login via AD|
+2025-03-17 14:52:43,416|8|0|b95b395b|Login Via External is Enable ?|ROA|unmatched|4eae53c6|Login via External|
+2025-03-17 14:52:43,479|18|0|8058edae|Login Via ISL is Enable ?|ROA|matched|773b3e08|Login via ISL|
+2025-03-17 14:52:43,508|8|0|1f2f0787|Get User|ESQLR|pre|ac8eea5c|Get User Data|
+2025-03-17 14:52:43,517|2|8|1f2f0787|Get User|ESQLR|success|ac8eea5c|Get User Data|
+2025-03-17 14:52:43,537|20|0|a10e9948|Parse User Data|EJP|matched|ac8eea5c|Get User Data|
+2025-03-17 14:52:43,546|9|0|d1aeb9f4|Compute Retry Attempt|UA|success|ac8eea5c|Get User Data|
+2025-03-17 14:52:43,614|17|0|d5afb7f2|Get Distributor|ESQLR|pre|36b413c5|Get Distributor Data|
+2025-03-17 14:52:43,619|1|4|d5afb7f2|Get Distributor|ESQLR|success|36b413c5|Get Distributor Data|
+2025-03-17 14:52:43,643|24|0|6a4aee2a|Parse Distributor Data|EJP|matched|36b413c5|Get Distributor Data|
+2025-03-17 14:52:43,676|10|0|ce5b3c53|Get Manufacture|ESQLR|pre|8e7bd662|Get Manufacture Data|
+2025-03-17 14:52:43,679|1|3|ce5b3c53|Get Manufacture|ESQLR|No Record Found|8e7bd662|Get Manufacture Data|
+2025-03-17 14:52:43,712|13|0|87378f13|Fetch Password Complexity Data|ESQLR|pre|be8e9e1c|Get Password Complexity Data|
+2025-03-17 14:52:43,715|16|3|87378f13|Fetch Password Complexity Data|ESQLR|success|be8e9e1c|Get Password Complexity Data|
+2025-03-17 14:52:43,725|10|0|ccf2c1c5|Pull out Attributes|UA|success|be8e9e1c|Get Password Complexity Data|
+2025-03-17 14:52:43,742|14|0|8372f1b4|Get Company Param|ESQLR|pre|2d261c46|Load Values|
+2025-03-17 14:52:43,745|17|3|8372f1b4|Get Company Param|ESQLR|success|2d261c46|Load Values|
+2025-03-17 14:52:43,769|24|0|c7c28ac2|Check for skip_otp permission|ESQLR|pre|2d261c46|Load Values|
+2025-03-17 14:52:43,772|27|2|c7c28ac2|Check for skip_otp permission|ESQLR|No Record Found|2d261c46|Load Values|
+2025-03-17 14:52:43,786|14|0|2f42fd1d|Set 2FA flag|UA|success|2d261c46|Load Values|
+2025-03-17 14:52:43,835|16|0|8d25af95|User is active?|ROA|User is Active|cc74cfcc|Check User|
+2025-03-17 14:52:43,849|13|0|a449737d|Is Group Type Valid|UA|success|cc74cfcc|Check User|
+2025-03-17 14:52:43,862|13|0|42d96224|Is Authorized user?|ROA|Authorized User|cc74cfcc|Check User|
+2025-03-17 14:52:43,867|5|0|d3795275|Check Approval Status|UA|success|cc74cfcc|Check User|
+2025-03-17 14:52:43,878|11|0|574e81a3|Success?|ROA|SUCCESS|cc74cfcc|Check User|
+2025-03-17 14:52:43,934|22|0|98f757a8|ISL_SSO_USER ?|ROA|unmatched|111a1a85|Check Password / FP|
+2025-03-17 14:52:43,956|22|0|9d8e12a3|password empty and FP has value?|ROA|FP is empty but pass has value|111a1a85|Check Password / FP|
+2025-03-17 14:52:43,974|18|0|d866aeab|Hash Password|EGS|success|111a1a85|Check Password / FP|
+2025-03-17 14:52:43,996|22|0|8e7375dc|Check User Password|UA|success|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,006|10|0|293f1587|Wrong password?|ROA|unmatched|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,018|7|0|cdf7302e|Block Concurrent Sessions?|ROA|unmatched|133defbb|Check Concurrent Session|
+2025-03-17 14:52:44,031|8|0|b9ab1e19|Check 1st Time Login|UA|success|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,035|4|0|ce97cfd0|1ST_TIME_LOGIN?|ROA|unmatched|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,048|13|0|b0219632|Check Password Expiration|UA|success|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,068|20|0|e0b5d953|Password Expired?|ROA|unmatched|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,072|3|0|ffe5e20e|Check Force Change Password|UA|success|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,074|2|0|d4ded6ae|Force Change Password?|ROA|unmatched|111a1a85|Check Password / FP|
+2025-03-17 14:52:44,116|9|0|467f686a|Check If Associated|UA|success|5aa58f9f|Check Associated|
+2025-03-17 14:52:44,123|7|0|f0a185de|Associated?|ROA|Success|5aa58f9f|Check Associated|
+2025-03-17 14:52:44,183|23|0|ad219836|Is Caller App Applicable?|ROA|Is Applicable|491bd0fd|Check Associated Status|
+2025-03-17 14:52:44,205|22|0|1e28e053|Validate Distributor|UA|success|491bd0fd|Check Associated Status|
+2025-03-17 14:52:44,223|18|0|4daa04ee|Is Credential Status Success?|ROA|Success|491bd0fd|Check Associated Status|
+2025-03-17 14:52:44,242|19|0|2bc21137|Validate Manufacture|UA|success|491bd0fd|Check Associated Status|
+2025-03-17 14:52:44,261|19|0|27db70aa|Is Credential Status Success?|ROA|Success|491bd0fd|Check Associated Status|
+2025-03-17 14:52:44,309|23|0|9d82d31a|Login Via External is Enable ?|ROA|unmatched|92de4b39|Check Permissions|
+2025-03-17 14:52:44,325|16|0|04361683|Load Permissions|ESQLR|pre|92de4b39|Check Permissions|
+2025-03-17 14:52:44,358|27|32|04361683|Load Permissions|ESQLR|success|92de4b39|Check Permissions|
+2025-03-17 14:52:44,369|11|3|fadf7e1b|Transform Permissions JSON|JTJSON|success|92de4b39|Check Permissions|
+2025-03-17 14:52:44,389|20|1|127f276e|Extract islPermissions|EJP|matched|92de4b39|Check Permissions|
+2025-03-17 14:52:44,413|23|0|db8f843e|Remove chars from islPermissions|UA|success|92de4b39|Check Permissions|
+2025-03-17 14:52:44,436|23|0|5c543774|Check if Force Change Password Detected|ROA|unmatched|92de4b39|Check Permissions|
+2025-03-17 14:52:44,452|3|0|129d776d|Check device time applicable?|ROA|unmatched|59b40c12|Check Time|
+2025-03-17 14:52:44,468|5|0|cfecf961|Enable Device check ?|ROA|unmatched|217bf00b|Check Device|
+2025-03-17 14:52:44,501|20|0|b122ba52|Fingerprint License Required?|ROA|Fingerprint License Required|828ff8bd|Check Licence|
+2025-03-17 14:52:44,529|24|0|b7b95373|Check caller|ROA|WEBCARE|40fabef6|Check Licence Fingerprint|
+2025-03-17 14:52:44,575|24|0|47e9ef36|RouteOnAttribute|ROA|unmatched|7a75c6ce|Check Licence Webcare|
+2025-03-17 14:52:44,598|23|0|f847024b|Prepare SQL|UA|success|7a75c6ce|Check Licence Webcare|
+2025-03-17 14:52:44,603|5|0|07f433d1|Find existing licence|ESQLR|pre|7a75c6ce|Check Licence Webcare|
+2025-03-17 14:52:44,606|1|3|07f433d1|Find existing licence|ESQLR|success|7a75c6ce|Check Licence Webcare|
+2025-03-17 14:52:44,619|12|0|0631c547|ALLOW alivenes|UA|success|7a75c6ce|Check Licence Webcare|
+2025-03-17 14:52:44,641|8|0|954a16d3|Aliveness License Required?|ROA|Aliveness License Required|828ff8bd|Check Licence|
+2025-03-17 14:52:44,647|4|0|bba36c1c|Aliveness enabled?|ROA|unmatched|3eabb2dc|Check Licence Aliveness|
+2025-03-17 14:52:44,673|16|0|87023174|Is mPOS?|ROA|unmatched|828ff8bd|Check Licence|
+2025-03-17 14:52:44,713|11|0|fdc42dbb|Is Caller App Applicable?|ROA|unmatched|7c00cfeb|Save Security Token|
+2025-03-17 14:52:44,731|4|0|37a765ba|1ST_TIME_LOGIN?|ROA|unmatched|6349c85b|Check for 1st Time Login|
+2025-03-17 14:52:44,777|7|0|9684856d|Create ISL_USER SQL|UA|success|25f403f9|Update User|
+2025-03-17 14:52:44,823|46|25|d363a1ba|Update ISL_USER|PSQL|success|25f403f9|Update User|
+2025-03-17 14:52:44,843|20|0|0035ed95|Check Credential Status|ROA|SUCCESS|25f403f9|Update User|
+2025-03-17 14:52:44,895|20|0|74343b18|Prepare Query|UA|success|075bca27|Contact Us|
+2025-03-17 14:52:44,898|3|0|defaf2f1|ExecuteSQLRecord|ESQLR|pre|075bca27|Contact Us|
+2025-03-17 14:52:44,903|8|5|defaf2f1|ExecuteSQLRecord|ESQLR|success|075bca27|Contact Us|
+2025-03-17 14:52:44,924|21|0|a23d148d|Encode HTML Content|UA|success|075bca27|Contact Us|
+2025-03-17 14:52:44,933|2|0|0f04120f|Success|UA|success|5aa5ead0|Prepare JSON Response|
+2025-03-17 14:52:44,962|11|0|10e1bd27|generate RefNo?|ROA|generate RefNo|00138e46|Check Ref No|
+2025-03-17 14:52:44,966|21|0|23477ccb|Lock Enabled?|ROA|trxLockEnabled|0fdfdd81|Clear TXN Lock|
+2025-03-17 14:52:44,982|15|0|64197be7|TwoFactorAuthentication is Enable ? |ROA|unmatched|6f26f12c|Generate OTP and RefNo|
+2025-03-17 14:52:44,991|25|3|25367f51|Update ISL_TRX_LOCK|PSQL|success|0fdfdd81|Clear TXN Lock|
+2025-03-17 14:52:45,012|4|0|d1c56824|Login Via AD is Enable ?|ROA|unmatched|4656dc94|Process Promotional Message|
+2025-03-17 14:52:45,036|23|0|53791679|Is Caller App Applicable?|ROA|Is Applicable|4656dc94|Process Promotional Message|
+2025-03-17 14:52:45,048|12|0|2602696d|Fetch Promotional Message|ESQLR|pre|4656dc94|Process Promotional Message|
+2025-03-17 14:52:45,050|14|2|2602696d|Fetch Promotional Message|ESQLR|No Record Found|4656dc94|Process Promotional Message|
+2025-03-17 14:52:45,082|11|0|7b6b528e|Versioning is enabled?|ROA|Versioning is enabled|ff19f33f|Process CMS Form Details|
+2025-03-17 14:52:45,104|22|0|f79d38a0|Derive UI Type|UA|success|ff19f33f|Process CMS Form Details|
+2025-03-17 14:52:45,121|17|0|2d2dc6fb|Construct SQL|UA|success|ff19f33f|Process CMS Form Details|
+2025-03-17 14:52:45,134|13|0|b5c4243c|Load CRM_FORM|ESQLR|pre|ff19f33f|Process CMS Form Details|
+2025-03-17 14:52:46,057|712|923|b5c4243c|Load CRM_FORM|ESQLR|success|ff19f33f|Process CMS Form Details|
+2025-03-17 14:52:46,505|447|444|91fbf01f|Unescape JSON|RT|success|ff19f33f|Process CMS Form Details|
+2025-03-17 14:52:46,522|7|0|d74a6896|Prepare Attributes for Response|UA|success|5ae9b3a5|Success Response|
+2025-03-17 14:52:47,180|658|633|fae9d4e1|Create Response|EGS|success|5ae9b3a5|Success Response|
+2025-03-17 14:52:47,196|16|0|8e79ee1e|Respone for mPOS?|ROA|unmatched|5ae9b3a5|Success Response|
+2025-03-17 14:52:47,235|16|0|d44485b0|POJO or JSON?|ROA|POJO|2c86268d|Convert Response|
+2025-03-17 14:52:48,338|1103|1087|50a65e80|RespMsg JSON to POJO|JTP|success|2c86268d|Convert Response|
+2025-03-17 14:52:48,387|40|26|fec20799|Publish Credential Response|PJMS|pre|a3bafacc|Login|Filename: 8a9c6e08-1528-484f-afdd-c679f33aa71a | MTNA - Core Operations & Management > Credential > Login | ISL-CORE.CREDENTIAL_VALIDATION_V5_REQ.TA - Response sent :  'ISL-CORE.CREDENTIAL_VALIDATION_V5_REQ.TA.RESP' :RespMsg{id=F143C6CC294D414AB38973349A572404, name=CREDENTIAL_VALIDATION_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=CredentialValidationResp%5BpromotionalMessages={},adLogin=false,formDetails=com.mt.form.bean.credential.FormDetailBean%5B30%5D,credentialsStatus=Trx status is undefined - 211,map=StringObjectMap%5BFINGERPRINT_ENABLED = true, USER_ID = 362192973924752, USER_HINT_ANSWER = 7, SSM_DISTRIBUTOR = SsmDistributor%5BdistributorId=10001,approvalStatusId=3,imei=354346070456230%5D, NOTIFICATION_MQ_PORT = , ALLOWED_CHARACTER_REPETITION = 5, USER_REMAIN_RETRY_ATTEMPT = 0, NOTIFICATION_TOPIC_NAME = , NOTIFICATION_WAIT_TIME = , MESSAGE_INBOX_NOTIFICATION_EXPIRY_DURATION = , ISL_PASSWORD_REGEX = ^(?=.*%5Ba-z%5D)(?=.{4,25}$)%5Ba-z%5D+$, REF_NO = , DISTRIBUTOR_ID = 10001, ISL_USER_BANK_PROFILE = ALL, ISL_USER = IslUser%5BuserId=362192973924752,userName=webcare,userPassword=String%5B63%5D,passwordExpired=Sat Jul 07 16:51:12 ICT 2227,hintQuestion=7,hintAnswer=7,phoneNumber=12312312,remainRetryAttempt=0,defaultMaxAttempt=15,approvalStatusId=3,forceChange=false,groupId=11000112,userGroup=IslUserGroup%5BgroupId=11000112%5D,idcompany=1,ssmCompany=SsmCompany%5Bidcompany=1%5D,isActive=true%5D, USER_HINT_QUESTION = 7, MESSAGE_INBOX_NOTIFICATION_TOPIC_NAME = , PASSWORDX_CHARS_NOT_IN_USERNAME = 9, DISCLAIMER_MESSAGE = , NOTIFICATION_MQ_SERVER = , ISL_PERMISSIONS = String%5B38902%5D, HTML_CONTENT = String%5B580%5D, %5D ,trxId=F143C6CC294D414AB38973349A572404,instanceId=11000101,idCompany=1,respCode=200,respDesc=Recive OTP and The trx is success on the server,createdDateTime=Mon Mar 17 14:52:46 ICT 2025%5D, datum=null}

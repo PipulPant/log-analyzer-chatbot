@@ -1,0 +1,53 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-06-05 19:09:54,013|4|3|2eb0aed2|Jetty Server (HTTP)|HHREQ|success|4239f542|EAI|Filename: 4930512b-0947-4f45-a2f9-305e72b66be1 | Singtel > EAI | POST '/CommonWebService' - Request: <v:Envelope xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:c="http://schemas.xmlsoap.org/soap/encoding/" xmlns:v="http://schemas.xmlsoap.org/soap/envelope/"><v:Header><n0:info xmlns:n0="http://mobile-technologies.com"><instanceId>800001</instanceId><operationName>getNewVersionMPOS</operationName><securityToken>YmI3Y2VkMjJkNzNhNDA1NGE3NzAzOWUzZDcwMTEwZmU=</securityToken></n0:info></v:Header><v:Body><n1:getNewVersionMPOS xmlns:n1="http://mobile-technologies.com/eai/isl/"><newVersionReq i:type=":"><mposInfoData i:type=":"><androidApiVersion i:type="d:int">34</androidApiVersion><androidVersion i:type="d:string">14</androidVersion><cellId i:type="d:string">26586</cellId><cellLac i:type="d:string">10204</cellLac><cellMcc i:type="d:string">-1</cellMcc><cellMnc i:type="d:string">-1</cellMnc><extraInfos i:type=":" /><latitude i:type="d:double">-1.0</latitude><longitude i:type="d:double">-1.0</longitude><mPosVersionCode i:type="d:string">76</mPosVersionCode><mPosVersionName i:type="d:string">sgtlsgp_v68_R161326</mPosVersionName><offlineLogin i:type="d:boolean">false</offlineLogin><processorName i:type="d:string">arm64-v8a</processorName><smsMaxCount i:type="d:int">0</smsMaxCount><smsPermission i:type="d:boolean">false</smsPermission><smsRetries i:type="d:int">0</smsRetries><smsSent i:type="d:boolean">false</smsSent></mposInfoData><securityToken i:type="d:string">YmI3Y2VkMjJkNzNhNDA1NGE3NzAzOWUzZDcwMTEwZmU=</securityToken><instanceId i:type="d:int">800001</instanceId></newVersionReq><securityToken i:type="d:string">YmI3Y2VkMjJkNzNhNDA1NGE3NzAzOWUzZDcwMTEwZmU=</securityToken><instanceId i:type="d:int">800001</instanceId><offlineLoginFlag i:type="d:boolean">false</offlineLoginFlag><operationName i:type="d:string">getNewVersionMPOS</operationName></n1:getNewVersionMPOS></v:Body></v:Envelope>
+2025-06-05 19:09:54,049|35|0|7f279b97|SOAP or REST?|ROA|unmatched|4239f542|EAI|
+2025-06-05 19:09:54,108|24|0|21731a1c|Which Web Service?|ROA|Common|6fe2eb4d|SOAP API|
+2025-06-05 19:09:54,155|9|0|09969fb3|SOAP / WSDL / XSD?|ROA|SOAP Req|4d2fb6d9|Common|
+2025-06-05 19:09:54,199|10|2|f4f8fc4a|Extract Header values|EXP|matched|1482b26e|Inspect SOAP|
+2025-06-05 19:09:54,247|48|35|6a594413|Get Request Object|EXP|matched|1482b26e|Inspect SOAP|
+2025-06-05 19:09:54,280|33|0|e1fe4f5f|Remove i:type|RT|success|1482b26e|Inspect SOAP|
+2025-06-05 19:09:54,287|7|2|c4be142f|Set default values (if missing)|UR|success|1482b26e|Inspect SOAP|
+2025-06-05 19:09:54,297|10|0|f7a5e63f|Extract important attributes|EJP|matched|1482b26e|Inspect SOAP|
+2025-06-05 19:09:54,349|21|0|c9304bcf|Set cache file name as trxId|UA|success|f4382d2c|Check Security Token|
+2025-06-05 19:09:54,361|12|0|11905c87|Cache Original Request|PF|success|f4382d2c|Check Security Token|
+2025-06-05 19:09:54,419|33|0|11e79cde|Load conf|ESQLR|pre|30ee8dee|Operation is permitted?|
+2025-06-05 19:09:54,435|49|16|11e79cde|Load conf|ESQLR|success|30ee8dee|Operation is permitted?|
+2025-06-05 19:09:54,448|12|0|abb636b5|Operation Permitted?|ROA|Operation Permitted|30ee8dee|Operation is permitted?|
+2025-06-05 19:09:54,534|34|0|5c5617cf|Blank Instance ID or Security Token?|ROA|unmatched|60441924|Call Core Check Security Token|
+2025-06-05 19:09:54,577|43|0|b856a00b|Construct JSON Message|RT|success|60441924|Call Core Check Security Token|
+2025-06-05 19:09:54,601|24|0|1f4a236c|Publish Request to MQ|PJMS|pre|60441924|Call Core Check Security Token|Filename: 96BE3D1B33614A3B81B139EAACCB5635 | Singtel > EAI > SOAP API > Common > Check Security Token > Call Core Check Security Token |  - Request to :  'ISL-CORE.SEC_TOKEN_VALIDATE_REQ.TA' :{ "name": "SEC_TOKEN_VALIDATE_REQ", "id": "2C371AEEB4CA4665A5C2AB41AFA71986", "dataObject": { "trxId": "2C371AEEB4CA4665A5C2AB41AFA71986", "securityToken": "YmI3Y2VkMjJkNzNhNDA1NGE3NzAzOWUzZDcwMTEwZmU=", "methodName": "getNewVersionMPOS", "offlineLoginFlag": "", "instanceId": 800001, "createdDateTime": "Thu Jun 05 19:09:54 ICT 2025" }, "allData": null }
+2025-06-05 19:09:54,869|0|23|27494a83|Pull Security Token Request|CJMS|success|b6633d09|Check Security Token|Filename: 02833b84-608d-4b68-bdf0-3745c0217f17 | Singtel > CORE > Credential > Check Security Token | ISL-CORE.SEC_TOKEN_VALIDATE_REQ.TA - Request: { "name": "SEC_TOKEN_VALIDATE_REQ", "id": "2C371AEEB4CA4665A5C2AB41AFA71986", "dataObject": { "trxId": "2C371AEEB4CA4665A5C2AB41AFA71986", "securityToken": "YmI3Y2VkMjJkNzNhNDA1NGE3NzAzOWUzZDcwMTEwZmU=", "methodName": "getNewVersionMPOS", "offlineLoginFlag": "", "instanceId": 800001, "createdDateTime": "Thu Jun 05 19:09:54 ICT 2025" }, "allData": null }
+2025-06-05 19:09:54,910|38|5|26f3bab9|POJO or JSON?|ROA|unmatched|34b5c12a|Inspect Request|
+2025-06-05 19:09:54,941|31|0|786d46d6|Set configuration and initial values|UA|success|34b5c12a|Inspect Request|
+2025-06-05 19:09:54,978|37|0|dcd635b7|Store Request Data in Attributes|EJP|matched|34b5c12a|Inspect Request|
+2025-06-05 19:09:55,029|29|0|ac3b7e51|Get Caller App|ESQLR|pre|b6633d09|Check Security Token|
+2025-06-05 19:09:55,085|85|56|ac3b7e51|Get Caller App|ESQLR|success|b6633d09|Check Security Token|
+2025-06-05 19:09:55,131|4|0|968061ca|Load RM_SECURITYTOKEN|ESQLR|pre|d10c6242|Query Security Token|
+2025-06-05 19:09:55,149|1|18|968061ca|Load RM_SECURITYTOKEN|ESQLR|success|d10c6242|Query Security Token|
+2025-06-05 19:09:55,194|45|0|454f097f|Extract Distributor fields|EJP|matched|d10c6242|Query Security Token|
+2025-06-05 19:09:55,251|36|0|7296d8fe|Validate Active IMEI?|ROA|unmatched|c41b94fb|Validate Dealer|
+2025-06-05 19:09:55,278|7|0|eba322c0|Active?|ROA|Is Active|16adb559|Check Security Token Lifetime|
+2025-06-05 19:09:55,336|23|0|d0d31609|Check Offline Flag|ROA|unmatched|0482ec68|Check Offline|
+2025-06-05 19:09:55,375|23|11|4adce568|Insert RM_SECURITYTOKENUSE|PSQL|success|16adb559|Check Security Token Lifetime|
+2025-06-05 19:09:55,502|47|10|ff9fa6f4|Set Success Response Attributes|UA|success|811fbc3b|Prepare JSON Reponse|
+2025-06-05 19:09:55,525|23|0|32a2076b|Prepare JSON Response|RT|success|811fbc3b|Prepare JSON Reponse|
+2025-06-05 19:09:55,610|9|0|11d772c3|POJO or JSON?|ROA|unmatched|e67b83de|Convert Response|
+2025-06-05 19:09:55,693|1080|0|1f4a236c|Publish Request to MQ|PJMS|success|60441924|Call Core Check Security Token|Filename: 96BE3D1B33614A3B81B139EAACCB5635 | Singtel > EAI > SOAP API > Common > Check Security Token > Call Core Check Security Token |  - Response from : 'ISL-CORE.SEC_TOKEN_VALIDATE_REQ.TA': { "id": "2C371AEEB4CA4665A5C2AB41AFA71986", "name": "SEC_TOKEN_VALIDATE_REQ", "resultCode": 200, "dataObject": { "respCode": 200, "respDesc": "", "ssmDistributor": 10001, "userId": "pipul-singtel", "createdDateTime": "Thu Jun 05 19:09:55 ICT 2025" }, "allData": null }
+2025-06-05 19:09:55,753|23|0|15a4eed7|Extract user details|EJP|matched|9b71183e|Validate User and SSMDistributor|
+2025-06-05 19:09:55,795|42|0|188cfdbc|Valid Security Token?|ROA|matched|9b71183e|Validate User and SSMDistributor|
+2025-06-05 19:09:55,807|11|0|56dda074|User Name Matches?|ROA|matched|9b71183e|Validate User and SSMDistributor|
+2025-06-05 19:09:55,847|39|0|78f5a938|Blank Usernames?|ROA|Blank Username 1|9b71183e|Validate User and SSMDistributor|
+2025-06-05 19:09:55,875|28|0|ba23fcb5|Update userName|UA|success|9b71183e|Validate User and SSMDistributor|
+2025-06-05 19:09:55,965|27|0|470f6d10|Fetch Original Request from Cache|FF|success|f4382d2c|Check Security Token|
+2025-06-05 19:09:55,983|14|0|1c8bb0bf|Which operation?|ROA|Get New Version mPOS|4d2fb6d9|Common|
+2025-06-05 19:09:56,055|13|0|f81ed2d3|Retrieve mPOS version configuration|ESQLR|pre|bc51bd72|Get New Version mPOS|
+2025-06-05 19:09:56,072|1|16|f81ed2d3|Retrieve mPOS version configuration|ESQLR|success|bc51bd72|Get New Version mPOS|
+2025-06-05 19:09:56,087|15|0|d8602a09|Extract mPOS version configuration|EJP|matched|bc51bd72|Get New Version mPOS|
+2025-06-05 19:09:56,109|22|0|316616bd|Get mPOS version attributes|UA|success|bc51bd72|Get New Version mPOS|
+2025-06-05 19:09:56,121|12|0|c9a3a1e1|Prepare Response|RT|success|bc51bd72|Get New Version mPOS|
+2025-06-05 19:09:56,155|33|0|aa380189|Set MIME as text/xml|UA|success|bc51bd72|Get New Version mPOS|
+2025-06-05 19:09:56,286|52|0|cfc60a1f|Success|UA|success|8dbbd077|Prepare final response|
+2025-06-05 19:09:56,318|32|0|1c2d541c|SOAP Response?|ROA|XML|8dbbd077|Prepare final response|
+2025-06-05 19:09:56,346|28|0|ca979d59|Set MiME as text/xml|UA|success|8dbbd077|Prepare final response|
+2025-06-05 19:09:56,372|26|0|070c25d9|Remove Cache Entry (if any)|DF|failure|8dbbd077|Prepare final response|
+2025-06-05 19:09:56,420|47|0|ce2a54cb|Send HTTP Response|HHRES|success|4239f542|EAI|Filename: 96BE3D1B33614A3B81B139EAACCB5635 | Singtel > EAI | POST '/CommonWebService' - Response: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isl="http://mobile-technologies.com/eai/isl/"><soapenv:Header /><soapenv:Body><isl:getNewVersionMPOSResponse><return><responseCode>200</responseCode><responseDesc>SUCCESS</responseDesc><versionDetails><versionDetail><code>10</code><name>com.mt.isl.mpos.android</name><url>String%5B73%5D</url><checksum>28e669702ef3558722d76526aebaa36f</checksum><iOSAppId></iOSAppId><iOSCode></iOSCode></versionDetail></versionDetails></return></isl:getNewVersionMPOSResponse></soapenv:Body></soapenv:Envelope>

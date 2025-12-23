@@ -1,0 +1,21 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-02-14 11:57:22,953|1|0|f4920ef4|HandleHttpRequest|HHREQ|success|eb303524|External EAI|Filename: 6b689b2a-a710-4d78-9e23-4090bb538546 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI | POST '/ISL_EAI/v1/enrollments/14353523146' - Request: { "enrollmentType": "RE_REG", "reqType": "updatemomoprofile", "contextualData": { "enrollmentUser": "Admin", "enrollmentDate": "2022-05-31T17:32:28Z", "MSISDN": "973143653", "rejectionReason": "TESTING", "mobileWalletProfile":"LOW_MOMO" } }
+2025-02-14 11:57:22,967|14|0|c62e552f|Fix Http URI|UA|success|eb303524|External EAI|
+2025-02-14 11:57:22,970|3|0|1267c4c2|Ping Request?|ROA|unmatched|eb303524|External EAI|
+2025-02-14 11:57:23,007|13|0|bd9ddb34|Decode Auth header|UA|success|8ea2b7a4|Extract User & Pass From Req|
+2025-02-14 11:57:23,025|18|0|3ce265ce|64Decode User & Pass|UA|success|8ea2b7a4|Extract User & Pass From Req|
+2025-02-14 11:57:23,052|15|1|5117edd9|Fetch ext user record|ESQLR|pre|cf05e5af|Validate User|
+2025-02-14 11:57:23,055|18|4|5117edd9|Fetch ext user record|ESQLR|success|cf05e5af|Validate User|
+2025-02-14 11:57:23,066|11|0|04402dc1|Valid User?|ROA|Valid User|cf05e5af|Validate User|
+2025-02-14 11:57:23,075|9|0|c7cb5290|Check Org?|ROA|Org check enable|cf05e5af|Validate User|
+2025-02-14 11:57:23,086|11|0|dbadf052|Valid Org?|ROA|unmatched|cf05e5af|Validate User|
+2025-02-14 11:57:23,112|11|0|0a7623c7|Set 401 Not authorized status|UA|success|eb303524|External EAI|
+2025-02-14 11:57:23,118|6|0|227d7178|Prepare Response|RT|success|eb303524|External EAI|
+2025-02-14 11:57:23,129|11|0|4c9d1eb4|Set Content-Type|UA|success|eb303524|External EAI|
+2025-02-14 11:57:23,132|3|0|b00d500a|HandleHttpResponse|HHRES|success|eb303524|External EAI|Filename: 6b689b2a-a710-4d78-9e23-4090bb538546 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI | POST '/v1/enrollments/14353523146' - Response: { "code": "401", "message": "Not Authorized" }
+2025-02-14 11:57:23,142|10|0|5f89f89d|Prepare Global Audit Trail Attributes|UA|success|e5dec635|Log Audit Trail|
+2025-02-14 11:57:23,143|1|0|7d19c635|Strip Big Data|LC|success|e5dec635|Log Audit Trail|Filename: 6b689b2a-a710-4d78-9e23-4090bb538546 | MTNA - EAI, MM, USSD & Utility > EAI > External EAI > Log Audit Trail | : { "code": "401", "message": "Not Authorized"}
+2025-02-14 11:57:23,160|16|0|becec1f4|ExtractText|ET|matched|e5dec635|Log Audit Trail|
+2025-02-14 11:57:23,169|8|0|d848a841|Prepare Description for Audit Trail|UA|success|e5dec635|Log Audit Trail|
+2025-02-14 11:57:23,175|6|0|048e4599|Initialize SQL Query|UA|success|e5dec635|Log Audit Trail|
+2025-02-14 11:57:23,181|6|4|c6446eed|Log Request|PSQL|failure|e5dec635|Log Audit Trail|

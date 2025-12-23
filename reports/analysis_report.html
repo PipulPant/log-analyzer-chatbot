@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analysis Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .stat-card .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .stat-card .label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .failures-section {
+            margin-top: 30px;
+        }
+        .failures-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        .failure-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s;
+        }
+        .failure-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .failure-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .failure-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .failure-level {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .level-error {
+            background: #fee;
+            color: #c33;
+        }
+        .level-warning {
+            background: #ffeaa7;
+            color: #d63031;
+        }
+        .level-info {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .failure-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .detail-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .detail-item label {
+            font-size: 0.85em;
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .detail-item value {
+            font-weight: bold;
+            color: #333;
+        }
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .keyword {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        .message {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            word-break: break-word;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .severity-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .severity-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50, #ff9800, #f44336);
+            transition: width 0.3s;
+        }
+        .model-info {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4caf50;
+        }
+        .model-info h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .no-failures {
+            text-align: center;
+            padding: 40px;
+            color: #4caf50;
+            font-size: 1.2em;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Log Analysis Report</h1>
+            <p>Generated on 2025-12-23 17:29:35</p>
+        </div>
+        <div class="content">
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h3>Total Lines</h3>
+                    <div class="value">77</div>
+                    <div class="label">lines</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Parsed Entries</h3>
+                    <div class="value">75</div>
+                    <div class="label">entries</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Rule Failures</h3>
+                    <div class="value">9</div>
+                    <div class="label">failures</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>ML Failures</h3>
+                    <div class="value">0</div>
+                    <div class="label">failures</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Critical Errors</h3>
+                    <div class="value">8</div>
+                    <div class="label">errors</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Warnings</h3>
+                    <div class="value">1</div>
+                    <div class="label">warnings</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Connection Issues</h3>
+                    <div class="value">0</div>
+                    <div class="label">issues</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>HTTP Errors</h3>
+                    <div class="value">4</div>
+                    <div class="label">errors</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Timeout Issues</h3>
+                    <div class="value">4</div>
+                    <div class="label">issues</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Data Issues</h3>
+                    <div class="value">14</div>
+                    <div class="label">issues</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Flow Breaks</h3>
+                    <div class="value">1</div>
+                    <div class="label">breaks</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Success Rate</h3>
+                    <div class="value">53.3</div>
+                    <div class="label">%</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Avg Process Time</h3>
+                    <div class="value">147.7</div>
+                    <div class="label">ms</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Avg Queue Time</h3>
+                    <div class="value">39.5</div>
+                    <div class="label">ms</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Processing Time</h3>
+                    <div class="value">0.05</div>
+                    <div class="label">seconds</div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>File Size</h3>
+                    <div class="value">0.02</div>
+                    <div class="label">MB</div>
+                </div>
+
+            </div>
+
+            <div style="background: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 30px;">
+                <strong>Detected Format:</strong> new_format
+            </div>
+
+            <div class="failures-section">
+                <details style="cursor: pointer;">
+                    <summary style="font-size: 24px; font-weight: bold; padding: 10px; cursor: pointer;">
+                        📊 Flow Analysis
+                    </summary>
+                    <div style="margin-top: 15px;">
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3>Total Transactions</h3>
+                                <div class="value">2</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Transactions with Issues</h3>
+                                <div class="value">2</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Connection Issues</h3>
+                                <div class="value">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>HTTP Errors</h3>
+                                <div class="value">4</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Timeouts</h3>
+                                <div class="value">4</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Data Issues</h3>
+                                <div class="value">14</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Flow Breaks</h3>
+                                <div class="value">1</div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div class="failures-section" style="border: 3px solid #f44336; background: #fff5f5;">
+                <h2 style="color: #f44336; font-size: 28px;">🎯 PRIMARY FAILURES (ROOT CAUSES)</h2>
+                <p style="font-size: 16px; color: #666; margin-bottom: 20px;">
+                    These are the main failures that caused other errors. Fix these first to resolve cascading issues.
+                </p>
+
+                <div class="failure-card" style="border-left: 6px solid #f44336; background: #fff5f5; margin-bottom: 20px;">
+                    <div class="failure-header">
+                        <div class="failure-title" style="font-size: 20px; font-weight: bold;">
+                            🔴 PRIMARY FAILURE #1: External Api Failure
+                        </div>
+                        <span class="failure-level level-error" style="background: #f44336; color: white; padding: 5px 15px; font-weight: bold;">ROOT CAUSE</span>
+                    </div>
+                    <div style="background: #ffe0e0; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                        <strong>Impact:</strong> 4 total failures (3 cascading failures caused by this root cause)
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>IHTTP</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Call to Check Max API</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value>Filename: 9361e695-395c-4486-b43f-533f9437d41e </value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity</label>
+                            <value>1.00</value>
+                        </div>
+                    </div>
+                    <div class="message" style="margin-top: 15px;">
+                        <strong>Root Cause Message:</strong><br>
+                         MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max > Call to 3rd Party > Invoke SOAP WS | ISL-MM.CALL_CBS_API_CHECK_MAX.TA - 3P Status Code: 404 - Response: <html><head><title>Apache Tomcat/7.
+                    </div>
+                </div>
+
+                <div class="failure-card" style="border-left: 6px solid #f44336; background: #fff5f5; margin-bottom: 20px;">
+                    <div class="failure-header">
+                        <div class="failure-title" style="font-size: 20px; font-weight: bold;">
+                            🔴 PRIMARY FAILURE #2: Unknown
+                        </div>
+                        <span class="failure-level level-error" style="background: #f44336; color: white; padding: 5px 15px; font-weight: bold;">ROOT CAUSE</span>
+                    </div>
+                    <div style="background: #ffe0e0; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                        <strong>Impact:</strong> 4 total failures (3 cascading failures caused by this root cause)
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>ROA</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Check Response Status Code</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value></value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity</label>
+                            <value>1.00</value>
+                        </div>
+                    </div>
+                    <div class="message" style="margin-top: 15px;">
+                        <strong>Root Cause Message:</strong><br>
+                        Check Response Status Code
+                    </div>
+                </div>
+
+                <div class="failure-card" style="border-left: 6px solid #f44336; background: #fff5f5; margin-bottom: 20px;">
+                    <div class="failure-header">
+                        <div class="failure-title" style="font-size: 20px; font-weight: bold;">
+                            🔴 PRIMARY FAILURE #3: Authentication Failure
+                        </div>
+                        <span class="failure-level level-error" style="background: #f44336; color: white; padding: 5px 15px; font-weight: bold;">ROOT CAUSE</span>
+                    </div>
+                    <div style="background: #ffe0e0; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                        <strong>Impact:</strong> 1 total failures (0 cascading failures caused by this root cause)
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>PJMS</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Publish Check Max Response</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value>Filename: 27ebb81d-e099-4de1-99c7-7b237352ddfd </value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity</label>
+                            <value>1.00</value>
+                        </div>
+                    </div>
+                    <div class="message" style="margin-top: 15px;">
+                        <strong>Root Cause Message:</strong><br>
+                         MTNA - Core Operations & Management > Checks and Validate > Check Max | ISL-CORE.CHECK_MAX_V5_REQ.TA - Response sent :  'ISL-CORE.CHECK_MAX_V5_REQ.TA.RESP' :RespMsg{id=5BD9C8B7EC9C4B029E0A8B3D571BC5B
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="failures-section">
+                <h2>🚨 All Detected Failures</h2>
+
+                <div class="failure-card" style="border-left: 6px solid #f44336; background: #fff5f5;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #1 - ROOT CAUSE</div>
+                        <span class="failure-level level-error">ERROR</span>
+                        <span class="failure-level level-error" style="background: #f44336; color: white; margin-left: 10px; padding: 5px 10px; font-weight: bold;">ROOT CAUSE</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:04,331</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>IHTTP</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Call to Check Max API</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value>Filename: 9361e695-395c-4486-b...</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #ffe0e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #d32f2f;">Impact:</label>
+                            <value>4 total failures (3 cascading)</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">error</span><span class="keyword">status_404</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                         MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max > Call to 3rd Party > Invoke SOAP WS | ISL-MM.CALL_CBS_API_CHECK_MAX.TA - 3P Status Code: 404 - Response: <html><head><title>Apache Tomcat/7.0.41 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D...
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:04,331|16|245|156f4256|Call to Check Max API|IHTTP|Response|9e1ef887|Invoke SOAP WS|Filename: 9361e695-395c-4486-b43f-533f9437d41e | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max > Call to 3rd Party > Invoke SOAP WS | ISL-MM.CALL_CBS_API_CHECK_MAX.TA - 3P Status Code: 404 - Response: <html><head><title>Apache Tomcat/7.0.41 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /mtna-ability/EaiEnvelopeSoapQSService</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/mtna-ability/EaiEnvelopeSoapQSService</u></p><p><b>description</b> <u>The requested resource is not available.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.41</h3></body></html>
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 4px solid #ff9800; background: #fffbf0;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #2 - CASCADE</div>
+                        <span class="failure-level level-error">ERROR</span>
+                        <span class="failure-level level-warning" style="background: #ff9800; margin-left: 10px;">CASCADE (caused by: external_api_failure)</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:04,333</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>IHTTP</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Call to Check Max API</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value>Filename: 9361e695-395c-4486-b...</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #fff3e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #f57c00;">Caused By:</label>
+                            <value>External Api Failure</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">status_404</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                         MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max > Call to 3rd Party > Invoke SOAP WS | ISL-MM.CALL_CBS_API_CHECK_MAX.TA - 3P Status Code: 404 - Response: <?xml version="1.0" encoding="UTF-8"?> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <soapenv:Header> <sch:authentication xmlns:sch="http://schema.concierge.com"> <sch:password>password</sch:password> <sch:user>user</sch:user> </sch:authentication> </soapenv:Header> <soapenv:Body> <sch:clientRequest xml...
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:04,333|258|246|156f4256|Call to Check Max API|IHTTP|No Retry|9e1ef887|Invoke SOAP WS|Filename: 9361e695-395c-4486-b43f-533f9437d41e | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max > Call to 3rd Party > Invoke SOAP WS | ISL-MM.CALL_CBS_API_CHECK_MAX.TA - 3P Status Code: 404 - Response: <?xml version="1.0" encoding="UTF-8"?> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <soapenv:Header> <sch:authentication xmlns:sch="http://schema.concierge.com"> <sch:password>password</sch:password> <sch:user>user</sch:user> </sch:authentication> </soapenv:Header> <soapenv:Body> <sch:clientRequest xmlns:sch="http://schema.concierge.com"> <env:EaiEnvelope xmlns:env="http://schema.concierge.com/Envelope"> <env:ApplicationName>modules/ISL_MM</env:ApplicationName> <env:Domain>abl_portal</env:Domain> <env:Service>ISPService</env:Service> <env:ServiceId>3</env:ServiceId> <env:Language>En</env:Language> <env:UserId>externalapp</env:UserId> <env:Sender>externalapp</env:Sender> <env:MessageId>abl_portal</env:MessageId> <env:Payload> <isp:ISP xmlns:isp="http://schema.concierge.com/isp"> <isp:ISPRequest> <isp:OperationName>updateValidateDocumentsFlag</isp:OperationName> <isp:Request> <EVENT> <REQUEST API_CODE="51003" CLIENT_ID="modules/ISL_MM" EXTERNAL_APPLICATION="ISL" EXTERNAL_REFERENCE="" EXTERNAL_SYSTEMS_LOG_REFERNCE="" EXTERNAL_USER="ISL" INFO_LEVEL="3" OPERATION_NAME="ValidateDocumentsType" /> <REQUESTDETAILS ID_NUMBER="243-123-123-3" ID_TYPE="NIC" /> </EVENT> </isp:Request> </isp:ISPRequest> </isp:ISP> </env:Payload> </env:EaiEnvelope> </sch:clientRequest> </soapenv:Body> </soapenv:Envelope>
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 6px solid #f44336; background: #fff5f5;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #3 - ROOT CAUSE</div>
+                        <span class="failure-level level-error">ERROR</span>
+                        <span class="failure-level level-error" style="background: #f44336; color: white; margin-left: 10px; padding: 5px 10px; font-weight: bold;">ROOT CAUSE</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:04,342</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>ROA</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Check Response Status Code</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value></value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #ffe0e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #d32f2f;">Impact:</label>
+                            <value>4 total failures (3 cascading)</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">status_404</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                        Check Response Status Code
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:04,342|3|0|ab3ede27|Check Response Status Code|ROA|404|9e1ef887|Invoke SOAP WS|
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 4px solid #ff9800; background: #fffbf0;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #4 - CASCADE</div>
+                        <span class="failure-level level-error">ERROR</span>
+                        <span class="failure-level level-warning" style="background: #ff9800; margin-left: 10px;">CASCADE (caused by: external_api_failure)</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:04,352</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>LC</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>LogContent(Strip Large Content)</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value>Filename: 9361e695-395c-4486-b...</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #fff3e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #f57c00;">Caused By:</label>
+                            <value>External Api Failure</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">error</span><span class="keyword">status_404</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                         MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max > Call to 3rd Party > Invoke SOAP WS > Save CRM_EXT_CALL_DATA | ISL-MM.CALL_CBS_API_CHECK_MAX.TA: <html><head><title>Apache Tomcat/7.0.41 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-...
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:04,352|10|0|191df6ef|LogContent(Strip Large Content)|LC|success|fd9de6ae|Save CRM_EXT_CALL_DATA|Filename: 9361e695-395c-4486-b43f-533f9437d41e | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max > Call to 3rd Party > Invoke SOAP WS > Save CRM_EXT_CALL_DATA | ISL-MM.CALL_CBS_API_CHECK_MAX.TA: <html><head><title>Apache Tomcat/7.0.41 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /mtna-ability/EaiEnvelopeSoapQSService</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/mtna-ability/EaiEnvelopeSoapQSService</u></p><p><b>description</b> <u>The requested resource is not available.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.41</h3></body></html>
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 4px solid #ff9800; background: #fffbf0;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #5 - CASCADE</div>
+                        <span class="failure-level level-info">INFO</span>
+                        <span class="failure-level level-warning" style="background: #ff9800; margin-left: 10px;">CASCADE (caused by: unknown)</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:04,404</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>RT</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Handle Internal Error Resp</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value></value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #fff3e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #f57c00;">Caused By:</label>
+                            <value>Unknown</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">error</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                        Handle Internal Error Resp
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:04,404|16|0|20fcb12e|Handle Internal Error Resp|RT|success|9f187938|Prepare Response|
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 4px solid #ff9800; background: #fffbf0;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #6 - CASCADE</div>
+                        <span class="failure-level level-error">ERROR</span>
+                        <span class="failure-level level-warning" style="background: #ff9800; margin-left: 10px;">CASCADE (caused by: external_api_failure)</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:04,448</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>PJMS</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Send Response to Core</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value>Filename: 9361e695-395c-4486-b...</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #fff3e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #f57c00;">Caused By:</label>
+                            <value>External Api Failure</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">status_500</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                         MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max | ISL-MM.CALL_CBS_API_CHECK_MAX.TA - Response sent :  'ISL-MM.CALL_CBS_API_CHECK_MAX.TA.RESP' :{ "id" : "5BD9C8B7EC9C4B029E0A8B3D571BC5BF", "name" : "ISL-MM.CALL_CBS_API_CHECK_MAX.TA", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "5BD9C8B7EC9C4B029E0A8B3D571BC5BF", "instanceId" : "0", "messageStatus": "Internal Error", "respCode": "500", "respDesc" : "trx failure" }, "datum" : null }
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:04,448|20|3|d0c269e5|Send Response to Core|PJMS|pre|fc960195|Check Max|Filename: 9361e695-395c-4486-b43f-533f9437d41e | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check Max | ISL-MM.CALL_CBS_API_CHECK_MAX.TA - Response sent :  'ISL-MM.CALL_CBS_API_CHECK_MAX.TA.RESP' :{ "id" : "5BD9C8B7EC9C4B029E0A8B3D571BC5BF", "name" : "ISL-MM.CALL_CBS_API_CHECK_MAX.TA", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "5BD9C8B7EC9C4B029E0A8B3D571BC5BF", "instanceId" : "0", "messageStatus": "Internal Error", "respCode": "500", "respDesc" : "trx failure" }, "datum" : null }
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 4px solid #ff9800; background: #fffbf0;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #7 - CASCADE</div>
+                        <span class="failure-level level-error">ERROR</span>
+                        <span class="failure-level level-warning" style="background: #ff9800; margin-left: 10px;">CASCADE (caused by: unknown)</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:05,178</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>ROA</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Mapping not found?</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value></value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #fff3e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #f57c00;">Caused By:</label>
+                            <value>Unknown</value>
+                        </div>
+
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                        Mapping not found?
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:05,178|28|0|558a26ee|Mapping not found?|ROA|unmatched|219df021|Call Result Code Mapping|
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 6px solid #f44336; background: #fff5f5;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #8 - ROOT CAUSE</div>
+                        <span class="failure-level level-info">INFO</span>
+                        <span class="failure-level level-error" style="background: #f44336; color: white; margin-left: 10px; padding: 5px 10px; font-weight: bold;">ROOT CAUSE</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:05,500</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>PJMS</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Publish Check Max Response</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value>Filename: 27ebb81d-e099-4de1-9...</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>1.00</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #ffe0e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #d32f2f;">Impact:</label>
+                            <value>1 total failures (0 cascading)</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">status_401</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                         MTNA - Core Operations & Management > Checks and Validate > Check Max | ISL-CORE.CHECK_MAX_V5_REQ.TA - Response sent :  'ISL-CORE.CHECK_MAX_V5_REQ.TA.RESP' :RespMsg{id=5BD9C8B7EC9C4B029E0A8B3D571BC5BF, name=CHECK_MAX_REG_REQ, resultCode=ResultCode{code=200, desc=Success}, dataObject=String%5B57%5D,instanceId=11000101,idCompany=1,respCode=401,respDesc=trx failure,customMessage=ResponseMessage %5Bid=401, messages={AR=trx failure, EN=trx failure, KU=trx failure}%5D,createdDateTime=Tue Dec 23 14:00...
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:05,500|22|6|c307f41a|Publish Check Max Response|PJMS|pre|77eab0c0|Check Max|Filename: 27ebb81d-e099-4de1-99c7-7b237352ddfd | MTNA - Core Operations & Management > Checks and Validate > Check Max | ISL-CORE.CHECK_MAX_V5_REQ.TA - Response sent :  'ISL-CORE.CHECK_MAX_V5_REQ.TA.RESP' :RespMsg{id=5BD9C8B7EC9C4B029E0A8B3D571BC5BF, name=CHECK_MAX_REG_REQ, resultCode=ResultCode{code=200, desc=Success}, dataObject=String%5B57%5D,instanceId=11000101,idCompany=1,respCode=401,respDesc=trx failure,customMessage=ResponseMessage %5Bid=401, messages={AR=trx failure, EN=trx failure, KU=trx failure}%5D,createdDateTime=Tue Dec 23 14:00:05 ICT 2025%5D, datum=null}
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="failure-card" style="border-left: 4px solid #ff9800; background: #fffbf0;">
+                    <div class="failure-header">
+                        <div class="failure-title">Failure #9 - CASCADE</div>
+                        <span class="failure-level level-info">INFO</span>
+                        <span class="failure-level level-warning" style="background: #ff9800; margin-left: 10px;">CASCADE (caused by: unknown)</span>
+                    </div>
+                    <div class="failure-details">
+                        <div class="detail-item">
+                            <label>Timestamp</label>
+                            <value>2025-12-23 14:00:05,334</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Component</label>
+                            <value>PSQL</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Operation</label>
+                            <value>Save failed data to DB</value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Transaction ID</label>
+                            <value></value>
+                        </div>
+                        <div class="detail-item">
+                            <label>Severity Score</label>
+                            <value>0.60</value>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 60.0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item" style="background: #fff3e0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                            <label style="font-weight: bold; color: #f57c00;">Caused By:</label>
+                            <value>Unknown</value>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Keywords Found:</strong>
+                        <div class="keywords">
+<span class="keyword">failed</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <strong>Message:</strong><br>
+                        Save failed data to DB
+                    </div>
+
+                    <details style="margin-top: 10px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold;">View Raw Log Line</summary>
+                        <div class="message" style="margin-top: 10px;">
+                            2025-12-23 14:00:05,334|55|46|479b57a8|Save failed data to DB|PSQL|success|219df021|Call Result Code Mapping|
+                        </div>
+                    </details>
+
+                </div>
+
+            </div>
+
+            <div class="failures-section">
+                <h2>⚠️ Detailed Issues</h2>
+
+                <h3 style="color: #f44336; margin-top: 20px;">CRITICAL Issues (1)</h3>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "http_error",
+  "errors": [
+    {
+      "type": "500",
+      "pattern": "500.*trx failure",
+      "severity": 0.9
+    }
+  ],
+  "severity": 0.9
+}
+                    </div>
+                </div>
+
+                <h3 style="color: #ff9800; margin-top: 20px;">WARNING Issues (8)</h3>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "http_error",
+  "errors": [
+    {
+      "type": "404",
+      "pattern": "404.*not available",
+      "severity": 0.7
+    },
+    {
+      "type": "tomcat_error",
+      "pattern": "Apache Tomcat.*Error report",
+      "severity": 0.7
+    }
+  ],
+  "severity": 0.7
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "http_error",
+  "errors": [
+    {
+      "type": "404",
+      "pattern": "Status Code:\\s*404",
+      "severity": 0.7
+    }
+  ],
+  "severity": 0.7
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "http_error",
+  "errors": [
+    {
+      "type": "404",
+      "pattern": "404.*not available",
+      "severity": 0.7
+    },
+    {
+      "type": "tomcat_error",
+      "pattern": "Apache Tomcat.*Error report",
+      "severity": 0.7
+    }
+  ],
+  "severity": 0.7
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "processing_slow",
+  "processor": "Pull Check Max Request",
+  "process_time_ms": 960,
+  "threshold_ms": 500,
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "queue_time_high",
+  "processor": "Call MM",
+  "queue_time_ms": 1040,
+  "threshold_ms": 100,
+  "severity": 0.5
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "processing_slow",
+  "processor": "Listen to CORE Request",
+  "process_time_ms": 920,
+  "threshold_ms": 500,
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "queue_time_high",
+  "processor": "Call to Check Max API",
+  "queue_time_ms": 258,
+  "threshold_ms": 100,
+  "severity": 0.5
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "id_inconsistency",
+  "ids": [
+    "11000101",
+    "1",
+    "5BD9C8B7EC9C4B029E0A8B3D571BC5BF",
+    "0",
+    "401",
+    "100061"
+  ],
+  "issues": [
+    "11000101 vs 5BD9C8B7EC9C4B029E0A8B3D571BC5BF",
+    "11000101 vs 401",
+    "11000101 vs 100061",
+    "1 vs 0",
+    "5BD9C8B7EC9C4B029E0A8B3D571BC5BF vs 401",
+    "5BD9C8B7EC9C4B029E0A8B3D571BC5BF vs 100061",
+    "401 vs 100061"
+  ],
+  "severity": 0.7
+}
+                    </div>
+                </div>
+
+                <h3 style="color: #2196f3; margin-top: 20px;">INFO Issues (14)</h3>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Pull Check Max Request",
+  "missing_fields": [
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Call MM",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Call MM",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Log Request",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Log Response",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 27ebb81d-e099-4de1-9</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Publish Check Max Response",
+  "missing_fields": [
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Listen to CORE Request",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Call to Check Max API",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "LogContent(Strip Large Content)",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+                <div class="failure-card">
+                    <div class="failure-header">
+                        <div class="failure-title">Transaction: Filename: 9361e695-395c-4486-b</div>
+                    </div>
+                    <div class="message">
+                        {
+  "type": "missing_mandatory_fields",
+  "processor": "Call to Check Max API",
+  "missing_fields": [
+    "id",
+    "name",
+    "instanceId",
+    "trxId"
+  ],
+  "severity": 0.6
+}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="timestamp">
+                Report generated by Log Analyzer with Supervised Learning
+            </div>
+        </div>
+    </div>
+</body>
+</html>

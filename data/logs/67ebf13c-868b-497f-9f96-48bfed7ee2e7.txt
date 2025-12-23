@@ -1,0 +1,18 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-02-05 12:40:39,325|0|544|0bb84f87|Pull Request|CJMS|success|7317fc9d|Count Registration|Filename: 67ebf13c-868b-497f-9f96-48bfed7ee2e7 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Count Registration | ISL-CORE.CUSTOMER_SEARCH_COUNT_V5_REQ.TA - Request: ReqMsg{id=E7C290F9BFE04226990602413DD170EF, name=CUSTOMER_SEARCH_COUNT_V5_REQ, dataObject=CustomerSearchReq%5Bmsisdn=170261689,startDateTime=Tue Feb 04 00:00:00 ICT 2025,endDateTime=Wed Feb 05 00:00:00 ICT 2025,firstResult=1,maxResult=10,map=StringObjectMap%5BSYS_REGISTRATION_TYPE_ID = 1,6,10,16, %5D ,enableWhiteList=true,screenId=40000196,username=pipulwebcare,loginInstanceId=11000101,trxId=E7C290F9BFE04226990602413DD170EF,idCompany=1,createdDateTime=Wed Feb 05 12:40:39 ICT 2025,locale=EN%5D, datum=null}
+2025-02-05 12:40:39,340|6|0|30608b6a|POJO or JSON?|ROA|POJO|91e9f909|Inspect Request|
+2025-02-05 12:40:39,342|2|0|fe814275|ReqMsg to JSON|PTJ|success|91e9f909|Inspect Request|
+2025-02-05 12:40:39,360|17|0|19125820|Store Request Data in Attributes|EJP|matched|91e9f909|Inspect Request|
+2025-02-05 12:40:39,361|1|0|7c7979f1|Set configuration and initial values|UA|success|91e9f909|Inspect Request|
+2025-02-05 12:40:39,369|8|0|e45ac3fd|AcceptedBy exists?|ROA|unmatched|91e9f909|Inspect Request|
+2025-02-05 12:40:39,407|14|0|9eca542b|Prepare SQL Clauses|UA|success|10d0f674|Query Count Registration|
+2025-02-05 12:40:39,412|5|0|e5c105bf|check is bulk search|ROA|unmatched|10d0f674|Query Count Registration|
+2025-02-05 12:40:39,433|20|0|97db9c66|Prepare Sql Query |UA|success|10d0f674|Query Count Registration|
+2025-02-05 12:40:39,455|22|0|f99b4db1|Find customer data count|ESQLR|pre|10d0f674|Query Count Registration|
+2025-02-05 12:40:39,476|43|20|f99b4db1|Find customer data count|ESQLR|success|10d0f674|Query Count Registration|
+2025-02-05 12:40:39,501|25|0|59a96e98|caller?|ROA|webcare|10d0f674|Query Count Registration|
+2025-02-05 12:40:39,527|7|0|7b06bbba|Success Response Attributes|UA|success|bef7a6df|Prepare JSON Reponse|
+2025-02-05 12:40:39,558|31|0|e54823eb|Prepare JSON Response|RT|success|bef7a6df|Prepare JSON Reponse|
+2025-02-05 12:40:39,602|10|0|326803e7|POJO or JSON?|ROA|POJO|1a1fbbef|Convert Response|
+2025-02-05 12:40:39,612|10|0|998d09b8|RespMsg JSON to POJO|JTP|success|1a1fbbef|Convert Response|
+2025-02-05 12:40:39,642|12|5|8ce90a1c|Publish Response|PJMS|pre|7317fc9d|Count Registration|Filename: 67ebf13c-868b-497f-9f96-48bfed7ee2e7 | MTNA - Core Operations & Management > Search, View, Update, Accept, Reject > Count Registration | ISL-CORE.CUSTOMER_SEARCH_COUNT_V5_REQ.TA - Response sent :  'ISL-CORE.CUSTOMER_SEARCH_COUNT_V5_REQ.TA.RESP' :RespMsg{id=E7C290F9BFE04226990602413DD170EF, name=CUSTOMER_SEARCH_COUNT_RESP, resultCode=ResultCode{code=200, desc=Success}, dataObject=CustomerSearchResp%5BcountCustomer=1,trxId=E7C290F9BFE04226990602413DD170EF,respCode=200,respDesc=Success,createdDateTime=Wed Feb 05 12:40:39 ICT 2025%5D, datum=null}

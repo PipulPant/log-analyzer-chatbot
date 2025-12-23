@@ -1,0 +1,4 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-03-17 18:50:50,015|0|0|fcd91a7a|Schedule trigger|GFF|success|02d558bb|Update MoMo Status|
+2025-03-17 18:50:50,033|18|4|6808d0bb|Update Schedule last run|PSQL|success|02d558bb|Update MoMo Status|
+2025-03-17 18:50:50,047|14|0|7e4b8e8f|check concurrence instance run|ROA|unmatched|02d558bb|Update MoMo Status|

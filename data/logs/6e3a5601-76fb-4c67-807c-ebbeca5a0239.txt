@@ -1,0 +1,62 @@
+TIMESTAMP|QUEUE_TIME_MS|PROCESS_TIME_MS|PROCESSOR_UUID|PROCESSOR_NAME|COMPONENT|RELATIONSHIP|PG_UUID|PG_NAME|LOG
+2025-04-30 16:48:36,618|0|521|4314b129|Pull Check Mobile Wallet Account Request|CJMS|success|9ec4dc2e|Check Mobile Wallet Account|Filename: 6e3a5601-76fb-4c67-807c-ebbeca5a0239 | MTNA - Core Operations & Management > Checks and Validate > Check Mobile Wallet Account | ISL-CORE.CHECK_MOBILE_WALLET_ACCOUNT.TA - Request: ReqMsg{id=0E991BB20D40405ABF36B17F5A554FF2, name=CHECK_MOBILE_WALLET_ACCOUNT, dataObject=String%5B50%5D,trxTypeId=1,instanceId=11000101,companyId=1,username=pipulwebcare,createdDateTime=Wed Apr 30 16:48:36 ICT 2025,locale=EN,map=StringObjectMap%5BIDTYPE = 1, MSISDN = 333333350, IDNUMBER = 909-888-000, %5D ,state=PENDING - MPOS,retries=0,localId=0,enableWhiteList=true,checkOccupied=false,smsCount=0,appActionId=100157%5D, datum=null}
+2025-04-30 16:48:36,638|8|0|f86d5ea9|POJO or JSON?|ROA|POJO|5d25696f|Inspect Request|
+2025-04-30 16:48:36,652|14|0|2e34c7ca|ReqMsg to JSON|PTJ|success|5d25696f|Inspect Request|
+2025-04-30 16:48:36,674|21|0|ad2f1b77|Set configuration and initial values|UA|success|5d25696f|Inspect Request|
+2025-04-30 16:48:36,705|15|0|6eff0f39|Store Request Data in Attributes|EJP|matched|9ecc6e26|Process Attributes|
+2025-04-30 16:48:36,719|14|0|a13e5ac0|Valid Request?|ROA|Valid|9ecc6e26|Process Attributes|
+2025-04-30 16:48:36,773|11|0|333ce37a|ISL or 3rd party?|ROA|validData|0e60f3a3|Check If Third Party or ISL?|
+2025-04-30 16:48:36,808|10|0|737cff28|Huawei Enabled?|ROA|unmatched|9ec4dc2e|Check Mobile Wallet Account|
+2025-04-30 16:48:36,832|5|0|c004ca93|Prepare OSIA Request|RT|success|6fded44d|Call ECW API|
+2025-04-30 16:48:36,837|0|460|6e9ea556|Listen to CORE Request|CJMS|success|0bdea01e|Check MOMO account|Filename: 4f6a7cff-7c69-4fa5-8b6c-6a2d05951458 | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check MOMO account | ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA - Request: { "id" : "0E991BB20D40405ABF36B17F5A554FF2", "name" : "OSIA_CHECK_MOBILE_WALLET_ACCOUNT_REQ", "dataObject" : { "trxId" : "0E991BB20D40405ABF36B17F5A554FF2", "instanceId" : "11000101", "trxTypeId" : "1", "username" : "pipulwebcare", "map" : { "IDTYPE" : "1", "MSISDN" : "333333350" } } }
+2025-04-30 16:48:36,839|7|3|1323bf93|Call MM ECW Getaccountholderinfo|PJMS|pre|6fded44d|Call ECW API|Filename: 6e3a5601-76fb-4c67-807c-ebbeca5a0239 | MTNA - Core Operations & Management > Checks and Validate > Check Mobile Wallet Account > Call ECW API | ISL-CORE.CHECK_MOBILE_WALLET_ACCOUNT.TA - Request to :  'ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA' :
+2025-04-30 16:48:36,860|13|0|4c1d67cf|POJO or JSON ?|ROA|unmatched|bbbf85ec|Inspect Request|
+2025-04-30 16:48:36,862|2|0|5034714c|Store Request Data in Attributes|EJP|matched|bbbf85ec|Inspect Request|
+2025-04-30 16:48:36,868|6|0|e636ea46|Valid request ?|ROA|unmatched|bbbf85ec|Inspect Request|
+2025-04-30 16:48:36,884|16|0|bed0d29b|Get Username & Password|UA|success|bbbf85ec|Inspect Request|
+2025-04-30 16:48:36,897|13|0|8331f360|Encode Username Password|EGS|success|bbbf85ec|Inspect Request|
+2025-04-30 16:48:36,944|13|0|36b992c8|Check Identity Format|ROA|unmatched|845701e5|Call to 3rd Party |
+2025-04-30 16:48:36,958|13|0|8a50422a|Prepare request to call |UA|success|845701e5|Call to 3rd Party |
+2025-04-30 16:48:36,975|17|0|85dc190b|Prepare request to XML|RT|success|845701e5|Call to 3rd Party |
+2025-04-30 16:48:36,977|1|0|8b6e0fc4|Set HTTP Method and URL|UA|success|42b1af6b|Invoke SOAP WS|
+2025-04-30 16:48:36,995|18|1|1a588e16|Call to ECW API|IHTTP|pre|42b1af6b|Invoke SOAP WS|Filename: 4f6a7cff-7c69-4fa5-8b6c-6a2d05951458 | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check MOMO account > Call to 3rd Party  > Invoke SOAP WS | ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA -URL: POST 'http://192.168.8.45:8087/EWP_MOCK/service/getaccountholderinfo' - Request: <?xml version="1.0" encoding="UTF-8"?><ns3:getaccountholderinforequest xmlns:ns3="http://www.ericsson.com/em/emm/provisioning/v1_0" xmlns:ns2="http://www.ericsson.com/lwac"><identity>ID:333333350/ID</identity></ns3:getaccountholderinforequest>
+2025-04-30 16:48:37,012|22|0|1a5cfacd|LogContent(Strip Large Content)|LC|success|d7a24c0d|Save CRM_EXT_CALL_DATA|Filename: 4f6a7cff-7c69-4fa5-8b6c-6a2d05951458 | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check MOMO account > Call to 3rd Party  > Invoke SOAP WS > Save CRM_EXT_CALL_DATA | ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA: <?xml version="1.0" encoding="UTF-8"?><ns3:getaccountholderinforequest xmlns:ns3="http://www.ericsson.com/em/emm/provisioning/v1_0" xmlns:ns2="http://www.ericsson.com/lwac"><identity>ID:333333350/ID</identity></ns3:getaccountholderinforequest>
+2025-04-30 16:48:37,029|17|0|370c9f87|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,032|0|0|263c4a10|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,032|2|0|263c4a10|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,065|33|18|0a615bd9|Save request  CRM_EXT_CALL_DATA  |PSQL|success|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,665|0|671|1a588e16|Call to ECW API|IHTTP|Response|42b1af6b|Invoke SOAP WS|Filename: 4f6a7cff-7c69-4fa5-8b6c-6a2d05951458 | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check MOMO account > Call to 3rd Party  > Invoke SOAP WS | ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA - 3P Status Code: 200 - Response: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:getaccountholderinforesponse xmlns:ns2="http://www.ericsson.com/em/emm/provisioning/v1_0"><accountholderbasicinfo><accountholderstatus>ACTIVE</accountholderstatus></accountholderbasicinfo></ns2:getaccountholderinforesponse> 
+2025-04-30 16:48:37,666|689|671|1a588e16|Call to ECW API|IHTTP|Original|42b1af6b|Invoke SOAP WS|Filename: 4f6a7cff-7c69-4fa5-8b6c-6a2d05951458 | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check MOMO account > Call to 3rd Party  > Invoke SOAP WS | ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA - 3P Status Code: 200 - Response: <?xml version="1.0" encoding="UTF-8"?><ns3:getaccountholderinforequest xmlns:ns3="http://www.ericsson.com/em/emm/provisioning/v1_0" xmlns:ns2="http://www.ericsson.com/lwac"><identity>ID:333333350/ID</identity></ns3:getaccountholderinforequest>
+2025-04-30 16:48:37,671|5|0|e5aa8a70|Set respCode and respDesc|UA|success|42b1af6b|Invoke SOAP WS|
+2025-04-30 16:48:37,685|1|0|1a5cfacd|LogContent(Strip Large Content)|LC|success|d7a24c0d|Save CRM_EXT_CALL_DATA|Filename: 4f6a7cff-7c69-4fa5-8b6c-6a2d05951458 | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check MOMO account > Call to 3rd Party  > Invoke SOAP WS > Save CRM_EXT_CALL_DATA | ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:getaccountholderinforesponse xmlns:ns2="http://www.ericsson.com/em/emm/provisioning/v1_0"><accountholderbasicinfo><accountholderstatus>ACTIVE</accountholderstatus></accountholderbasicinfo></ns2:getaccountholderinforesponse>
+2025-04-30 16:48:37,686|15|0|04c5badb|Check Response Status Code|ROA|success|42b1af6b|Invoke SOAP WS|
+2025-04-30 16:48:37,698|13|0|370c9f87|Prepare SQL INSERT CRM_EXT_CALL_DATA|EGS|success|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,702|0|0|263c4a10|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|sql|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,702|4|0|263c4a10|Prepare CRM_EXT_CALL_DATA SQL|CJSONTSQL|original|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,724|22|8|0a615bd9|Save request  CRM_EXT_CALL_DATA  |PSQL|success|d7a24c0d|Save CRM_EXT_CALL_DATA|
+2025-04-30 16:48:37,742|9|0|844712a8|200 ?|ROA|200|ba859492|Prepare Response|
+2025-04-30 16:48:37,763|21|1|7701d855|Store Request fields to Attributes|EXP|matched|ba859492|Prepare Response|
+2025-04-30 16:48:37,780|17|0|c1940771|Handle Success Resp|RT|success|ba859492|Prepare Response|
+2025-04-30 16:48:37,815|13|0|5955de4d|Request is POJO or JSON ?|ROA|unmatched|115c7fbf|Handle Response|
+2025-04-30 16:48:37,843|22|1|66176d96|Send Response to Core|PJMS|pre|0bdea01e|Check MOMO account|Filename: 4f6a7cff-7c69-4fa5-8b6c-6a2d05951458 | MTNA - EAI, MM, USSD & Utility > MM > MM MTNA > Check MOMO account | ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA - Response sent :  'ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA.RESP' :{ "id" : "0E991BB20D40405ABF36B17F5A554FF2", "name" : "ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA", "resultCode" : "SUCCESS", "dataObject" : { "trxId" : "0E991BB20D40405ABF36B17F5A554FF2", "respCode": "200_ST_ACTIVE", "respDesc" : "ACTIVE", "map" : { "FIRSTNAME": "", "NAME": " ", "ECW_PROFILE_NAME": "", "ECW_INTERNAL_IDENTITY":"ID:333333350/ID", "ECW_ACCOUNT_STATUS": "ACTIVE", "ECW_ACCOUNT_TYPE": "" } } }
+2025-04-30 16:48:37,877|1038|0|1323bf93|Call MM ECW Getaccountholderinfo|PJMS|success|6fded44d|Call ECW API|Filename: 6e3a5601-76fb-4c67-807c-ebbeca5a0239 | MTNA - Core Operations & Management > Checks and Validate > Check Mobile Wallet Account > Call ECW API | ISL-CORE.CHECK_MOBILE_WALLET_ACCOUNT.TA - Response from : 'ISL-MM.MM_ECW_GET_ACCOUNT_HOLDER_V5_REQ.TA': 
+2025-04-30 16:48:37,902|24|0|8300919a|Extract Response Data|EJP|matched|6fded44d|Call ECW API|
+2025-04-30 16:48:37,932|5|0|40303ed6|Set Mapping Name|UA|success|467871bd|Call Result Code Mapping|
+2025-04-30 16:48:37,947|15|0|838fb69f|Prepare Result Code Mapping Request|RT|success|467871bd|Call Result Code Mapping|
+2025-04-30 16:48:37,956|4|0|4527be67|Extract attributes|EJP|matched|7383c38c|Result Code Mapping|
+2025-04-30 16:48:37,973|21|0|9c32b404|Log Request|LC|success|7383c38c|Result Code Mapping|Filename: 6e3a5601-76fb-4c67-807c-ebbeca5a0239 | MTNA - Core Operations & Management > Checks and Validate > Check Mobile Wallet Account > Call ECW API > Call Result Code Mapping > Result Code Mapping | ISL-CORE.CHECK_MOBILE_WALLET_ACCOUNT.TA: 
+2025-04-30 16:48:37,981|4|0|b2505a6d|Prepare SQL to fetch ISL Code|UA|success|cd9c64dd|Fetch ISL Code|
+2025-04-30 16:48:37,998|17|0|eb3a4d8c|Fetch ISL Code|ESQLR|pre|cd9c64dd|Fetch ISL Code|
+2025-04-30 16:48:38,000|19|1|eb3a4d8c|Fetch ISL Code|ESQLR|success|cd9c64dd|Fetch ISL Code|
+2025-04-30 16:48:38,025|6|0|d0acbf60|Fetch message|ESQLR|pre|7383c38c|Result Code Mapping|
+2025-04-30 16:48:38,028|9|3|d0acbf60|Fetch message|ESQLR|success|7383c38c|Result Code Mapping|
+2025-04-30 16:48:38,049|21|0|1965f1da|Set Mapping Response|RT|success|7383c38c|Result Code Mapping|
+2025-04-30 16:48:38,073|3|0|46638ccf|Extract Response Data|EJP|matched|467871bd|Call Result Code Mapping|
+2025-04-30 16:48:38,085|36|0|70150c93|Log Response|LC|success|7383c38c|Result Code Mapping|Filename: 6e3a5601-76fb-4c67-807c-ebbeca5a0239 | MTNA - Core Operations & Management > Checks and Validate > Check Mobile Wallet Account > Call ECW API > Call Result Code Mapping > Result Code Mapping | ISL-CORE.CHECK_MOBILE_WALLET_ACCOUNT.TA: 
+2025-04-30 16:48:38,149|3|0|73727c3c|Fetch Custom Message|ESQLR|pre|2b76a2ee|Fetch Custom Message|
+2025-04-30 16:48:38,161|0|11|73727c3c|Fetch Custom Message|ESQLR|success|2b76a2ee|Fetch Custom Message|
+2025-04-30 16:48:38,163|2|0|25cb085c|Build Custom Message|EGS|success|2b76a2ee|Fetch Custom Message|
+2025-04-30 16:48:38,192|3|0|bd7fc669|Prepare JSON Response|RT|success|422b59f3|Prepare Reponse|
+2025-04-30 16:48:38,234|2|0|ef452afa|POJO or JSON?|ROA|POJO|1e6f94f2|Convert Response|
+2025-04-30 16:48:38,255|20|0|4acaadd7|RespMsg JSON to POJO|JTP|success|1e6f94f2|Convert Response|
+2025-04-30 16:48:38,308|30|4|1c48ca9a|Publish Check Mobile Wallet Account|PJMS|pre|9ec4dc2e|Check Mobile Wallet Account|Filename: 6e3a5601-76fb-4c67-807c-ebbeca5a0239 | MTNA - Core Operations & Management > Checks and Validate > Check Mobile Wallet Account | ISL-CORE.CHECK_MOBILE_WALLET_ACCOUNT.TA - Response sent :  'ISL-CORE.CHECK_MOBILE_WALLET_ACCOUNT.TA.RESP' :RespMsg{id=0E991BB20D40405ABF36B17F5A554FF2, name=CHECK_MOBILE_WALLET_ACCOUNT, resultCode=ResultCode{code=200, desc=Success}, dataObject=String%5B57%5D,instanceId=11000101,idCompany=1,respCode=200,respDesc=String%5B106%5D,customMessage=ResponseMessage %5Bid=200, messages=String%5B110%5D, EN=String%5B106%5D, KU=String%5B106%5D}%5D,createdDateTime=Wed Apr 30 16:48:38 ICT 2025%5D, datum=null}
